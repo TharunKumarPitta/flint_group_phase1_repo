@@ -1,0 +1,8 @@
+$lang=en
+
+UPDATE BackofficeRole;uid[unique=true];locname[lang=$lang]
+ ;flintcustomersupportagentrole;" Flint Customer Support Agent Role"
+ 
+UPDATE CsAgentGroup;uid[unique=true];locname[lang=$lang]
+ ;flintcustomerservicegroup;"Flint Customer Service Group"
+ 

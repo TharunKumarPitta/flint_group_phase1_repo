@@ -1,0 +1,15 @@
+# ImpEx for Importing Category Media into flint Store
+
+# Macros / Replacement Parameter definitions
+$productCatalog=flintProductCatalog
+$productCatalogName=flint Product Catalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$thumbnail=thumbnail(code, $catalogVersion)
+$picture=picture(code, $catalogVersion)
+$siteResource=jar:com.flintgroup.initialdata.constants.Flintyb2bInitialDataConstants&/flintyb2binitialdata/import/sampledata/productCatalogs/$productCatalog
+
+
+# Import Category Media
+INSERT_UPDATE Media;code[unique=true];realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];$catalogVersion
+
+UPDATE Category;code[unique=true];$thumbnail;allowedPrincipals(uid)[default='customergroup'];$catalogVersion

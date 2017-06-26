@@ -1,0 +1,11 @@
+INSERT_UPDATE BackofficeRole;UID[unique=true];backOfficeLoginDisabled;authorities
+;flintcustomersupportagentrole;FALSE;flintcustomersupportagentrole
+;;;;;
+
+INSERT_UPDATE CsAgentGroup;UID[unique=true];description
+;flintcustomerservicegroup;The flintcustomer Support Agent Group has access to the flint customer Support Backoffice's flint customer Support Agent Group views.
+
+INSERT_UPDATE PrincipalGroupRelation;source(uid)[unique=true];target(uid)[unique=true]
+;flintcustomersupportagentrole;employeegroup
+;flintcustomerservicegroup;employeegroup
+;flintcustomerservicegroup;flintcustomersupportagentrole

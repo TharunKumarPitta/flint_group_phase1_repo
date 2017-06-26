@@ -1,0 +1,12 @@
+# ImpEx for importing products Future Stock into flint Store
+
+# Macros / Replacement Parameter definitions
+$productCatalog=flintgroup-zhProductCatalog
+$productCatalogName=flint Product Catalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+
+
+INSERT_UPDATE Vendor;code[unique=true];name[lang=en]
+;flint;Flint
+
+INSERT_UPDATE FutureStock;productCode[unique=true];quantity;date[unique=true,dateformat=yyyy-MM-dd]

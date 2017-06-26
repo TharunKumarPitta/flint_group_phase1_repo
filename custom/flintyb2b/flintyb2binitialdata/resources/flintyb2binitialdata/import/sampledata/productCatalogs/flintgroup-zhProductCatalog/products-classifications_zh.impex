@@ -1,0 +1,334 @@
+# ImpEx for Importing Product Classifications into flint Store
+
+#% impex.setLocale(Locale.ENGLISH);
+
+# Macros / Replacement Parameter definitions
+$productCatalog=flintgroup-zhProductCatalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$clAttrModifiers=system='FlintClassification',version='1.0',translator=de.hybris.platform.catalog.jalo.classification.impex.ClassificationAttributeTranslator,lang=ZH
+
+# Insert Product Classifications
+
+# Classification: Technical details (4591)
+$feature1=@Source data-sheet, 6617[$clAttrModifiers];  # Source data-sheet
+UPDATE Product;code[unique=true];$feature1;$catalogVersion;
+
+
+
+# Classification: Technical details (4545)
+$feature1=@Source data-sheet, 6617[$clAttrModifiers];  # Source data-sheet
+UPDATE Product;code[unique=true];$feature1;$catalogVersion;
+
+
+
+# Classification: Technical details (4593)
+$feature1=@Motor diameter, 6752[$clAttrModifiers];  # Motor diameter in millimeter (mm)
+$feature2=@Chuck type, 6751[$clAttrModifiers];  # Chuck type
+$feature3=@Impact energy, 6782[$clAttrModifiers];  # Impact energy in Joules (J)
+$feature4=@Maximum torque, 6739[$clAttrModifiers];  # Maximum torque in Newtonmeters (Nm)
+$feature5=@Idle speed  4th gear , 6790[$clAttrModifiers];  # Idle speed (4th gear)in revolutions per minute (RPM)
+$feature6=@Soft grip, 5483[$clAttrModifiers];  # Soft grip
+$feature7=@Variable speed, 2976[$clAttrModifiers];  # Variable speed
+$feature8=@Idle speed  3rd gear , 6789[$clAttrModifiers];  # Idle speed (3rd gear)in revolutions per minute (RPM)
+$feature9=@Idle speed  1st gear , 6787[$clAttrModifiers];  # Idle speed (1st gear)in revolutions per minute (RPM)
+$feature10=@Idle speed  2nd gear , 6788[$clAttrModifiers];  # Idle speed (2nd gear)in revolutions per minute (RPM)
+$feature11=@Screw diameter  max , 6749[$clAttrModifiers];  # Screw diameter (max)in millimeter (mm)
+$feature12=@Forward/Reverse operation, 6748[$clAttrModifiers];  # Forward/Reverse operation
+$feature13=@Impact drilling, 6747[$clAttrModifiers];  # Impact drilling
+$feature14=@Number of gears, 6765[$clAttrModifiers];  # Number of gears
+$feature15=@Drill diameter in wood  m, 6746[$clAttrModifiers];  # Drill diameter in wood (max)in millimeter (mm)
+$feature16=@Drill diameter in steel  , 6745[$clAttrModifiers];  # Drill diameter in steel (max)in millimeter (mm)
+$feature17=@Drill diameter in concret, 6744[$clAttrModifiers];  # Drill diameter in concrete (max)in millimeter (mm)
+$feature19=@Source data-sheet, 6617[$clAttrModifiers];  # Source data-sheet
+$feature20=@Impact rate, 6743[$clAttrModifiers];  # Impact rate in impact rate (bpm)
+$feature18=@No-load speed, 6740[$clAttrModifiers];  # No-load speed in revolutions per minute (RPM)
+UPDATE Product;code[unique=true];$feature1;$feature2;$feature3;$feature4;$feature5;$feature6;$feature7;$feature8;$feature9;$feature10;$feature11;$feature12;$feature13;$feature14;$feature15;$feature16;$feature17;$feature18;$feature19;$feature20;$catalogVersion;
+
+
+# Classification: Technical details (4597)
+$feature1=@Source data-sheet, 6617[$clAttrModifiers];  # Source data-sheet
+UPDATE Product;code[unique=true];$feature1;$catalogVersion;
+
+
+
+# Classification: Technical details (4598)
+$feature1=@Source data-sheet, 6617[$clAttrModifiers];  # Source data-sheet
+UPDATE Product;code[unique=true];$feature1;$catalogVersion;
+
+# Classification: Technical details (4913)
+$feature1=@Dust extraction, 6780[$clAttrModifiers];  # Dust extraction
+$feature2=@Input power, 6738[$clAttrModifiers];  # Input powerin Watt (W)
+$feature3=@Blade diameter, 7143[$clAttrModifiers];  # Blade diameterin millimeter (mm)
+$feature4=@Bore size, 7144[$clAttrModifiers];  # Bore sizein millimeter (mm)
+$feature5=@Depth of cut at 90 degrees, 7145[$clAttrModifiers];  # Depth of cut at 90 degrees in millimeter (mm)
+$feature6=@Depth of cut at 45 degrees, 7146[$clAttrModifiers];  # Depth of cut at 45 degrees in millimeter (mm)
+$feature7=@Position indicator, 7147[$clAttrModifiers];  # Position indicator
+$feature8=@Noise level, 1793[$clAttrModifiers];  # Noise levelin decibel (dB)
+$feature9=@Double insulated, 2958[$clAttrModifiers];  # Double insulated
+$feature10=@Cable length, 1266[$clAttrModifiers];  # Cable lengthin meter (m)
+$feature11=@No-load speed, 6740[$clAttrModifiers];  # No-load speedin revolutions per minute (RPM)
+$feature12=@Output power, 5932[$clAttrModifiers];  # Output powerin Watt (W)
+$feature13=@Source data-sheet, 6617[$clAttrModifiers];  # Source data-sheet
+UPDATE Product;code[unique=true];$feature1;$feature2;$feature3;$feature4;$feature5;$feature6;$feature7;$feature8;$feature9;$feature10;$feature11;$feature12;$feature13;$catalogVersion;
+
+
+# Classification: Technical details (4604)
+$feature1=@Source data-sheet, 6617[$clAttrModifiers];  # Source data-sheet
+UPDATE Product;code[unique=true];$feature1;$catalogVersion;
+
+
+# Classification: Energy management (4671)
+$feature1=@Battery voltage, 4858[$clAttrModifiers];  # Battery voltagein Volt (V)
+$feature2=@Battery technology, 434[$clAttrModifiers];  # Battery technology
+$feature3=@Input voltage, 1466[$clAttrModifiers];  # Input voltagein Volt (V)
+$feature4=@Input power, 6738[$clAttrModifiers];  # Input powerin Watt (W)
+$feature5=@Number of batteries suppo, 1211[$clAttrModifiers];  # Number of batteries supported
+$feature6=@Input frequency, 2935[$clAttrModifiers];  # Input frequencyin Hertz (Hz)
+$feature7=@Charge indicator, 5439[$clAttrModifiers];  # Charge indicator
+$feature8=@Output power, 5932[$clAttrModifiers];  # Output powerin Watt (W)
+$feature9=@Charging time, 4087[$clAttrModifiers];  # Charging timein hour (h)
+$feature10=@Power supply type, 514[$clAttrModifiers];  # Power supply type
+$feature11=@Quick charge, 4981[$clAttrModifiers];  # Quick charge
+UPDATE Product;code[unique=true];$feature1;$feature2;$feature3;$feature4;$feature5;$feature6;$feature7;$feature8;$feature9;$feature10;$feature11;$catalogVersion;
+
+
+
+# Classification: Weight & dimensions (4670)
+$feature1=@Weight, 94[$clAttrModifiers];  # Weightin gram (g)
+UPDATE Product;code[unique=true];$feature1;$catalogVersion;
+
+
+
+# Classification: Packaging content (4684)
+$feature1=@Charger base, 3914[$clAttrModifiers];  # Charger base
+$feature2=@Plastic case, 6785[$clAttrModifiers];  # Plastic case
+$feature3=@Screwdriver bit, 6786[$clAttrModifiers];  # Screwdriver bit
+UPDATE Product;code[unique=true];$feature1;$feature2;$feature3;$catalogVersion;
+
+
+
+# Classification: Technical details (4734)
+$feature1=@Rotational speed, 2770[$clAttrModifiers];  # Rotational speedin revolutions per minute (RPM)
+$feature2=@Soft grip, 5483[$clAttrModifiers];  # Soft grip
+$feature3=@Input power, 6738[$clAttrModifiers];  # Input powerin Watt (W)
+$feature4=@Cord clip, 3923[$clAttrModifiers];  # Cord clip
+$feature5=@Output power, 5932[$clAttrModifiers];  # Output powerin Watt (W)
+$feature6=@Cable length, 1266[$clAttrModifiers];  # Cable lengthin meter (m)
+$feature7=@Grinding disc diameter, 6769[$clAttrModifiers];  # Grinding disc diameterin millimeter (mm)
+$feature8=@Source data-sheet, 6617[$clAttrModifiers];  # Source data-sheet
+UPDATE Product;code[unique=true];$feature1;$feature2;$feature3;$feature4;$feature5;$feature6;$feature7;$feature8;$catalogVersion;
+
+
+
+# Classification: Technical details (4673)
+$feature1=@Torque settings, 6750[$clAttrModifiers];  # Torque settings
+$feature2=@Input power, 6738[$clAttrModifiers];  # Input powerin Watt (W)
+$feature3=@Maximum torque, 6739[$clAttrModifiers];  # Maximum torquein torque (N·m)
+$feature4=@Soft grip handle, 2702[$clAttrModifiers];  # Soft grip handle
+$feature5=@Variable speed, 2976[$clAttrModifiers];  # Variable speed
+$feature6=@Screw diameter  max , 6749[$clAttrModifiers];  # Screw diameter (max)in millimeter (mm)
+$feature7=@Forward/Reverse operation, 6748[$clAttrModifiers];  # Forward/Reverse operation
+$feature8=@Noise level, idle, 3310[$clAttrModifiers];  # Noise level, idlein decibel (dB)
+$feature9=@Number of gears, 6765[$clAttrModifiers];  # Number of gears
+$feature10=@Cable length, 1266[$clAttrModifiers];  # Cable lengthin meter (m)
+$feature11=@No-load speed, 6740[$clAttrModifiers];  # No-load speedin revolutions per minute (RPM)
+$feature12=@Power supply type, 514[$clAttrModifiers];  # Power supply type
+$feature13=@Source data-sheet, 6617[$clAttrModifiers];  # Source data-sheet
+UPDATE Product;code[unique=true];$feature1;$feature2;$feature3;$feature4;$feature5;$feature6;$feature7;$feature8;$feature9;$feature10;$feature11;$feature12;$feature13;$catalogVersion;
+
+
+# Classification: Energy management (4672)
+$feature1=@Battery voltage, 4858[$clAttrModifiers];  # Battery voltagein Volt (V)
+$feature2=@Battery technology, 434[$clAttrModifiers];  # Battery technology
+$feature3=@Number of batteries suppo, 1211[$clAttrModifiers];  # Number of batteries supported
+$feature4=@Charge indicator, 5439[$clAttrModifiers];  # Charge indicator
+$feature5=@Charging time, 4087[$clAttrModifiers];  # Charging timein hour (h)
+$feature6=@Quick charge, 4981[$clAttrModifiers];  # Quick charge
+UPDATE Product;code[unique=true];$feature1;$feature2;$feature3;$feature4;$feature5;$feature6;$catalogVersion;
+
+
+
+# Classification: Technical details (4739)
+$feature1=@Type of sander, 6770[$clAttrModifiers];  # Type of sander
+$feature2=@Dust extraction, 6780[$clAttrModifiers];  # Dust extraction
+$feature3=@Sanding plate size, 6771[$clAttrModifiers];  # Sanding plate sizein millimeter (mm)
+$feature4=@Sanding plate dimension o, 6781[$clAttrModifiers];  # Sanding plate dimension over cornerin millimeter (mm)
+$feature5=@Oscillating circuit diame, 6774[$clAttrModifiers];  # Oscillating circuit diameterin millimeter (mm)
+$feature6=@Input power, 6738[$clAttrModifiers];  # Input powerin Watt (W)
+$feature7=@Micro Velcro-type sanding, 6775[$clAttrModifiers];  # Micro Velcro-type sanding platein millimeter (mm)
+$feature8=@Sanding surface, 6772[$clAttrModifiers];  # Sanding surfacein square meter (m²)
+$feature9=@Orbital stroke rate, 6773[$clAttrModifiers];  # Orbital stroke ratein revolutions per minute (RPM)
+$feature10=@Soft grip, 5483[$clAttrModifiers];  # Soft grip
+$feature11=@Clamping system sanding p, 6776[$clAttrModifiers];  # Clamping system sanding platein millimeter (mm)
+$feature12=@Eccentricity, 6779[$clAttrModifiers];  # Eccentricityin millimeter (mm)
+$feature13=@No-load speed, 6740[$clAttrModifiers];  # No-load speedin revolutions per minute (RPM)
+$feature14=@Output power, 5932[$clAttrModifiers];  # Output powerin Watt (W)
+$feature15=@Source data-sheet, 6617[$clAttrModifiers];  # Source data-sheet
+UPDATE Product;code[unique=true];$feature1;$feature2;$feature3;$feature4;$feature5;$feature6;$feature7;$feature8;$feature9;$feature10;$feature11;$feature12;$feature13;$feature14;$feature15;$catalogVersion;
+
+
+# Classification: Packaging content (4743)
+$feature1=@Additional accessories, 1305[$clAttrModifiers];  # Additional accessories
+UPDATE Product;code[unique=true];$feature1;$catalogVersion;
+
+
+# Classification: Technical details (4850)
+$feature1=@Source data-sheet, 6617[$clAttrModifiers];  # Source data-sheet
+UPDATE Product;code[unique=true];$feature1;$catalogVersion;
+
+
+# Classification: Energy management (4915)
+$feature1=@Input voltage, 1466[$clAttrModifiers];  # Input voltagein Volt (V)
+UPDATE Product;code[unique=true];$feature1;$catalogVersion;
+
+
+# Classification: Weight & dimensions (4674)
+$feature1=@Dimensions W x D x H, 49[$clAttrModifiers];  # Dimensions W x D x Hin millimeter (mm)
+$feature2=@Weight, 94[$clAttrModifiers];  # Weightin gram (g)
+$feature3=@Length, 2738[$clAttrModifiers];  # Lengthin millimeter (mm)
+UPDATE Product;code[unique=true];$feature1;$feature2;$feature3;$catalogVersion;
+
+
+
+# Classification: Technical details (4783)
+$feature1=@Source data-sheet, 6617[$clAttrModifiers];  # Source data-sheet
+UPDATE Product;code[unique=true];$feature1;$catalogVersion;
+
+
+# Classification: Technical details (4969)
+$feature1=@Source data-sheet, 6617[$clAttrModifiers];  # Source data-sheet
+UPDATE Product;code[unique=true];$feature1;$catalogVersion;
+
+
+# Classification: Packaging content (4719)
+$feature1=@Screwdriver bit, 6786[$clAttrModifiers];  # Screwdriver bit
+$feature2=@Additional accessories, 1305[$clAttrModifiers];  # Additional accessories
+UPDATE Product;code[unique=true];$feature1;$feature2;$catalogVersion;
+
+
+# Classification: Packaging data (4736)
+$feature1=@Package dimensions  W x D, 582[$clAttrModifiers];  # Package dimensions (W x D x H)in millimeter (mm)
+$feature2=@Package weight, 762[$clAttrModifiers];  # Package weightin gram (g)
+UPDATE Product;code[unique=true];$feature1;$feature2;$catalogVersion;
+
+# Classification: Energy management (4733)
+$feature1=@Input voltage, 1466[$clAttrModifiers];  # Input voltagein Volt (V)
+$feature2=@Input frequency, 2935[$clAttrModifiers];  # Input frequencyin Hertz (Hz)
+UPDATE Product;code[unique=true];$feature1;$feature2;$catalogVersion;
+
+
+# Classification: Weight & dimensions (4735)
+$feature1=@Weight, 94[$clAttrModifiers];  # Weightin gram (g)
+UPDATE Product;code[unique=true];$feature1;$catalogVersion;
+
+
+# Classification: Weight & dimensions (4740)
+$feature1=@Weight, 94[$clAttrModifiers];  # Weightin gram (g)
+UPDATE Product;code[unique=true];$feature1;$catalogVersion;
+
+
+# Classification: Weight & dimensions (4914)
+$feature1=@Depth, 1650[$clAttrModifiers];  # Depthin millimeter (mm)
+$feature2=@Weight, 94[$clAttrModifiers];  # Weightin gram (g)
+$feature3=@Height, 1464[$clAttrModifiers];  # Heightin millimeter (mm)
+$feature4=@Width, 1649[$clAttrModifiers];  # Widthin millimeter (mm)
+UPDATE Product;code[unique=true];$feature1;$feature2;$feature3;$feature4;$catalogVersion;
+
+# Classification: Technical details (5358)
+$feature1=@Cord length, 4937[$clAttrModifiers];  # Cord lengthin meter (m)
+$feature2=@Dust extraction, 6780[$clAttrModifiers];  # Dust extraction
+$feature3=@Nominal input power, 2446[$clAttrModifiers];  # Nominal input powerin Watt (W)
+$feature4=@Stroke height, 7414[$clAttrModifiers];  # Stroke heightin millimeter (mm)
+$feature5=@Cutting depth in wood, 7415[$clAttrModifiers];  # Cutting depth in woodin millimeter (mm)
+$feature6=@Cutting depth in aluminiu, 7416[$clAttrModifiers];  # Cutting depth in aluminiumin millimeter (mm)
+$feature7=@Cutting depth in non-allo, 7417[$clAttrModifiers];  # Cutting depth in non-alloyed steelin millimeter (mm)
+$feature8=@Output power, 5932[$clAttrModifiers];  # Output powerin Watt (W)
+$feature9=@No-load speed, 6740[$clAttrModifiers];  # No-load speedin revolutions per minute (RPM)
+$feature10=@Source data-sheet, 6617[$clAttrModifiers];  # Source data-sheet
+UPDATE Product;code[unique=true];$feature1;$feature2;$feature3;$feature4;$feature5;$feature6;$feature7;$feature8;$feature9;$feature10;$catalogVersion;
+
+# Classification: Weight & dimensions (5359)
+$feature1=@Weight, 94[$clAttrModifiers];  # Weightin gram (g)
+UPDATE Product;code[unique=true];$feature1;$catalogVersion;
+
+
+# Classification: Technical details (5362)
+$feature1=@Rated speed, 2270[$clAttrModifiers];  # Rated speedin revolutions per minute (RPM)
+$feature2=@Impact energy, 6782[$clAttrModifiers];  # Impact energyin Joules (J)
+$feature3=@Nominal input power, 2446[$clAttrModifiers];  # Nominal input powerin Watt (W)
+$feature4=@Forward/Reverse operation, 6748[$clAttrModifiers];  # Forward/Reverse operation
+$feature5=@Drill diameter in wood  m, 6746[$clAttrModifiers];  # Drill diameter in wood (max)in millimeter (mm)
+$feature6=@Optimum range of applicat, 7419[$clAttrModifiers];  # Optimum range of applications in concretein millimeter (mm)
+$feature7=@Drill diameter in steel  , 6745[$clAttrModifiers];  # Drill diameter in steel (max)in millimeter (mm)
+$feature8=@Drill diameter in concret, 6744[$clAttrModifiers];  # Drill diameter in concrete (max)in millimeter (mm)
+$feature9=@Source data-sheet, 6617[$clAttrModifiers];  # Source data-sheet
+$feature10=@Impact rate, 6743[$clAttrModifiers];  # Impact ratein impact rate (bpm)
+UPDATE Product;code[unique=true];$feature1;$feature2;$feature3;$feature4;$feature5;$feature6;$feature7;$feature8;$feature9;$feature10;$catalogVersion;
+
+
+# Classification: Weight & dimensions (5364)
+$feature1=@Depth, 1650[$clAttrModifiers];  # Depthin millimeter (mm)
+$feature2=@Height, 1464[$clAttrModifiers];  # Heightin millimeter (mm)
+$feature3=@Width, 1649[$clAttrModifiers];  # Widthin millimeter (mm)
+$feature4=@Weight  including battery, 7418[$clAttrModifiers];  # Weight (including battery)in gram (g)
+UPDATE Product;code[unique=true];$feature1;$feature2;$feature3;$feature4;$catalogVersion;
+
+
+# Classification: Technical details (5458)
+$feature1=@Cutting capacity, 2348[$clAttrModifiers];  # Cutting capacityin millimeter (mm)
+$feature2=@Ergonomic grip, 4689[$clAttrModifiers];  # Ergonomic grip
+$feature3=@No-load speed, 6740[$clAttrModifiers];  # No-load speedin revolutions per minute (RPM)
+$feature4=@Source data-sheet, 6617[$clAttrModifiers];  # Source data-sheet
+UPDATE Product;code[unique=true];$feature1;$feature2;$feature3;$feature4;$catalogVersion;
+
+ # Classification: Weight & dimensions (2966)
+$feature1=@Dimensions W x D x H, 49[$clAttrModifiers];  # Dimensions W x D x Hin millimeter (mm)
+$feature2=@Weight, 94[$clAttrModifiers];  # Weightin gram (g)
+UPDATE Product;code[unique=true];$feature1;$feature2;$catalogVersion;
+
+
+# Classification: Technical details (2968)
+$feature1=@Cable type, 1280[$clAttrModifiers];  # Cable type
+$feature2=@Connector type, 7141[$clAttrModifiers];  # Connector type
+$feature3=@Source data-sheet, 6617[$clAttrModifiers];  # Source data-sheet
+UPDATE Product;code[unique=true];$feature1;$feature2;$feature3;$catalogVersion;
+
+
+# Classification: Technical details (1316)
+$feature1=@Weight, 5736[$clAttrModifiers];  # Weightin pounds (lbs)
+$feature2=@Cable colour, 1272[$clAttrModifiers];  # Cable colour
+$feature3=@Size, 1147[$clAttrModifiers];  # Sizein inch (")
+$feature4=@Connector s , 1496[$clAttrModifiers];  # Connector(s)
+$feature5=@Service level, 1930[$clAttrModifiers];  # Service level
+$feature6=@Compatible operating syst, 2507[$clAttrModifiers];  # Compatible operating systems
+$feature7=@Core / cladding diameter, 2109[$clAttrModifiers];  # Core / cladding diameterin micron (µm)
+$feature8=@UNSPSC-code, 2505[$clAttrModifiers];  # UNSPSC-code
+$feature9=@Channels quantity, 2275[$clAttrModifiers];  # Channels quantity
+$feature10=@Operating relative humidi, 703[$clAttrModifiers];  # Operating relative humidity rangein percent (%)
+$feature11=@Full duplex, 536[$clAttrModifiers];  # Full duplex
+$feature12=@Cable length, 1266[$clAttrModifiers];  # Cable lengthin meter (m)
+$feature13=@Source data-sheet, 6617[$clAttrModifiers];  # Source data-sheet
+$feature14=@Array platforms, 5776[$clAttrModifiers];  # Array platforms
+$feature15=@Fibre optics wave type, 6005[$clAttrModifiers];  # Fibre optics wave type
+$feature16=@Dimensions W x D x H, 49[$clAttrModifiers];  # Dimensions W x D x Hin millimeter (mm)
+$feature17=@Cable type, 1280[$clAttrModifiers];  # Cable type
+$feature18=@Server function, 2903[$clAttrModifiers];  # Server function
+$feature19=@Bundled software, 251[$clAttrModifiers];  # Bundled software
+$feature20=@Technical features, 2143[$clAttrModifiers];  # Technical features
+$feature21=@Weight, 94[$clAttrModifiers];  # Weightin gram (g)
+$feature22=@Operating temperature ran, 1112[$clAttrModifiers];  # Operating temperature range (T-T)in degrees Celcium (°C)
+$feature23=@Media types supported, 477[$clAttrModifiers];  # Media types supported
+$feature24=@Compliance industry stand, 793[$clAttrModifiers];  # Compliance industry standards
+$feature25=@Storage temperature range, 757[$clAttrModifiers];  # Storage temperature range (T-T)in degrees Celcium (°C)
+$feature26=@Controller interface type, 1831[$clAttrModifiers];  # Controller interface type
+$feature27=@Wavelength, 2239[$clAttrModifiers];  # Wavelengthin nanometers (nm)
+$feature28=@Gender type, 3230[$clAttrModifiers];  # Gender type
+UPDATE Product;code[unique=true];$feature1;$feature2;$feature3;$feature4;$feature5;$feature6;$feature7;$feature8;$feature9;$feature10;$feature11;$feature12;$feature13;$feature14;$feature15;$feature16;$feature17;$feature18;$feature19;$feature20;$feature21;$feature22;$feature23;$feature24;$feature25;$feature26;$feature27;$feature28;$catalogVersion;
+
+
+# Classification: Connectivity (4039)
+$feature1=@Connector contacts platin, 7361[$clAttrModifiers];  # Connector contacts plating
+$feature2=@Connector 2, 5640[$clAttrModifiers];  # Connector 2
+$feature3=@Connector 1, 5639[$clAttrModifiers];  # Connector 1
+UPDATE Product;code[unique=true];$feature1;$feature2;$feature3;$catalogVersion;
+

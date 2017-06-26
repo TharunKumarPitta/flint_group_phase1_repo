@@ -1,0 +1,86 @@
+INSERT_UPDATE Company;uid[unique=true];name;
+;FlintAddresses;FlintAddresses;
+
+INSERT_UPDATE Address    ;code[unique=true]  ;owner(Company.uid)[unique=true]    ;country(isocode)   ;company ;line1;line2;streetnumber   ;streetname;postalcode     ;town   ;state;cellphone;billingAddress;contactAddress;shippingAddress;unloadingAddress;
+;10175102;FlintAddresses;CN;Korich Printing Equipment Co. Ltd.;Rm 1911;Guangzhou Exchange Square No. 268;Guangzhou Exchange Square No. 268;DONGFENG MID RD. C;510030;Guangzhou;;86 20 8351 1290;TRUE;TRUE;TRUE;TRUE;
+;10175126;FlintAddresses;CN;Dongguan Sunking Trading Co. Ltd.;;;;Kuangtou Road;;Liaobu Town;Dongguan, Shangtun District;86 769 87715011;TRUE;TRUE;TRUE;TRUE;
+;10175128;FlintAddresses;CN;Tianjin Dike;Printing Material Co., Ltd.;;Guangzhou Exchange Square No. 268;DONGFENG MID RD. C;510030;Tianjin;;;TRUE;TRUE;TRUE;TRUE;
+;10175131;FlintAddresses;CN;Everbest (Guangzhou);Printing Co. Ltd.;;;;511458;;;86-20-84981812;TRUE;TRUE;TRUE;TRUE;
+;10175144;FlintAddresses;CN;Shanghai Evershine Ind & Trading Co.;;;No. 1 Lane 1062, Dong Daming Road;No. 1 Lane 1062, Dong Daming Road;200082;Shanghai;;21-55885730    ;TRUE;TRUE;TRUE;TRUE;
+;10175145;FlintAddresses;CN;Shanghai KEYING Trading Co. Ltd;;;;;;Shanghai;;86 21 6353 0603;TRUE;TRUE;TRUE;TRUE;
+
+INSERT_UPDATE B2BUnit    ;active[default=true]   ;uid[unique=true]   ;locName[lang=en]   ;locName[lang=zh]   ;
+;;FlintCustomers;Flint Customers;Flint Customers;
+
+INSERT_UPDATE B2BUnit    ;active[default=true]   ;uid[unique=true]   ;locName[lang=en]   ;locName[lang=zh]   ;groups(uid);country(isocode)
+;;90003235;Dongguan Sunking Trading Co. Ltd.;Dongguan Sunking Trading Co. Ltd.;FlintCustomers;CN 
+;;90003237;Tianjin Dike;Tianjin Dike;FlintCustomers;CN
+;;90003238;Zhuhai Dike;Zhuhai Dike;FlintCustomers;CN
+;;90003240;Korich Printing Equipment Co. Ltd.;Korich Printing Equipment Co. Ltd.;FlintCustomers; CN
+;;90003242;Shanghai Evershine Ind & Trading Co;Shanghai Evershine Ind & Trading Co;FlintCustomers;CN
+;;90003243;Shanghai KEYING Trading Co. Ltd;hanghai KEYING Trading Co. Ltd;FlintCustomers;CN
+;;90003285;Everbest (Guangzhou);Everbest (Guangzhou);FlintCustomers;CN
+
+INSERT_UPDATE Address;&addId;owner(&B2BUnitID)[unique=true];
+;10175102;90003240;
+;10175126;90003235;
+;10175128;90003237;
+;10175131;90003285;
+;10175144;90003242;
+;10175145;90003243;
+
+INSERT_UPDATE B2BUnit;uid[unique=true];Addresses(&addId);&B2BUnitID;
+;90003235;10175126;90003235;
+;90003237;10175128;90003237;
+;90003238;10175128;90003238;
+;90003240;10175102;90003240;
+;90003242;10175144;90003242;
+;90003243;10175145;90003243;
+;90003285;10175131;90003285;
+
+
+#UPDATE B2BUnit;;uid[unique=true];blocked    ;deleted    ;salesArea(code);country(isocode)
+#;90003235;false;false;CN
+#;90003237;false;false;CN
+#;90003238;false;false;CN
+#;90003240;false;false;CN
+#;90003242;false;false;CN
+#;90003243;false;false;CN
+#;90003285;false;false;CN
+
+#UPDATE B2BUnit[$proc]   ;uid[unique=true]   ;soldToAddress(code,owner(Company.uid[default=FlintAddresses]))   ;shipToAddresses(code,owner(Company.uid[default=FlintAddresses]))[collection-delimiter=|]     ;billToAddresses(code,owner(Company.uid[default=FlintAddresses]));payerAddresses(code,owner(Company.uid[default=FlintAddresses]));IsDefaultShipTo(code,owner(Company.uid[default=FlintAddresses]))		;IsDefaultBillTo(code,owner(Company.uid[default=FlintAddresses]))		;IsDefaultPayer(code,owner(Company.uid[default=FlintAddresses]))
+#;90003235;10175126;10175126;10175126;10175126;true;true;true;
+#;90003237;10175128;10175128;10175128;10175128;true;true;true;
+#;90003238;10175128;10175128;10175128;10175128;true;true;true;
+#;90003240;10175102;10175102;10175102;10175102;true;true;true;
+#;90003242;10175144;10175144;10175144;10175144;true;true;true;
+#;90003243;10175145;10175145;10175145;10175145;true;true;true;
+#;90003285;10175131;10175131;10175131;10175131;true;true;true;
+
+INSERT_UPDATE B2BCustomer;description;uid[unique=true];originalUid;email;name;title(code);groups(uid);sessionCurrency(isocode)[default='CNY'];password;defaultB2BUnit(uid);
+;Flint Customer;korichgz@163.com;korichgz@163.com;korichgz@163.com;Zhao DuanSheng;mr;b2bcustomergroup;;Korich12;90003240;
+;Flint Customer;simoncc1000@shanghai-dayco.com;simoncc1000@shanghai-dayco.com;simoncc1000@shanghai-dayco.com;Huang Simon;mr;b2bcustomergroup,premiumPermissions;;SDPE1234;90003242;
+;Flint Customer;tjdkmajun@163.com;tjdkmajun@163.com;tjdkmajun@163.com;Ma Jun;mr;b2bcustomergroup;;TJDK1234;90003237;
+;Flint Customer;hamasaki.koshi@163.com;hamasaki.koshi@163.com;hamasaki.koshi@163.com;Guo Jeremy;mr;b2bcustomergroup;;ZHDK1234;90003238;
+;Flint Customer;nelsonchongys@yahoo.com;nelsonchongys@yahoo.com;nelsonchongys@yahoo.com;Chong Nelson;mr;b2bcustomergroup;;MS123456;90003235;
+
+INSERT_UPDATE B2BCostCenter;code[unique=true];name[lang=en];Unit(uid);budgets(code);currency(isocode)[default='CNY']
+;Shanghai Evershine Ind;Shanghai Evershine Ind Cost Centre;90003242;Monthly 5000K CNY;
+
+INSERT_UPDATE B2BBudget;code[unique=true];Unit(uid);budget;currency(isocode)[allownull=true];dateRange[dateformat=dd.MM.yyyy hh:mm:ss,allownull=true];name[lang=en];;
+;Monthly 5000K CNY;90003242;50000000;CNY;01.01.2010 00:00:00,12.31.2032 12:59:59;Monthly 5000K CNY;
+
+INSERT_UPDATE B2BOrderThresholdPermission;code[unique=true];Unit(uid);threshold;currency(isocode)[default='CNY'];
+;Shanghai Evershine 200K CYN ORDER;90003242;2000000;
+
+INSERT_UPDATE B2BUserGroup;uid[unique=true];name;unit(uid);permissions(code,unit(uid));
+;premiumPermissions;Premium Permissions;90003242;Shanghai Evershine 200K CYN ORDER:90003242;
+
+UPDATE B2BUnit;uid[unique=true];approvers(uid);
+;90003242;simoncc1000@shanghai-dayco.com;
+
+INSERT_UPDATE B2BBudgetExceededPermission;code[unique=true];Unit(uid);
+;Shanghai Evershine Budget Exceeded;90003242;
+
+UPDATE B2BCustomer;originalUid[unique=true];uid[unique=true];permissions(code,Unit(uid));
+;simoncc1000@shanghai-dayco.com;simoncc1000@shanghai-dayco.com;Shanghai Evershine Budget Exceeded:90003242;

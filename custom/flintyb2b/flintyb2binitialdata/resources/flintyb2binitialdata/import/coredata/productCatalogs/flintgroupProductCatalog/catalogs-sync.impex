@@ -1,0 +1,16 @@
+### context setup
+$lang=sessionLanguage(isocode[default=en])
+
+$flintgroupProductCatalog=flintgroupProductCatalog
+$flintgroupProductOnlineJob=synchflintgroupProductCatalogOnline
+
+#Synchronization Jobs
+INSERT_UPDATE CatalogVersionSyncJob;code[unique=true];sourceVersion(catalog(id),version);targetVersion(catalog(id),version);sessionUser(User.uid);removeMissingItems[default=false];syncLanguages(isocode)[default=en]
+;$flintgroupProductOnlineJob;$flintgroupProductCatalog:Staged;$flintgroupProductCatalog:Online;admin;true;en
+
+INSERT_UPDATE SyncItemCronJob;code[unique=true];$lang;job(code);
+CatalogVersionSyncCronJob;flintgroupProductOnlineCronJob;;$flintgroupProductOnlineJob;
+
+INSERT_UPDATE Trigger;Job(code)[unique=true];second;minute;hour;day;month;year;relative;active;maxAcceptableDelay
+;$flintgroupProductOnlineJob;0;0;4;-1;-1;-1;true;true;-1
+

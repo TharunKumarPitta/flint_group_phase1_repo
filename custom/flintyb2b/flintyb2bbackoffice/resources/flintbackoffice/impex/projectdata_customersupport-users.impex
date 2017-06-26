@@ -1,0 +1,2 @@
+INSERT_UPDATE Employee;UID[unique=true];name;groups(uid);description;password
+;FlintCustomerSupportAgent;Customer Support Agent;flintcustomerservicegroup;This Flint Customer Support Agent is assigned and has access to the Backoffice Customer Support Agent Group views .;1234

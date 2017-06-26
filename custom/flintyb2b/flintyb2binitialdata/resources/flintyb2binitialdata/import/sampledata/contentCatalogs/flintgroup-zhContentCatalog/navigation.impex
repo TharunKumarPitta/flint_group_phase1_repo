@@ -1,0 +1,152 @@
+$contentCatalog=flintgroup-zhContentCatalog
+$contentCatalogName=Flintgroup Zh Content Catalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+#$contentCV=catalogVersion(catalog(id[default=$contentCatalog]),version[default='Staged'])
+$productCatalog=flintgroup-zhProductCatalog
+$productCatalogName=Flintgroup Zh Product Catalog
+$productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$picture=media(code, $contentCV);
+$image=image(code, $contentCV);
+$media=media(code, $contentCV);
+$page=page(uid, $contentCV);
+$contentPage=contentPage(uid, $contentCV);
+$product=product(code, $productCV)
+$category=category(code, $productCV)
+$siteResource=jar:com.flintgroup.initialdata.constants.Flintyb2bInitialDataConstants&/flintyb2binitialdata/import/sampledata/contentCatalogs/$contentCatalog
+$productResource=jar:com.flintgroup.initialdata.constants.Flintyb2bInitialDataConstants&/flintyb2binitialdata/import/sampledata/productCatalogs/$productCatalog
+$jarResourceCms=jar:com.flintgroup.initialdata.constants.Flintyb2bInitialDataConstants&/flintyb2binitialdata/import/sampledata/cockpits/cmscockpit
+$addonExtensionName=b2bacceleratoraddon
+$medias=medias(code, $contentCV);
+$mediaContainer=media(qualifier, $contentCV);
+#$siteUid=flintgroup-zh
+
+
+INSERT_UPDATE CMSLinkComponent;uid[unique=true,allownull=true];$contentCV[unique=true];linkName[lang=en];linkName[lang=zh];name;url;visible[default=true]
+
+;NEWS_INT_Menu_Link;;News ColdSet;新闻 / 冷固;News ColdSet;/categories/c/NEWS_INT
+;HEADSET_INT_Menu_Link;;Headset;热固;Headset;/categories/c/HEADSET_INT
+;UV_INT_Menu_Link;;UV;紫外线;UV;/categories/c/UV_INT
+;LetterPress_INT_Menu_Link;;LetterPress;凸版印刷;LetterPress;/categories/c/LetterPress_INT
+;MetalDeco_INT_Menu_Link;;MetalDeco;金属印刷;MetalDeco;/categories/c/MetalDeco_INT
+;Sheetfed_INT_Menu_Link;;Sheetfed;单张纸胶印;Sheetfed;/categories/c/Sheetfed_INT
+;Flexography_INT_Menu_Link;;Flexography;柔性版印刷;Flexography;/categories/c/Flexography_INT
+;Gravure_INT_Menu_Link;;Gravure;凹印;Gravure;/categories/c/Gravure_INT
+;Digital_INT_Menu_Link;;Digital;数码印刷;Digital;/categories/c/Digital_INT
+
+
+;News_INK_Conventional_INT_Menu_Link;;Conventional;传统;Conventional;/categories/c/News_INK_Conventional_INT
+;News_INK_UV_INT_Menu_Link;;UV;紫外线;UV;/categories/c/News_INK_UV_INT
+;News_INK_Specialty_INT_Menu_Link;;Specialty;特殊产品;Specialty;/categories/c/News_INK_Specialty_INT
+;News_Blankets_Offset_INT_Menu_Link;;Offset;抵消;Offset;/categories/c/News_Blankets_Offset_INT
+;News_Blankets_Metalback_INT_Menu_Link;;Metalback;Metalback;Metalback;/categories/c/News_Blankets_Metalback_INT
+;News_Blankets_Sleeves_FOOD_INT_Menu_Link;;Sleeves;袖;Sleeves;/categories/c/News_Blankets_Sleeves_FOOD_INT
+;News_PC_Founts_INT_Menu_Link;;Founts;;Founts;/categories/c/News_PC_Founts_INT
+;News_PC_Washes_INT_Menu_Link;;Washes;淘;Washes;/categories/c/News_PC_Washes_INT
+;News_PC_Silicones_INT_Menu_Link;;Silicones;有機矽;Silicones;/categories/c/News_PC_Silicones_INT
+;News_PC_Specialty_INT_Menu_Link;;Specialty;專業;Specialty;/categories/c/News_PC_Specialty_INT
+;News_Plates_INT_Menu_Link;;Plates;印版;Plates;/categories/c/News_Plates_INT
+;News_Anciliary_Products_Link;;Anciliary Products;主管產品;Anciliary Products;/categories/c/News_Anciliary_Products_INT
+
+;HeadSet_Inks_INT_Link;;Inks;油墨;Inks;/categories/c/HeadSet_Inks_INT
+;HeadSet_Blankets_Offset_INT_Menu_Link;;Offset;抵消;Offset;/categories/c/HeadSet_Blankets_Offset_INT
+;HeadSet_Blankets_Metalback_INT_Menu_Link;;Metalback;Metalback;Metalback;/categories/c/HeadSet_Blankets_Metalback_INT
+;HeadSet_Blankets_Sleeves_INT_Menu_Link;;Sleeves;袖;Sleeves;/categories/c/HeadSet_Blankets_Sleeves_INT
+;HeadSet_PC_Founts_INT_Menu_Link;;Founts;Founts;Founts;/categories/c/HeadSet_PC_Founts_INT
+;HeadSet_PC_Washes_INT_Menu_Link;;Washes;淘;Washes;/categories/c/HeadSet_PC_Washes_INT
+;HeadSet_PC_Silicones_INT_Menu_Link;;Silicones;有機矽;Silicones;/categories/c/HeadSet_PC_Silicones_INT
+;HeadSet_PC_Specialty_INT_Menu_Link;;Specialty;專業;Specialty;/categories/c/HeadSet_PC_Specialty_INT
+;HeadSet_Plates_INT_Menu_Link;;Plates;印版;Plates;/categories/c/HeadSet_Plates_INT
+;HeadSet_Anciliary_Products_Link;;Anciliary Products;主管產品;Anciliary Products;/categories/c/HeadSet_Anciliary_Product
+
+
+;UV_NarrowWeb_INT_Menu_Link;;NarrowWeb;窄幅轮转;NarrowWeb;/categories/c/UV_NarrowWeb_INT
+;UV_Sheetfed_INT_Menu_Link;;Sheetfed;单张纸胶印;Sheetfed;/categories/c/UV_Sheefted_INT
+;UV_Coldset_INT_Menu_Link;;Coldset;冷固;Coldset;/categories/c/UV_Coldset_INT
+;UV_Screen_INT_Menu_Link;;Screen;屏幕;Screen;/categories/c/UV_Screen_INT
+;UV_Varnishes_Others_Menu_Link;;Varnishes;光油;Varnishes;/categories/c/UV_Varnishes_Others
+;UV_OffsetUV_INT_Menu_Link;;OffsetUV;抵消UV;OffsetUV;/categories/c/UV_OffsetUV_INT
+;UV_Blankets_Others_Menu_Link;;Others;其他;Others;/categories/c/UV_Blankets_Others
+;UV_PC_Founts_INT_Menu_Link;;Founts;Founts;Founts;/categories/c/UV_PC_Founts_INT
+;UV_PC_Washes_INT_Menu_Link;;Washes;淘;Washes;/categories/c/UV_PC_Washes_INT
+;UV_PC_Cleaners&Rejuvenators_INT_Menu_Link;;Cleaners & Rejuvenators;清潔劑和復興器;Cleaners & Rejuvenators;/categories/c/UV_PC_Cleaners_Rejuvenators_INT
+;UV_Ancillary_Products_INT_Menu_Link;;Ancillary Products;主管產品;Ancillary Products;/categories/c/UV_Ancillary_Products_INT
+
+
+;LetterPress_Inks_NarrowWeb_INT_Menu_Link;;NarrowWeb;窄幅轮转;NarrowWeb;/categories/c/LetterPress_Inks_NarrowWeb_INT
+;LetterPress_News_INT_Menu_Link;;News;新闻;News;/categories/c/LetterPress_News_INT
+;LetterPress_Varnishes_NarrowWeb_INT_Menu_Link;;NarrowWeb;窄幅轮转;NarrowWeb;/categories/c/LetterPress_Varnishes_NarrowWeb_INT
+;LetterPress_PlateMaking_Equipment_INT_Menu_Link;;Plate Making Equipment;制版设备;Plate Making Equipment;/categories/c/LetterPress_PlateMaking_Equipment_INT
+;LetterPress_PlateProcessor_Menu_Link;;Plate Processors;印版显影机;Plate Processors;/categories/c/LetterPress_PlateProcessor_Menu
+;LetterPress_Equipment_INT_Menu_Link;;Equipment;设备;Equipment;/categories/c/LetterPress_Equipment_INT
+
+
+
+# CMS Navigation Nodes #
+INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;children(uid,$contentCV)[mode=append]
+;root;;root;;
+
+# CMS Navigation Nodes
+INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);links(&componentRef);&nodeRef
+;SiteRootNode;;SiteRootNode;root;;SiteRootNode
+;FlintgroupNavNode;;Flint Site;SiteRootNode;;FlintgroupNavNode
+
+
+INSERT_UPDATE CMSNavigationNode;uid[unique=true,allownull=true];$contentCV[unique=true];name;parent(uid,$contentCV);parentPOS;title[lang=en];visible[default=true];links(uid,$contentCV);
+
+#------------------Top menu-----------;;;;;;;;;;
+
+;News_INT_NavNode;;News_ColdSet;FlintgroupNavNode;1;News_ColdSet;;;
+;HEADSET_INT_NavNode;;Headset;FlintgroupNavNode;2;Headset;;;
+;UV_INT_NavNode;;UV;FlintgroupNavNode;3;UV;;;
+;LetterPress_INT_NavNode;;LetterPress;FlintgroupNavNode;4;LetterPress;;;
+;MetalDeco_INT_NavNode;;MetalDeco;FlintgroupNavNode;5;MetalDeco;;;
+;Sheetfed_INT_NavNode;;Sheetfed;FlintgroupNavNode;6;Sheetfed;;;
+;Flexography_INT_NavNode;;Flexography;FlintgroupNavNode;7;Flexography;;;
+;Gravure_INT_NavNode;;Gravure;FlintgroupNavNode;8;Gravure;;;
+;Digital_INT_NavNode;;Digital;FlintgroupNavNode;9;Digital;;;
+
+#------------------News/Coldset-----------;;;;;;;;;;
+
+;News_Inks_NavNode;;Inks;News_INT_NavNode;4;Inks;;News_INK_Conventional_INT_Menu_Link,News_INK_UV_INT_Menu_Link,News_INK_Specialty_INT_Menu_Link;
+;News_Blankets_NavNode;;Blankets & Sleeves;News_INT_NavNode;0;Blankets & Sleeves;;News_Blankets_Offset_INT_Menu_Link,News_Blankets_Metalback_INT_Menu_Link,News_Blankets_Sleeves_FOOD_INT_Menu_Link;
+;News_Pressroom_Chemistry_NavNode;;Pressroom Chemistry ;News_INT_NavNode;2;Pressroom Chemistry;;News_PC_Founts_INT_Menu_Link,News_PC_Washes_INT_Menu_Link,News_PC_Silicones_INT_Menu_Link,News_PC_Specialty_INT_Menu_Link;
+;News_Plates_NavNode;;Plates;News_INT_NavNode;1;Plates;;News_Plates_INT_Menu_Link;
+;News_Anciliary_Products__NavNode;;Anciliary Products;News_INT_NavNode;3;Anciliary Products ;;News_Anciliary_Products_Link;
+
+
+#------------------HeadSet-----------;;;;;;;;;;
+
+;HeadSet_Inks_NavNode;;Inks;HEADSET_INT_NavNode;1;Inks;;HeadSet_Inks_INT_Link;
+;HeadSet_Blankets_NavNode;;Blankets & Sleeves;HEADSET_INT_NavNode;2;Blankets & Sleeves;;HeadSet_Blankets_Offset_INT_Menu_Link,HeadSet_Blankets_Metalback_INT_Menu_Link,HeadSet_Blankets_Sleeves_INT_Menu_Link;
+;HeadSet_Pressroom_Chemistry_NavNode;;Pressroom Chemistry;HEADSET_INT_NavNode;3;Pressroom Chemistry;;HeadSet_PC_Founts_INT_Menu_Link,HeadSet_PC_Washes_INT_Menu_Link,HeadSet_PC_Silicones_INT_Menu_Link,HeadSet_PC_Specialty_INT_Menu_Link;
+;HeadSet_Plates_NavNode;;Plates;HEADSET_INT_NavNode;4;Plates;;HeadSet_Plates_INT_Menu_Link;
+;HeadSet_Anciliary_Products_NavNode;;Anciliary Products;HEADSET_INT_NavNode;5;Anciliary Products ;;HeadSet_Anciliary_Products_Link;
+
+#------------------UV-----------
+;UV_Inks_NavNode;;Inks;UV_INT_NavNode;0;Inks;;UV_NarrowWeb_INT_Menu_Link,UV_Sheetfed_INT_Menu_Link,UV_Coldset_INT_Menu_Link;
+;UV_Varnishes_NavNode;;Varnishes;UV_INT_NavNode;1;Varnishes;;UV_Screen_INT_Menu_Link,UV_Varnishes_Others_Menu_Link;
+;UV_Blankets&Sleeves_NavNode;;Blankets & Sleeves;UV_INT_NavNode;2;Blankets & Sleeves;;UV_OffsetUV_INT_Menu_Link,UV_Blankets_Others_Menu_Link;
+;UV_Pressroom_Chemistry_NavNode;;Pressroom Chemistry;UV_INT_NavNode;3;Pressroom Chemistry;;UV_PC_Founts_INT_Menu_Link,UV_PC_Washes_INT_Menu_Link,UV_PC_Cleaners&Rejuvenators_INT_Menu_Link;
+;UV_Ancillary_Products_NavNode;;Ancillary Products;UV_INT_NavNode;4;Ancillary Products;;UV_Ancillary_Products_INT_Menu_Link;
+
+#--------------LetterPress--------------
+;LetterPress_Inks_NavNode;;Inks;LetterPress_INT_NavNode;0;Inks;;LetterPress_Inks_NarrowWeb_INT_Menu_Link,LetterPress_News_INT_Menu_Link;
+;LetterPress_Varnishes_NavNode;;Varnishes;LetterPress_INT_NavNode;1;Varnishes;;LetterPress_Varnishes_NarrowWeb_INT_Menu_Link;
+;LetterPress_Plates_NavNode;;Plates;LetterPress_INT_NavNode;2;Plates;;LetterPress_PlateMaking_Equipment_INT_Menu_Link,LetterPress_PlateProcessor_Menu_Link;
+;LetterPress_Equipment_NavNode;;Equipment;LetterPress_INT_NavNode;3;Equipment;;LetterPress_Equipment_INT_Menu_Link;
+
+
+INSERT_UPDATE NavigationBarComponent;$contentCV[unique=true];uid[unique=true];name;wrapAfter;link(uid, $contentCV);styleClass;navigationNode(uid);dropDownLayout(code)[default=AUTO];&componentRef
+;;FlintCategory1BarComponent;News&Coldset ;10;NEWS_INT_Menu_Link;;News_INT_NavNode;;FlintCategory1BarComponent
+;;FlintCategory2BarComponent;HeatSet;10;HEADSET_INT_Menu_Link;;HEADSET_INT_NavNode;;FlintCategory2BarComponent
+;;FlintCategory3BarComponent;UV;10;UV_INT_Menu_Link;;UV_INT_NavNode;;FlintCategory3BarComponent
+;;FlintCategory4BarComponent;Letterpress;10;LetterPress_INT_Menu_Link;;LetterPress_INT_NavNode;;FlintCategory4BarComponent
+
+
+# Navigation Bar Collection Component
+INSERT_UPDATE NavigationBarCollectionComponent;$contentCV[unique=true];uid[unique=true];name;components(uid, $contentCV);&componentRef
+;;NavBarComponent;Navigation Bar Collection Componeent;FlintCategory1BarComponent,FlintCategory2BarComponent,FlintCategory3BarComponent,FlintCategory4BarComponent;NavBarComponent
+
+#### Content Slots ####
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(uid, $contentCV)
+;;NavigationBarSlot;NavBarComponent,breadcrumbComponent

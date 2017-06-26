@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<groups xmlns="http://www.isdc.ro/wro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.isdc.ro/wro wro.xsd">
+   <group name="addons_responsive">
+      <js>/_ui/addons/secureportaladdon/responsive/common/js/secureportaladdon.js</js>
+      <js>/_ui/addons/customerticketingaddon/responsive/common/js/customerticketingaddon.js</js>
+      <css>/_ui/addons/customerticketingaddon/responsive/common/css/customerticketingaddon.css</css>
+      <js>/_ui/addons/b2bacceleratoraddon/responsive/common/js/acc.checkoutsummary.js</js>
+      <js>/_ui/addons/b2bacceleratoraddon/responsive/common/js/acc.paymentType.js</js>
+      <js>/_ui/addons/b2bacceleratoraddon/responsive/common/js/acc.replenishment.js</js>
+      <js>/_ui/addons/b2bacceleratoraddon/responsive/common/js/acc.orderform.js</js>
+      <js>/_ui/addons/b2bacceleratoraddon/responsive/common/js/acc.approval.js</js>
+   </group>
+   <group name="addons_desktop">
+      <js>/_ui/addons/customerticketingaddon/desktop/common/js/customerticketingaddon.js</js>
+      <css>/_ui/addons/customerticketingaddon/desktop/common/css/customerticketingaddon.css</css>
+   </group>
+   <group name="addons_mobile">
+      <js>/_ui/addons/customerticketingaddon/desktop/common/js/customerticketingaddon.js</js>
+      <css>/_ui/addons/customerticketingaddon/mobile/common/css/customerticketingaddon.css</css>
+   </group>
+</groups>
+

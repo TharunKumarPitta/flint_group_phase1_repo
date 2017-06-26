@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- [y] hybris Platform Copyright 
+	(c) 2017 SAP SE or an SAP affiliate company. All rights reserved. This software 
+	is the confidential and proprietary information of SAP ("Confidential Information"). 
+	You shall not disclose such Confidential Information and shall use it only 
+	in accordance with the terms of the license agreement you entered into with 
+	SAP. -->
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/widgets.xsd">
+	<widget-extension widgetId="backofficeMainSlot">
+		<widget id="FlintCustomerSupport-Perspective" widgetDefinitionId="com.hybris.cockpitng.borderlayout"
+			slotId="perspectives" title="Flint Customer Support"
+			template="false"
+			access="flintcustomersupportagentrole">
+			<widget id="fcs-leftSlotContainer" widgetDefinitionId="com.hybris.cockpitng.borderlayout"  slotId="leftSlot" template="false">
+			<widget id="fcsExplorerTree" widgetDefinitionId="com.hybris.cockpitng.widgets.common.explorertree" slotId="centerSlot" template="false" title="flintcustomersupport_backoffice_perspective_name">
+				<widget id="fcsTreeSelectionConditionEvaluator" widgetDefinitionId="com.hybris.cockpitng.conditionevaluator" slotId="cockpitWidgetChildrenInvisible" title="csTreeSelectionConditionEvaluator" template="false">
+                        <widget id="fcsNamePropExtractor" widgetDefinitionId="com.hybris.cockpitng.widgets.common.propextractor" slotId="cockpitWidgetChildrenInvisible" title="csNamePropExtractor" template="false">
+                            <setting key="widgetStyleClass" type="String"></setting>
+                            <setting key="socketDataType_$T" type="String">java.lang.String</setting>
+                            <setting key="expression" type="String">name</setting>
+                            <setting key="widgetStyleAttribute" type="String"></setting>
+                            <virtual-sockets/>
+                        </widget>
+                        <setting key="expression" type="String">#root instanceof T(com.hybris.cockpitng.tree.node.TypeNode)</setting>
+
+                        <setting key="socketDataType_$T" type="String">java.lang.Object</setting>
+                        <setting key="widgetStyleAttribute" type="String"></setting>
+                        <setting key="widgetStyleClass" type="String"></setting>
+                        <virtual-sockets/>
+                    </widget>
+			        <widget id="fcs-perspective-checker" widgetDefinitionId="com.hybris.cockpitng.conditionevaluator"
+                            slotId="cockpitWidgetChildrenInvisible" template="false">
+                        <widget id="fcs-node-selector" widgetDefinitionId="com.hybris.cockpitng.widgets.common.propextractor"
+                                slotId="cockpitWidgetChildrenInvisible" template="false">
+                            <setting key="widgetStyleClass" type="String"></setting>
+                            <setting key="expression" type="String">new com.hybris.backoffice.navigation.TreeNodeSelector("flintcustomersupport_backoffice_explorerTree_tickets", true)</setting>
+                            <setting key="socketDataType_$T" type="String">java.lang.Object</setting>
+                            <setting key="widgetStyleAttribute" type="String"></setting>
+                            <virtual-sockets/>
+                        </widget>
+                        <setting key="expression" type="String">#root != null &amp;&amp; "FlintCustomerSupport-Perspective".equals(#root.id)</setting>
+
+                        <setting key="socketDataType_$T" type="String">java.lang.Object</setting>
+                        <setting key="widgetStyleAttribute" type="String"></setting>
+                        <setting key="widgetStyleClass" type="String"></setting>
+                        <virtual-sockets/>
+                    </widget>
+                    <setting key="explorerTreeConfigCtx" type="String">fcs-explorer-tree</setting>
+                    <setting key="widgetStyleClass" type="String">y-customersupport-explorer-tree</setting>
+                    <setting key="allowFilteringEntries" type="Boolean">false</setting>
+                    <setting key="widgetStyleAttribute" type="String"></setting>
+                    <virtual-sockets/>
+			</widget>
+			<setting key="westDisabled" type="Boolean">true</setting>
+				<setting key="northDisabled" type="Boolean">true</setting>
+				<setting key="eastDisabled" type="Boolean">true</setting>
+				<setting key="southDisabled" type="Boolean">true</setting>
+				<virtual-sockets/>
+			</widget>
+			<widget id="fcsCollapsibleContainer" widgetDefinitionId="com.hybris.cockpitng.collapsiblecontainer" slotId="centerSlot" template="false">
+                <widget id="fcsAdvancedSearch" widgetDefinitionId="com.hybris.cockpitng.advancedsearch" slotId="center" template="false">
+                    <widget id="fcsAdvancedSearchEngine" widgetDefinitionId="com.hybris.cockpitng.widgets.common.advancedsearchengine" slotId="cockpitWidgetChildrenInvisible" template="false">
+                        <setting key="widgetStyleClass" type="String"></setting>
+                        <setting key="defaultPageSize" type="Integer">20</setting>
+                        <setting key="widgetStyleAttribute" type="String"></setting>
+                        <virtual-sockets/>
+                    </widget>
+					<widget id="fcsCollectionBrowser" widgetDefinitionId="com.hybris.cockpitng.collectionBrowser" slotId="nestedWidget" title="csCollectionBrowser" template="false">
+						<setting key="itemRenderer" type="String">listViewRenderer</setting>
+						<setting key="sortableListHeader" type="Boolean">true</setting>
+						<setting key="asyncLoading" type="Boolean">true</setting>
+						<setting key="pageSize" type="Integer">50</setting>
+						<setting key="maxCharsInCell" type="Integer">70</setting>
+						<setting key="listTitle" type="String"></setting>
+						<setting key="widgetStyleClass" type="String"></setting>
+						<setting key="actionSlotComponentId" type="String">cslistviewactions</setting>
+						<setting key="widgetStyleAttribute" type="String"></setting>
+						<setting key="colConfigCtxCode" type="String">fcs-listview</setting>
+						<setting key="listSubtitle" type="String">emptylist</setting>
+						<setting key="multiSelect" type="Boolean">false</setting>
+                        <setting key="maxCharsInCell" type="Integer">50</setting>
+						<setting key="refreshAfterObjectCreation" type="Boolean">true</setting>
+						<virtual-sockets/>
+					</widget>
+                    <setting key="simpleSearchConfigCtxCode" type="String">fcs-simple-search</setting>
+                    <setting key="disableAttributesComparator" type="Boolean">false</setting>
+                    <setting key="disableSimpleSearch" type="Boolean">false</setting>
+                    <setting key="addRowPosition" type="String">Header</setting>
+                    <setting key="widgetStyleClass" type="String"></setting>
+                    <setting key="disableSubtypesCheckbox" type="Boolean">false</setting>
+                    <setting key="isNestedObjectCreationDisabled" type="Boolean">true</setting>
+                    <setting key="disableSearchModelCache" type="Boolean">false</setting>
+                    <setting key="widgetStyleAttribute" type="String"></setting>
+                    <setting key="disableSortOrder" type="Boolean">false</setting>
+                    <setting key="sendResetWhenDisableAutoSearch" type="Boolean">true</setting>
+                    <setting key="forceSearchForCode" type="String">CsTicket</setting>
+                    <setting key="advancedSearchConfigCtxCode" type="String">fcs-advanced-search</setting>
+                    <setting key="disableAutoSearch" type="Boolean">false</setting>
+                    <setting key="disableAdvancedSearchToolbar" type="Boolean">false</setting>
+					<setting key="enableNestedWidgetView" type="Boolean">true</setting>
+					<setting key="isNestedObjectCreationDisabled" type="Boolean">true</setting>
+					<setting key="addRowPosition" type="String">Bottom</setting>
+                    <virtual-sockets/>
+                </widget>
+                <widget id="fcsEditorArea" widgetDefinitionId="com.hybris.cockpitng.backoffice.defaultEditorArea" slotId="bottom" title="csEditorArea" template="false">
+                    <setting key="widgetStyleAttribute" type="String"></setting>
+                    <setting key="viewModeBtnVisible" type="Boolean">false</setting>
+                    <setting key="widgetStyleClass" type="String"></setting>
+                    <setting key="initViewMode" type="String">fluid</setting>
+                    <setting key="fluidViewCode" type="String">fluid</setting>
+                    <setting key="editorAreaConfigCtx" type="String">fcs-editor-area</setting>
+                    <setting key="bottomToolbar" type="Boolean">false</setting>
+                    <setting key="actionSlotComponentId" type="String">cseditorareaactions</setting>
+                    <setting key="showLinksInNotifications" type="Boolean">false</setting>
+                </widget>
+
+                <widget id="fcsBackofficeSpaceManagement" widgetDefinitionId="com.hybris.backoffice.spaceManagement" slotId="cockpitWidgetChildrenInvisible" template="false">
+                    <setting key="widgetStyleAttribute" type="String"></setting>
+                    <setting key="widgetStyleClass" type="String"></setting>
+                    <virtual-sockets/>
+                </widget>
+                <setting key="widgetStyleAttribute" type="String"></setting>
+                <setting key="allowLockingCenterPanel" type="Boolean">true</setting>
+                <setting key="bottomPanelCollapsed" type="Boolean">false</setting>
+                <setting key="topHeight" type="String">33%</setting>
+                <setting key="centerCaption" type="String">List</setting>
+                <setting key="bottomPanelInitiallyLocked" type="Boolean">false</setting>
+                <setting key="centerHeight" type="String">50%</setting>
+                <setting key="topPanelInitiallyLocked" type="Boolean">false</setting>
+                <setting key="thirdSectionDisabled" type="Boolean">true</setting>
+                <setting key="allowLockingBottomPanel" type="Boolean">true</setting>
+                <setting key="bottomCaption" type="String">Edit</setting>
+                <setting key="centerPanelCollapsed" type="Boolean">false</setting>
+                <setting key="widgetStyleClass" type="String"></setting>
+                <setting key="topCaption" type="String">Search</setting>
+                <setting key="centerPanelInitiallyLocked" type="Boolean">false</setting>
+                <setting key="topPanelCollapsed" type="Boolean">true</setting>
+                <setting key="allowLockingTopPanel" type="Boolean">true</setting>
+                <virtual-sockets/>
+            </widget>
+				<setting key="eastDisabled" type="Boolean">true</setting>
+				<setting key="perspectiveImageUrl" type="String">/cng/images/icon-customer-support.png</setting>
+			</widget>
+	</widget-extension>
+	<widget-connection sourceWidgetId="backofficeMainSlot" outputId="perspectiveSelected" targetWidgetId="fcs-perspective-checker" inputId="input"/>
+	<widget-connection sourceWidgetId="fcs-perspective-checker" outputId="true" targetWidgetId="fcs-node-selector" inputId="genericInput"/>
+	<widget-connection sourceWidgetId="fcs-node-selector" outputId="genericOutput" targetWidgetId="fcsExplorerTree" inputId="nodeIdSelected"/>
+	
+	<widget-connection sourceWidgetId="fcsExplorerTree" outputId="nodeSelected" targetWidgetId="fcsTreeSelectionConditionEvaluator" inputId="input"/>
+    <widget-connection sourceWidgetId="fcsTreeSelectionConditionEvaluator" outputId="true" targetWidgetId="fcsNamePropExtractor" inputId="genericInput"/>
+    <widget-connection sourceWidgetId="fcsNamePropExtractor" outputId="genericOutput" targetWidgetId="fcsAdvancedSearch" inputId="type"/>
+    
+	<widget-connection sourceWidgetId="fcsAdvancedSearch" outputId="searchData" targetWidgetId="fcsAdvancedSearchEngine" inputId="searchData"/>
+	<widget-connection sourceWidgetId="fcsAdvancedSearchEngine" outputId="pageable" targetWidgetId="fcsCollectionBrowser" inputId="pageable"/>
+	
+	<widget-connection sourceWidgetId="fcsCollectionBrowser" outputId="selectedItem" targetWidgetId="fcsBackofficeSpaceManagement" inputId="listSelectedObject"/>
+	<widget-connection sourceWidgetId="fcsCollectionBrowser" outputId="selectedItem" targetWidgetId="fcsEditorArea" inputId="inputObject"/>
+    <widget-connection sourceWidgetId="fcsCollectionBrowser" outputId="sortData" targetWidgetId="fcsAdvancedSearch" inputId="sortData"/>
+    
+	<widget-connection sourceWidgetId="fcsBackofficeSpaceManagement" outputId="collapseState" targetWidgetId="fcsCollapsibleContainer" inputId="collapseState"/>
+	<widget-connection sourceWidgetId="fcsAdvancedSearch" outputId="searchData" targetWidgetId="fcsBackofficeSpaceManagement" inputId="searchData"/>
+	
+</widgets>

@@ -1,0 +1,18 @@
+#
+# Import the Solr CronJob Trigger configuration for the flintgroup store
+#
+
+$facetSearchConfigName=flintIndex
+
+INSERT_UPDATE SolrIndexerCronJob; code[unique=true];job(code);singleExecutable;sessionLanguage(isocode);indexerOperation(code);facetSearchConfig(name)
+;full-flintIndex-cronJob;solrIndexerJob;false;en;full;$facetSearchConfigName
+;update-flintIndex-cronJob;solrIndexerJob;false;en;update;$facetSearchConfigName
+;delete-flintIndex-cronJob;solrIndexerJob;false;en;delete;$facetSearchConfigName
+
+INSERT_UPDATE Trigger;cronJob(code)[unique=true];second;minute;hour;day;month;year;relative;active;maxAcceptableDelay
+
+# Run the full-flintIndex-cronJob at 3:05 AM every day
+;full-flintIndex-cronJob;0;5;3;-1;-1;-1;false;false;-1
+
+# Run the update-flintIndex-cronJob every 10 minutes
+;update-flintIndex-cronJob;0;10;-1;-1;-1;-1;true;false;-1

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+
+ This software is the confidential and proprietary information of SAP
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with SAP.
+-->
+<config xmlns="http://www.hybris.com/cockpit/config">
+
+ <!-- Explorer Tree-->
+ <context component="flint-explorer-tree" principal="admin">
+   <n:explorer-tree xmlns:n="http://www.hybris.com/cockpitng/config/explorertree">
+
+    <n:navigation-node id="flintbackoffice.treenode.CsTickets">
+        <n:type-node id="flintbackoffice.treenode.CsTickets.view" code="CsTicket" />
+    </n:navigation-node>
+
+   </n:explorer-tree>
+ </context>
+
+ <context type="CsTicket" component="flintlistview">
+   <list:list-view xmlns:list="http://www.hybris.com/cockpitng/component/listView">
+    <list:column qualifier="ticketID" label="flintbackoffice.csTicket.listview.ticketID"/>
+    <list:column qualifier="headline" label="flintbackoffice.csTicket.listview.headline"/>
+    <list:column qualifier="state" label="flintbackoffice.csTicket.listview.state"/>
+    <list:column qualifier="category" label="flintbackoffice.csTicket.listview.category"/>
+    <list:column qualifier="priority" label="flintbackoffice.csTicket.listview.priority" />
+  </list:list-view>
+ </context>
+
+ <context merge-by="type" parent="GenericItem" type="CsTicket" component="simple-search">
+  <simple-search:simple-search xmlns:simple-search="http://www.hybris.com/cockpitng/config/simplesearch">
+   <simple-search:field xmlns="http://www.hybris.com/cockpitng/config/simplesearch" name="code"/>
+   <simple-search:sort-field name="status" asc="false"/>
+  </simple-search:simple-search>
+ </context>
+
+</config>

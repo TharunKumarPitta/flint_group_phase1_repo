@@ -1,0 +1,128 @@
+
+################### Categories ######################
+#$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$productCatalog=flintgroup-zhProductCatalog
+$productCatalogName=Flintgroup Zh Product Catalog
+$productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$productRef=code,$productCV
+$categoryRef=code,$productCV
+#$allSubcategories=allSubcategories(code, $productCV)
+# Insert Categories
+INSERT_UPDATE Category;code[unique=true];allowedPrincipals(uid)[default='customergroup'];$productCV;name[lang=en][lang=zh]
+;flintCategory;;;Product Catalogue;Product Catalogue
+
+#Insert Categories
+INSERT_UPDATE Category;code[unique=true];name[lang=en];name[lang=zh];$productCV[unique=true]
+;flintCategory;Product Catalog;产品目录;;
+;NEWS_INT;News ColdSet;新闻   冷固;;
+;HEATSET_INT;Heatset;热固;;
+;UV_INT;UV;紫外线;;
+;LetterPress_INT;LetterPress;凸版印刷;;
+;MetalDeco_INT;MetalDeco;金属印刷;;
+;Sheetfed_INT;Sheetfed;单张纸胶印;;
+;Flexography_INT;Flexography;柔性版印刷;;
+;Gravure_INT;Gravure;凹印;;
+;Digital_INT;Digital;数码印刷;;
+
+;News_INK_Conventional_INT;Conventional;传统;;
+;News_INK_UV_INT;UV;紫外线;;
+;News_INK_Specialty_INT;Specialty;特殊产品;;
+;News_Blankets_Sleeves_FOOD_INT;Blankets & Sleeves;毯子和袖子;;
+;News_PC_Founts_INT;PC Founts;;;
+;News_PC_Washes_INT;PC Washes;PC洗滌;;
+;News_PC_Silicones_INT;PC Silicones;PC矽膠;;
+;News_PC_Specialty_INT;PC Speciality;PC專業;;
+;News_Plates_INT;Plates;印版;;
+;News_Anciliary_Products_INT;Anciliary Products;主管產品;;
+;News_Blankets_Offset_INT;Blankets Offset;毯子偏移;;
+;News_Blankets_Metalback_INT;Blankets Metalback;;;
+
+
+;Heatset_Inks_INT;Inks;油墨;;
+;Heatset_Blankets_Offset_INT;Blankets Offset;毯子偏移;;
+;Heatset_Blankets_Metalback_INT;Blankets Metalback;;;
+;Heatset_Blankets_Sleeves_INT;Blankets Sleeves;毯子套;;
+;Heatset_PC_Founts_INT;PC Founts;;;
+;Heatset_PC_Washes_INT;PC Washes;PC洗滌;;
+;Heatset_PC_Silicones_INT;PC Silicones;PC矽膠;;
+;Heatset_PC_Specialty_INT;PC Specialty;PC專業;;
+;Heatset_Plates_INT;Plates;印版;;
+;Heatset_Anciliary_Product;Anciliary Product;主管產品;;
+
+;UV_NarrowWeb_INT;NarrowWeb;窄幅轮转;;
+;UV_Sheefted_INT;Sheefted;单张纸胶印;;
+;UV_Coldset_INT;Coldset;冷固;;
+;UV_Screen_INT;Screen;屏幕;;
+;UV_Varnishes_Others;Varnishes;光油;;
+;UV_OffsetUV_INT;OffsetUV;抵消UV;;
+;UV_Blankets_Others;Blankets;毯子;;
+;UV_PC_Founts_INT;PC Founts;;;
+;UV_PC_Washes_INT;PC Washes;PC洗滌;;
+;UV_PC_Cleaners_Rejuvenators_INT;PC Cleaners Rejuvenators;電腦清潔劑復興機;;
+;UV_Ancillary_Products_INT;Ancillary Products;主管產品;;
+
+
+;LetterPress_Inks_NarrowWeb_INT;Inks NarrowWeb;窄幅轮转;;
+;LetterPress_News_INT;News;新闻;;
+;LetterPress_Varnishes_NarrowWeb_INT;Varnishes NarrowWeb;窄幅轮转;;
+;LetterPress_PlateMaking_Equipment_INT;PlateMaking Equipment;制版设备;;
+;LetterPress_PlateProcessor_Menu;PlateProcessor menu;印版显影机;;
+;LetterPress_Equipment_INT;Equipment;设备;;
+
+#INSERT_UPDATE Category;code[unique=true];$allSubcategories[unique=true]
+#;flintCategory;NEWS_INT,HEATSET_INT,UV_INT,LetterPress_INT,MetalDeco_INT,Sheetfed_INT,Flexography_INT,Gravure_INT,Digital_INT
+
+# Insert Category Structure
+INSERT_UPDATE CategoryCategoryRelation;source($categoryRef)[unique=true];target($categoryRef)[unique=true]
+;flintCategory;NEWS_INT;
+;flintCategory;HEATSET_INT;
+;flintCategory;UV_INT;
+;flintCategory;LetterPress_INT;
+;flintCategory;MetalDeco_INT;
+;flintCategory;Sheetfed_INT;
+;flintCategory;Flexography_INT;
+;flintCategory;Gravure_INT;
+;flintCategory;Digital_INT;
+
+;NEWS_INT;News_INK_Conventional_INT;
+;NEWS_INT;News_INK_UV_INT;
+;NEWS_INT;News_INK_Specialty_INT;
+;NEWS_INT;News_Blankets_Offset_INT;
+;NEWS_INT;News_Blankets_Metalback_INT;
+;NEWS_INT;News_Blankets_Sleeves_FOOD_INT;
+;NEWS_INT;News_PC_Founts_INT;
+;NEWS_INT;News_PC_Washes_INT;
+;NEWS_INT;News_PC_Silicones_INT;
+;NEWS_INT;News_PC_Specialty_INT;
+;NEWS_INT;News_Plates_INT;
+;NEWS_INT;News_Anciliary_Products_INT;
+
+;HEATSET_INT;Heatset_Inks_INT
+;HEATSET_INT;Heatset_Blankets_Offset_INT
+;HEATSET_INT;Heatset_Blankets_Metalback_INT
+;HEATSET_INT;Heatset_Blankets_Sleeves_INT
+;HEATSET_INT;Heatset_PC_Founts_INT
+;HEATSET_INT;Heatset_PC_Washes_INT
+;HEATSET_INT;Heatset_PC_Silicones_INT
+;HEATSET_INT;Heatset_PC_Specialty_INT
+;HEATSET_INT;Heatset_Plates_INT
+;HEATSET_INT;Heatset_Anciliary_Product
+
+;UV_INT;UV_NarrowWeb_INT;
+;UV_INT;UV_Sheefted_INT;
+;UV_INT;UV_Coldset_INT;
+;UV_INT;UV_Screen_INT;
+;UV_INT;UV_Varnishes_Others;
+;UV_INT;UV_OffsetUV_INT;
+;UV_INT;UV_Blankets_Others;
+;UV_INT;UV_PC_Founts_INT;
+;UV_INT;UV_PC_Washes_INT;
+;UV_INT;UV_PC_Cleaners_Rejuvenators_INT;
+;UV_INT;UV_Ancillary_Products_INT;
+
+;LetterPress_INT;LetterPress_Inks_NarrowWeb_INT;
+;LetterPress_INT;LetterPress_News_INT;
+;LetterPress_INT;LetterPress_Varnishes_NarrowWeb_INT;
+;LetterPress_INT;LetterPress_PlateMaking_Equipment_INT;
+;LetterPress_INT;LetterPress_PlateProcessor_Menu;
+;LetterPress_INT;LetterPress_Equipment_INT;

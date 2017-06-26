@@ -1,0 +1,13 @@
+#
+# Import the CMS Site configuration for the Flint store
+#
+
+# Language
+$lang=en
+
+
+$siteUid=flintgroup
+
+# Create CMS Site
+UPDATE CMSSite;uid[unique=true];name[lang=$lang];locale[lang=$lang]
+;$siteUid;"FlintGroup Site";en_GB

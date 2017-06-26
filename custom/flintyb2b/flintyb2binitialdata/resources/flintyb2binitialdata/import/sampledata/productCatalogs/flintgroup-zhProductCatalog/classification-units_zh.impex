@@ -1,0 +1,11 @@
+# ImpEx for Importing Units into flint Store
+
+# Macros / Replacement Parameter definitions
+$systemVersion=systemVersion(catalog(id[default='FlintClassification']),version[default='1.0'])[unique=true]
+
+#
+# Localization zh
+#
+$lang=zh
+
+UPDATE ClassificationAttributeUnit;code[unique=true];$systemVersion;name[lang=$lang]
