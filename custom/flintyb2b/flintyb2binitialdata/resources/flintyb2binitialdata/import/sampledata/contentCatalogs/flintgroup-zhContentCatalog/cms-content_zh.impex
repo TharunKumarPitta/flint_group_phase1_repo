@@ -97,7 +97,7 @@ UPDATE CMSNavigationNode;$contentCV[unique=true];uid[unique=true];title[lang=$la
 ;;AcceleratorNavNode;"Accelerator"
 ;;FollowUsNavNode;"Follow Us"
 ;;HybrisNavNode;"Hybris"
-;;MyAccountNavNode;"My Account"
+;;MyAccountNavNode;"我的帳戶"
 ;;SiteRootNode;"SiteRoot"
 
 # CMS Navigation Nodes

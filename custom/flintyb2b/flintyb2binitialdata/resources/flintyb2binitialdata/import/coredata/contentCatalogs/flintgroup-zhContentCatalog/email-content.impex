@@ -1,163 +1,414 @@
-## -----------------------------------------------------------------------
-## [y] hybris Platform
-##
-## Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
-##
-## This software is the confidential and proprietary information of SAP
-## ("Confidential Information"). You shall not disclose such Confidential
-## Information and shall use it only in accordance with the terms of the
-## license agreement you entered into with SAP.
-## -----------------------------------------------------------------------
-##
-## Import the CMS content for the site emails
-##
-#$contentCatalog=flintgroup-zhContentCatalog
-#$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
-#$wideContent=CMSImageComponent,BannerComponent
+
 #
-## Import config properties into impex macros
-#UPDATE GenericItem[processor=de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor];pk[unique=true]
-#$jarResourceCms=$config-jarResourceCmsValue
+# Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
 #
-## Email page Template
-#INSERT_UPDATE EmailPageTemplate;$contentCV[unique=true];uid[unique=true];name;active;frontendTemplateName;subject(code);htmlTemplate(code);restrictedPageTypes(code)
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
 #
-## Templates for CMS Cockpit Page Edit
-#UPDATE EmailPageTemplate;$contentCV[unique=true];uid[unique=true];velocityTemplate[translator=de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+# Import the CMS content for the flintgroup site emails
 #
-#INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='CustomerRegistrationEmailTemplate'];validComponentTypes(code)
-#;SiteLogo;;;logo
-#;TopContent;;$wideContent;
-#;BottomContent;;$wideContent;
-#
-#INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='ForgottenPasswordEmailTemplate'];validComponentTypes(code)
-#;SiteLogo;;;logo
-#;TopContent;;$wideContent;
-#;BottomContent;;$wideContent;
-#
-#INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='OrderConfirmationEmailTemplate'];validComponentTypes(code)
-#;SiteLogo;;;logo
-#;TopContent;;$wideContent;
-#;BottomContent;;$wideContent;
-#
-#INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='OrderCancelledEmailTemplate'];validComponentTypes(code)
-#;SiteLogo;;;logo
-#;TopContent;;$wideContent;
-#;BottomContent;;$wideContent;
-#
-#INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='OrderRefundEmailTemplate'];validComponentTypes(code)
-#;SiteLogo;;;logo
-#;TopContent;;$wideContent;
-#;BottomContent;;$wideContent;
-#
-#INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='DeliverySentEmailTemplate'];validComponentTypes(code)
-#;SiteLogo;;;logo
-#;TopContent;;$wideContent;
-#;BottomContent;;$wideContent;
-#
-#INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='ReadyForPickupEmailTemplate'];validComponentTypes(code)
-#;SiteLogo;;;logo
-#;TopContent;;$wideContent;
-#;BottomContent;;$wideContent;
-#
-#INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='OrderCollectionReminderEmailTemplate'];validComponentTypes(code)
-#;SiteLogo;;;logo
-#;TopContent;;$wideContent;
-#;BottomContent;;$wideContent;
-#
-#INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='OrderMoveToCsEmailTemplate'];validComponentTypes(code)
-#;SiteLogo;;;logo
-#;TopContent;;$wideContent;
-#;BottomContent;;$wideContent;
-#
-#INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='OrderPartiallyCanceledEmailTemplate'];validComponentTypes(code)
-#;SiteLogo;;;logo
-#;TopContent;;$wideContent;
-#;BottomContent;;$wideContent;
-#
-#INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='OrderPartiallyRefundedEmailTemplate'];validComponentTypes(code)
-#;SiteLogo;;;logo
-#;TopContent;;$wideContent;
-#;BottomContent;;$wideContent;
-#
-#INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='NotPickedUpConsignmentCanceledEmailTemplate'];validComponentTypes(code)
-#;SiteLogo;;;logo
-#;TopContent;;$wideContent;
-#;BottomContent;;$wideContent;
-#
-## Create Content Slots
-#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active
-#;;EmailTopSlot;Default Email Top Slot;true
-#;;EmailBottomSlot;Default Email Bottom Slot;true
-#;;EmailSiteLogoSlot;Default Email Site Slot;true
-#
-## Bind Content Slots to Email Page Templates
-#INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='CustomerRegistrationEmailTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
-#;;SiteLogo-CustomerRegistrationEmail;SiteLogo;;EmailSiteLogoSlot;true
-#;;TopContent-CustomerRegistrationEmail;TopContent;;EmailTopSlot;true
-#;;BottomContent-CustomerRegistrationEmail;BottomContent;;EmailBottomSlot;true
-#
-#INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='ForgottenPasswordEmailTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
-#;;SiteLogo-ForgottenPasswordEmail;SiteLogo;;EmailSiteLogoSlot;true
-#;;TopContent-ForgottenPasswordEmail;TopContent;;EmailTopSlot;true
-#;;BottomContent-ForgottenPasswordEmail;BottomContent;;EmailBottomSlot;true
-#
-#INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='OrderConfirmationEmailTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
-#;;SiteLogo-OrderConfirmationEmail;SiteLogo;;EmailSiteLogoSlot;true
-#;;TopContent-OrderConfirmationEmail;TopContent;;EmailTopSlot;true
-#;;BottomContent-OrderConfirmationEmail;BottomContent;;EmailBottomSlot;true
-#
-#INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='OrderCancelledEmailTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
-#;;SiteLogo-OrderCancelledEmail;SiteLogo;;EmailSiteLogoSlot;true
-#;;TopContent-OrderCancelledEmail;TopContent;;EmailTopSlot;true
-#;;BottomContent-OrderCancelledEmail;BottomContent;;EmailBottomSlot;true
-#
-#INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='OrderRefundEmailTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
-#;;SiteLogo-OrderRefundEmail;SiteLogo;;EmailSiteLogoSlot;true
-#;;TopContent-OrderRefundEmail;TopContent;;EmailTopSlot;true
-#;;BottomContent-OrderRefundEmail;BottomContent;;EmailBottomSlot;true
-#
-#INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='DeliverySentEmailTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
-#;;SiteLogo-DeliverySentEmail;SiteLogo;;EmailSiteLogoSlot;true
-#;;TopContent-DeliverySentEmail;TopContent;;EmailTopSlot;true
-#;;BottomContent-DeliverySentEmail;BottomContent;;EmailBottomSlot;true
-#
-#INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='ReadyForPickupEmailTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
-#;;SiteLogo-ReadyForPickupEmail;SiteLogo;;EmailSiteLogoSlot;true
-#;;TopContent-ReadyForPickupEmail;TopContent;;EmailTopSlot;true
-#;;BottomContent-ReadyForPickupEmail;BottomContent;;EmailBottomSlot;true
-#
-#INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='OrderPartiallyCanceledEmailTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
-#;;SiteLogo-OrderPartiallyCanceledEmail;SiteLogo;;EmailSiteLogoSlot;true
-#;;TopContent-OrderPartiallyCanceledEmail;TopContent;;EmailTopSlot;true
-#;;BottomContent-OrderPartiallyCanceledEmail;BottomContent;;EmailBottomSlot;true
-#
-#INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='OrderPartiallyRefundedEmailTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
-#;;SiteLogo-OrderPartiallyRefundedEmail;SiteLogo;;EmailSiteLogoSlot;true
-#;;TopContent-OrderPartiallyRefundedEmail;TopContent;;EmailTopSlot;true
-#;;BottomContent-OrderPartiallyRefundedEmail;BottomContent;;EmailBottomSlot;true
-#
-#INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='NotPickedUpConsignmentCanceledEmailTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
-#;;SiteLogo-NotPickedUpConsignmentCanceledEmail;SiteLogo;;EmailSiteLogoSlot;true
-#;;TopContent-NotPickedUpConsignmentCanceledEmail;TopContent;;EmailTopSlot;true
-#;;BottomContent-NotPickedUpConsignmentCanceledEmail;BottomContent;;EmailBottomSlot;true
-#
-#INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='OrderCollectionReminderEmailTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
-#;;SiteLogo-OrderCollectionReminderEmail;SiteLogo;;EmailSiteLogoSlot;true
-#;;TopContent-OrderCollectionReminderEmail;TopContent;;EmailTopSlot;true
-#;;BottomContent-OrderCollectionReminderEmail;BottomContent;;EmailBottomSlot;true
-#
-## Email Pages
-#INSERT_UPDATE EmailPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);defaultPage;approvalStatus(code)[default='approved']
-#
-## CMS components velocity templates
-#INSERT_UPDATE RendererTemplate;code[unique=true];contextClass;rendererType(code)[default='velocity']
-#
-## Email velocity templates
-#INSERT_UPDATE RendererTemplate;code[unique=true];contextClass;rendererType(code)[default='velocity']
-#
-## Preview Image for use in the CMS Cockpit
-#INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];mime;realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true]
-#;;EmailPageModel_preview;text/gif;EmailPageModel_preview.gif;$jarResourceCms/preview-images/EmailPageModel_preview.gif
-#
-#UPDATE EmailPage;$contentCV[unique=true];uid[unique=true];previewImage(code, $contentCV)
+$contentCatalog=flintgroup-zhContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$jarEmailResource=jar:com.flintgroup.initialdata.setup.InitialDataSystemSetup&/flintyb2binitialdata/import/coredata/contentCatalogs/flintgroup-zhContentCatalog/emails
+$wideContent=CMSImageComponent,BannerComponent
+
+# Import config properties into impex macros for modulegen
+UPDATE GenericItem[processor=de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor];pk[unique=true]
+$emailResource=$config-emailResourceValue
+
+# Language
+$lang=en
+
+# CMS components and Email velocity templates
+UPDATE RendererTemplate;code[unique=true];description[lang=$lang];templateScript[lang=$lang,translator=de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+;flintgroup-BannerComponent-template;"CMSBannerComponent Template";$emailResource/email-bannerComponentTemplate.vm
+;flintgroup-CMSImageComponent-template;"CMSImageComponent Template";$emailResource/email-cmsImageComponentTemplate.vm
+;flintgroup-CMSLinkComponent-template;"CMSLinkComponent Template";$emailResource/email-cmsLinkComponentTemplate.vm
+;flintgroup-CMSParagraphComponent-template;"CMSParagraphComponent Template";$emailResource/email-cmsParagraphComponentTemplate.vm
+;flintgroup-SimpleBannerComponent-template;"CMSSimpleBannerComponent Template";$emailResource/email-bannerComponentTemplate.vm
+;flintgroup_Email_Customer_Registration_Body;"Customer Registration Email Body";$emailResource/email-customerRegistrationBody.vm
+;flintgroup_Email_Customer_Registration_Subject;"Customer Registration Email Subject";$emailResource/email-customerRegistrationSubject.vm
+;flintgroup_Email_Delivery_Sent_Body;"Delivery Sent Email Body";$emailResource/email-deliverySentBody.vm
+;flintgroup_Email_Delivery_Sent_Subject;"Delivery Sent Email Subject";$emailResource/email-deliverySentSubject.vm
+;flintgroup_Email_Forgotten_Password_Body;"Forgotten Password Email Body";$emailResource/email-forgottenPasswordBody.vm
+;flintgroup_Email_Forgotten_Password_Subject;"Forgotten Password Email Subject";$emailResource/email-forgottenPasswordSubject.vm
+;flintgroup_Email_NotPickedUpConsignment_Canceled_Body;"Not Picked Up Consignment Canceled Email Body";$emailResource/email-notPickedUpConsignmentCanceledBody.vm
+;flintgroup_Email_NotPickedUpConsignment_Canceled_Subject;"Not Picked Up Consignment Canceled Email Subject";$emailResource/email-notPickedUpConsignmentCanceledSubject.vm
+;flintgroup_Email_Order_Cancelled_Body;"Order Cancelled Email Body";$emailResource/email-orderCancelledBody.vm
+;flintgroup_Email_Order_Cancelled_Subject;"Order Cancelled Email Subject";$emailResource/email-orderCancelledSubject.vm
+;flintgroup_Email_Order_Collection_Reminder_Body;"Order Collection Reminder Body";$emailResource/email-orderCollectionReminderBody.vm
+;flintgroup_Email_Order_Collection_Reminder_Subject;"Order Collection Reminder Subject";$emailResource/email-orderCollectionReminderSubject.vm
+;flintgroup_Email_Order_Confirmation_Body;"Order Confirmation Email Body";$emailResource/email-orderConfirmationBody.vm
+;flintgroup_Email_Order_Confirmation_Subject;"Order Confirmation Email Subject";$emailResource/email-orderConfirmationSubject.vm
+;flintgroup_Email_Order_Move_To_CS_Body;"Order Move To CS Body";$emailResource/email-orderMoveToCsBody.vm
+;flintgroup_Email_Order_Move_To_CS_Subject;"Order Move To CS Subject";$emailResource/email-orderMoveToCsSubject.vm
+;flintgroup_Email_Order_Partially_Canceled_Body;"Order Partially Canceled Email Body";$emailResource/email-orderPartiallyCanceledBody.vm
+;flintgroup_Email_Order_Partially_Canceled_Subject;"Order Partially Canceled Email Subject";$emailResource/email-orderPartiallyCanceledSubject.vm
+;flintgroup_Email_Order_Partially_Refunded_Body;"Order Partially Refunded Email Body";$emailResource/email-orderPartiallyRefundedBody.vm
+;flintgroup_Email_Order_Partially_Refunded_Subject;"Order Partially Refunded Email Subject";$emailResource/email-orderPartiallyRefundedSubject.vm
+;flintgroup_Email_Order_Refund_Body;"Order Refund Email Body";$emailResource/email-orderRefundBody.vm
+;flintgroup_Email_Order_Refund_Subject;"Order Refund Email Subject";$emailResource/email-orderRefundSubject.vm
+;flintgroup_Email_Ready_For_Pickup_Body;"Ready For Pickup Email Body";$emailResource/email-readyForPickupBody.vm
+;flintgroup_Email_Ready_For_Pickup_Subject;"Ready For Pickup Email Subject";$emailResource/email-readyForPickupSubject.vm
+
+# CMS components and Email velocity templates
+UPDATE RendererTemplate;code[unique=true];description[lang=$lang];templateScript[lang=$lang,translator=de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+;flintgroup_Email_Order_ApprovalRejection_Body;"Order Approval Rejection Email Body";$jarEmailResource/email-orderApprovalRejectionBody.vm
+;flintgroup_Email_Order_ApprovalRejection_Subject;"Order Approval Rejection Email Subject";$jarEmailResource/email-orderApprovalRejectionSubject.vm
+;flintgroup_Email_Order_PendingApproval_Body;"Order Pending Approval Email Body";$jarEmailResource/email-orderPendingApprovalBody.vm
+;flintgroup_Email_Order_PendingApproval_Subject;"Order Pending Approval Email Subject";$jarEmailResource/email-orderPendingApprovalSubject.vm
+;flintgroup_Email_Quote_Order_Approve_Body;"Quote Order Approval Email Body";$jarEmailResource/email-quoteOrderApprovalBody.vm
+;flintgroup_Email_Quote_Order_Approve_Subject;"Quote Order Approval Email Subject";$jarEmailResource/email-quoteOrderApprovalSubject.vm
+;flintgroup_Email_Quote_Order_Reject_Body;"Quote Order Reject Email Body";$jarEmailResource/email-quoteOrderRejectionBody.vm
+;flintgroup_Email_Quote_Order_Reject_Subject;"Quote Order Reject Email Subject";$jarEmailResource/email-quoteOrderRejectionSubject.vm
+;flintgroup_Email_Replenishment_Order_Confirmation_Body;"";$jarEmailResource/email-replenishmentOrderConfirmationBody.vm
+;flintgroup_Email_Replenishment_Order_Confirmation_Subject;"Order Confirmation Email Subject";$jarEmailResource/email-replenishmentOrderConfirmationSubject.vm
+;flintgroup_Email_Replenishment_Order_Placed_Body;"Order Confirmation Email Subject";$jarEmailResource/email-replenishmentOrderPlacedBody.vm
+;flintgroup_Email_Replenishment_Order_Placed_Subject;"Order Confirmation Email Subject";$jarEmailResource/email-replenishmentOrderPlacedSubject.vm
+
+# Email Pages
+UPDATE EmailPage;$contentCV[unique=true];uid[unique=true];fromEmail[lang=$lang];fromName[lang=$lang]
+;;CustomerRegistrationEmail;"customerservices@flintgroup.com";"Customer Services Team"
+;;DeliverySentEmail;"customerservices@flintgroup.com";"Customer Services Team"
+;;ForgottenPasswordEmail;"customerservices@flintgroup.com";"Customer Services Team"
+;;OrderApprovalRejectionEmail;"customerservices@flintgroup.com";"Customer Services Team"
+;;OrderCancelledEmail;"customerservices@flintgroup.com";"Customer Services Team"
+;;OrderCollectionReminderEmail;"customerservices@flintgroup.com";"Customer Services Team"
+;;OrderConfirmationEmail;"customerservices@flintgroup.com";"Customer Services Team"
+;;OrderMoveToCsEmail;"customerservices@flintgroup.com";"Customer Services Team"
+;;OrderPartiallyCanceledEmail;"customerservices@flintgroup.com";"Customer Services Team"
+;;OrderPartiallyRefundedEmail;"customerservices@flintgroup.com";"Customer Services Team"
+;;OrderPendingApprovalEmail;"customerservices@flintgroup.com";"Customer Services Team"
+;;OrderRefundEmail;"customerservices@flintgroup.com";"Customer Services Team"
+;;QuoteOrderApproveEmail;"customerservices@flintgroup.com";"Customer Services Team"
+;;QuoteOrderRejectEmail;"customerservices@flintgroup.com";"Customer Services Team"
+;;ReadyForPickupEmail;"customerservices@flintgroup.com";"Customer Services Team"
+;;ReplenishmentOrderConfirmationEmail;"customerservices@flintgroup.com";"Customer Services Team"
+;;ReplenishmentOrderPlacedEmail;"customerservices@flintgroup.com";"Customer Services Team"
+
+
+# Import modulegen config properties into impex macros
+UPDATE GenericItem[processor=de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor];pk[unique=true]
+$jarResourceCms=$config-jarResourceCmsValue
+$emailPackageName=$config-emailContextPackageName
+
+# Email page Template
+INSERT_UPDATE EmailPageTemplate;$contentCV[unique=true];uid[unique=true];name;active;frontendTemplateName;subject(code);htmlTemplate(code);restrictedPageTypes(code)
+;;CustomerRegistrationEmailTemplate;Customer Registration Email Template;true;customerRegistrationEmail;flintgroup_Email_Customer_Registration_Subject;flintgroup_Email_Customer_Registration_Body;EmailPage
+;;ForgottenPasswordEmailTemplate;Forgotten Password Email Template;true;forgottenPasswordEmail;flintgroup_Email_Forgotten_Password_Subject;flintgroup_Email_Forgotten_Password_Body;EmailPage
+;;OrderConfirmationEmailTemplate;Order Confirmation Email Template;true;orderConfirmationEmail;flintgroup_Email_Order_Confirmation_Subject;flintgroup_Email_Order_Confirmation_Body;EmailPage
+;;DeliverySentEmailTemplate;Delivery Sent Email Template;true;deliverySentEmail;flintgroup_Email_Delivery_Sent_Subject;flintgroup_Email_Delivery_Sent_Body;EmailPage
+;;ReadyForPickupEmailTemplate;Ready For Pickup Email Template;true;readyForPickupEmail;flintgroup_Email_Ready_For_Pickup_Subject;flintgroup_Email_Ready_For_Pickup_Body;EmailPage
+;;OrderCancelledEmailTemplate;Order Cancelled Email Template;true;orderCancelledEmail;flintgroup_Email_Order_Cancelled_Subject;flintgroup_Email_Order_Cancelled_Body;EmailPage
+;;OrderRefundEmailTemplate;Order Refund Email Template;true;orderRefundEmail;flintgroup_Email_Order_Refund_Subject;flintgroup_Email_Order_Refund_Body;EmailPage
+;;OrderCollectionReminderEmailTemplate;Order Collection Reminder Email Template;true;orderCollectionReminderEmail;flintgroup_Email_Order_Collection_Reminder_Subject;flintgroup_Email_Order_Collection_Reminder_Body;EmailPage
+;;OrderMoveToCsEmailTemplate;Order Moved To CS Email Template;true;orderMoveToCsEmail;flintgroup_Email_Order_Move_To_CS_Subject;flintgroup_Email_Order_Move_To_CS_Body;EmailPage
+;;OrderPartiallyCanceledEmailTemplate;Order Partially Canceled Email Template;true;orderPartiallyCanceledEmail;flintgroup_Email_Order_Partially_Canceled_Subject;flintgroup_Email_Order_Partially_Canceled_Body;EmailPage
+;;OrderPartiallyRefundedEmailTemplate;Order Partially Refunded Email Template;true;orderPartiallyRefundedEmail;flintgroup_Email_Order_Partially_Refunded_Subject;flintgroup_Email_Order_Partially_Refunded_Body;EmailPage
+;;NotPickedUpConsignmentCanceledEmailTemplate;Not Picked Up Consignment Canceled Email Template;true;notPickedUpConsignmentCanceledEmail;flintgroup_Email_NotPickedUpConsignment_Canceled_Subject;flintgroup_Email_NotPickedUpConsignment_Canceled_Body;EmailPage
+;;OrderApprovalRejectionEmailTemplate;Order Approval Rejection Email Template;true;orderApprovalRejectionEmail;flintgroup_Email_Order_ApprovalRejection_Subject;flintgroup_Email_Order_ApprovalRejection_Body;EmailPage
+;;OrderPendingApprovalEmailTemplate;Order Pending Approval Email Template;true;orderPendingApprovalEmail;flintgroup_Email_Order_PendingApproval_Subject;flintgroup_Email_Order_PendingApproval_Body;EmailPage
+;;ReplenishmentOrderPlacedEmailTemplate;Replenishment Order Placed Email Template;true;replenishmentOrderPlacedEmail;flintgroup_Email_Replenishment_Order_Placed_Subject;flintgroup_Email_Replenishment_Order_Placed_Body;EmailPage
+;;QuoteOrderApproveEmailTemplate;Quote Order Approval Email Template;true;QuoteOrderApproveEmail;flintgroup_Email_Quote_Order_Approve_Subject;flintgroup_Email_Quote_Order_Approve_Body;EmailPage
+;;QuoteOrderRejectEmailTemplate;Quote Order Rejection Email Template;true;QuoteOrderRejectEmail;flintgroup_Email_Quote_Order_Reject_Subject;flintgroup_Email_Quote_Order_Reject_Body;EmailPage
+;;ReplenishmentOrderConfirmationEmailTemplate;Replenishment Order Confirmation Email Template;true;replenishmentOrderConfirmationEmail;flintgroup_Email_Replenishment_Order_Confirmation_Subject;flintgroup_Email_Replenishment_Order_Confirmation_Body;EmailPage
+
+# Templates for CMS Cockpit Page Edit
+UPDATE EmailPageTemplate;$contentCV[unique=true];uid[unique=true];velocityTemplate[translator=de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+;;CustomerRegistrationEmailTemplate;$jarResourceCms/structure-view/structure_customerRegistrationEmailTemplate.vm
+;;ForgottenPasswordEmailTemplate;$jarResourceCms/structure-view/structure_forgottenPasswordEmailTemplate.vm
+;;OrderConfirmationEmailTemplate;$jarResourceCms/structure-view/structure_orderConfirmationEmailTemplate.vm
+;;DeliverySentEmailTemplate;$jarResourceCms/structure-view/structure_deliverySentEmailTemplate.vm
+;;ReadyForPickupEmailTemplate;$jarResourceCms/structure-view/structure_readyForPickupEmailTemplate.vm
+;;OrderCancelledEmailTemplate;$jarResourceCms/structure-view/structure_orderCancelledEmailTemplate.vm
+;;OrderRefundEmailTemplate;$jarResourceCms/structure-view/structure_orderRefundEmailTemplate.vm
+;;OrderCollectionReminderEmailTemplate;$jarResourceCms/structure-view/structure_orderCollectionReminderEmailTemplate.vm
+;;OrderMoveToCsEmailTemplate;$jarResourceCms/structure-view/structure_orderMoveToCSEmailTemplate.vm
+;;OrderPartiallyCanceledEmailTemplate;$jarResourceCms/structure-view/structure_orderPartiallyCanceledEmailTemplate.vm
+;;OrderPartiallyRefundedEmailTemplate;$jarResourceCms/structure-view/structure_orderPartiallyRefundedEmailTemplate.vm
+;;NotPickedUpConsignmentCanceledEmailTemplate;$jarResourceCms/structure-view/structure_notPickedUpConsignmentCanceledEmailTemplate.vm
+;;OrderApprovalRejectionEmailTemplate;$jarEmailResource/structure-view/structure_orderApprovalRejectionEmailTemplate.vm
+;;OrderPendingApprovalEmailTemplate;$jarEmailResource/structure-view/structure_orderPendingApprovalEmailTemplate.vm
+;;ReplenishmentOrderPlacedEmailTemplate;$jarEmailResource/structure-view/structure_replenishmentOrderPlacedEmailTemplate.vm
+;;QuoteOrderApproveEmailTemplate;$jarEmailResource/structure-view/structure_quoteOrderApproveEmailTemplate.vm
+;;QuoteOrderRejectEmailTemplate;$jarEmailResource/structure-view/structure_quoteOrderRejectEmailTemplate.vm
+;;ReplenishmentOrderConfirmationEmailTemplate;$jarEmailResource/structure-view/structure_replenishmentOrderConfirmationEmailTemplate.vm
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='CustomerRegistrationEmailTemplate'];validComponentTypes(code)
+;SiteLogo;;;logo
+;TopContent;;$wideContent;
+;BottomContent;;$wideContent;
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='ForgottenPasswordEmailTemplate'];validComponentTypes(code)
+;SiteLogo;;;logo
+;TopContent;;$wideContent;
+;BottomContent;;$wideContent;
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='OrderConfirmationEmailTemplate'];validComponentTypes(code)
+;SiteLogo;;;logo
+;TopContent;;$wideContent;
+;BottomContent;;$wideContent;
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='OrderCancelledEmailTemplate'];validComponentTypes(code)
+;SiteLogo;;;logo
+;TopContent;;$wideContent;
+;BottomContent;;$wideContent;
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='OrderRefundEmailTemplate'];validComponentTypes(code)
+;SiteLogo;;;logo
+;TopContent;;$wideContent;
+;BottomContent;;$wideContent;
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='DeliverySentEmailTemplate'];validComponentTypes(code)
+;SiteLogo;;;logo
+;TopContent;;$wideContent;
+;BottomContent;;$wideContent;
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='ReadyForPickupEmailTemplate'];validComponentTypes(code)
+;SiteLogo;;;logo
+;TopContent;;$wideContent;
+;BottomContent;;$wideContent;
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='OrderCollectionReminderEmailTemplate'];validComponentTypes(code)
+;SiteLogo;;;logo
+;TopContent;;$wideContent;
+;BottomContent;;$wideContent;
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='OrderMoveToCsEmailTemplate'];validComponentTypes(code)
+;SiteLogo;;;logo
+;TopContent;;$wideContent;
+;BottomContent;;$wideContent;
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='OrderPartiallyCanceledEmailTemplate'];validComponentTypes(code)
+;SiteLogo;;;logo
+;TopContent;;$wideContent;
+;BottomContent;;$wideContent;
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='OrderPartiallyRefundedEmailTemplate'];validComponentTypes(code)
+;SiteLogo;;;logo
+;TopContent;;$wideContent;
+;BottomContent;;$wideContent;
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='NotPickedUpConsignmentCanceledEmailTemplate'];validComponentTypes(code)
+;SiteLogo;;;logo
+;TopContent;;$wideContent;
+;BottomContent;;$wideContent;
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='OrderApprovalRejectionEmailTemplate'];validComponentTypes(code)
+;SiteLogo;;;logo
+;TopContent;;$wideContent;
+;BottomContent;;$wideContent;
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='QuoteOrderApproveEmailTemplate'];validComponentTypes(code)
+;SiteLogo;;;logo
+;TopContent;;$wideContent;
+;BottomContent;;$wideContent;
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='QuoteOrderRejectEmailTemplate'];validComponentTypes(code)
+;SiteLogo;;;logo
+;TopContent;;$wideContent;
+;BottomContent;;$wideContent;
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='OrderPendingApprovalEmailTemplate'];validComponentTypes(code)
+;SiteLogo;;;logo
+;TopContent;;$wideContent;
+;BottomContent;;$wideContent;
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='ReplenishmentOrderPlacedEmailTemplate'];validComponentTypes(code)
+;SiteLogo;;;logo
+;TopContent;;$wideContent;
+;BottomContent;;$wideContent;
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='ReplenishmentOrderConfirmationEmailTemplate'];validComponentTypes(code)
+;SiteLogo;;;logo
+;TopContent;;$wideContent;
+;BottomContent;;$wideContent;
+
+
+# Create Content Slots
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active
+;;EmailTopSlot;Default Email Top Slot;true
+;;EmailBottomSlot;Default Email Bottom Slot;true
+;;EmailSiteLogoSlot;Default Email Site Slot;true
+
+# Bind Content Slots to Email Page Templates
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='CustomerRegistrationEmailTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-CustomerRegistrationEmail;SiteLogo;;EmailSiteLogoSlot;true
+;;TopContent-CustomerRegistrationEmail;TopContent;;EmailTopSlot;true
+;;BottomContent-CustomerRegistrationEmail;BottomContent;;EmailBottomSlot;true
+
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='ForgottenPasswordEmailTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-ForgottenPasswordEmail;SiteLogo;;EmailSiteLogoSlot;true
+;;TopContent-ForgottenPasswordEmail;TopContent;;EmailTopSlot;true
+;;BottomContent-ForgottenPasswordEmail;BottomContent;;EmailBottomSlot;true
+
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='OrderConfirmationEmailTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-OrderConfirmationEmail;SiteLogo;;EmailSiteLogoSlot;true
+;;TopContent-OrderConfirmationEmail;TopContent;;EmailTopSlot;true
+;;BottomContent-OrderConfirmationEmail;BottomContent;;EmailBottomSlot;true
+
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='OrderCancelledEmailTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-OrderCancelledEmail;SiteLogo;;EmailSiteLogoSlot;true
+;;TopContent-OrderCancelledEmail;TopContent;;EmailTopSlot;true
+;;BottomContent-OrderCancelledEmail;BottomContent;;EmailBottomSlot;true
+
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='OrderRefundEmailTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-OrderRefundEmail;SiteLogo;;EmailSiteLogoSlot;true
+;;TopContent-OrderRefundEmail;TopContent;;EmailTopSlot;true
+;;BottomContent-OrderRefundEmail;BottomContent;;EmailBottomSlot;true
+
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='DeliverySentEmailTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-DeliverySentEmail;SiteLogo;;EmailSiteLogoSlot;true
+;;TopContent-DeliverySentEmail;TopContent;;EmailTopSlot;true
+;;BottomContent-DeliverySentEmail;BottomContent;;EmailBottomSlot;true
+
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='ReadyForPickupEmailTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-ReadyForPickupEmail;SiteLogo;;EmailSiteLogoSlot;true
+;;TopContent-ReadyForPickupEmail;TopContent;;EmailTopSlot;true
+;;BottomContent-ReadyForPickupEmail;BottomContent;;EmailBottomSlot;true
+
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='OrderPartiallyCanceledEmailTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-OrderPartiallyCanceledEmail;SiteLogo;;EmailSiteLogoSlot;true
+;;TopContent-OrderPartiallyCanceledEmail;TopContent;;EmailTopSlot;true
+;;BottomContent-OrderPartiallyCanceledEmail;BottomContent;;EmailBottomSlot;true
+
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='OrderPartiallyRefundedEmailTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-OrderPartiallyRefundedEmail;SiteLogo;;EmailSiteLogoSlot;true
+;;TopContent-OrderPartiallyRefundedEmail;TopContent;;EmailTopSlot;true
+;;BottomContent-OrderPartiallyRefundedEmail;BottomContent;;EmailBottomSlot;true
+
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='NotPickedUpConsignmentCanceledEmailTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-NotPickedUpConsignmentCanceledEmail;SiteLogo;;EmailSiteLogoSlot;true
+;;TopContent-NotPickedUpConsignmentCanceledEmail;TopContent;;EmailTopSlot;true
+;;BottomContent-NotPickedUpConsignmentCanceledEmail;BottomContent;;EmailBottomSlot;true
+
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='OrderCollectionReminderEmailTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-OrderCollectionReminderEmail;SiteLogo;;EmailSiteLogoSlot;true
+;;TopContent-OrderCollectionReminderEmail;TopContent;;EmailTopSlot;true
+;;BottomContent-OrderCollectionReminderEmail;BottomContent;;EmailBottomSlot;true
+
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='OrderApprovalRejectionEmailTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-OrderApprovalRejectionEmail;SiteLogo;;SiteLogoSlot;true
+;;TopContent-OrderApprovalRejectionEmail;TopContent;;EmailTopSlot;true
+;;BottomContent-OrderApprovalRejectionEmail;BottomContent;;EmailBottomSlot;true
+
+
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='QuoteOrderApproveEmailTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-QuoteOrderApproveEmail;SiteLogo;;SiteLogoSlot;true
+;;TopContent-QuoteOrderApproveEmail;TopContent;;EmailTopSlot;true
+;;BottomContent-QuoteOrderApproveEmail;BottomContent;;EmailBottomSlot;true
+
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='QuoteOrderRejectEmailTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-QuoteOrderRejectEmail;SiteLogo;;SiteLogoSlot;true
+;;TopContent-QuoteOrderRejectEmail;TopContent;;EmailTopSlot;true
+;;BottomContent-QuoteOrderRejectEmail;BottomContent;;EmailBottomSlot;true
+
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='OrderPendingApprovalEmailTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-OrderPendingApprovalEmail;SiteLogo;;SiteLogoSlot;true
+;;TopContent-OrderPendingApprovalEmail;TopContent;;EmailTopSlot;true
+;;BottomContent-OrderPendingApprovalEmail;BottomContent;;EmailBottomSlot;true
+
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='ReplenishmentOrderConfirmationEmailTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-ReplenishmentOrderConfirmationEmail;SiteLogo;;SiteLogoSlot;true
+;;TopContent-ReplenishmentOrderConfirmationEmail;TopContent;;EmailTopSlot;true
+;;BottomContent-ReplenishmentOrderConfirmationEmail;BottomContent;;EmailBottomSlot;true
+
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='ReplenishmentOrderPlacedEmailTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-ReplenishmentOrderPlacedEmail;SiteLogo;;SiteLogoSlot;true
+;;TopContent-ReplenishmentOrderPlacedEmail;TopContent;;EmailTopSlot;true
+;;BottomContent-ReplenishmentOrderPlacedEmail;BottomContent;;EmailBottomSlot;true
+
+# Email Pages
+INSERT_UPDATE EmailPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);defaultPage;approvalStatus(code)[default='approved']
+;;CustomerRegistrationEmail;Customer Registration Email;CustomerRegistrationEmailTemplate;true;
+;;ForgottenPasswordEmail;Forgotten Password Email;ForgottenPasswordEmailTemplate;true;
+;;OrderConfirmationEmail;Order Confirmation Email;OrderConfirmationEmailTemplate;true;
+;;DeliverySentEmail;Delivery Sent Email;DeliverySentEmailTemplate;true;
+;;ReadyForPickupEmail;Ready For Pickup Email;ReadyForPickupEmailTemplate;true;
+;;OrderCancelledEmail;Order Cancelled Email;OrderCancelledEmailTemplate;true;
+;;OrderRefundEmail;Order Refund Email;OrderRefundEmailTemplate;true;
+;;OrderCollectionReminderEmail;Order Collection Reminder Email;OrderCollectionReminderEmailTemplate;true;;customerservices@flintgroup.com;Customer Services Team
+;;OrderMoveToCsEmail;Order Move To CS Email;OrderMoveToCsEmailTemplate;true;;customerservices@flintgroup.com;Customer Services Team
+;;OrderPartiallyCanceledEmail;Order Partially Canceled Email;OrderPartiallyCanceledEmailTemplate;true;
+;;OrderPartiallyRefundedEmail;Order Partially Refunded Email;OrderPartiallyRefundedEmailTemplate;true;
+;;NotPickedUpConsignmentCanceledEmail;Not Picked Up Consignment Canceled Email;NotPickedUpConsignmentCanceledEmailTemplate;true;
+;;OrderApprovalRejectionEmail;Order Approval Rejection Email;OrderApprovalRejectionEmailTemplate;true;;customerservices@flintgroup.com;Customer Services Team
+;;OrderPendingApprovalEmail;Order Pending Approval Email;OrderPendingApprovalEmailTemplate;true;;customerservices@flintgroup.com;Customer Services Team
+;;ReplenishmentOrderPlacedEmail;Order Confirmation Email;ReplenishmentOrderPlacedEmailTemplate;true;;customerservices@flintgroup.com;Customer Services Team
+;;QuoteOrderApproveEmail;Quote Order Approval Email;QuoteOrderApproveEmailTemplate;true;;customerservices@flintgroup.com;Customer Services Team
+;;QuoteOrderRejectEmail;Quote Order Rejection Email;QuoteOrderRejectEmailTemplate;true;;customerservices@flintgroup.com;Customer Services Team
+;;ReplenishmentOrderConfirmationEmail;Order Confirmation Email;ReplenishmentOrderConfirmationEmailTemplate;true;;customerservices@flintgroup.com;Customer Services Team
+
+# CMS components velocity templates
+INSERT_UPDATE RendererTemplate;code[unique=true];contextClass;rendererType(code)[default='velocity']
+;flintgroup-CMSImageComponent-template;java.util.Map
+;flintgroup-BannerComponent-template;java.util.Map
+;flintgroup-SimpleBannerComponent-template;java.util.Map
+;flintgroup-CMSLinkComponent-template;java.util.Map
+;flintgroup-CMSParagraphComponent-template;java.util.Map
+
+# Email velocity templates
+INSERT_UPDATE RendererTemplate;code[unique=true];contextClass;rendererType(code)[default='velocity']
+;flintgroup_Email_Customer_Registration_Body;$emailPackageName.CustomerEmailContext
+;flintgroup_Email_Forgotten_Password_Body;$emailPackageName.ForgottenPasswordEmailContext
+;flintgroup_Email_Order_Confirmation_Body;$emailPackageName.OrderNotificationEmailContext
+;flintgroup_Email_Delivery_Sent_Body;$emailPackageName.DeliverySentEmailContext
+;flintgroup_Email_Ready_For_Pickup_Body;$emailPackageName.ReadyForPickupEmailContext
+;flintgroup_Email_Order_Cancelled_Body;$emailPackageName.OrderCancelledEmailContext
+;flintgroup_Email_Order_Refund_Body;$emailPackageName.OrderRefundEmailContext
+;flintgroup_Email_Order_Collection_Reminder_Body;$emailPackageName.ConsignmentCollectionReminderEmailContext
+;flintgroup_Email_Order_Move_To_CS_Body;$emailPackageName.ConsignmentCollectionReminderEmailContext
+;flintgroup_Email_Order_Partially_Canceled_Body;$emailPackageName.OrderPartiallyCanceledEmailContext
+;flintgroup_Email_Order_Partially_Refunded_Body;$emailPackageName.OrderPartiallyRefundedEmailContext
+;flintgroup_Email_NotPickedUpConsignment_Canceled_Body;$emailPackageName.NotPickedUpConsignmentCanceledEmailContext
+;flintgroup_Email_Customer_Registration_Subject;$emailPackageName.CustomerEmailContext
+;flintgroup_Email_Forgotten_Password_Subject;$emailPackageName.ForgottenPasswordEmailContext
+;flintgroup_Email_Order_Confirmation_Subject;$emailPackageName.OrderNotificationEmailContext
+;flintgroup_Email_Delivery_Sent_Subject;$emailPackageName.DeliverySentEmailContext
+;flintgroup_Email_Ready_For_Pickup_Subject;$emailPackageName.ReadyForPickupEmailContext
+;flintgroup_Email_Order_Cancelled_Subject;$emailPackageName.OrderCancelledEmailContext
+;flintgroup_Email_Order_Refund_Subject;$emailPackageName.OrderRefundEmailContext
+;flintgroup_Email_Order_Collection_Reminder_Subject;$emailPackageName.ConsignmentCollectionReminderEmailContext
+;flintgroup_Email_Order_Move_To_CS_Subject;$emailPackageName.ConsignmentCollectionReminderEmailContext
+;flintgroup_Email_Order_Partially_Canceled_Subject;$emailPackageName.OrderPartiallyCanceledEmailContext
+;flintgroup_Email_Order_Partially_Refunded_Subject;$emailPackageName.OrderPartiallyRefundedEmailContext
+;flintgroup_Email_NotPickedUpConsignment_Canceled_Subject;$emailPackageName.NotPickedUpConsignmentCanceledEmailContext
+;flintgroup_Email_Order_ApprovalRejection_Body;$emailPackageName.OrderNotificationEmailContext
+;flintgroup_Email_Order_ApprovalRejection_Subject;$emailPackageName.OrderNotificationEmailContext
+;flintgroup_Email_Quote_Order_Approve_Body;$emailPackageName.OrderNotificationEmailContext
+;flintgroup_Email_Quote_Order_Approve_Subject;$emailPackageName.OrderNotificationEmailContext
+;flintgroup_Email_Quote_Order_Reject_Body;$emailPackageName.OrderNotificationEmailContext
+;flintgroup_Email_Quote_Order_Reject_Subject;$emailPackageName.OrderNotificationEmailContext
+;flintgroup_Email_Order_PendingApproval_Subject;$emailPackageName.OrderNotificationEmailContext
+;flintgroup_Email_Order_PendingApproval_Body;$emailPackageName.OrderNotificationEmailContext
+;flintgroup_Email_Replenishment_Order_Placed_Body;de.hybris.platform.b2bacceleratoraddon.proccess.email.context.OrderReplenishmentEmailContext
+;flintgroup_Email_Replenishment_Order_Placed_Subject;de.hybris.platform.b2bacceleratoraddon.proccess.email.context.OrderReplenishmentEmailContext
+;flintgroup_Email_Replenishment_Order_Confirmation_Subject;$emailPackageName.OrderNotificationEmailContext
+;flintgroup_Email_Replenishment_Order_Confirmation_Body;$emailPackageName.OrderNotificationEmailContext
+
+# Preview Image for use in the CMS Cockpit
+INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];mime;realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true]
+;;EmailPageModel_preview;text/gif;EmailPageModel_preview.gif;$jarResourceCms/preview-images/EmailPageModel_preview.gif
+
+UPDATE EmailPage;$contentCV[unique=true];uid[unique=true];previewImage(code, $contentCV)
+;;CustomerRegistrationEmail;EmailPageModel_preview
+;;ForgottenPasswordEmail;EmailPageModel_preview
+;;OrderConfirmationEmail;EmailPageModel_preview
+;;DeliverySentEmail;EmailPageModel_preview
+;;ReadyForPickupEmail;EmailPageModel_preview
+;;OrderCancelledEmail;EmailPageModel_preview
+;;OrderRefundEmail;EmailPageModel_preview
+;;OrderCollectionReminderEmail;EmailPageModel_preview
+;;OrderMoveToCsEmail;EmailPageModel_preview
+;;OrderPartiallyCanceledEmail;EmailPageModel_preview
+;;OrderPartiallyRefundedEmail;EmailPageModel_preview
+;;NotPickedUpConsignmentCanceledEmail;EmailPageModel_preview
+;;OrderApprovalRejectionEmail;EmailPageModel_preview
+;;OrderPendingApprovalEmail;EmailPageModel_preview
+;;ReplenishmentOrderPlacedEmail;EmailPageModel_preview
+;;QuoteOrderApproveEmail;EmailPageModel_preview
+;;QuoteOrderRejectEmail;EmailPageModel_preview
+;;ReplenishmentOrderConfirmationEmail;EmailPageModel_preview

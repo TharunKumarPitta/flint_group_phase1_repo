@@ -323,7 +323,7 @@
 									<if>
 										<available file="${ext.@{extname}.path}/acceleratoraddon/@{addOnFile}"/>
 										<then>
-											<!--<copyAddOnToExtension addonextension="@{extname}" addonresource="@{addOnFile}" target="flintyb2bstorefront"/>-->
+											<copyAddOnToExtension addonextension="@{extname}" addonresource="@{addOnFile}" target="flintyb2bstorefront"/>
 										</then>
 									</if>
 								</sequential>

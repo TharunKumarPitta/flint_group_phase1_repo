@@ -28,14 +28,14 @@
 			</span>
         </div>
     </c:if>
-    &nbsp;
+
     <%--<div class="stock-wrapper clearfix">--%>
         <%--<ycommerce:testId code="productDetails_productInStock_label">--%>
             <%--<b2b-product:productStockThreshold product="${product}"/>--%>
         <%--</ycommerce:testId>--%>
         <%--<product:productFutureAvailability product="${product}" futureStockEnabled="${futureStockEnabled}" />--%>
     <%--</div>--%>
-
+    <br>
     <div class="actions">
         <c:if test="${multiDimensionalProduct}" >
                 <c:url value="${product.url}/orderForm" var="productOrderFormUrl"/>

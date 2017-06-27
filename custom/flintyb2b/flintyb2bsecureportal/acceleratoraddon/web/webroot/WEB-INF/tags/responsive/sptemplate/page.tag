@@ -21,7 +21,7 @@
     <jsp:body>
         <spheader:header/>
         <a id="skip-to-content"></a>
-        <div class="container main-container">
+        <div class="container">
             <common:globalMessages/>
             <jsp:doBody/>
          </div>
