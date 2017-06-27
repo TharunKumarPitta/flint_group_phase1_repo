@@ -89,6 +89,9 @@ public class PasswordResetPageController extends AbstractPageController
 			catch (final UnknownIdentifierException unknownIdentifierException)
 			{
 				LOG.warn("Email: " + form.getEmail() + " does not exist in the database.");
+				bindingResult.rejectValue("email", "Email: " + form.getEmail() + " does not exist in the database.");
+				return ControllerConstants.Views.Fragments.Password.PasswordResetRequestPopup;
+
 			}
 			return ControllerConstants.Views.Fragments.Password.ForgotPasswordValidationMessage;
 		}

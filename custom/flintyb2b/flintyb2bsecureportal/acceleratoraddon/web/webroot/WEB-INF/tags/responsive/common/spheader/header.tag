@@ -1,6 +1,7 @@
 <%@ tag body-content="empty" trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="footer" tagdir="/WEB-INF/tags/responsive/common/footer"  %>
 
 <spring:htmlEscape defaultHtmlEscape="true"/>
 
@@ -17,9 +18,14 @@
 								<cms:component component="${logo}"/>
 							</cms:pageSlot>
 						</div>
-			</div>			
-            
+			</div>
+
 			<div class="col-sm-6">
+
+						<div class="header-lang-drop col-md-3 col-md-offset-3" style="margin-top: 55px;width: 110px;margin-left: 324px;">
+							<footer:languageSelector languages="${languages}"
+													 currentLanguage="${currentLanguage}" />
+						</div>
 						<div class="nav__left js-site-logo logo-rely logo-right">			
 						<img src="${commonResourcePath}/images/caption.png" alt="rely on us" class="img-rely hidden-xs"/>
 						<img src="${commonResourcePath}/images/mobile-caption.png" alt="rely on us" class="img-rely visible-xs"/>

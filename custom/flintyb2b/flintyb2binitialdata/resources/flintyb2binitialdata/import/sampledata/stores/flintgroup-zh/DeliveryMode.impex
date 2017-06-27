@@ -7,27 +7,45 @@ $europeCurrency=EUR
 $chinaCurrency=CNY
 
 # Delivery Zones
-INSERT_UPDATE Zone                  ; code[unique=true]               ; countries(isocode)
-                                    ; china                           ; CN
-									
+INSERT_UPDATE Zone ;code[unique=true]; countries(isocode)
+;china ; CN
+
 # Zone Delivery Modes
-INSERT_UPDATE ZoneDeliveryMode      ; code[unique=true]               ; net                                                                                                                                             ; active[default=true]
-                                    ; premium-net                     ; true
-                                    ; standard-net                    ; true
-                                    ; premium-gross                   ; false
-                                    ; standard-gross                  ; false
-                                    ; free-standard-shipping          ; true  
+INSERT_UPDATE ZoneDeliveryMode ; code[unique=true] ;net; active[default=true]
+; premium-net; true
+; standard-net; true
+; premium-gross; true
+; standard-gross; true
+; free-standard-shipping; false
+
 # China
-INSERT_UPDATE ZoneDeliveryModeValue ; deliveryMode(code)[unique=true] ; zone(code)[default='china'][unique=true]                                                                                                        ; currency(isocode)[unique=true] ; value  ; minimum[unique=true]
-                                    ; premium-gross                   ;                                                                                                                                                 ; $chinaCurrency                    ; 14,49  ; 0,00
-                                    ; premium-gross                   ;                                                                                                                                                 ; $chinaCurrency                    ; 99,49  ; 0,00
-                                    ; premium-gross                   ;                                                                                                                                                 ; $chinaCurrency                    ; 18,49  ; 0,00
-                                    ; premium-gross                   ;                                                                                                                                                 ; $chinaCurrency                ; 27,99  ; 0,00
-                                    ; premium-net                     ;                                                                                                                                                 ; $chinaCurrency                    ; 99,99  ; 0,00
-                                    ; premium-net                     ;                                                                                                                                                 ; $chinaCurrency                    ; 26,49  ; 0,00
-                                    ; standard-gross                  ;                                                                                                                                                 ; $chinaCurrency                ; 18,99  ; 0,00
-                                    ; standard-gross                  ;                                                                                                                                                 ; $chinaCurrency                    ; 9,49   ; 0,00
-                                    ; standard-gross                  ;                                                                                                                                                 ; $chinaCurrency                    ; 7,49   ; 0,00
-                                    ; standard-gross                  ;                                                                                                                                                 ; $chinaCurrency                    ; 59,99  ; 0,00
-                                    ; standard-net                    ;                                                                                                                                                 ; $chinaCurrency                    ; 59,99  ; 0,00
-                                    ; standard-net                    ;                                                                                                                                                 ; $chinaCurrency                    ; 18,49  ; 0,00
+INSERT_UPDATE ZoneDeliveryModeValue ; deliveryMode(code)[unique=true] ; zone(code)[default='china'][unique=true];currency(isocode)[unique=true];value;minimum[unique=true]
+; free-standard-shipping  ; ; $chinaCurrency ;00,00  ; 0,00
+
+
+#
+## Delivery Zones
+#INSERT_UPDATE Zone                  ; code[unique=true]               ; countries(isocode)
+#                                    ; china                           ; CN
+#
+## Zone Delivery Modes
+#INSERT_UPDATE ZoneDeliveryMode      ; code[unique=true]               ; net                                                                                                                                             ; active[default=true]
+#                                    ; premium-net                     ; true
+#                                    ; standard-net                    ; true
+#                                    ; premium-gross                   ; false
+#                                    ; standard-gross                  ; false
+#                                    ; free-standard-shipping          ; true
+## China
+#INSERT_UPDATE ZoneDeliveryModeValue ; deliveryMode(code)[unique=true] ; zone(code)[default='china'][unique=true]                                                                                                        ; currency(isocode)[unique=true] ; value  ; minimum[unique=true]
+#                                    ; premium-gross                   ;                                                                                                                                                 ; $chinaCurrency                    ; 14,49  ; 0,00
+#                                    ; premium-gross                   ;                                                                                                                                                 ; $chinaCurrency                    ; 99,49  ; 0,00
+#                                    ; premium-gross                   ;                                                                                                                                                 ; $chinaCurrency                    ; 18,49  ; 0,00
+#                                    ; premium-gross                   ;                                                                                                                                                 ; $chinaCurrency                ; 27,99  ; 0,00
+#                                    ; premium-net                     ;                                                                                                                                                 ; $chinaCurrency                    ; 99,99  ; 0,00
+#                                    ; premium-net                     ;                                                                                                                                                 ; $chinaCurrency                    ; 26,49  ; 0,00
+#                                    ; standard-gross                  ;                                                                                                                                                 ; $chinaCurrency                ; 18,99  ; 0,00
+#                                    ; standard-gross                  ;                                                                                                                                                 ; $chinaCurrency                    ; 9,49   ; 0,00
+#                                    ; standard-gross                  ;                                                                                                                                                 ; $chinaCurrency                    ; 7,49   ; 0,00
+#                                    ; standard-gross                  ;                                                                                                                                                 ; $chinaCurrency                    ; 59,99  ; 0,00
+#                                    ; standard-net                    ;                                                                                                                                                 ; $chinaCurrency                    ; 59,99  ; 0,00
+#                                    ; standard-net                    ;                                                                                                                                                 ; $chinaCurrency                    ; 18,49  ; 0,00

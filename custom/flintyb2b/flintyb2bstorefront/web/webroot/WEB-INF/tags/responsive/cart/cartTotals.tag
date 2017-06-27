@@ -14,10 +14,10 @@
     <div class="col-xs-6 cart-totals-right text-right"><ycommerce:testId code="Order_Totals_Subtotal"><format:price priceData="${cartData.subTotal}"/></ycommerce:testId></div>
 
 
-  <%--   <c:if test="${not empty cartData.deliveryCost}">
+    <c:if test="${not empty cartData.deliveryCost}">
         <div class="col-xs-6 cart-totals-left"><spring:theme code="basket.page.totals.delivery"/></div>
         <div class="col-xs-6 cart-totals-right text-right"><format:price priceData="${cartData.deliveryCost}" displayFreeForZero="TRUE"/></div>
-     </c:if> --%>
+     </c:if> 
 
 
     <c:if test="${cartData.net && cartData.totalTax.value > 0 && showTax}">

@@ -21,7 +21,6 @@ import de.hybris.platform.acceleratorstorefrontcommons.controllers.util.GlobalMe
 import de.hybris.platform.acceleratorstorefrontcommons.forms.AddressForm;
 import de.hybris.platform.acceleratorstorefrontcommons.forms.UpdateEmailForm;
 import de.hybris.platform.acceleratorstorefrontcommons.forms.UpdatePasswordForm;
-import de.hybris.platform.acceleratorstorefrontcommons.forms.UpdateProfileForm;
 import de.hybris.platform.acceleratorstorefrontcommons.forms.validation.AddressValidator;
 import de.hybris.platform.acceleratorstorefrontcommons.forms.validation.EmailValidator;
 import de.hybris.platform.acceleratorstorefrontcommons.forms.validation.PasswordValidator;
@@ -37,11 +36,9 @@ import de.hybris.platform.commercefacades.order.CheckoutFacade;
 import de.hybris.platform.commercefacades.order.OrderFacade;
 import de.hybris.platform.commercefacades.order.data.CCPaymentInfoData;
 import de.hybris.platform.commercefacades.order.data.OrderData;
-import de.hybris.platform.commercefacades.order.data.OrderEntryData;
 import de.hybris.platform.commercefacades.order.data.OrderHistoryData;
 import de.hybris.platform.commercefacades.product.ProductFacade;
 import de.hybris.platform.commercefacades.product.ProductOption;
-import de.hybris.platform.commercefacades.product.data.ProductData;
 import de.hybris.platform.commercefacades.user.UserFacade;
 import de.hybris.platform.commercefacades.user.data.AddressData;
 import de.hybris.platform.commercefacades.user.data.CountryData;
@@ -55,14 +52,12 @@ import de.hybris.platform.commerceservices.search.pagedata.SearchPageData;
 import de.hybris.platform.commerceservices.util.ResponsiveUtils;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
 import de.hybris.platform.util.Config;
-import com.flintgroup.storefront.controllers.ControllerConstants;
 
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.Set;
 
 import javax.annotation.Resource;
@@ -82,6 +77,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.flintgroup.storefront.controllers.ControllerConstants;
+import com.flintgroup.storefront.forms.FlintUpdateProfileForm;
 
 
 /**
@@ -180,7 +178,7 @@ public class AccountPageController extends AbstractSearchPageController
 
 	@Resource(name = "addressDataUtil")
 	private AddressDataUtil addressDataUtil;
-	
+
 	protected PasswordValidator getPasswordValidator()
 	{
 		return passwordValidator;
@@ -339,7 +337,7 @@ public class AccountPageController extends AbstractSearchPageController
 			@RequestParam("productCode") final String productCode, final Model model)
 	{
 		final OrderData orderData = orderFacade.getOrderDetailsForCodeWithoutUser(orderCode);
-		
+
 		final Map<String, ReadOnlyOrderGridData> readOnlyMultiDMap = orderGridFormFacade.getReadOnlyOrderGridForProductInOrder(
 				productCode, Arrays.asList(ProductOption.BASIC, ProductOption.CATEGORIES), orderData);
 		model.addAttribute("readOnlyMultiDMap", readOnlyMultiDMap);
@@ -466,13 +464,15 @@ public class AccountPageController extends AbstractSearchPageController
 		model.addAttribute(TITLE_DATA_ATTR, userFacade.getTitles());
 
 		final CustomerData customerData = customerFacade.getCurrentCustomer();
-		final UpdateProfileForm updateProfileForm = new UpdateProfileForm();
+		final FlintUpdateProfileForm flintUpdateProfileForm = new FlintUpdateProfileForm();
 
-		updateProfileForm.setTitleCode(customerData.getTitleCode());
-		updateProfileForm.setFirstName(customerData.getFirstName());
-		updateProfileForm.setLastName(customerData.getLastName());
+		flintUpdateProfileForm.setTitleCode(customerData.getTitleCode());
+		flintUpdateProfileForm.setFirstName(customerData.getFirstName());
+		flintUpdateProfileForm.setLastName(customerData.getLastName());
+		flintUpdateProfileForm.setEmail(customerData.getDisplayUid());
 
-		model.addAttribute("updateProfileForm", updateProfileForm);
+		//model.addAttribute("customerData", customerData);
+		model.addAttribute("flintUpdateProfileForm", flintUpdateProfileForm);
 
 		storeCmsPageInModel(model, getContentPageForLabelOrId(UPDATE_PROFILE_CMS_PAGE));
 		setUpMetaDataForContentPage(model, getContentPageForLabelOrId(UPDATE_PROFILE_CMS_PAGE));
@@ -484,8 +484,8 @@ public class AccountPageController extends AbstractSearchPageController
 
 	@RequestMapping(value = "/update-profile", method = RequestMethod.POST)
 	@RequireHardLogIn
-	public String updateProfile(final UpdateProfileForm updateProfileForm, final BindingResult bindingResult, final Model model,
-			final RedirectAttributes redirectAttributes) throws CMSItemNotFoundException
+	public String updateProfile(final FlintUpdateProfileForm updateProfileForm, final BindingResult bindingResult,
+			final Model model, final RedirectAttributes redirectAttributes) throws CMSItemNotFoundException
 	{
 		getProfileValidator().validate(updateProfileForm, bindingResult);
 
@@ -658,8 +658,8 @@ public class AccountPageController extends AbstractSearchPageController
 		else
 		{
 			newAddress.setDefaultAddress(addressForm.getDefaultAddress() != null && addressForm.getDefaultAddress().booleanValue());
-		}		
-		
+		}
+
 		final AddressVerificationResult<AddressVerificationDecision> verificationResult = getAddressVerificationFacade()
 				.verifyAddressData(newAddress);
 		final boolean addressRequiresReview = getAddressVerificationResultHandler().handleResult(verificationResult, newAddress,
@@ -813,8 +813,8 @@ public class AccountPageController extends AbstractSearchPageController
 	@RequestMapping(value = "/select-suggested-address", method = RequestMethod.POST)
 	public String doSelectSuggestedAddress(final AddressForm addressForm, final RedirectAttributes redirectModel)
 	{
-		final Set<String> resolveCountryRegions = org.springframework.util.StringUtils
-				.commaDelimitedListToSet(Config.getParameter("resolve.country.regions"));
+		final Set<String> resolveCountryRegions = org.springframework.util.StringUtils.commaDelimitedListToSet(Config
+				.getParameter("resolve.country.regions"));
 
 		final AddressData selectedAddress = addressDataUtil.convertToVisibleAddressData(addressForm);
 

@@ -13,15 +13,15 @@
                    <!-- <div class="account-text">Don't have an account ?</div> -->
                      <div class="account-letstalk-text"> <img src="${commonResourcePath}/images/account.png"/></div>
                      <div class="account-letstalk">
-               <!--  <button type="button"  class="btn btn-talk but">-->
-             
+               <!--  <buttonï¿½type="button"  class="btn btn-talk but">-->
+
                  <!--</button>-->
                        <input type="submit" value="<spring:theme code="lets.talk"/>" target="_blank"
-    onclick="window.location='http://www.flintgrp.com/en/contact/'"  />                     
+    onclick="window.location='http://www.flintgrp.com/en/contact/'"  />
                      </div>
                 </div>
             </div>
-            
+
             <div class="col-sm-4 col-md-4">
                 <div class="login-section flint-login-section">
                     <c:url value="/j_spring_security_check" var="loginActionUrl"/>
