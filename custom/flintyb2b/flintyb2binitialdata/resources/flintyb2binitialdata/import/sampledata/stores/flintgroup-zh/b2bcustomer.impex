@@ -12,14 +12,14 @@ INSERT_UPDATE Address    ;code[unique=true]  ;owner(Company.uid)[unique=true]   
 INSERT_UPDATE B2BUnit    ;active[default=true]   ;uid[unique=true]   ;locName[lang=en]   ;locName[lang=zh]   ;
 ;;FlintCustomers;Flint Customers;Flint Customers;
 
-INSERT_UPDATE B2BUnit    ;active[default=true]   ;uid[unique=true]   ;locName[lang=en]   ;locName[lang=zh]   ;groups(uid);country(isocode)
-;;90003235;Dongguan Sunking Trading Co. Ltd.;Dongguan Sunking Trading Co. Ltd.;FlintCustomers;CN 
-;;90003237;Tianjin Dike;Tianjin Dike;FlintCustomers;CN
-;;90003238;Zhuhai Dike;Zhuhai Dike;FlintCustomers;CN
-;;90003240;Korich Printing Equipment Co. Ltd.;Korich Printing Equipment Co. Ltd.;FlintCustomers; CN
-;;90003242;Shanghai Evershine Ind & Trading Co;Shanghai Evershine Ind & Trading Co;FlintCustomers;CN
-;;90003243;Shanghai KEYING Trading Co. Ltd;hanghai KEYING Trading Co. Ltd;FlintCustomers;CN
-;;90003285;Everbest (Guangzhou);Everbest (Guangzhou);FlintCustomers;CN
+INSERT_UPDATE B2BUnit    ;active[default=true]   ;uid[unique=true]   ;locName[lang=en]   ;locName[lang=zh]   ;groups(uid);country(isocode); approvalProcessCode;
+;;90003235;Dongguan Sunking Trading Co. Ltd.;Dongguan Sunking Trading Co. Ltd.;FlintCustomers;CN;flintapproval
+;;90003237;Tianjin Dike;Tianjin Dike;FlintCustomers;CN;flintapproval
+;;90003238;Zhuhai Dike;Zhuhai Dike;FlintCustomers;CN;flintapproval
+;;90003240;Korich Printing Equipment Co. Ltd.;Korich Printing Equipment Co. Ltd.;FlintCustomers; CN;flintapproval
+;;90003242;Shanghai Evershine Ind & Trading Co;Shanghai Evershine Ind & Trading Co;FlintCustomers;CN;flintapproval
+;;90003243;Shanghai KEYING Trading Co. Ltd;hanghai KEYING Trading Co. Ltd;FlintCustomers;CN;flintapproval
+;;90003285;Everbest (Guangzhou);Everbest (Guangzhou);FlintCustomers;CN;flintapproval
 
 INSERT_UPDATE Address;&addId;owner(&B2BUnitID)[unique=true];
 ;10175102;90003240;

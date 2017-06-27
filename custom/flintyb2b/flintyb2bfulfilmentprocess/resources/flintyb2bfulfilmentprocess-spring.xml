@@ -61,6 +61,10 @@
 	<bean id="returnProcessDefinitionResource" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource" >
 		<property name="resource" value="classpath:/flintyb2bfulfilmentprocess/process/return-process.xml"/>
 	</bean>
+	
+	<bean id="approvalProcessDefinitionResource" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource" >
+		<property name="resource" value="classpath:/flintyb2bfulfilmentprocess/process/flintb2bapproval.xml"/>
+	</bean>
 
 	<!-- Process Actions -->
 
