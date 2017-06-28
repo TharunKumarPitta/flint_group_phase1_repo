@@ -23,8 +23,8 @@ $mediaContainer=media(qualifier, $contentCV);
 
 INSERT_UPDATE CMSLinkComponent;uid[unique=true,allownull=true];$contentCV[unique=true];linkName[lang=en];linkName[lang=zh];name;url;visible[default=true]
 
-;NEWS_INT_Menu_Link;;News ColdSet;新闻 / 冷固;News ColdSet;/categories/c/NEWS_INT
-;HEADSET_INT_Menu_Link;;Headset;热固;Headset;/categories/c/HEADSET_INT
+;NEWS_INT_Menu_Link;;News Coldset;新闻 / 冷固;News Coldset;/categories/c/NEWS_INT
+;HEATSET_INT_Menu_Link;;Heatset;热固;Heatset;/categories/c/HEATSET_INT
 ;UV_INT_Menu_Link;;UV;紫外线;UV;/categories/c/UV_INT
 ;LetterPress_INT_Menu_Link;;LetterPress;凸版印刷;LetterPress;/categories/c/LetterPress_INT
 ;MetalDeco_INT_Menu_Link;;MetalDeco;金属印刷;MetalDeco;/categories/c/MetalDeco_INT
@@ -47,16 +47,16 @@ INSERT_UPDATE CMSLinkComponent;uid[unique=true,allownull=true];$contentCV[unique
 ;News_Plates_INT_Menu_Link;;Plates;印版;Plates;/categories/c/News_Plates_INT
 ;News_Anciliary_Products_Link;;Anciliary Products;主管產品;Anciliary Products;/categories/c/News_Anciliary_Products_INT
 
-;HeadSet_Inks_INT_Link;;Inks;油墨;Inks;/categories/c/HeadSet_Inks_INT
-;HeadSet_Blankets_Offset_INT_Menu_Link;;Offset;抵消;Offset;/categories/c/HeadSet_Blankets_Offset_INT
-;HeadSet_Blankets_Metalback_INT_Menu_Link;;Metalback;Metalback;Metalback;/categories/c/HeadSet_Blankets_Metalback_INT
-;HeadSet_Blankets_Sleeves_INT_Menu_Link;;Sleeves;袖;Sleeves;/categories/c/HeadSet_Blankets_Sleeves_INT
-;HeadSet_PC_Founts_INT_Menu_Link;;Founts;Founts;Founts;/categories/c/HeadSet_PC_Founts_INT
-;HeadSet_PC_Washes_INT_Menu_Link;;Washes;淘;Washes;/categories/c/HeadSet_PC_Washes_INT
-;HeadSet_PC_Silicones_INT_Menu_Link;;Silicones;有機矽;Silicones;/categories/c/HeadSet_PC_Silicones_INT
-;HeadSet_PC_Specialty_INT_Menu_Link;;Specialty;專業;Specialty;/categories/c/HeadSet_PC_Specialty_INT
-;HeadSet_Plates_INT_Menu_Link;;Plates;印版;Plates;/categories/c/HeadSet_Plates_INT
-;HeadSet_Anciliary_Products_Link;;Anciliary Products;主管產品;Anciliary Products;/categories/c/HeadSet_Anciliary_Product
+;Heatset_Inks_INT_Link;;Inks;油墨;Inks;/categories/c/Heatset_Inks_INT
+;Heatset_Blankets_Offset_INT_Menu_Link;;Offset;抵消;Offset;/categories/c/Heatset_Blankets_Offset_INT
+;Heatset_Blankets_Metalback_INT_Menu_Link;;Metalback;Metalback;Metalback;/categories/c/Heatset_Blankets_Metalback_INT
+;Heatset_Blankets_Sleeves_INT_Menu_Link;;Sleeves;袖;Sleeves;/categories/c/Heatset_Blankets_Sleeves_INT
+;Heatset_PC_Founts_INT_Menu_Link;;Founts;Founts;Founts;/categories/c/Heatset_PC_Founts_INT
+;Heatset_PC_Washes_INT_Menu_Link;;Washes;淘;Washes;/categories/c/Heatset_PC_Washes_INT
+;Heatset_PC_Silicones_INT_Menu_Link;;Silicones;有機矽;Silicones;/categories/c/Heatset_PC_Silicones_INT
+;Heatset_PC_Specialty_INT_Menu_Link;;Specialty;專業;Specialty;/categories/c/Heatset_PC_Specialty_INT
+;Heatset_Plates_INT_Menu_Link;;Plates;印版;Plates;/categories/c/Heatset_Plates_INT
+;Heatset_Anciliary_Products_Link;;Anciliary Products;主管產品;Anciliary Products;/categories/c/Heatset_Anciliary_Product
 
 
 ;UV_NarrowWeb_INT_Menu_Link;;NarrowWeb;窄幅轮转;NarrowWeb;/categories/c/UV_NarrowWeb_INT
@@ -96,7 +96,7 @@ INSERT_UPDATE CMSNavigationNode;uid[unique=true,allownull=true];$contentCV[uniqu
 #------------------Top menu-----------;;;;;;;;;;
 
 ;News_INT_NavNode;;News_ColdSet;FlintgroupNavNode;1;News_ColdSet;;;
-;HEADSET_INT_NavNode;;Headset;FlintgroupNavNode;2;Headset;;;
+;HEATSET_INT_NavNode;;Heatset;FlintgroupNavNode;2;Heatset;;;
 ;UV_INT_NavNode;;UV;FlintgroupNavNode;3;UV;;;
 ;LetterPress_INT_NavNode;;LetterPress;FlintgroupNavNode;4;LetterPress;;;
 ;MetalDeco_INT_NavNode;;MetalDeco;FlintgroupNavNode;5;MetalDeco;;;
@@ -114,13 +114,13 @@ INSERT_UPDATE CMSNavigationNode;uid[unique=true,allownull=true];$contentCV[uniqu
 ;News_Anciliary_Products__NavNode;;Anciliary Products;News_INT_NavNode;3;Anciliary Products ;;News_Anciliary_Products_Link;
 
 
-#------------------HeadSet-----------;;;;;;;;;;
+#------------------Heatset-----------;;;;;;;;;;
 
-;HeadSet_Inks_NavNode;;Inks;HEADSET_INT_NavNode;1;Inks;;HeadSet_Inks_INT_Link;
-;HeadSet_Blankets_NavNode;;Blankets & Sleeves;HEADSET_INT_NavNode;2;Blankets & Sleeves;;HeadSet_Blankets_Offset_INT_Menu_Link,HeadSet_Blankets_Metalback_INT_Menu_Link,HeadSet_Blankets_Sleeves_INT_Menu_Link;
-;HeadSet_Pressroom_Chemistry_NavNode;;Pressroom Chemistry;HEADSET_INT_NavNode;3;Pressroom Chemistry;;HeadSet_PC_Founts_INT_Menu_Link,HeadSet_PC_Washes_INT_Menu_Link,HeadSet_PC_Silicones_INT_Menu_Link,HeadSet_PC_Specialty_INT_Menu_Link;
-;HeadSet_Plates_NavNode;;Plates;HEADSET_INT_NavNode;4;Plates;;HeadSet_Plates_INT_Menu_Link;
-;HeadSet_Anciliary_Products_NavNode;;Anciliary Products;HEADSET_INT_NavNode;5;Anciliary Products ;;HeadSet_Anciliary_Products_Link;
+;Heatset_Inks_NavNode;;Inks;HEATSET_INT_NavNode;1;Inks;;Heatset_Inks_INT_Link;
+;Heatset_Blankets_NavNode;;Blankets & Sleeves;HEATSET_INT_NavNode;2;Blankets & Sleeves;;Heatset_Blankets_Offset_INT_Menu_Link,Heatset_Blankets_Metalback_INT_Menu_Link,Heatset_Blankets_Sleeves_INT_Menu_Link;
+;Heatset_Pressroom_Chemistry_NavNode;;Pressroom Chemistry;HEATSET_INT_NavNode;3;Pressroom Chemistry;;Heatset_PC_Founts_INT_Menu_Link,Heatset_PC_Washes_INT_Menu_Link,Heatset_PC_Silicones_INT_Menu_Link,Heatset_PC_Specialty_INT_Menu_Link;
+;Heatset_Plates_NavNode;;Plates;HEATSET_INT_NavNode;4;Plates;;Heatset_Plates_INT_Menu_Link;
+;Heatset_Anciliary_Products_NavNode;;Anciliary Products;HEATSET_INT_NavNode;5;Anciliary Products ;;Heatset_Anciliary_Products_Link;
 
 #------------------UV-----------
 ;UV_Inks_NavNode;;Inks;UV_INT_NavNode;0;Inks;;UV_NarrowWeb_INT_Menu_Link,UV_Sheetfed_INT_Menu_Link,UV_Coldset_INT_Menu_Link;
@@ -136,9 +136,9 @@ INSERT_UPDATE CMSNavigationNode;uid[unique=true,allownull=true];$contentCV[uniqu
 ;LetterPress_Equipment_NavNode;;Equipment;LetterPress_INT_NavNode;3;Equipment;;LetterPress_Equipment_INT_Menu_Link;
 
 
-INSERT_UPDATE NavigationBarComponent;$contentCV[unique=true];uid[unique=true];name;wrapAfter;link(uid, $contentCV);styleClass;navigationNode(uid);dropDownLayout(code)[default=AUTO];&componentRef
+INSERT_UPDATE NavigationBarComponent;$contentCV[unique=true];uid[unique=true];name;wrapAfter;link(uid, $contentCV);styleClass;navigationNode(uid, $contentCV);dropDownLayout(code)[default=AUTO];&componentRef
 ;;FlintCategory1BarComponent;News&Coldset ;10;NEWS_INT_Menu_Link;;News_INT_NavNode;;FlintCategory1BarComponent
-;;FlintCategory2BarComponent;HeatSet;10;HEADSET_INT_Menu_Link;;HEADSET_INT_NavNode;;FlintCategory2BarComponent
+;;FlintCategory2BarComponent;HeatSet;10;HEATSET_INT_Menu_Link;;HEATSET_INT_NavNode;;FlintCategory2BarComponent
 ;;FlintCategory3BarComponent;UV;10;UV_INT_Menu_Link;;UV_INT_NavNode;;FlintCategory3BarComponent
 ;;FlintCategory4BarComponent;Letterpress;10;LetterPress_INT_Menu_Link;;LetterPress_INT_NavNode;;FlintCategory4BarComponent
 

@@ -14,8 +14,11 @@
         
 
 
-<requires-extension name="customerticketingaddon"/>
+
 <requires-extension name="secureportaladdon"/>
+<requires-extension name="flintyb2bsecureportal"/>
+<requires-extension name="customerticketingaddon"/>
+<!--<requires-extension name="secureportaladdon"/>-->
 
 
 <requires-extension name="b2bacceleratoraddon"/>

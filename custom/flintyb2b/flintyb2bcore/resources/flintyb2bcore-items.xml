@@ -34,8 +34,27 @@
 			<value code="WHITE"/>
 			<value code="YELLOW"/>
 		</enumtype>
+		
+		<enumtype generate="true" code="SalesArea" autocreate="true" dynamic="true">
+            <value code="AHKO" />
+        </enumtype>
 	</enumtypes>
-
+	<relations>
+		<relation code="Product2B2BUnit" localized="false"
+		          generate="true" autocreate="true">
+				<deployment table="product2b2bunit" typecode="30001"/>
+				<sourceElement type="Product" qualifier="product" cardinality="many">
+					<description>The Product</description>
+					<modifiers read="true" write="true" search="true"/>
+				</sourceElement>
+				<targetElement type="B2BUnit" qualifier="b2bunit"
+				               cardinality="many">
+					<description>B2bunit associated to a Product</description>
+					<modifiers read="true" write="true" search="true"/>
+				</targetElement>
+		</relation>
+		
+	</relations>
 	<itemtypes>
 
 		<!-- Add your item definitions here -->
@@ -124,6 +143,69 @@
 				<attribute qualifier="state" type="java.lang.String">
 					<description>Country state, as free string.</description>
 					<persistence type="property" />
+				</attribute>
+			</attributes>
+		</itemtype>
+		<itemtype code="B2BUnit" generate="false" autocreate="false">
+			<description>bioMerieux address type extension</description>
+			<attributes>
+				<attribute qualifier="blocked" type="java.lang.Boolean">
+					<description>Unit is blocked</description>
+					<persistence type="property" />
+					<modifiers optional="false" />
+					<defaultvalue>Boolean.FALSE</defaultvalue>
+				</attribute>
+				<attribute qualifier="deleted" type="java.lang.Boolean">
+					<description>Unit is deleted</description>
+					<persistence type="property" />
+					<modifiers optional="false" />
+					<defaultvalue>Boolean.FALSE</defaultvalue>
+				</attribute>
+				<attribute qualifier="distributor" type="java.lang.Boolean">
+					<description>Unit is a distributor</description>
+					<persistence type="property" />
+					<modifiers optional="false" />
+					<defaultvalue>Boolean.FALSE</defaultvalue>
+				</attribute>
+				<attribute qualifier="shippingTerms" type="java.lang.String">
+					<description>Shipping terms</description>
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="soldToAddress" type="Address">
+					<description>Sold To</description>
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="shipToAddresses" type="AddressCollection">
+					<description>Ship To</description>
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="billToAddresses" type="AddressCollection">
+					<description>Bill To</description>
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="payerAddresses" type="AddressCollection">
+					<description>Payer</description>
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="isDefaultBillTo" type="Address">
+					<description>Default Bill To Address</description>
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="isDefaultPayer" type="Address">
+					<description>Default Payer Address</description>
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="isDefaultShipTo" type="Address">
+					<description>Default Ship To Address</description>
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="salesArea" type="SalesArea">
+                    <description>Sales area</description>
+                    <persistence type="property" />
+                </attribute>
+                <attribute qualifier="defaultDeliveryMode" type="DeliveryMode">
+					<description>The default delivery mode for a specific customer account</description>
+					<persistence type="property"></persistence>
 				</attribute>
 			</attributes>
 		</itemtype>

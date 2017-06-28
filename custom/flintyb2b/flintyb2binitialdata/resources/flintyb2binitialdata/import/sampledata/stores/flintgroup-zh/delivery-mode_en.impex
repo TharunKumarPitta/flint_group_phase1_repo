@@ -1,0 +1,6 @@
+$lang=en
+
+# Zone Delivery Modes
+UPDATE ZoneDeliveryMode;code[unique=true];name[lang=$lang];description[lang=$lang]
+;free-standard-shipping;"Free Delivery";"Free Delivery"
+

@@ -42,6 +42,12 @@
         <property name="priceComparator" ref="volumePriceComparator"/>
         <property name="catalogVersionService" ref="catalogVersionService"/>
     </bean>
+    
+    <bean id="flintB2BUnitCodeValueProvider" class="com.flintgroup.core.search.solrfacetsearch.provider.impl.FlintB2BUnitCodeValueProvider"
+	      parent="abstractPropertyFieldValueProvider" >
+		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
+		<property name="commonI18NService" ref="commonI18NService"/>
+	</bean>
 
     <bean id="volumePriceComparator" class="com.flintgroup.core.comparators.VolumeAwarePriceInformationComparator" scope="singleton"/>
 
@@ -487,9 +493,16 @@
 	<property name="flintOrderDao" ref="flintOrderDao"/>
 	</bean>
 	
-	
+    
 	<import resource="/flintyb2bcore/processes/quote/quote-buyer-process-spring.xml"/>
 	<import resource="/flintyb2bcore/processes/quote/quote-salesrep-process-spring.xml"/>
 	<import resource="/flintyb2bcore/processes/quote/quote-seller-approval-process-spring.xml"/>
+	
+	<bean id="flintSolrSearchListenerDefinition" parent="solrListenerDefinition">
+     <property name="priority" value="150" />
+     <property name="listener" ref="flintSolrSearchListener" />
+ 	</bean>
+ 	<bean id="flintSolrSearchListener" class="com.flintgroup.core.util.FlintSolrSearchListener"></bean>
+ 	
 	
 </beans>

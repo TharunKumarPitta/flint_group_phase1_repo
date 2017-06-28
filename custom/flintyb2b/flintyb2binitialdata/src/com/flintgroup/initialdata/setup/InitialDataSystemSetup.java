@@ -165,7 +165,9 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 			importImpexFile(context, FLINT_IMPORT_HOME + "/sampledata/stores/flintgroup-zh/solr_zh.impex");
 			importImpexFile(context, FLINT_IMPORT_HOME + "/sampledata/stores/flintgroup-zh/warehouses.impex");
 			importImpexFile(context, FLINT_IMPORT_HOME + "/sampledata/stores/flintgroup-zh/b2bcustomer.impex");
-			importImpexFile(context, FLINT_IMPORT_HOME + "/sampledata/stores/flintgroup-zh/DeliveryMode.impex");
+			importImpexFile(context, FLINT_IMPORT_HOME + "/sampledata/stores/flintgroup-zh/delivery-mode.impex");
+			importImpexFile(context, FLINT_IMPORT_HOME + "/sampledata/stores/flintgroup-zh/delivery-mode_en.impex");
+			importImpexFile(context, FLINT_IMPORT_HOME + "/sampledata/stores/flintgroup-zh/delivery-mode_zh.impex");
 
 		}
 
@@ -241,8 +243,8 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 					FLINT_IMPORT_HOME + "/sampledata/productCatalogs/flintgroup-zhProductCatalog/products_en.impex");
 			importImpexFile(context,
 					FLINT_IMPORT_HOME + "/sampledata/productCatalogs/flintgroup-zhProductCatalog/products-medias.impex");
-
-
+			importImpexFile(context,
+					FLINT_IMPORT_HOME + "/sampledata/productCatalogs/flintgroup-zhProductCatalog/product_cust_rel.impex");
 
 		}
 

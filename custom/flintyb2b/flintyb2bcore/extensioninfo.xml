@@ -17,6 +17,7 @@
 		<requires-extension name="acceleratorcms"/>
 		<requires-extension name="acceleratorfacades"/>
 		<requires-extension name="solrserver"/>
+		<requires-extension name="b2bcommerce"/>
 
 		<coremodule generated="true" manager="com.flintgroup.core.jalo.Flintyb2bCoreManager" packageroot="com.flintgroup.core"/>
 
