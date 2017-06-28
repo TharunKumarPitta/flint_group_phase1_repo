@@ -24,15 +24,15 @@
 		<!--Please check documentation for code snippets for specific components-->
 	<!--</context>-->
 	
-	<context component="perspective-chooser" principal="admin">
+	<context component="perspective-chooser" principal="flintcustomersupportagentrole">
 		<y:perspective-chooser xmlns:y="http://www.hybris.com/cockpitng/config/perspectiveChooser">
-			<y:authority name="admin">
+			<y:authority name="flintcustomersupportagentrole">
 				<y:perspective id="FlintCustomerSupport-Perspective"/>
 			</y:authority>
 		</y:perspective-chooser>
 	</context>
 
-	<context component="fcs-explorer-tree" module="flintcustomersupportbackoffice" principal="admin">
+	<context component="fcs-explorer-tree" module="flintcustomersupportbackoffice" principal="flintcustomersupportagentrole">
         <n:explorer-tree xmlns:n="http://www.hybris.com/cockpitng/config/explorertree" title="customer_support">
         	<n:type-node code="CsTicket" id="flintcustomersupport_backoffice_explorerTree_tickets"/>
         </n:explorer-tree>
@@ -68,7 +68,7 @@
         </list-view:list-view>
     </context>
 
-	<context merge-by="type" parent="GenericItem" type="CsTicket" component="fcs-editor-area" principal="admin" module="flintcustomersupportbackoffice" >
+	<context merge-by="type" parent="GenericItem" type="CsTicket" component="fcs-editor-area" principal="flintcustomersupportagentrole" module="flintcustomersupportbackoffice" >
         <editorArea:editorArea name="csTicket">
             <editorArea:tab name="customersupport_backoffice_ticket_tab_details" tooltipText="customersupport_backoffice_ticket_tab_details_desc">
                <editorArea:section name="hmc.tab.section.ticket.details" position="1">
