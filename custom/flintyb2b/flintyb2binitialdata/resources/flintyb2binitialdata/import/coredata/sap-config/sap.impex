@@ -1,0 +1,79 @@
+$productCatalog=flintgroup-zhProductCatalog
+$productCatalogVersion=Staged
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='$productCatalogVersion'])[unique=true,default=$productCatalog:$productCatalogVersion]
+$storeUid=flint-zh
+
+#####################
+## RFC DESTINATION ##
+#####################
+INSERT_UPDATE SAPRFCDestination;rfcDestinationName[unique=true];backendType(code);connectionType;targetHost;instance;client;userid;password
+;HYBRIS_T;ERP;true;flnerpcs1d.flintgrp.com;00;100;Hybris;HybriS
+
+INSERT_UPDATE SAPDeliveryMode;sapConfiguration(core_name)[unique=true];deliveryMode(code);deliveryValue
+;FLINT_B2B_HYB_SAP_CONFIG;standard-gross;10
+
+##########################################################
+## SAP Product & Pricing Sales Area To Catalog Mapping  ##
+##########################################################
+INSERT_UPDATE SAPProductSalesAreaToCatalogMapping;$catalogVersion;salesOrganization;distributionChannel;sapGlobalConfiguration(core_name);taxClassCountry(isocode)
+;;BZHO;01;sapGlobalConfiguration;CN
+
+##################################################
+## SAP Base Store Configuration Common Settings ##
+##################################################
+INSERT_UPDATE SAPConfiguration;core_name[unique=true];sapcommon_transactionType;sapcommon_referenceCustomer;sapcommon_salesOrganization;sapcommon_distributionChannel;sapcommon_division
+;FLINT_B2B_HYB_SAP_CONFIG;ZA;90003235;BZHO;01;00
+
+#;BS_ZBX_3WIL_01;ZA;3002150;BZHO;01;00
+################################################
+## SAP Base Store Configuration Core Settings ##
+################################################
+INSERT_UPDATE SAPConfiguration;core_name[unique=true];SAPRFCDestination(rfcDestinationName);baseStores(uid)
+;FLINT_B2B_HYB_SAP_CONFIG;HYBRIS_T;flint-zh
+#;BS_ZBX_3WIL_01;FLINT_RFC_ZBX_B2B;3WIL
+
+INSERT_UPDATE SAPDeliveryMode;sapConfiguration(core_name)[unique=true];deliveryMode(code);deliveryValue
+;FLINT_B2B_HYB_SAP_CONFIG;standard-gross;10
+
+#####################
+## RFC DESTINATION ##
+#####################
+INSERT_UPDATE SAPRFCDestination;rfcDestinationName[unique=true];backendType(code);connectionType;targetHost;instance;client;userid;password
+;HYBRIS_T;ERP;true;flnerpcs1d.flintgrp.com;00;100;Hybris;HybriS
+
+######################
+## HTTP DESTINATION ##
+######################
+INSERT_UPDATE SAPHTTPDestination;httpDestinationName[unique=true];targetURL;authenticationType(code);userid;password
+;HYBRIS_T;"http://";BASIC_AUTHENTICATION;HYBRIS_T;Hybris
+
+###############################
+## SAP Global Configuration  ##
+###############################
+INSERT_UPDATE SAPGlobalConfiguration;core_name;sapcommon_erpLogicalSystem
+;sapGlobalConfiguration;HYBRIS_T;
+
+##########################################################
+## SAP Product & Pricing Sales Area To Catalog Mapping  ##
+##########################################################
+INSERT_UPDATE SAPProductSalesAreaToCatalogMapping;$catalogVersion;salesOrganization;distributionChannel;sapGlobalConfiguration(core_name);taxClassCountry(isocode)
+;$catalogVersion;BZHO;01;sapGlobalConfiguration;ZH
+
+INSERT_UPDATE SAPPricingSalesAreaToCatalog;$catalogVersion;salesOrganization;distributionChannel;sapcommon_sapGlobalConfiguration(core_name);net[default=true,forceWrite=true]
+#;;BZHO;01;sapGlobalConfiguration
+
+##########################################
+## SAP Base Store Configuration Pricing ##
+##########################################
+INSERT_UPDATE SAPConfiguration;core_name[unique=true];sappricingbol_cartPricing;sappricingbol_priceSub(code);sappricingbol_discountSub(code);sappricingbol_taxesSub(code);sappricingbol_deliverySub(code)
+#;BS_ZBX_3WIL_01;false;KZWI1;KZWI2;MWSBP;KZWI4
+#KZWI1;KZWI2;MWSBP;KZWI4???
+
+################################################################
+### SAP Base Store Configuration Synchronous Order Management ##
+################################################################
+#INSERT_UPDATE SAPConfiguration;core_name[unique=true];sapordermgmt_enabled;sapordermgmt_headerCondTypeFreight;sapordermgmt_sourceFreight;sapordermgmt_sourceNetWOFreight;
+#;BS_ZBX_3WIL_01;true;ZF01;SUBTOTAL4;SUBTOTAL2
+##;ZF01;SUBTOTAL4;SUBTOTAL2
+
+
