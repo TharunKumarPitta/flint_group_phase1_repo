@@ -14,10 +14,14 @@
          processClass="de.hybris.platform.b2b.process.approval.model.B2BApprovalProcessModel">
 
 	<action id="approvalProcessStartAction" bean="approvalProcessStartAction">
-		<transition name="OK" to="informOfOrderApproval"/>
+		<transition name="OK" to="startFulfilmentProcessAction"/>
 		<transition name="NOK" to="error"/>
 	</action>
 
+	<action id="startFulfilmentProcessAction" bean="startFulfilmentProcessAction">
+		<transition name="OK" to="informOfOrderApproval" />
+	</action>
+	
 	<action id="informOfOrderApproval" bean="informOfOrderApproval">
 		<transition name="OK" to="setBookingLineEntries"/>
 	</action>

@@ -1,7 +1,7 @@
 <hybrisconfig xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:noNamespaceSchemaLocation='../bin/platform/resources/schemas/extensions.xsd'>
   <extensions>
-    <path dir='${hybris_bin_dir}/ext-integration/sap' autoload='false' />
-    <path dir='${hybris_bin_dir}' autoload='false' />
+    <path dir='${HYBRIS_BIN_DIR}/ext-integration/sap' autoload='false' />
+    <path dir='${HYBRIS_BIN_DIR}' autoload='false' />
     <extension name='mcc' />
     <extension name='commercesearchbackoffice' />
     <extension name='b2bcommercebackoffice' />
@@ -57,19 +57,20 @@
     <extension name="sapcorejcorec" />
     <extension name="sapcoreodata" />
     <extension name="sapmodel" />
+    
 
 
 	    <!-- flint accelerator -->
-    <extension dir="${hybris_bin_dir}/custom/flintyb2b/flintyb2bcockpits"/>
-	<extension dir="${hybris_bin_dir}/custom/flintyb2b/flintyb2bcore"/>
-	<extension dir="${hybris_bin_dir}/custom/flintyb2b/flintyb2bfacades"/>
-	<extension dir="${hybris_bin_dir}/custom/flintyb2b/flintyb2bfulfilmentprocess"/>
-	<extension dir="${hybris_bin_dir}/custom/flintyb2b/flintyb2binitialdata"/>
-	<extension dir="${hybris_bin_dir}/custom/flintyb2b/flintyb2bstorefront"/>
-	<extension dir="${hybris_bin_dir}/custom/flintyb2b/flintyb2bsecureportal"/>
-	<extension dir="${hybris_bin_dir}/custom/flintyb2b/flintyb2bbackoffice"/>
-	<extension dir="${hybris_bin_dir}/custom/flintyb2b/flintyb2bcustomerticketing"/>
-	<!--<extension dir="${hybris_bin_dir}/custom/flintyb2b/flintyb2bsaporderfulfillment"/>-->
+    <extension dir="${HYBRIS_BIN_DIR}/custom/flintyb2b/flintyb2bcockpits"/>
+	<extension dir="${HYBRIS_BIN_DIR}/custom/flintyb2b/flintyb2bcore"/>
+	<extension dir="${HYBRIS_BIN_DIR}/custom/flintyb2b/flintyb2bfacades"/>
+	<extension dir="${HYBRIS_BIN_DIR}/custom/flintyb2b/flintyb2bfulfilmentprocess"/>
+	<extension dir="${HYBRIS_BIN_DIR}/custom/flintyb2b/flintyb2binitialdata"/>
+	<extension dir="${HYBRIS_BIN_DIR}/custom/flintyb2b/flintyb2bstorefront"/>
+	<extension dir="${HYBRIS_BIN_DIR}/custom/flintyb2b/flintyb2bsecureportal"/>
+	<extension dir="${HYBRIS_BIN_DIR}/custom/flintyb2b/flintyb2bbackoffice"/>
+	<extension dir="${HYBRIS_BIN_DIR}/custom/flintyb2b/flintyb2bcustomerticketing"/>
+	<extension dir="${HYBRIS_BIN_DIR}/custom/flintyb2b/flintyb2bsaporderfulfillment"/>
 
 
   </extensions>
