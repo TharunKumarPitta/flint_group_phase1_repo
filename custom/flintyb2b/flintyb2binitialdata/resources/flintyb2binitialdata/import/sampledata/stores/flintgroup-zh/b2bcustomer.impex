@@ -84,3 +84,106 @@ INSERT_UPDATE B2BBudgetExceededPermission;code[unique=true];Unit(uid);
 
 UPDATE B2BCustomer;originalUid[unique=true];uid[unique=true];permissions(code,Unit(uid));
 ;simoncc1000@shanghai-dayco.com;simoncc1000@shanghai-dayco.com;Shanghai Evershine Budget Exceeded:90003242;
+
+
+
+INSERT_UPDATE B2BCostCenter;code[unique=true];name[lang=en];Unit(uid);budgets(code);currency(isocode)[default='CNY']
+;Korich Printing Equipment Co. Ltd.;Korich Printing Equipment Co. Ltd.;90003240;Monthly 5000K CNY;
+
+INSERT_UPDATE B2BBudget;code[unique=true];Unit(uid);budget;currency(isocode)[allownull=true];dateRange[dateformat=dd.MM.yyyy hh:mm:ss,allownull=true];name[lang=en];;
+;Monthly 5000K CNY;90003240;50000000;CNY;01.01.2010 00:00:00,12.31.2032 12:59:59;Monthly 5000K CNY;
+
+INSERT_UPDATE B2BOrderThresholdPermission;code[unique=true];Unit(uid);threshold;currency(isocode)[default='CNY'];
+;Korich Printing Equipment 200K CYN ORDER;90003240;2000000;
+
+INSERT_UPDATE B2BUserGroup;uid[unique=true];name;unit(uid);permissions(code,unit(uid));
+;premiumPermissions;Premium Permissions;90003240;Korich Printing Equipment 200K CYN ORDER:90003240;
+
+UPDATE B2BUnit;uid[unique=true];approvers(uid);
+;90003240;korichgz@163.com;
+
+INSERT_UPDATE B2BBudgetExceededPermission;code[unique=true];Unit(uid);
+;Korich Printing Equipment Budget Exceeded;90003240;
+
+UPDATE B2BCustomer;originalUid[unique=true];uid[unique=true];permissions(code,Unit(uid));
+;korichgz@163.com;korichgz@163.com;Korich Printing Equipment Budget Exceeded:90003240;
+
+
+
+
+
+
+
+
+
+
+INSERT_UPDATE B2BCostCenter;code[unique=true];name[lang=en];Unit(uid);budgets(code);currency(isocode)[default='CNY']
+;Zhuhai Dike;Zhuhai Dike;90003238;Monthly 5000K CNY;
+
+INSERT_UPDATE B2BBudget;code[unique=true];Unit(uid);budget;currency(isocode)[allownull=true];dateRange[dateformat=dd.MM.yyyy hh:mm:ss,allownull=true];name[lang=en];;
+;Monthly 5000K CNY;90003238;50000000;CNY;01.01.2010 00:00:00,12.31.2032 12:59:59;Monthly 5000K CNY;
+
+INSERT_UPDATE B2BOrderThresholdPermission;code[unique=true];Unit(uid);threshold;currency(isocode)[default='CNY'];
+;Zhuhai Dike 200K CYN ORDER;90003238;2000000;
+
+INSERT_UPDATE B2BUserGroup;uid[unique=true];name;unit(uid);permissions(code,unit(uid));
+;premiumPermissions;Premium Permissions;90003238;Zhuhai Dike 200K CYN ORDER:90003238;
+
+UPDATE B2BUnit;uid[unique=true];approvers(uid);
+;90003238;nelsonchongys@yahoo.com;
+
+INSERT_UPDATE B2BBudgetExceededPermission;code[unique=true];Unit(uid);
+;Zhuhai Dike Budget Exceeded;90003238;
+
+UPDATE B2BCustomer;originalUid[unique=true];uid[unique=true];permissions(code,Unit(uid));
+;nelsonchongys@yahoo.com;nelsonchongys@yahoo.com;Zhuhai Dike Budget Exceeded:90003238;
+
+
+
+
+
+
+INSERT_UPDATE B2BCostCenter;code[unique=true];name[lang=en];Unit(uid);budgets(code);currency(isocode)[default='CNY']
+;Dongguan Sunking Trading Co. Ltd.;Dongguan Sunking Trading Co. Ltd.;90003235;Monthly 5000K CNY;
+
+INSERT_UPDATE B2BBudget;code[unique=true];Unit(uid);budget;currency(isocode)[allownull=true];dateRange[dateformat=dd.MM.yyyy hh:mm:ss,allownull=true];name[lang=en];;
+;Monthly 5000K CNY;90003235;50000000;CNY;01.01.2010 00:00:00,12.31.2032 12:59:59;Monthly 5000K CNY;
+
+INSERT_UPDATE B2BOrderThresholdPermission;code[unique=true];Unit(uid);threshold;currency(isocode)[default='CNY'];
+;Dongguan Sunking Trading Co. Ltd. 200K CYN ORDER;90003235;2000000;
+
+INSERT_UPDATE B2BUserGroup;uid[unique=true];name;unit(uid);permissions(code,unit(uid));
+;premiumPermissions;Premium Permissions;90003235;Dongguan Sunking Trading Co. Ltd. 200K CYN ORDER:90003235;
+
+UPDATE B2BUnit;uid[unique=true];approvers(uid);
+;90003235;hamasaki.koshi@163.com;
+
+INSERT_UPDATE B2BBudgetExceededPermission;code[unique=true];Unit(uid);
+;Dongguan Sunking Trading Co. Ltd. Budget Exceeded;90003235;
+
+UPDATE B2BCustomer;originalUid[unique=true];uid[unique=true];permissions(code,Unit(uid));
+;hamasaki.koshi@163.com;hamasaki.koshi@163.com;Dongguan Sunking Trading Co. Ltd. Budget Exceeded:90003235;
+
+
+
+
+INSERT_UPDATE B2BCostCenter;code[unique=true];name[lang=en];Unit(uid);budgets(code);currency(isocode)[default='CNY']
+;Tianjin Dike;Tianjin Dike;90003237;Monthly 5000K CNY;
+
+INSERT_UPDATE B2BBudget;code[unique=true];Unit(uid);budget;currency(isocode)[allownull=true];dateRange[dateformat=dd.MM.yyyy hh:mm:ss,allownull=true];name[lang=en];;
+;Monthly 5000K CNY;90003237;50000000;CNY;01.01.2010 00:00:00,12.31.2032 12:59:59;Monthly 5000K CNY;
+
+INSERT_UPDATE B2BOrderThresholdPermission;code[unique=true];Unit(uid);threshold;currency(isocode)[default='CNY'];
+;Tianjin Dike 200K CYN ORDER;90003237; 2000000;
+
+INSERT_UPDATE B2BUserGroup;uid[unique=true];name;unit(uid);permissions(code,unit(uid));
+;premiumPermissions;Premium Permissions;90003238;Tianjin Dike 200K CYN ORDER:90003237;
+
+UPDATE B2BUnit;uid[unique=true];approvers(uid);
+;90003237;tjdkmajun@163.com;
+
+INSERT_UPDATE B2BBudgetExceededPermission;code[unique=true];Unit(uid);
+;Tianjin Dike Budget Exceeded;90003237;
+
+UPDATE B2BCustomer;originalUid[unique=true];uid[unique=true];permissions(code,Unit(uid));
+;tjdkmajun@163.com;tjdkmajun@163.com;Tianjin Dike Budget Exceeded:90003237;
