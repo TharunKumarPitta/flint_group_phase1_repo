@@ -25,10 +25,18 @@
                 <div class="account-section-form">
                     <div id="customer-ticketing-alerts"></div>
                     <form:form method="post" commandName="supportTicketForm" enctype="multipart/form-data">
-                        <formElement:formInputBox idKey="createTicket-subject" labelKey="text.account.supporttickets.createTicket.subject" path="subject" inputCSS="text" mandatory="true" />
+                    <div class="form-group">
+                        <label class="control-label" for="text.account.supporttickets.createTicket.subject"> <spring:theme code="text.account.supporttickets.createTicket.subject" text="Subject"/></label>
+                        <form:select path="subject" cssClass="form-control">
+                         <form:option value="Where is my order ?"><spring:message code="text.account.supporttickets.createTicket.ticketSubject.whereIsMyOrder"/></form:option>
+                         <form:option value="I want to add a new delivery address"><spring:message code="text.account.supporttickets.createTicket.ticketSubject.addDeliveryAddress"/></form:option>
+                         <form:option value="I want to order a new product"><spring:message code="text.account.supporttickets.createTicket.ticketSubject.wantToOrderNewProduct"/></form:option>
+                         <form:option value="General inquiry"><spring:message code="text.account.supporttickets.createTicket.ticketSubject.generalEnquiry"/></form:option>
+                        </form:select>
                         <div id="NotEmpty-supportTicketForm-subject" class="help-block" style="display: none;">
                             <span id="subject-errors"></span>
                         </div>
+                       </div>
                         <div id="Size-supportTicketForm-subject" class="help-block" style="display: none;"></div>
                         <formElement:formTextArea idKey="createTicket-message" labelKey="text.account.supporttickets.createTicket.message" path="message" mandatory="true" areaCSS="form-control" labelCSS="control-label"/>
                         <div id="NotEmpty-supportTicketForm-message" class="help-block" style="display: none;"></div>
