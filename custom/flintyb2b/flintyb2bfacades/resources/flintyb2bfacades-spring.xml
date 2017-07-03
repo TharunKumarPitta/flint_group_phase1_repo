@@ -185,13 +185,18 @@
 	</bean>
 
 	<bean id="genderData" class="com.flintgroup.facades.product.data.GenderData" scope="prototype"/>
-	
+
+	<!-- Custom Flint specifics -->
+
 	<bean id="flintOrderFacade" class="com.flintgroup.facades.order.impl.DefaultFlintGroupFacade" parent="defaultOrderFacade">
 		<property name="flintRecentOrderService" ref="flintRecentOrderService"></property>
 	</bean>
 
 	<bean id="flintTicketFacade" class="com.flintgroup.facades.ticket.impl.DefaultFlintTicketFacade" parent="defaultCustomerTicketingFacade">
 		<property name="ticketService" ref="ticketService"/>
+	</bean>
+
+	<bean id="flintB2BCheckoutFlowFacadeImpl" class="com.flintgroup.facades.order.impl.FlintB2BCheckoutFlowFacadeImpl" parent="defaultB2BCheckoutFacade">
 	</bean>
 
 

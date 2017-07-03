@@ -79,6 +79,7 @@ UPDATE UserTaxGroup;code[unique=true];name[lang=$lang]
  ;jp-taxes;"JP Taxes"
  ;uk-taxes;"UK Taxes"
  ;us-taxes;"US Taxes"
+ ;cn-taxes;"CN Taxes"
 
 # Tax
 UPDATE Tax;code[unique=true];name[lang=$lang]

@@ -118,11 +118,14 @@ INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;pa
 ## entries of the above navigation nodes ##
 INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;navigationNode(&nodeRef);item(CMSLinkComponent.uid,CMSLinkComponent.$contentCV);
 ;AboutHybrisNavNodeEntry;;About Hybris Navigation Node Entry;AboutHybrisNavNode;AboutHybrisLink;
-;ContactUsNavNodeEntry;;Contact Us Navigation Node Entry;ContactUsNavNode;ContactUsLink;
-## links of the above navigation nodes ##
-INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url;&linkRef;&componentRef;target(code)[default='sameWindow']
-;;AboutHybrisLink;About Hybris Link;"http://www.hybris.com";AboutHybrisLink;AboutHybrisLink;newWindow
-;;ContactUsLink;Contact Us Link;"http://www.hybris.com/contact";ContactUsLink;ContactUsLink;newWindow
+#;ContactUsNavNodeEntry;;Contact Us Navigation Node Entry;ContactUsNavNode;ContactUsLink;
+
+INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;linkname[lang=en];linkname[lang=zh];url;&linkRef;&componentRef;target(code)[default='sameWindow']
+;;AboutHybrisLink;About Hybris Link;;;"http://www.hybris.com";AboutHybrisLink;AboutHybrisLink;newWindow
+;;FlintAboutUsLink;About Us Link;About Flint Group;关于 Flint Group;"http://www.flintgrp.com/en/company/fast-facts/";FlintAboutUsLink;FlintAboutUsLink;newWindow
+;;FlintTermsConditionLink;Terms & Condition Link;Terms & Condition;条款和条件;"http://www.flintgrp.com/en/company/conditions-of-sale/";FlintTermsConditionLink;FlintTermsConditionLink;newWindow
+#;;FlintNewsInformationLink;News & Information Link;News & Information;新闻资讯;"http://www.flintgrp.com/en/news-information/press-releases/";FlintNewsInformationLink;FlintNewsInformationLink;newWindow
+
 
 ##---- level 4. children of Order Tools ----##
 INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);links(&linkRef);&nodeRef
@@ -219,7 +222,7 @@ INSERT_UPDATE CMSTabParagraphComponent;$contentCV[unique=true];uid[unique=true];
 
 ## footer slot ##
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
-;;FooterSlot;FooterNavigationComponent
+;;FooterSlot;FlintAboutUsLink,FlintTermsConditionLink,FAQLink,FooterNavigationComponent
 
 INSERT_UPDATE FooterNavigationComponent;$contentCV[unique=true];uid[unique=true];wrapAfter;&componentRef;showLanguageCurrency;navigationNode(&nodeRef)
 ;;FooterNavigationComponent;4;FooterNavigationComponent;true;FooterNavNode;
@@ -543,15 +546,15 @@ INSERT_UPDATE ViewStoreAction;$contentCV[unique=true];uid[unique=true];url;name;
 
 ###### FAQ Page Start ######
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='faq'];contentSlot(uid,$contentCV)[unique=true];;;
-;;Section2A-FAQ;Section2A;;Section2ASlot-FAQ;;;
+#;;Section2A-FAQ;Section2A;;Section2ASlot-FAQ;;;
 ;;Section2B-FAQ;Section2B;;Section2BSlot-FAQ;;;
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
-;;Section2ASlot-FAQ;Section2A Slot for FAQ Page;true;FAQMenuParagraph;;;
+#;;Section2ASlot-FAQ;Section2A Slot for FAQ Page;true;FAQMenuParagraph;;;
 ;;Section2BSlot-FAQ;Section2B Slot for FAQ Page;true;FAQTextParagraph;;;
 
 INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;;;;
-;;faqMenuParagraph;FAQ Paragraph;FAQMenuParagraph;;;;
+#;;faqMenuParagraph;FAQ Paragraph;FAQMenuParagraph;;;;
 ;;faqTextParagraph;FAQ Paragraph;FAQTextParagraph;;;;
 ###### FAQ Page End ######
 
@@ -1045,4 +1048,4 @@ INSERT_UPDATE FooterNavigationComponent;$contentCV[unique=true];uid[unique=true]
 ;;FooterNavigationComponent;4;FooterNavigationComponent;true;FooterNavNode;
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef);;;
-;;FooterSlot;FAQLink,FooterNavigationComponent
+#;;FooterSlot;FAQLink,FooterNavigationComponent

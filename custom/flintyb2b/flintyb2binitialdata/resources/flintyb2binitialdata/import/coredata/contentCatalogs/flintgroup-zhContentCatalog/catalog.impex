@@ -12,6 +12,7 @@
 # Import the Content Catalog
 #
 $contentCatalog=flintgroup-zhContentCatalog
+$productCatalog-flintgroup-zhProductCatalog
 $languages=en,zh
 
 # Content catalog for CMS contents
@@ -23,4 +24,7 @@ INSERT_UPDATE CatalogVersion;catalog(id)[unique=true];version[unique=true];activ
 ;$contentCatalog;Staged;false;$languages
 ;$contentCatalog;Online;true;$languages
 
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
 
+INSERT_UPDATE TaxRow;$catalogVersion;tax(code)[unique=true];pg(code)[unique=true];ug(code)[unique=true]
+#;;cn-sales-tax-full;cn-sales-tax-full;cn-taxes

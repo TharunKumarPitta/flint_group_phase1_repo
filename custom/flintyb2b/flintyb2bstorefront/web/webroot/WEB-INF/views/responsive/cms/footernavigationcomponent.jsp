@@ -31,11 +31,11 @@
                         </c:if>
                     </c:forEach> 
  --%>
-					<div class="footer__nav--container col-xs-12 col-sm-2">
-						<ul class="footer__nav--links">
-							<li> <a href="http://www.flintgrp.com/en/company/fast-facts/" target="_blank"> <spring:theme code="about.flint.group"/> </a> </li>
-						</ul>
-					</div>
+<%-- 					<div class="footer__nav--container col-xs-12 col-sm-2">
+<%-- 						<ul class="footer__nav--links"> --%>
+<%-- 							<li> <a href="http://www.flintgrp.com/en/company/fast-facts/" target="_blank"> <spring:theme code="about.flint.group"/> </a> </li> --%>
+<%-- 						</ul> --%>
+<%-- 					</div> --%> 
 
 					<!--<div class="footer__nav--container col-xs-12 col-sm-2">
 						<ul class="footer__nav--links">
@@ -44,13 +44,9 @@
 					</div>-->
 
 
-					<!--<div class="footer__nav--container col-xs-12 col-sm-2">
-						<ul class="footer__nav--links">
-							<li style="margin-left: 10px;"> <a href="faq" ><spring:theme code="frequently.ask.question"/></a> </li>
-						</ul>
-					</div>-->
+					
 
-					<div class="footer__nav--container col-xs-12 col-sm-2">
+			<%-- 		<div class="footer__nav--container col-xs-12 col-sm-2">
 						<ul class="footer__nav--links">
 							<li> <a href="http://www.flintgrp.com/en/company/conditions-of-sale/" target="_blank"><spring:theme code="term.and.condition"/> </a> </li>
 						</ul>
@@ -61,7 +57,7 @@
 						<ul class="footer__nav--links">
 							<li> <a href="http://www.flintgrp.com/en/news-information/press-releases/" target="_blank"><spring:theme code="news.and.information"/> </a> </li>
 						</ul>
-					</div>
+					</div> --%>
 
 
 				<!--	<div class="footer__nav--container col-xs-12 col-sm-2">
@@ -70,8 +66,13 @@
 						</ul>
 					</div> -->
 
-
-
+<!-- 					<div class="footer__nav--container col-xs-12 col-sm-2"> -->
+<!-- 						<ul class="footer__nav--links"> -->
+<%-- 							<li style="margin-left: 10px;"> <a href="faq" ><spring:theme code="frequently.ask.question"/></a> </li> --%>
+					
+<!-- 						</ul> -->
+						
+<!-- 					</div> -->
 
 
 				</div>

@@ -126,4 +126,10 @@
 		<property name="sessionService" ref="sessionService"/>
 	</bean>
 
+	<bean id="flintExportOrderJob" class="com.flintgroup.fulfilmentprocess.jobs.FlintExportOrderJob"  >
+		<property name="modelService" ref="modelService"/>
+		<property name="flexibleSearchService" ref="flexibleSearchService"/>
+		<property name="sessionService" ref="sessionService"/>
+	</bean>
+
 </beans>

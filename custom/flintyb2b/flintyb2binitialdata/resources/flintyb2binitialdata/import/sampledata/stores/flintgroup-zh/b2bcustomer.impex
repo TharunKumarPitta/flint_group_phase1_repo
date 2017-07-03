@@ -1,189 +1,242 @@
+### COMPANY####
 INSERT_UPDATE Company;uid[unique=true];name;
 ;FlintAddresses;FlintAddresses;
 
+### Addresses ###
 INSERT_UPDATE Address    ;code[unique=true]  ;owner(Company.uid)[unique=true]    ;country(isocode)   ;company ;line1;line2;streetnumber   ;streetname;postalcode     ;town   ;state;cellphone;billingAddress;contactAddress;shippingAddress;unloadingAddress;
-;10175102;FlintAddresses;CN;Korich Printing Equipment Co. Ltd.;Rm 1911;Guangzhou Exchange Square No. 268;Guangzhou Exchange Square No. 268;DONGFENG MID RD. C;510030;Guangzhou;;86 20 8351 1290;TRUE;TRUE;TRUE;TRUE;
-;10175126;FlintAddresses;CN;Dongguan Sunking Trading Co. Ltd.;;;;Kuangtou Road;;Liaobu Town;Dongguan, Shangtun District;86 769 87715011;TRUE;TRUE;TRUE;TRUE;
-;10175128;FlintAddresses;CN;Tianjin Dike;Printing Material Co., Ltd.;;Guangzhou Exchange Square No. 268;DONGFENG MID RD. C;510030;Tianjin;;;TRUE;TRUE;TRUE;TRUE;
-;10175131;FlintAddresses;CN;Everbest (Guangzhou);Printing Co. Ltd.;;;;511458;;;86-20-84981812;TRUE;TRUE;TRUE;TRUE;
-;10175144;FlintAddresses;CN;Shanghai Evershine Ind & Trading Co.;;;No. 1 Lane 1062, Dong Daming Road;No. 1 Lane 1062, Dong Daming Road;200082;Shanghai;;21-55885730    ;TRUE;TRUE;TRUE;TRUE;
-;10175145;FlintAddresses;CN;Shanghai KEYING Trading Co. Ltd;;;;;;Shanghai;;86 21 6353 0603;TRUE;TRUE;TRUE;TRUE;
+;10367113;FlintAddresses;CN;山东北方新华经贸有限公司;;;;济南市槐荫区纬八路36号舜亿绿园1号楼1-301室;250000;山东;;;true;true;true;true;
+;10367116;FlintAddresses;CN;东莞市顺锦贸易有限公司;;;;东莞市寮步镇上屯;523430;东莞市;;;true;true;true;true;
+;10367059;FlintAddresses;CN;天津市迪可印刷材料有限公司;;;;天津市北辰区刘家房子;300400;天津;;;true;true;true;true;
+;10372239;FlintAddresses;CN;上海迪可印刷器材專賣部有限公司;;;;上海市青浦区朱家角康园路396号;200070;上海;;;true;true;true;true;
+;10372242;FlintAddresses;CN;上海迪科印刷设备有限公司;;;;上海市静安区中山北路740弄2号1楼;200070;上海;;;true;true;true;true;
+;10372245;FlintAddresses;CN;广州市确域印刷器材有限公司;;;;东风中路268号广州交易广场1911室;510030;广州市;;;true;true;true;true;
+;10372249;FlintAddresses;CN;上海迪恒印刷器材有限公司;;;;普陀区中江路889号605室;;上海;200070;;true;true;true;true;
+;10372250;FlintAddresses;CN;恒美印务（广州）有限公司;;;;南沙经济技术开发区环市大道南334号;;广州;;;true;true;true;true;
 
+### B2BUNIT ###
 INSERT_UPDATE B2BUnit    ;active[default=true]   ;uid[unique=true]   ;locName[lang=en]   ;locName[lang=zh]   ;
 ;;FlintCustomers;Flint Customers;Flint Customers;
 
-INSERT_UPDATE B2BUnit    ;active[default=true]   ;uid[unique=true]   ;locName[lang=en]   ;locName[lang=zh]   ;groups(uid);country(isocode); approvalProcessCode;
-;;90003235;Dongguan Sunking Trading Co. Ltd.;Dongguan Sunking Trading Co. Ltd.;FlintCustomers;CN;flintapproval
-;;90003237;Tianjin Dike;Tianjin Dike;FlintCustomers;CN;flintapproval
-;;90003238;Zhuhai Dike;Zhuhai Dike;FlintCustomers;CN;flintapproval
-;;90003240;Korich Printing Equipment Co. Ltd.;Korich Printing Equipment Co. Ltd.;FlintCustomers; CN;flintapproval
-;;90003242;Shanghai Evershine Ind & Trading Co;Shanghai Evershine Ind & Trading Co;FlintCustomers;CN;flintapproval
-;;90003243;Shanghai KEYING Trading Co. Ltd;hanghai KEYING Trading Co. Ltd;FlintCustomers;CN;flintapproval
-;;90003285;Everbest (Guangzhou);Everbest (Guangzhou);FlintCustomers;CN;flintapproval
-
-INSERT_UPDATE Address;&addId;owner(&B2BUnitID)[unique=true];
-;10175102;90003240;
-;10175126;90003235;
-;10175128;90003237;
-;10175131;90003285;
-;10175144;90003242;
-;10175145;90003243;
-
-INSERT_UPDATE B2BUnit;uid[unique=true];Addresses(&addId);&B2BUnitID;
-;90003235;10175126;90003235;
-;90003237;10175128;90003237;
-;90003238;10175128;90003238;
-;90003240;10175102;90003240;
-;90003242;10175144;90003242;
-;90003243;10175145;90003243;
-;90003285;10175131;90003285;
+INSERT_UPDATE B2BUnit    ;active[default=true]   ;uid[unique=true]   ;locName[lang=en]   ;locName[lang=zh]   ;groups(uid);country(isocode);userPriceGroup(code);&B2BUnitID;
+;;90021886;Zhuhai Dike Printing Equipment Co., Ltd.;山东北方新华经贸有限公司;FlintCustomers;CN;90021886;90021886
+;;90021887;Dongguan Sunking Trading Co. Ltd.;东莞市顺锦贸易有限公司;FlintCustomers;CN;90021887;90021887
+;;90021901;天津市迪可印刷材料有限公司;天津市迪可印刷材料有限公司;FlintCustomers;CN;90021901;90021901
+;;90022162;Shanghai Evershine Ind & Trading Co;上海迪可印刷器材專賣部有限公司;FlintCustomers;CN;90022162;90022162
+;;90022163;Shanghai KEYING Trading Co. Ltd;上海迪科印刷设备有限公司;FlintCustomers;CN;90022163;90022163
+;;90022164;Korich Printing Equipment Co. Ltd. Rm 1911;广州市确域印刷器材有限公司;FlintCustomers;CN;90022164;90022164
+;;90022176;Zhuhai Dike Printing Equipment Co., Ltd.;上海迪恒印刷器材有限公司;FlintCustomers;CN;90022176;90022176
 
 
-#UPDATE B2BUnit;;uid[unique=true];blocked    ;deleted    ;salesArea(code);country(isocode)
-#;90003235;false;false;CN
-#;90003237;false;false;CN
-#;90003238;false;false;CN
-#;90003240;false;false;CN
-#;90003242;false;false;CN
-#;90003243;false;false;CN
-#;90003285;false;false;CN
+INSERT_UPDATE B2BUnit;uid[unique=true];addresses(code);&B2BUnitID;
+;90021886;10367113;90021886
+;90021887;10367116;90021887
+;90021901;10367059;90021901
+;90022162;10372239;90022162
+;90022163;10372242;90022163
+;90022164;10372245;90022164
+;90022176;10372249;90022176
 
-#UPDATE B2BUnit[$proc]   ;uid[unique=true]   ;soldToAddress(code,owner(Company.uid[default=FlintAddresses]))   ;shipToAddresses(code,owner(Company.uid[default=FlintAddresses]))[collection-delimiter=|]     ;billToAddresses(code,owner(Company.uid[default=FlintAddresses]));payerAddresses(code,owner(Company.uid[default=FlintAddresses]));IsDefaultShipTo(code,owner(Company.uid[default=FlintAddresses]))		;IsDefaultBillTo(code,owner(Company.uid[default=FlintAddresses]))		;IsDefaultPayer(code,owner(Company.uid[default=FlintAddresses]))
-#;90003235;10175126;10175126;10175126;10175126;true;true;true;
-#;90003237;10175128;10175128;10175128;10175128;true;true;true;
-#;90003238;10175128;10175128;10175128;10175128;true;true;true;
-#;90003240;10175102;10175102;10175102;10175102;true;true;true;
-#;90003242;10175144;10175144;10175144;10175144;true;true;true;
-#;90003243;10175145;10175145;10175145;10175145;true;true;true;
-#;90003285;10175131;10175131;10175131;10175131;true;true;true;
-
+### B2BCUSTOMERS ###
 INSERT_UPDATE B2BCustomer;description;uid[unique=true];originalUid;email;name;title(code);groups(uid);sessionCurrency(isocode)[default='CNY'];password;defaultB2BUnit(uid);
-;Flint Customer;korichgz@163.com;korichgz@163.com;korichgz@163.com;Zhao DuanSheng;mr;b2bcustomergroup;;Korich12;90003240;
-;Flint Customer;simoncc1000@shanghai-dayco.com;simoncc1000@shanghai-dayco.com;simoncc1000@shanghai-dayco.com;Huang Simon;mr;b2bcustomergroup,premiumPermissions;;SDPE1234;90003242;
-;Flint Customer;tjdkmajun@163.com;tjdkmajun@163.com;tjdkmajun@163.com;Ma Jun;mr;b2bcustomergroup;;TJDK1234;90003237;
-;Flint Customer;hamasaki.koshi@163.com;hamasaki.koshi@163.com;hamasaki.koshi@163.com;Guo Jeremy;mr;b2bcustomergroup;;ZHDK1234;90003238;
-;Flint Customer;nelsonchongys@yahoo.com;nelsonchongys@yahoo.com;nelsonchongys@yahoo.com;Chong Nelson;mr;b2bcustomergroup;;MS123456;90003235;
+;Sales Manager;hamasaki.koshi@163.com;hamasaki.koshi@163.com;hamasaki.koshi@163.com;Jeremy Guo;mr;b2bcustomergroup;;ZHDK1234;90021886;
+;General Manager;tianshun769@163.com;tianshun769@163.com;tianshun769@163.com;Zetian Li;mr;b2bcustomergroup;;Sunking1;90021887;
+;General Manager;tjdkmajun@163.com;tjdkmajun@163.com;tjdkmajun@163.com;Jun Ma;mr;b2bcustomergroup;;TJDK1234;90021901;
+;General Manager;13801860607@163.com;13801860607@163.com;13801860607@163.com;Xueling Wu;miss;b2bcustomergroup;;SDPMES12;90022162;
+;Vice General Manager;simoncc1000@shanghai-dayco.com;simoncc1000@shanghai-dayco.com;simoncc1000@shanghai-dayco.com;Simon Huang;mr;b2bcustomergroup;;SDPE1234;90022163;
+;Sales Director;korichgz@163.com;korichgz@163.com;korichgz@163.com;DuanSheng Zhao;mr;b2bcustomergroup;;Korich12;90022164;
+;Sales Manager;hamasaki.koshi@163.com;hamasaki.koshi@163.com;hamasaki.koshi@163.com;Jeremy Guo;mr;b2bcustomergroup;;ZHDK1234;90022176;
 
-INSERT_UPDATE B2BCostCenter;code[unique=true];name[lang=en];Unit(uid);budgets(code);currency(isocode)[default='CNY']
-;Shanghai Evershine Ind;Shanghai Evershine Ind Cost Centre;90003242;Monthly 5000K CNY;
 
-INSERT_UPDATE B2BBudget;code[unique=true];Unit(uid);budget;currency(isocode)[allownull=true];dateRange[dateformat=dd.MM.yyyy hh:mm:ss,allownull=true];name[lang=en];;
-;Monthly 5000K CNY;90003242;50000000;CNY;01.01.2010 00:00:00,12.31.2032 12:59:59;Monthly 5000K CNY;
-
-INSERT_UPDATE B2BOrderThresholdPermission;code[unique=true];Unit(uid);threshold;currency(isocode)[default='CNY'];
-;Shanghai Evershine 200K CYN ORDER;90003242;2000000;
-
-INSERT_UPDATE B2BUserGroup;uid[unique=true];name;unit(uid);permissions(code,unit(uid));
-;premiumPermissions;Premium Permissions;90003242;Shanghai Evershine 200K CYN ORDER:90003242;
-
-UPDATE B2BUnit;uid[unique=true];approvers(uid);
-;90003242;simoncc1000@shanghai-dayco.com;
-
-INSERT_UPDATE B2BBudgetExceededPermission;code[unique=true];Unit(uid);
-;Shanghai Evershine Budget Exceeded;90003242;
-
-UPDATE B2BCustomer;originalUid[unique=true];uid[unique=true];permissions(code,Unit(uid));
-;simoncc1000@shanghai-dayco.com;simoncc1000@shanghai-dayco.com;Shanghai Evershine Budget Exceeded:90003242;
-
+################### COST CENTRE AND BUDGETS  ##############
 
 
 INSERT_UPDATE B2BCostCenter;code[unique=true];name[lang=en];Unit(uid);budgets(code);currency(isocode)[default='CNY']
-;Korich Printing Equipment Co. Ltd.;Korich Printing Equipment Co. Ltd.;90003240;Monthly 5000K CNY;
+;Shanghai Evershine Ind;Shanghai Evershine Ind Cost Centre;90022162;Monthly 5000K CNY;
 
 INSERT_UPDATE B2BBudget;code[unique=true];Unit(uid);budget;currency(isocode)[allownull=true];dateRange[dateformat=dd.MM.yyyy hh:mm:ss,allownull=true];name[lang=en];;
-;Monthly 5000K CNY;90003240;50000000;CNY;01.01.2010 00:00:00,12.31.2032 12:59:59;Monthly 5000K CNY;
+;Monthly 5000K CNY;90022162;50000000;CNY;01.01.2010 00:00:00,12.31.2032 12:59:59;Monthly 5000K CNY;
 
 INSERT_UPDATE B2BOrderThresholdPermission;code[unique=true];Unit(uid);threshold;currency(isocode)[default='CNY'];
-;Korich Printing Equipment 200K CYN ORDER;90003240;2000000;
+;Shanghai Evershine 200K CYN ORDER;90022162;2000000;
 
 INSERT_UPDATE B2BUserGroup;uid[unique=true];name;unit(uid);permissions(code,unit(uid));
-;premiumPermissions;Premium Permissions;90003240;Korich Printing Equipment 200K CYN ORDER:90003240;
+;premiumPermissions;Premium Permissions;90022162;Shanghai Evershine 200K CYN ORDER:90022162;
 
 UPDATE B2BUnit;uid[unique=true];approvers(uid);
-;90003240;korichgz@163.com;
+;90022162;13801860607@163.com;
+;90021886;hamasaki.koshi@163.com;
+;90021887;tianshun769@163.com;
+;90021901;tjdkmajun@163.com;
+;90022163;simoncc1000@shanghai-dayco.com;
+;90022164;korichgz@163.com;
+;90022176;hamasaki.koshi@163.com;
+
 
 INSERT_UPDATE B2BBudgetExceededPermission;code[unique=true];Unit(uid);
-;Korich Printing Equipment Budget Exceeded;90003240;
+;Shanghai Evershine Budget Exceeded;90022162;
 
 UPDATE B2BCustomer;originalUid[unique=true];uid[unique=true];permissions(code,Unit(uid));
-;korichgz@163.com;korichgz@163.com;Korich Printing Equipment Budget Exceeded:90003240;
+;13801860607@163.com;13801860607@163.com;Shanghai Evershine Budget Exceeded:90022162;
 
 
-
-
-
-
-
-
+#################################
 
 
 INSERT_UPDATE B2BCostCenter;code[unique=true];name[lang=en];Unit(uid);budgets(code);currency(isocode)[default='CNY']
-;Zhuhai Dike;Zhuhai Dike;90003238;Monthly 5000K CNY;
+;Zhuhai Dike Printing Equipment Co., Ltd.;Zhuhai Dike Printing Equipment Co., Ltd. Cost Centre;90021886;Monthly 5000K CNY;
 
 INSERT_UPDATE B2BBudget;code[unique=true];Unit(uid);budget;currency(isocode)[allownull=true];dateRange[dateformat=dd.MM.yyyy hh:mm:ss,allownull=true];name[lang=en];;
-;Monthly 5000K CNY;90003238;50000000;CNY;01.01.2010 00:00:00,12.31.2032 12:59:59;Monthly 5000K CNY;
+;Monthly 5000K CNY;90021886;50000000;CNY;01.01.2010 00:00:00,12.31.2032 12:59:59;Monthly 5000K CNY;
 
 INSERT_UPDATE B2BOrderThresholdPermission;code[unique=true];Unit(uid);threshold;currency(isocode)[default='CNY'];
-;Zhuhai Dike 200K CYN ORDER;90003238;2000000;
+;Zhuhai Dike Printing Equipment 200K CYN ORDER;90021886;2000000;
 
 INSERT_UPDATE B2BUserGroup;uid[unique=true];name;unit(uid);permissions(code,unit(uid));
-;premiumPermissions;Premium Permissions;90003238;Zhuhai Dike 200K CYN ORDER:90003238;
+;premiumPermissions;Premium Permissions;90021886;Zhuhai Dike Printing Equipment 200K CYN ORDER:90021886;
 
 UPDATE B2BUnit;uid[unique=true];approvers(uid);
-;90003238;nelsonchongys@yahoo.com;
+;90021886;hamasaki.koshi@163.com;
 
 INSERT_UPDATE B2BBudgetExceededPermission;code[unique=true];Unit(uid);
-;Zhuhai Dike Budget Exceeded;90003238;
+;Zhuhai Dike Printing Equipment Budget Exceeded;90021886;
 
 UPDATE B2BCustomer;originalUid[unique=true];uid[unique=true];permissions(code,Unit(uid));
-;nelsonchongys@yahoo.com;nelsonchongys@yahoo.com;Zhuhai Dike Budget Exceeded:90003238;
+;hamasaki.koshi@163.com;hamasaki.koshi@163.com;Zhuhai Dike Printing Equipment Budget Exceeded:90021886;
 
-
-
-
+#################################
 
 
 INSERT_UPDATE B2BCostCenter;code[unique=true];name[lang=en];Unit(uid);budgets(code);currency(isocode)[default='CNY']
-;Dongguan Sunking Trading Co. Ltd.;Dongguan Sunking Trading Co. Ltd.;90003235;Monthly 5000K CNY;
+;Dongguan Sunking Trading Co. Ltd.;Dongguan Sunking Trading Co. Ltd. Cost Centre;90021887;Monthly 5000K CNY;
 
 INSERT_UPDATE B2BBudget;code[unique=true];Unit(uid);budget;currency(isocode)[allownull=true];dateRange[dateformat=dd.MM.yyyy hh:mm:ss,allownull=true];name[lang=en];;
-;Monthly 5000K CNY;90003235;50000000;CNY;01.01.2010 00:00:00,12.31.2032 12:59:59;Monthly 5000K CNY;
+;Monthly 5000K CNY;90021887;50000000;CNY;01.01.2010 00:00:00,12.31.2032 12:59:59;Monthly 5000K CNY;
 
 INSERT_UPDATE B2BOrderThresholdPermission;code[unique=true];Unit(uid);threshold;currency(isocode)[default='CNY'];
-;Dongguan Sunking Trading Co. Ltd. 200K CYN ORDER;90003235;2000000;
+;Dongguan Sunking Trading Co. Ltd. 200K CYN ORDER;90021887;2000000;
 
 INSERT_UPDATE B2BUserGroup;uid[unique=true];name;unit(uid);permissions(code,unit(uid));
-;premiumPermissions;Premium Permissions;90003235;Dongguan Sunking Trading Co. Ltd. 200K CYN ORDER:90003235;
+;premiumPermissions;Premium Permissions;90021887;Dongguan Sunking Trading Co. Ltd. 200K CYN ORDER:90021887;
 
 UPDATE B2BUnit;uid[unique=true];approvers(uid);
-;90003235;hamasaki.koshi@163.com;
+;90021887;tianshun769@163.com;
 
 INSERT_UPDATE B2BBudgetExceededPermission;code[unique=true];Unit(uid);
-;Dongguan Sunking Trading Co. Ltd. Budget Exceeded;90003235;
+;Dongguan Sunking Trading Co. Ltd. Budget Exceeded;90021887;
 
 UPDATE B2BCustomer;originalUid[unique=true];uid[unique=true];permissions(code,Unit(uid));
-;hamasaki.koshi@163.com;hamasaki.koshi@163.com;Dongguan Sunking Trading Co. Ltd. Budget Exceeded:90003235;
+;tianshun769@163.com;tianshun769@163.com;Dongguan Sunking Trading Co. Ltd. Budget Exceeded:90021887;
 
+
+
+#################################
 
 
 
 INSERT_UPDATE B2BCostCenter;code[unique=true];name[lang=en];Unit(uid);budgets(code);currency(isocode)[default='CNY']
-;Tianjin Dike;Tianjin Dike;90003237;Monthly 5000K CNY;
+;天津市迪可印刷材料有限公司;天津市迪可印刷材料有限公司;90021901;Monthly 5000K CNY;;
 
 INSERT_UPDATE B2BBudget;code[unique=true];Unit(uid);budget;currency(isocode)[allownull=true];dateRange[dateformat=dd.MM.yyyy hh:mm:ss,allownull=true];name[lang=en];;
-;Monthly 5000K CNY;90003237;50000000;CNY;01.01.2010 00:00:00,12.31.2032 12:59:59;Monthly 5000K CNY;
+;Monthly 5000K CNY;90021901;50000000;CNY;01.01.2010 00:00:00,12.31.2032 12:59:59;Monthly 5000K CNY;
 
+#Same
 INSERT_UPDATE B2BOrderThresholdPermission;code[unique=true];Unit(uid);threshold;currency(isocode)[default='CNY'];
-;Tianjin Dike 200K CYN ORDER;90003237; 2000000;
+;天津市迪可印刷材料有限公司;90021901;2000000;
 
 INSERT_UPDATE B2BUserGroup;uid[unique=true];name;unit(uid);permissions(code,unit(uid));
-;premiumPermissions;Premium Permissions;90003238;Tianjin Dike 200K CYN ORDER:90003237;
+;premiumPermissions;Premium Permissions;90021901;天津市迪可印刷材料有限公司:90021901;
 
 UPDATE B2BUnit;uid[unique=true];approvers(uid);
-;90003237;tjdkmajun@163.com;
+;90021901;tjdkmajun@163.com;
 
 INSERT_UPDATE B2BBudgetExceededPermission;code[unique=true];Unit(uid);
-;Tianjin Dike Budget Exceeded;90003237;
+;天津市迪可印刷材料有限公司 Budget Exceeded;90021901;
 
 UPDATE B2BCustomer;originalUid[unique=true];uid[unique=true];permissions(code,Unit(uid));
-;tjdkmajun@163.com;tjdkmajun@163.com;Tianjin Dike Budget Exceeded:90003237;
+;tjdkmajun@163.com;tjdkmajun@163.com;天津市迪可印刷材料有限公司 Budget Exceeded:90021901;
+
+
+
+#################################
+
+
+
+INSERT_UPDATE B2BCostCenter;code[unique=true];name[lang=en];Unit(uid);budgets(code);currency(isocode)[default='CNY']
+;Shanghai KEYING Trading Co. Ltd;Shanghai KEYING Trading Co. Ltd Cost Centre;90022163;Monthly 5000K CNY;
+
+INSERT_UPDATE B2BBudget;code[unique=true];Unit(uid);budget;currency(isocode)[allownull=true];dateRange[dateformat=dd.MM.yyyy hh:mm:ss,allownull=true];name[lang=en];;
+;Monthly 5000K CNY;90022163;50000000;CNY;01.01.2010 00:00:00,12.31.2032 12:59:59;Monthly 5000K CNY;
+
+INSERT_UPDATE B2BOrderThresholdPermission;code[unique=true];Unit(uid);threshold;currency(isocode)[default='CNY'];
+;Shanghai KEYING Trading Co. Ltd 200K CYN ORDER;90022163;2000000;
+
+INSERT_UPDATE B2BUserGroup;uid[unique=true];name;unit(uid);permissions(code,unit(uid));
+;premiumPermissions;Premium Permissions;90022163;Shanghai KEYING Trading Co. Ltd 200K CYN ORDER:90022163;
+
+UPDATE B2BUnit;uid[unique=true];approvers(uid);
+;90022163;simoncc1000@shanghai-dayco.com;
+
+INSERT_UPDATE B2BBudgetExceededPermission;code[unique=true];Unit(uid);
+;Shanghai KEYING Trading Co. Ltd Budget Exceeded;90022163;
+
+UPDATE B2BCustomer;originalUid[unique=true];uid[unique=true];permissions(code,Unit(uid));
+;simoncc1000@shanghai-dayco.com;simoncc1000@shanghai-dayco.com;Shanghai KEYING Trading Co. Ltd Budget Exceeded:90022163;
+
+
+
+#################################
+
+
+INSERT_UPDATE B2BCostCenter;code[unique=true];name[lang=en];Unit(uid);budgets(code);currency(isocode)[default='CNY']
+;Korich Printing Equipment Co. Ltd.;Korich Printing Equipment Co. Ltd. Cost Centre;90022164;Monthly 5000K CNY;
+
+INSERT_UPDATE B2BBudget;code[unique=true];Unit(uid);budget;currency(isocode)[allownull=true];dateRange[dateformat=dd.MM.yyyy hh:mm:ss,allownull=true];name[lang=en];;
+;Monthly 5000K CNY;90022164;50000000;CNY;01.01.2010 00:00:00,12.31.2032 12:59:59;Monthly 5000K CNY;
+
+INSERT_UPDATE B2BOrderThresholdPermission;code[unique=true];Unit(uid);threshold;currency(isocode)[default='CNY'];
+;Korich Printing Equipment Co. Ltd. 200K CYN ORDER;90022164;2000000;
+
+INSERT_UPDATE B2BUserGroup;uid[unique=true];name;unit(uid);permissions(code,unit(uid));
+;premiumPermissions;Premium Permissions;90022164;Korich Printing Equipment Co. Ltd. 200K CYN ORDER:90022164;
+
+UPDATE B2BUnit;uid[unique=true];approvers(uid);
+;90022164;korichgz@163.com;
+
+INSERT_UPDATE B2BBudgetExceededPermission;code[unique=true];Unit(uid);
+;Korich Printing Equipment Co. Ltd. Budget Exceeded;90022164;
+
+UPDATE B2BCustomer;originalUid[unique=true];uid[unique=true];permissions(code,Unit(uid));
+;korichgz@163.com;korichgz@163.com;Korich Printing Equipment Co. Ltd. Budget Exceeded:90022164;
+
+
+#################################
+
+
+INSERT_UPDATE B2BCostCenter;code[unique=true];name[lang=en];Unit(uid);budgets(code);currency(isocode)[default='CNY']
+;Zhuhai Dike Printing Equipment Co. Unit1, Ltd;Zhuhai Dike Printing Equipment Co. Unit1 Cost Centre;90022176;Monthly 5000K CNY;
+
+INSERT_UPDATE B2BBudget;code[unique=true];Unit(uid);budget;currency(isocode)[allownull=true];dateRange[dateformat=dd.MM.yyyy hh:mm:ss,allownull=true];name[lang=en];;
+;Monthly 5000K CNY;90022176;50000000;CNY;01.01.2010 00:00:00,12.31.2032 12:59:59;Monthly 5000K CNY;
+
+INSERT_UPDATE B2BOrderThresholdPermission;code[unique=true];Unit(uid);threshold;currency(isocode)[default='CNY'];
+;Zhuhai Dike Printing Equipment Co. Ltd Unit1 200K CYN ORDER;90022176;2000000;
+
+INSERT_UPDATE B2BUserGroup;uid[unique=true];name;unit(uid);permissions(code,unit(uid));
+;premiumPermissions;Premium Permissions;90022176;Zhuhai Dike Printing Equipment Co. Ltd Unit1 200K CYN ORDER:90022176;navigation.impex
+
+UPDATE B2BUnit;uid[unique=true];approvers(uid);
+;90022176;hamasaki.koshi@163.com;
+
+INSERT_UPDATE B2BBudgetExceededPermission;code[unique=true];Unit(uid);
+;Zhuhai Dike Printing Equipment Co. Ltd Unit1 Budget Exceeded;90022176;
+
+UPDATE B2BCustomer;originalUid[unique=true];uid[unique=true];permissions(code,Unit(uid));
+;hamasaki.koshi@163.com;hamasaki.koshi@163.com;Zhuhai Dike Printing Equipment Co. Ltd Unit1 Budget Exceeded:90022176;
+
+
+#################################
+
+
+
+
+

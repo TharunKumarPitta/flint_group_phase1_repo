@@ -56,7 +56,7 @@
         </div>
 
         <%-- availability --%>
-        <c:if test="${varShowStock}">
+        <%-- <c:if test="${varShowStock}">
         	<div class="item__stock">
             	<ycommerce:testId code="orderDetail_productStock_label">
                 	<c:choose>
@@ -72,7 +72,7 @@
                 	</c:choose>
             	</ycommerce:testId>
         	</div>
-        </c:if>
+        </c:if> --%>
 
        	<c:if test="${not empty order.appliedProductPromotions}">
            	<div class="promo">

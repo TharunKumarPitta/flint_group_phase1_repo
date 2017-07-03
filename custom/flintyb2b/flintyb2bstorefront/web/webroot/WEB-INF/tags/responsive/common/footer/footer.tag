@@ -4,8 +4,14 @@
 
 
 <footer>
-    <cms:pageSlot position="Footer" var="feature">
-        <cms:component component="${feature}"/>
+
+
+    <cms:pageSlot position="Footer" var="feature" >
+
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<cms:component component="${feature}" />&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+
     </cms:pageSlot>
+    
+   
 </footer>
 

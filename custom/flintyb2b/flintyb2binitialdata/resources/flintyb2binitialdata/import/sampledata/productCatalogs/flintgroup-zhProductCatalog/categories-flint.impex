@@ -24,42 +24,72 @@ INSERT_UPDATE Category;code[unique=true];name[lang=en];name[lang=zh];$productCV[
 ;Gravure_INT;Gravure;凹印;;
 ;Digital_INT;Digital;数码印刷;;
 
+;News_INKS_INT2;Inks;油墨;;
+;News_Blankets_Sleeves_INT2;Blankets Sleeves;橡皮布及套筒;;
+;News_Plates_INT2;Plates;印版;;
+;News_Pressroom_Chemistry_INT2;Pressroom Chemistry;印刷化学品;;
+;News_Anciliary_Products_INT2;Anciliary Products;辅助产品;;
+
+;Heatset_INKS_INT2;Inks;油墨;;
+;Heatset_Blankets_Sleeves_INT2;Blankets Sleeves;橡皮布及套筒;;
+;Heatset_Plates_INT2;Plates;印版;;
+;Heatset_Pressroom_Chemistry_INT2;Pressroom Chemistry;印刷化学品;;
+;Heatset_Anciliary_Products_INT2;Anciliary Products;辅助产品;;
+
+;UV_INKS_INT2;Inks;油墨;;
+;UV_Varnishes_INT2;Varnishes;光油;;
+;UV_Blankets_Sleeves_INT2;Blankets Sleeves;橡皮布及套筒;;
+;UV_Pressroom_Chemistry_INT2;Pressroom Chemistry;印刷化学品;;
+;UV_Anciliary_Products_INT2;Anciliary Products;辅助产品;;
+
+;LetterPress_INKS_INT2;Inks;油墨;;
+;LetterPress_Varnishes_INT2;Varnishes;光油;;
+;LetterPress_Plates_INT2;Plates;印版;;
+;LetterPress_Equipment_INT2;Equipment;设备;;
+
+;Sheetfed_INKS_INT2;Inks;油墨;;
+;Sheetfed_Blankets_Sleeves_INT2;Blankets Sleeves;橡皮布及套筒;;
+;Sheetfed_PC_INT2;Pressroom Chemistry;印刷化学品;;
+;Sheetfed_Plates_INT2;Plates;印版;;
+;Sheetfed_Ancillary_Products_INT2;Anciliary Products;辅助产品;;
+
+
 ;News_INK_Conventional_INT;Conventional;传统;;
 ;News_INK_UV_INT;UV;紫外线;;
 ;News_INK_Specialty_INT;Specialty;特殊产品;;
-;News_Blankets_Sleeves_FOOD_INT;Blankets & Sleeves;毯子和袖子;;
-;News_PC_Founts_INT;PC Founts;;;
-;News_PC_Washes_INT;PC Washes;PC洗滌;;
-;News_PC_Silicones_INT;PC Silicones;PC矽膠;;
-;News_PC_Specialty_INT;PC Speciality;PC專業;;
+;News_Blankets_Sleeves_FOOD_INT;Blankets & Sleeves;橡皮布及套筒;;
+;News_PC_Founts_INT;Pressroom Chemistry Founts;印刷化学品润版液;;
+;News_PC_Washes_INT;Pressroom Chemistry Washes;印刷化学品洗车水;;
+;News_PC_Silicones_INT;Pressroom Chemistry Silicones;印刷化学品硅油;;
+;News_PC_Specialty_INT;Pressroom Chemistry Speciality;印刷化学品特殊化学品;;
 ;News_Plates_INT;Plates;印版;;
-;News_Anciliary_Products_INT;Anciliary Products;主管產品;;
-;News_Blankets_Offset_INT;Blankets Offset;毯子偏移;;
-;News_Blankets_Metalback_INT;Blankets Metalback;;;
+;News_Anciliary_Products_INT;Anciliary Products;辅助产品;;
+;News_Blankets_Offset_INT;Blankets Offset;橡皮布胶印;;
+;News_Blankets_Metalback_INT;Blankets Metalback;橡皮布金属底面;;
 
 
 ;Heatset_Inks_INT;Inks;油墨;;
-;Heatset_Blankets_Offset_INT;Blankets Offset;毯子偏移;;
-;Heatset_Blankets_Metalback_INT;Blankets Metalback;;;
-;Heatset_Blankets_Sleeves_INT;Blankets Sleeves;毯子套;;
-;Heatset_PC_Founts_INT;PC Founts;;;
-;Heatset_PC_Washes_INT;PC Washes;PC洗滌;;
-;Heatset_PC_Silicones_INT;PC Silicones;PC矽膠;;
-;Heatset_PC_Specialty_INT;PC Specialty;PC專業;;
+;Heatset_Blankets_Offset_INT;Blankets Offset;橡皮布胶印;;
+;Heatset_Blankets_Metalback_INT;Blankets Metalback;橡皮布金属底面;;
+;Heatset_Blankets_Sleeves_INT;Blankets Sleeves;橡皮布及套筒;;
+;Heatset_PC_Founts_INT;Pressroom Chemistry Founts;印刷化学品润版液;;
+;Heatset_PC_Washes_INT;Pressroom Chemistry Washes;印刷化学品洗车水;;
+;Heatset_PC_Silicones_INT;Pressroom Chemistry Silicones;印刷化学品硅油;;
+;Heatset_PC_Specialty_INT;Pressroom Chemistry Specialty;印刷化学品特殊化学品;;
 ;Heatset_Plates_INT;Plates;印版;;
-;Heatset_Anciliary_Product;Anciliary Product;主管產品;;
+;Heatset_Anciliary_Product;Anciliary Product;辅助产品;;
 
 ;UV_NarrowWeb_INT;NarrowWeb;窄幅轮转;;
 ;UV_Sheefted_INT;Sheefted;单张纸胶印;;
 ;UV_Coldset_INT;Coldset;冷固;;
 ;UV_Screen_INT;Screen;屏幕;;
 ;UV_Varnishes_Others;Varnishes;光油;;
-;UV_OffsetUV_INT;OffsetUV;抵消UV;;
-;UV_Blankets_Others;Blankets;毯子;;
-;UV_PC_Founts_INT;PC Founts;;;
-;UV_PC_Washes_INT;PC Washes;PC洗滌;;
-;UV_PC_Cleaners_Rejuvenators_INT;PC Cleaners Rejuvenators;電腦清潔劑復興機;;
-;UV_Ancillary_Products_INT;Ancillary Products;主管產品;;
+;UV_OffsetUV_INT;OffsetUV;抵消紫外线;;
+;UV_Blankets_Others;Blankets;橡皮布;;
+;UV_PC_Founts_INT;Pressroom Chemistry Founts;印刷化学品润版液;;
+;UV_PC_Washes_INT;Pressroom Chemistry Washes;印刷化学品洗车水;;
+;UV_PC_Cleaners_Rejuvenators_INT;Pressroom Chemistry Cleaners Rejuvenators;印刷化学品清洗剂和更新剂;;
+;UV_Ancillary_Products_INT;Ancillary Products;辅助产品;;
 
 
 ;LetterPress_Inks_NarrowWeb_INT;Inks NarrowWeb;窄幅轮转;;
@@ -68,6 +98,22 @@ INSERT_UPDATE Category;code[unique=true];name[lang=en];name[lang=zh];$productCV[
 ;LetterPress_PlateMaking_Equipment_INT;PlateMaking Equipment;制版设备;;
 ;LetterPress_PlateProcessor_Menu;PlateProcessor menu;印版显影机;;
 ;LetterPress_Equipment_INT;Equipment;设备;;
+
+;Sheetfed_INK_Conventional_INT;Conventional;传统;;
+;Sheetfed_INK_UV_INT;UV;紫外线;;
+;Sheetfed_INK_Coatings_INT;Coatings;光油;;
+;Sheetfed_Offset_Blankets_INT;Offset Blankets;胶印;;
+;Sheetfed_Offset_UV_Blankets_INT;Offset UV Blankets;紫外线胶印;;
+;Sheetfed_Stripping_Blankets_INT;Stripping Blankets;局部上光;;
+;Sheetfed_Blanket_Bars_Blankets_INT;Blanket Bars Blankets;橡皮布夹;;
+;Sheetfed_PC_Founts_INT;Founts_;润版液;;
+;Sheetfed_PC_Washes_INT;Washes;洗车水;;
+;Sheetfed_PC_Specialty_INT;Specialty;特殊化学品;;
+;Sheetfed_PC_Spray_Powder_INT;Spray Powder;喷粉;;
+;Sheetfed_Plates_Coating_INT;Plates Coating;光油;;
+;Sheetfed_Embossing_INT;Embossing;压凹凸;;
+;Sheetfed_Anciliary_Products_INT;Anciliary Products;辅助产品;;
+
 
 #INSERT_UPDATE Category;code[unique=true];$allSubcategories[unique=true]
 #;flintCategory;NEWS_INT,HEATSET_INT,UV_INT,LetterPress_INT,MetalDeco_INT,Sheetfed_INT,Flexography_INT,Gravure_INT,Digital_INT
@@ -126,3 +172,66 @@ INSERT_UPDATE CategoryCategoryRelation;source($categoryRef)[unique=true];target(
 ;LetterPress_INT;LetterPress_PlateMaking_Equipment_INT;
 ;LetterPress_INT;LetterPress_PlateProcessor_Menu;
 ;LetterPress_INT;LetterPress_Equipment_INT;
+
+;News_INKS_INT2;News_INK_Conventional_INT;
+;News_INKS_INT2;News_INK_UV_INT;
+;News_INKS_INT2;News_INK_Specialty_INT;
+;News_Blankets_Sleeves_INT2;News_Blankets_Sleeves_FOOD_INT;
+;News_Blankets_Sleeves_INT2;News_Blankets_Offset_INT;
+;News_Blankets_Sleeves_INT2;News_Blankets_Metalback_INT;
+;News_Plates_INT2;News_Plates_INT
+;News_Pressroom_Chemistry_INT2;News_PC_Founts_INT;
+;News_Pressroom_Chemistry_INT2;News_PC_Washes_INT;
+;News_Pressroom_Chemistry_INT2;News_PC_Silicones_INT;
+;News_Pressroom_Chemistry_INT2;News_PC_Specialty_INT;
+;News_Anciliary_Products_INT2;News_Anciliary_Products_INT;
+
+
+;Heatset_INKS_INT2;Heatset_Inks_INT;
+;Heatset_Blankets_Sleeves_INT2;Heatset_Blankets_Offset_INT;
+;Heatset_Blankets_Sleeves_INT2;Heatset_Blankets_Metalback_INT;
+;Heatset_Blankets_Sleeves_INT2;Heatset_Blankets_Sleeves_INT;
+;Heatset_Plates_INT2;Heatset_Plates_INT;
+;Heatset_Pressroom_Chemistry_INT2;Heatset_PC_Founts_INT;
+;Heatset_Pressroom_Chemistry_INT2;Heatset_PC_Washes_INT;
+;Heatset_Pressroom_Chemistry_INT2;Heatset_PC_Silicones_INT;
+;Heatset_Pressroom_Chemistry_INT2;Heatset_PC_Specialty_INT;
+;Heatset_Anciliary_Products_INT2;Heatset_Anciliary_Product;
+
+;UV_INKS_INT2;UV_NarrowWeb_INT;
+;UV_INKS_INT2;UV_Sheefted_INT;
+;UV_INKS_INT2;UV_Coldset_INT;
+;UV_Varnishes_INT2;UV_Varnishes_Others;
+;UV_Varnishes_INT2;UV_Screen_INT;
+;UV_Blankets_Sleeves_INT2;UV_Blankets_Others;
+;UV_Blankets_Sleeves_INT2;UV_OffsetUV_INT;
+;UV_Pressroom_Chemistry_INT2;UV_PC_Founts_INT;
+;UV_Pressroom_Chemistry_INT2;UV_PC_Washes_INT;
+;UV_Pressroom_Chemistry_INT2;UV_PC_Cleaners_Rejuvenators_INT;
+;UV_Anciliary_Products_INT2;UV_Ancillary_Products_INT;
+
+;LetterPress_INKS_INT2;LetterPress_Inks_NarrowWeb_INT;
+;LetterPress_INKS_INT2;LetterPress_News_INT;
+;LetterPress_Varnishes_INT2;LetterPress_Varnishes_NarrowWeb_INT;
+;LetterPress_Plates_INT2;LetterPress_PlateMaking_Equipment_INT;
+;LetterPress_Plates_INT2;LetterPress_PlateProcessor_Menu;
+;LetterPress_Equipment_INT2;LetterPress_Equipment_INT;
+
+;Sheetfed_INKS_INT2;Sheetfed_INK_Conventional_INT;
+;Sheetfed_INKS_INT2;Sheetfed_INK_UV_INT;
+;Sheetfed_INKS_INT2;Sheetfed_INK_Coatings_INT;
+;Sheetfed_Blankets_Sleeves_INT2;Sheetfed_Offset_Blankets_INT;
+;Sheetfed_Blankets_Sleeves_INT2;Sheetfed_Offset_UV_Blankets_INT;
+;Sheetfed_Blankets_Sleeves_INT2;Sheetfed_Stripping_Blankets_INT;
+;Sheetfed_Blankets_Sleeves_INT2;Sheetfed_Blanket_Bars_Blankets_INT;
+;Sheetfed_PC_INT2;Sheetfed_PC_Founts_INT;
+;Sheetfed_PC_INT2;Sheetfed_PC_Washes_INT;
+;Sheetfed_PC_INT2;Sheetfed_PC_Specialty_INT;
+;Sheetfed_PC_INT2;Sheetfed_PC_Spray_Powder_INT;
+;Sheetfed_Plates_INT2;Sheetfed_Plates_Coating_INT;
+;Sheetfed_Plates_INT2;Sheetfed_Embossing_INT;
+;Sheetfed_Ancillary_Products_INT2;Sheetfed_Anciliary_Products_INT;
+
+
+
+

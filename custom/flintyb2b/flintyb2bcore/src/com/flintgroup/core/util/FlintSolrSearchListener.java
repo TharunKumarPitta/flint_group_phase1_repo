@@ -1,13 +1,3 @@
-/*
- * [y] hybris Platform
- *
- * Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
- *
- * This software is the confidential and proprietary information of SAP
- * ("Confidential Information"). You shall not disclose such Confidential
- * Information and shall use it only in accordance with the terms of the
- * license agreement you entered into with SAP.
- */
 package com.flintgroup.core.util;
 
 import de.hybris.platform.b2b.model.B2BCustomerModel;
@@ -23,17 +13,24 @@ import de.hybris.platform.solrfacetsearch.search.SearchResult;
 import de.hybris.platform.solrfacetsearch.search.context.FacetSearchContext;
 import de.hybris.platform.solrfacetsearch.search.context.FacetSearchListener;
 import de.hybris.platform.solrfacetsearch.search.impl.SolrSearchResult;
+import java.util.ArrayList;
+import java.util.List;
+import javax.annotation.Resource;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.apache.log4j.Logger;
 
 
 
 public class FlintSolrSearchListener implements FacetSearchListener
 {
+
+	private static final Logger LOG = Logger.getLogger(FlintSolrSearchListener.class);
 
 	@Resource
 	private UserService userService;
@@ -49,50 +46,53 @@ public class FlintSolrSearchListener implements FacetSearchListener
 	public void afterSearch(final FacetSearchContext facetSearchContext) throws FacetSearchException
 	{
 
-		final SearchResult searchResult = facetSearchContext.getSearchResult();
-		if (searchResult != null && searchResult.getNumberOfResults() > 0)
-		{
-			final List<? extends ItemModel> results = searchResult.getResults();
-			final List<Document> documentList = searchResult.getDocuments();
-			final List<Document> documentListNew = new ArrayList<Document>();
-			for (int i = 0; i < results.size(); i++)
-			{
-				final ItemModel item = results.get(i);
-				if (item instanceof ProductModel)
-				{
-					final ProductModel productModel = (ProductModel) item;
-					final UserModel user = userService.getCurrentUser();
-					if (user instanceof B2BCustomerModel)
-					{
-						final B2BCustomerModel b2bCustomer = (B2BCustomerModel) user;
-
-						if (null == productModel.getB2bunit() || productModel.getB2bunit().isEmpty()) {
-							documentListNew.add(documentList.get(i));
-						}
-						else
-						{
-							for (final B2BUnitModel custId : productModel.getB2bunit())
-							{
-								if (b2bCustomer.getDefaultB2BUnit().getUid().equals(custId.getUid()))
-								{
-									//Do Nothing
-								}
-								else
-								{
-
-									documentListNew.add(documentList.get(i));
-								}
-
-							}
-						}
-					}
-				}
-			}
-			documentList.removeAll(documentListNew);
-			((SolrSearchResult) searchResult).setDocuments(documentList);
-			((SolrSearchResult) searchResult).setNumberOfResults(documentList.size());
-			facetSearchContext.setSearchResult(searchResult);
-		}
+////		final SearchResult searchResult = facetSearchContext.getSearchResult();
+////		if (searchResult != null && searchResult.getNumberOfResults() > 0)
+////		{
+////			final List<? extends ItemModel> results = searchResult.getResults();
+////			final List<Document> documentList = searchResult.getDocuments();
+////			final List<Document> documentListNew = new ArrayList<Document>();
+////			final UserModel user = userService.getCurrentUser();
+////			ProductModel productModel = null;
+////			//this logic works for B2BCutomer, please add condition if you use normal User
+////			try
+////			{
+////				if (user instanceof B2BCustomerModel)
+////				{
+////					final B2BCustomerModel b2bCustomer = (B2BCustomerModel) user;
+////					for (int i = 0; i < results.size(); i++)
+////					{
+////						final ItemModel item = results.get(i);
+////						if (item instanceof ProductModel)
+////						{
+////							productModel = (ProductModel) item;
+////							if (null == productModel.getB2bunit() || productModel.getB2bunit().isEmpty())
+////							{
+////								documentListNew.add(documentList.get(i));
+////							}
+////							else
+////							{
+////								for (final B2BUnitModel custId : productModel.getB2bunit())
+////								{
+////									if (!b2bCustomer.getDefaultB2BUnit().getUid().equals(custId.getUid()))
+////									{
+////										documentListNew.add(documentList.get(i));
+////									}
+////								}
+////							}
+////						}
+////					}
+////				}
+////				documentList.removeAll(documentListNew);
+////				((SolrSearchResult) searchResult).setDocuments(documentList);
+////				((SolrSearchResult) searchResult).setNumberOfResults(documentList.size());
+////				facetSearchContext.setSearchResult(searchResult);
+////			}
+////			catch (final Exception exception)
+////			{
+////				LOG.error(exception);
+////			}
+//		}
 	}
 
 	/*
@@ -117,13 +117,14 @@ public class FlintSolrSearchListener implements FacetSearchListener
 	@Override
 	public void beforeSearch(final FacetSearchContext facetSearchContext) throws FacetSearchException
 	{
-
 		final UserModel user = userService.getCurrentUser();
+
 		if (user instanceof B2BCustomerModel)
 		{
 			final B2BCustomerModel b2bCustomer = (B2BCustomerModel) user;
 			final SearchQuery searchQuery = facetSearchContext.getSearchQuery();
-			searchQuery.addFilterQuery("customerIDList_string_mv", b2bCustomer.getDefaultB2BUnit().getUid());
+//			searchQuery.addFilterQuery("b2bunit_string_mv", b2bCustomer.getDefaultB2BUnit().getUid());
+			searchQuery.addQuery("b2bunit_string_mv", b2bCustomer.getDefaultB2BUnit().getUid());
 		}
 
 	}

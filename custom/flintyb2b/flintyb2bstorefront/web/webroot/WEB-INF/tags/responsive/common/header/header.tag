@@ -99,7 +99,15 @@
 
 			<div class="col-sm-2">
 				<div class="nav__left js-site-logo logo-rely logo-right">
-					<img src="${commonResourcePath}/images/caption-for-dashboard.png"/>
+					<%--<img src="${commonResourcePath}/images/caption-for-dashboard.png"/>--%>
+						<c:choose>
+							<c:when test="${currentLanguage.isocode eq 'zh'}">
+								<img src="${commonResourcePath}/images/relyonus_zh.png" alt="rely on us" class="img-rely hidden-xs"/>
+							</c:when>
+							<c:otherwise>
+								<img src="${commonResourcePath}/images/caption.png" alt="rely on us" class="img-rely hidden-xs"/>
+							</c:otherwise>
+						</c:choose>
 					<!-- 	<cms:pageSlot position="SiteLogo" var="logo" limit="1">
 							<cms:component component="${logo}"/>
 						</cms:pageSlot> -->

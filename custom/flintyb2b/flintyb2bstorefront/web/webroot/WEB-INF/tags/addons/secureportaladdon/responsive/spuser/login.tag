@@ -24,7 +24,8 @@
 
     <div class="forgotten-password">
         <ycommerce:testId code="login_forgotPassword_link">
-            <a href="<c:url value='/login/pw/request'/>" class="js-password-forgotten"
+            <a href="#" data-link="<c:url value='/login/pw/request'/>"
+               class="js-password-forgotten"
                data-cbox-title="<spring:theme code="forgottenPwd.title"/>">
                 <spring:theme code="login.link.forgottenPwd"/>
             </a>

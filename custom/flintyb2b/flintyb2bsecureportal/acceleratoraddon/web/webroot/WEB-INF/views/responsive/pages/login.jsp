@@ -10,8 +10,8 @@
         <div class="row">
             <div class="col-sm-6 col-md-6">
                 <div class="lets-talk-session">
-                   <!-- <div class="account-text">Don't have an account ?</div> -->
-                     <div class="account-letstalk-text"> <img src="${commonResourcePath}/images/account.png"/></div>
+                   <div class="account-text">Don't have an account ?</div>
+                     <%--<div class="account-letstalk-text"> <img src="${commonResourcePath}/images/account.png"/></div>--%>
                      <div class="account-letstalk">
                <!--  <button�type="button"  class="btn btn-talk but">-->
 

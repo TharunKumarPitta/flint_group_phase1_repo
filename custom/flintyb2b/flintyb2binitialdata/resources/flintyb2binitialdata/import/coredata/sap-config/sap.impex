@@ -3,6 +3,9 @@ $productCatalogVersion=Staged
 $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='$productCatalogVersion'])[unique=true,default=$productCatalog:$productCatalogVersion]
 $storeUid=flint-zh
 
+INSERT_UPDATE SAPConfiguration;core_name[unique=true];sappricingbol_cartPricing;sappricingbol_priceSub(code);sappricingbol_discountSub(code);sappricingbol_taxesSub(code);sappricingbol_deliverySub(code)
+;BS_ZBX_3WIL_01;false;KZWI1;KZWI2;MWSBP;KZWI4
+
 #####################
 ## RFC DESTINATION ##
 #####################
@@ -57,7 +60,7 @@ INSERT_UPDATE SAPGlobalConfiguration;core_name;sapcommon_erpLogicalSystem
 ## SAP Product & Pricing Sales Area To Catalog Mapping  ##
 ##########################################################
 INSERT_UPDATE SAPProductSalesAreaToCatalogMapping;$catalogVersion;salesOrganization;distributionChannel;sapGlobalConfiguration(core_name);taxClassCountry(isocode)
-;$catalogVersion;BZHO;01;sapGlobalConfiguration;ZH
+;;BZHO;01;sapGlobalConfiguration;ZH
 
 INSERT_UPDATE SAPPricingSalesAreaToCatalog;$catalogVersion;salesOrganization;distributionChannel;sapcommon_sapGlobalConfiguration(core_name);net[default=true,forceWrite=true]
 #;;BZHO;01;sapGlobalConfiguration
@@ -66,7 +69,7 @@ INSERT_UPDATE SAPPricingSalesAreaToCatalog;$catalogVersion;salesOrganization;dis
 ## SAP Base Store Configuration Pricing ##
 ##########################################
 INSERT_UPDATE SAPConfiguration;core_name[unique=true];sappricingbol_cartPricing;sappricingbol_priceSub(code);sappricingbol_discountSub(code);sappricingbol_taxesSub(code);sappricingbol_deliverySub(code)
-#;BS_ZBX_3WIL_01;false;KZWI1;KZWI2;MWSBP;KZWI4
+;BS_ZBX_3WIL_01;false;KZWI1;KZWI2;MWSBP;KZWI4
 #KZWI1;KZWI2;MWSBP;KZWI4???
 
 ################################################################

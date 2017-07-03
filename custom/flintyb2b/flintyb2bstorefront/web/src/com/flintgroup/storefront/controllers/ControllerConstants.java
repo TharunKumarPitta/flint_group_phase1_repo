@@ -202,6 +202,12 @@ public interface ControllerConstants
 				String ReviewsTab = "fragments/product/reviewsTab"; // NOSONAR
 				String StorePickupSearchResults = "fragments/product/storePickupSearchResults"; // NOSONAR
 			}
+
+			interface Footer
+			{
+				String TermsAndConditionsPopupForFooter = "fragments/footer/termsAndConditionsPopupForFooter";
+			}
+
 		}
 	}
 }

@@ -26,15 +26,25 @@
 							<footer:languageSelector languages="${languages}"
 													 currentLanguage="${currentLanguage}" />
 						</div>
-						<div class="nav__left js-site-logo logo-rely logo-right">			
-						<img src="${commonResourcePath}/images/caption.png" alt="rely on us" class="img-rely hidden-xs"/>
-						<img src="${commonResourcePath}/images/mobile-caption.png" alt="rely on us" class="img-rely visible-xs"/>
+						<div class="nav__left js-site-logo logo-rely logo-right">
+
+							<c:choose>
+								<c:when test="${currentLanguage.isocode eq 'zh'}">
+									<img src="${commonResourcePath}/images/relyonus_zh.png" alt="rely on us" class="img-rely hidden-xs"/>
+								</c:when>
+								<c:otherwise>
+									<img src="${commonResourcePath}/images/caption.png" alt="rely on us" class="img-rely hidden-xs"/>
+								</c:otherwise>
+							</c:choose>
+
+
+							<img src="${commonResourcePath}/images/mobile-caption.png" alt="rely on us" class="img-rely visible-xs"/>
 					<!-- 	<cms:pageSlot position="SiteLogo" var="logo" limit="1">
 							<cms:component component="${logo}"/>
 						</cms:pageSlot> -->
 						</div>
 			</div>
-		</div>		
-		
+		</div>
+
     </nav>
 </header>

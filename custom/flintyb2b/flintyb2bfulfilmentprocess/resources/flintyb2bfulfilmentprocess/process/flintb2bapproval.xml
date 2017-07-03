@@ -23,13 +23,18 @@
 	</action>
 	
 	<action id="informOfOrderApproval" bean="informOfOrderApproval">
+		<transition name="OK" to="sendOrderPlacedNotification"/>
+	</action>
+	
+	<action id="sendOrderPlacedNotification" bean="sendOrderPlacedNotificationAction">
 		<transition name="OK" to="setBookingLineEntries"/>
 	</action>
-
+	
 	<action id="setBookingLineEntries" bean="setBookingLineEntries">
 		<transition name="OK" to="approvalProcessCompleteAction"/>
 		<transition name="NOK" to="error"/>
 	</action>
+	
 	<action id="approvalProcessCompleteAction" bean="approvalProcessCompleteAction">
 		<transition name="OK" to="success"/>
 		<transition name="NOK" to="error"/>

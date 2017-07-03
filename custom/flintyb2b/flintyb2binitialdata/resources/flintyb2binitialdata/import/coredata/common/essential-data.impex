@@ -109,6 +109,7 @@ INSERT_UPDATE UserTaxGroup;code[unique=true]
 ;uk-taxes
 ;us-taxes
 ;ca-taxes
+;cn-taxes
 
 INSERT_UPDATE ProductTaxGroup;code[unique=true]
 ;jp-vat-full
@@ -118,16 +119,29 @@ INSERT_UPDATE ProductTaxGroup;code[unique=true]
 ;ca-sales-tax-full
 ;cn-sales-tax-full
 
-INSERT_UPDATE Tax;code[unique=true];value;currency(isocode)
-;de-vat-full;19
-;de-vat-half;7
-;jp-vat-full;5
-;uk-vat-full;20
-;uk-vat-half;5
-;us-sales-tax-full;0
-;ca-sales-tax-full;0
-;cn-sales-tax-full;0
+INSERT_UPDATE Tax;code[unique=true];value;currency(isocode);absolute
+;de-vat-full;19;
+;de-vat-half;7;
+;jp-vat-full;5;
+;uk-vat-full;20;
+;uk-vat-half;5;
+;us-sales-tax-full;0;
+;ca-sales-tax-full;0;
+;cn-sales-tax-full;17;
+
+INSERT_UPDATE Tax;code[unique=true];value;currency(isocode);absolute
+;mx-vat-full;16;;false;
 
 INSERT_UPDATE ServicelayerJob;code[unique=true];springId[unique=true]
 ;cartRemovalJob;cartRemovalJob
 ;siteMapMediaJob;siteMapMediaJob
+
+# Units
+INSERT_UPDATE Unit;unitType[unique=true];code[unique=true];name[lang=zh];name[lang=en];;;;
+;M2;M2;M2;M2;;;;
+;ST;ST;ST;ST;;;;
+;STE;STE;STE;STE;;;;
+
+
+UPDATE Employee;UID[unique=true];password
+;admin;flintAdmin!1

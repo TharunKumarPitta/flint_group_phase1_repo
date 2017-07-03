@@ -9130,7 +9130,7 @@ ul.nav__links::after {
 }
 .navigation--bottom .nav__links--primary .sub-navigation-section .title {
   font-size: 18px;
-  line-height: 40px;
+  line-height: -5px;
   text-transform: uppercase;
   color: rgba(0, 0, 0, 0.7);
 }
@@ -9163,7 +9163,7 @@ ul.nav__links::after {
     display: block;
     color: #19212b;
     line-height: 30px;
-    padding: 0 0 0 5px;
+    padding: 0 0 0 17px;
   }
   .navigation--bottom .nav__links--primary .sub-navigation-section .sub-navigation-list a:hover {
     background-color: #f2f2f2;
@@ -18797,8 +18797,8 @@ footer {
 .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
   /*changed to grey colour*/
   color: #ffffff;
-  background-color: grey;
-  border-color: grey;
+  background-color: #ed2e24;
+  border-color: #ed2e24;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
@@ -18895,12 +18895,12 @@ a, button {
 }
 
 .lets-talk-session{
-                  opacity: 0.69;
-                  height: 180px;
-                  width: 883px;
-                  background: black;
-                  margin-top: 85px;
-                  margin-left: 346px;
+  opacity: 0.69;
+  height: 180px;
+  width: 883px;
+  background: black;
+  margin-top: 85px;
+  margin-left: 132px;
 }
 .account-text{color:#fff;font-size:20px;width:100px;}
 .footer__top {
@@ -19239,6 +19239,17 @@ ul.nav.nav-pills.payments  > li > a:hover, .nav > li > a:focus {
     padding-top: 10px;
     margin-top: 10px;
   }
+  .navigation--bottom .nav__links--products li a {
+    color: #666;
+  }
+  .wel-content-mark {
+    padding-bottom: 10px!important;
+    padding-top: 7px!important;
+    margin-bottom: 10px!important;
+  }
+  .lets-talk-session {
+    margin-left: 80px;
+  }
 
 }
 
@@ -19260,7 +19271,7 @@ ul.nav.nav-pills.payments  > li > a:hover, .nav > li > a:focus {
     width: 352px;
     background: black;
     margin-top: -38px;
-
+    margin-left: 0px;
   }
   .flint-login-section {
     width: 352px;
@@ -19309,7 +19320,33 @@ ul.nav.nav-pills.payments  > li > a:hover, .nav > li > a:focus {
   .footer__top .footer__nav--container .footer__nav--links{
     padding: 10px;
   }
-
+  .navigation--bottom .nav__links--products li a {
+    color: #666;
+  }
+  .navigation--middle .mobile__nav__row--btn span.glyphicon {
+    color: #666;
+  }
+  .componentContainer .yCmsComponent .glyphicon-list-alt {
+    top: 14px;
+    font-size: 28px;
+    color: #666;
+  }
+  span.icon-font-order {
+    font-size: 12px!important;
+    margin-top: 12px;
+    display: inline-block;
+    font-weight: bold;
+  }
+  .wel-come-mark {
+    font-size: 14px;
+    margin-top: 0%;
+  }
+  .breadcrumb {
+    font-size: 12px!important;
+  }
+  .breadcrumb > .active {
+    font-size: 12px;
+  }
 }
 
 /* Mobile landscape view*/
@@ -19338,9 +19375,6 @@ ul.nav.nav-pills.payments  > li > a:hover, .nav > li > a:focus {
   margin-left : -83px;
 }
 
-form#sortForm2 {
-  margin-left: -83px;
-}
 
 button#choosePaymentType_continue_button {
   /*changing background of add to cart button   */
@@ -19357,4 +19391,54 @@ button.btn.btn-primary.btn-block {
   color: #ffffff;
 }
 
+form#sortForm2 {
+  margin-left: 0px;
+}
 
+.pagination-bar.bottom .pagination-toolbar {
+  padding-left: 21px;
+}
+/* remove padding right for Flint Rely on us */
+.navigation.navigation--top {
+  padding-left: 30px;
+}
+
+@media (max-width: 1023px){
+  .navigation--bottom .nav__links--mobile li {
+    background-color: #ccc;
+  }
+  .navigation--bottom .nav__links--products li.liUserSign {
+    border-bottom: 1px solid #666;
+  }
+  .navigation--bottom .nav__links--mobile .subNavList li {
+    background: #ccc;
+  }
+  .navigation--bottom .nav__links--mobile.offcanvasGroup1 .offcanvasGroup2 li, .navigation--bottom .nav__links--mobile.offcanvasGroup1 .offcanvasGroup3 li {
+    border-bottom: 1px solid #666;
+  }
+  .navigation--bottom .nav__links--mobile div.sub-nav a {
+    border-bottom: 1px solid #666;
+  }
+  .navigation--middle .mobile-menu span {
+    color: #666;
+  }
+  .navigation--bottom.js-enquire-offcanvas-navigation .close-nav button span {
+    color: #666;
+  }
+  .navigation--bottom .userGroup {
+    color: #666;
+  }
+  .navigation--bottom .userGroup a {
+    color: #666;
+  }
+
+}
+
+.header-lang-drop-custom{margin-top: 35px;width: 127px;
+  /* margin-left: 283px; */
+  margin-left: 23%;}
+
+.table > tbody + tbody {
+  border-top: 2px solid #e5e5e5;
+  border-bottom: 2px solid #e5e5e5;
+}

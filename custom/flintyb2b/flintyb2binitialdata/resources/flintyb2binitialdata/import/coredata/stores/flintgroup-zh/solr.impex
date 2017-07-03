@@ -141,9 +141,9 @@ SELECT DISTINCT tbl.pk, tbl.code FROM (
 
 # Define the available sorts
 INSERT_UPDATE SolrSort;&sortRefID;indexedType(identifier)[unique=true];code[unique=true];useBoost
-;sortRef1;$solrIndexedType;relevance;true
-;sortRef2;$solrIndexedType;name-asc;false
-;sortRef3;$solrIndexedType;name-desc;false
+;sortRef1;$solrIndexedType;name-asc;false
+;sortRef2;$solrIndexedType;name-desc;false
+;sortRef3;$solrIndexedType;relevance;true
 ;sortRef4;$solrIndexedType;price-asc;false
 ;sortRef5;$solrIndexedType;price-desc;false
 

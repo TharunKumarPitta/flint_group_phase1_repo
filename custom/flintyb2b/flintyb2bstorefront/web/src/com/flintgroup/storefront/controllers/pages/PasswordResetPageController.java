@@ -13,6 +13,7 @@ package com.flintgroup.storefront.controllers.pages;
 import de.hybris.platform.acceleratorstorefrontcommons.breadcrumb.ResourceBreadcrumbBuilder;
 import de.hybris.platform.acceleratorstorefrontcommons.constants.WebConstants;
 import de.hybris.platform.acceleratorstorefrontcommons.controllers.pages.AbstractPageController;
+import de.hybris.platform.acceleratorstorefrontcommons.controllers.util.GlobalMessages;
 import de.hybris.platform.acceleratorstorefrontcommons.forms.ForgottenPwdForm;
 import de.hybris.platform.acceleratorstorefrontcommons.forms.UpdatePwdForm;
 import de.hybris.platform.acceleratorstorefrontcommons.forms.validation.UpdatePasswordFormValidator;
@@ -20,8 +21,6 @@ import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.commercefacades.customer.CustomerFacade;
 import de.hybris.platform.commerceservices.customer.TokenInvalidatedException;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
-import com.flintgroup.storefront.controllers.ControllerConstants;
-import de.hybris.platform.acceleratorstorefrontcommons.controllers.util.GlobalMessages;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
@@ -35,6 +34,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.flintgroup.storefront.controllers.ControllerConstants;
 
 
 /**
@@ -89,9 +90,7 @@ public class PasswordResetPageController extends AbstractPageController
 			catch (final UnknownIdentifierException unknownIdentifierException)
 			{
 				LOG.warn("Email: " + form.getEmail() + " does not exist in the database.");
-
-				bindingResult.rejectValue("email", "Email: " + form.getEmail() + " does not exist in the database.", "Email not exist in Database");
-
+				bindingResult.rejectValue("email", "email.not.exist");
 				return ControllerConstants.Views.Fragments.Password.PasswordResetRequestPopup;
 
 			}
@@ -119,8 +118,8 @@ public class PasswordResetPageController extends AbstractPageController
 	}
 
 	@RequestMapping(value = "/request/external", method = RequestMethod.POST)
-	public String externalPasswordRequest(@Valid final ForgottenPwdForm form, final BindingResult bindingResult, final Model model, final RedirectAttributes redirectModel)
-			throws CMSItemNotFoundException
+	public String externalPasswordRequest(@Valid final ForgottenPwdForm form, final BindingResult bindingResult,
+										  final Model model, final RedirectAttributes redirectModel) throws CMSItemNotFoundException
 	{
 		storeCmsPageInModel(model, getContentPageForLabelOrId(null));
 		setUpMetaDataForContentPage(model, getContentPageForLabelOrId(null));
@@ -136,7 +135,7 @@ public class PasswordResetPageController extends AbstractPageController
 			{
 				customerFacade.forgottenPassword(form.getEmail());
 				GlobalMessages.addFlashMessage(redirectModel, GlobalMessages.CONF_MESSAGES_HOLDER,
-										"account.confirmation.forgotten.password.link.sent");
+						"account.confirmation.forgotten.password.link.sent");
 			}
 			catch (final UnknownIdentifierException unknownIdentifierException)
 			{
@@ -165,7 +164,7 @@ public class PasswordResetPageController extends AbstractPageController
 
 	@RequestMapping(value = "/change", method = RequestMethod.POST)
 	public String changePassword(@Valid final UpdatePwdForm form, final BindingResult bindingResult, final Model model,
-			final RedirectAttributes redirectModel) throws CMSItemNotFoundException
+								 final RedirectAttributes redirectModel) throws CMSItemNotFoundException
 	{
 		getUpdatePasswordFormValidator().validate(form, bindingResult);
 		if (bindingResult.hasErrors())
@@ -199,7 +198,7 @@ public class PasswordResetPageController extends AbstractPageController
 
 	/**
 	 * Prepares the view to display an error message
-	 * 
+	 *
 	 * @throws CMSItemNotFoundException
 	 */
 	protected void prepareErrorMessage(final Model model, final String page) throws CMSItemNotFoundException
