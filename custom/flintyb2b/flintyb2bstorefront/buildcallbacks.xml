@@ -600,7 +600,7 @@
 	<macrodef name="flintyb2bstorefront_after_clean">
 		<sequential>
 			<!-- Addon folders in storefronts are always cleaned (even if there is no addonsupport on localextension list) -->
-			<addonclean/>
+			<!--<addonclean/>-->
 			<commonwebclean/>
 			<delete_wro_addons_xml/>
 		</sequential>
