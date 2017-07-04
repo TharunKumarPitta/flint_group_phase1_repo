@@ -30,7 +30,7 @@
                         <form:select path="subject" cssClass="form-control">
                             <form:option value="Where is my order ?"><spring:message code="text.account.supporttickets.createTicket.ticketSubject.whereIsMyOrder"/></form:option>
                             <form:option value="I want to add a new delivery address"><spring:message code="text.account.supporttickets.createTicket.ticketSubject.addDeliveryAddress"/></form:option>
-                            <form:option value="I want to order a new product"><spring:message code="text.account.supporttickets.createTicket.ticketSubject.wantToOrderNewProduct"/></form:option>
+                            <form:option value="I want to order a product that is not shown"><spring:message code="text.account.supporttickets.createTicket.ticketSubject.wantToOrderNewProduct"/></form:option>
                             <form:option value="General inquiry"><spring:message code="text.account.supporttickets.createTicket.ticketSubject.generalEnquiry"/></form:option>
                         </form:select>
                         <div id="NotEmpty-supportTicketForm-subject" class="help-block" style="display: none;">
