@@ -8261,6 +8261,7 @@ ul.nav__links::after {
   margin: 0;
   padding-left: 0;
   float: right;
+  padding-right: 50px;
 }
 .navigation--top .nav__right .nav__links--account div[data-smartedit-component-id="HeaderLinksSlot"] {
   display: inline-block;
@@ -18865,7 +18866,7 @@ a, button {
 
 .page-login{background: url("../../common/images/background.png") no-repeat center;
   height: 674px;
-  background-size: 1346px 468px;
+  background-size: 1366px 468px;
 }
 
 .but{background: url(../../common/images/lets-talk.png) no-repeat;
@@ -18879,8 +18880,8 @@ a, button {
 
 .logo-right{    float: right;
   padding: 0px!important;
-  margin-top: -5px;
-  margin-bottom: -7px;
+  margin-top: -7px;
+  margin-bottom: -8px;
   margin-right: -14px}
 
 .flint-login-section{
@@ -18949,9 +18950,9 @@ form .forgotten-password {
 
 .navigation--middle .nav__left .site-search .input-group .form-control {
   box-shadow: none;
-  height: 26px;
+  /* height: 26px;
+  padding-top: 16px;*/
   background: #cccccc;
-  padding-top: 16px;
 }
 
 .navigation--middle .nav__left .site-search .input-group {
@@ -19098,7 +19099,7 @@ label.control-label {
   color: #666;
 }
 
-.account-letstalk-text { margin-top: 38px;margin-left: 65px;padding-top: 25px; }
+.account-letstalk-text { margin-top: 38px;margin-left: 56px;padding-top: 25px; }
 .account-letstalk { margin-top: 5px;margin-left: 65px;}
 
 .product__facet .facet .facet__list .facet__list__checkbox:checked + .facet__list__label .facet__list__mark {
@@ -19435,10 +19436,36 @@ form#sortForm2 {
 }
 
 .header-lang-drop-custom{margin-top: 35px;width: 127px;
-  /* margin-left: 283px; */
-  margin-left: 23%;}
+/* margin-left: 283px; */
+    margin-left: 23%;}
 
-.table > tbody + tbody {
+	.table > tbody + tbody {
   border-top: 2px solid #e5e5e5;
   border-bottom: 2px solid #e5e5e5;
+}
+
+.register-account {
+    color: #fff;
+    font-size: 25px;
+    width: 30%;
+    font-family: Roboto Condensed,sans-serif;
+    font-weight: 400;
+    margin-left: 5px;
+}
+
+.nav__left.js-site-logo.logo-rely.logo-right img.img-rely {
+	   height: 134px;
+}
+
+.nav__left.js-site-logo .navigation--top .nav__left .simple-banner-component img, .navigation--top .nav__left .banner__component img
+{
+	    padding-top: 25px;
+}
+
+footer a:hover, a:focus {
+    color: #e52d30;
+}
+
+.account-orderhistory-pagination .pagination-bar.bottom .pagination-toolbar {
+    padding-left: 0px;
 }

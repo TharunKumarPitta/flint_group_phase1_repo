@@ -1,9 +1,9 @@
-
+﻿
 ################### Categories ######################
-#$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+#$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Online'])[unique=true,default=$productCatalog:Online]
 $productCatalog=flintgroup-zhProductCatalog
 $productCatalogName=Flintgroup Zh Product Catalog
-$productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Online'])[unique=true,default=$productCatalog:Online]
 $productRef=code,$productCV
 $categoryRef=code,$productCV
 #$allSubcategories=allSubcategories(code, $productCV)
@@ -36,10 +36,10 @@ INSERT_UPDATE Category;code[unique=true];name[lang=en];name[lang=zh];$productCV[
 ;Heatset_Pressroom_Chemistry_INT2;Pressroom Chemistry;印刷化学品;;
 ;Heatset_Anciliary_Products_INT2;Anciliary Products;辅助产品;;
 
-;UV_INKS_INT2;Inks;油墨;;
-;UV_Varnishes_INT2;Varnishes;光油;;
-;UV_Blankets_Sleeves_INT2;Blankets Sleeves;橡皮布及套筒;;
-;UV_Pressroom_Chemistry_INT2;Pressroom Chemistry;印刷化学品;;
+;UV_INKS_INT2;Inks-UV;油墨-紫外线;;
+;UV_Varnishes_INT2;Varnishes-UV;光油-紫外线;;
+;UV_Blankets_INT2;Blankets-UV;橡皮布夹-紫外线;;
+;UV_Pressroom_Chemistry_INT2;Pressroom Chemistry-UV;印刷化学品-紫外线;;
 ;UV_Anciliary_Products_INT2;Anciliary Products;辅助产品;;
 
 ;LetterPress_INKS_INT2;Inks;油墨;;
@@ -72,6 +72,7 @@ INSERT_UPDATE Category;code[unique=true];name[lang=en];name[lang=zh];$productCV[
 ;Heatset_Blankets_Offset_INT;Blankets Offset;橡皮布胶印;;
 ;Heatset_Blankets_Metalback_INT;Blankets Metalback;橡皮布金属底面;;
 ;Heatset_Blankets_Sleeves_INT;Blankets Sleeves;橡皮布及套筒;;
+;Heatset_Blanket_Bars_INT;Blanket Bars;橡皮布夹;;
 ;Heatset_PC_Founts_INT;Pressroom Chemistry Founts;印刷化学品润版液;;
 ;Heatset_PC_Washes_INT;Pressroom Chemistry Washes;印刷化学品洗车水;;
 ;Heatset_PC_Silicones_INT;Pressroom Chemistry Silicones;印刷化学品硅油;;
@@ -82,10 +83,12 @@ INSERT_UPDATE Category;code[unique=true];name[lang=en];name[lang=zh];$productCV[
 ;UV_NarrowWeb_INT;NarrowWeb;窄幅轮转;;
 ;UV_Sheefted_INT;Sheefted;单张纸胶印;;
 ;UV_Coldset_INT;Coldset;冷固;;
-;UV_Screen_INT;Screen;屏幕;;
+;UV_Screen_Narrow_Web_INT;UV Screen Narrow Web;窄幅紫外线丝网;;
+;UV_Screen_INT;UV Screen;紫外线丝网;;
+;UV_Offset_Narrow_Web_INT;UV Offset Narrow Web;窄幅紫外线胶印;;
 ;UV_Varnishes_Others;Varnishes;光油;;
 ;UV_OffsetUV_INT;OffsetUV;抵消紫外线;;
-;UV_Blankets_Others;Blankets;橡皮布;;
+;UV_Blankets_Bars;Blankets Bars;橡皮布夹;;
 ;UV_PC_Founts_INT;Pressroom Chemistry Founts;印刷化学品润版液;;
 ;UV_PC_Washes_INT;Pressroom Chemistry Washes;印刷化学品洗车水;;
 ;UV_PC_Cleaners_Rejuvenators_INT;Pressroom Chemistry Cleaners Rejuvenators;印刷化学品清洗剂和更新剂;;
