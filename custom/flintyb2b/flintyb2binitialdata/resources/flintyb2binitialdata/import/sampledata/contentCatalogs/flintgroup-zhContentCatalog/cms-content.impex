@@ -1032,7 +1032,7 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];positi
 # Restriction for FAQ Only
 
 INSERT_UPDATE CMSInverseRestriction;$contentCV[unique=true];name;originalRestriction(&userRestriction)[allownull=true];uid[unique=true];components(&componentRef)
-;;Logged in User;anonymousUserRestriction;loggedInUser;FAQLink
+;;Logged in User;anonymousUserRestriction;loggedInUser;FAQLink,FlintTermsConditionLink
 
 INSERT_UPDATE CMSUserRestriction;$contentCV[unique=true];&userRestriction;name;uid[unique=true];users(uid)
 ;;anonymousUserRestriction;Anonymous User Restriction;anonymousUserRestriction;anonymous
