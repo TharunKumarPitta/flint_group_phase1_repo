@@ -7,12 +7,19 @@
     <div class="step-body-form">
         <div class="radiobuttons_paymentselection">
             <c:forEach items="${paymentTypes}" var="paymentType">
+
                 <form:radiobutton path="paymentType" id="PaymentTypeSelection_${paymentType.code}" value="${paymentType.code}" label="${paymentType.displayName}" />
+
+            	<c:if test="${paymentType.code eq 'ACCOUNT'}">
+                	<form:radiobutton path="paymentType" id="PaymentTypeSelection_${paymentType.code}" value="${paymentType.code}" label="" />
+					<spring:theme code="checkout.multi.paymenttype.labelnew"/>
+                </c:if>
+
                 <br>
             </c:forEach>
         </div>
 
-        <formElement:formInputBox idKey="PurchaseOrderNumber" labelKey="checkout.multi.purchaseOrderNumber.label" path="purchaseOrderNumber" inputCSS="text" />
+        <formElement:formInputBox idKey="PurchaseOrderNumber" labelKey="checkout.multi.paymenttype.purchaseOrderNumber.labelNew" path="purchaseOrderNumber" inputCSS="text" />
 
         <div id="costCenter">
             <formElement:formSelectBox idKey="costCenterSelect" labelKey="checkout.multi.costCenter.label" path="costCenterId" skipBlank="false" skipBlankMessageKey="checkout.multi.costCenter.title.pleaseSelect" itemValue="code" itemLabel="name" items="${costCenters}" mandatory="true" selectCSSClass="form-control"/>

@@ -125,7 +125,7 @@ INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;lin
 ;;FlintAboutUsLink;About Us Link;About Flint Group;关于 Flint Group;"http://www.flintgrp.com/en/company/fast-facts/";FlintAboutUsLink;FlintAboutUsLink;newWindow
 ;;FlintTermsConditionLink;Terms & Condition Link;Terms & Condition;条款和条件;"http://www.flintgrp.com/en/company/conditions-of-sale/";FlintTermsConditionLink;FlintTermsConditionLink;newWindow
 #;;FlintNewsInformationLink;News & Information Link;News & Information;新闻资讯;"http://www.flintgrp.com/en/news-information/press-releases/";FlintNewsInformationLink;FlintNewsInformationLink;newWindow
-
+;;FAQLink;FAQ Link;FAQ;常问问题;/faq;FAQLink;FAQLink
 
 ##---- level 4. children of Order Tools ----##
 INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);links(&linkRef);&nodeRef
@@ -972,7 +972,7 @@ UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];previewImage(code, $
 
 INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url;&linkRef;&componentRef;target(code)[default='sameWindow']
 ;;TermsAndConditionsLink;Terms and Conditions Link;/termsAndConditions;TermsAndConditionsLink;TermsAndConditionsLink
-;;FAQLink;FAQ Link;/faq;FAQLink;FAQLink
+
 
 UPDATE ProductPage;$contentCV[unique=true];uid[unique=true];previewImage(code, $contentCV)
 ;;productDetails;
