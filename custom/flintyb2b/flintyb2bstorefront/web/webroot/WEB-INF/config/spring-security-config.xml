@@ -193,7 +193,7 @@
 	<!-- Login Success Handlers -->
 
 	<bean id="loginGuidAuthenticationSuccessHandler" class="com.flintgroup.storefront.security.GUIDAuthenticationSuccessHandler" >
-		<property name="authenticationSuccessHandler" ref="loginAuthenticationSuccessHandler" />
+		<property name="authenticationSuccessHandler" ref="flintStorefrontAuthenticationSuccessHandler" />
 		<property name="guidCookieStrategy" ref="guidCookieStrategy" />
 	</bean>
 
@@ -310,4 +310,5 @@
 		<constructor-arg name="key" value="flintyb2bstorefront"/>
 	</bean>
 
+	<bean id="flintStorefrontAuthenticationSuccessHandler" class="com.flintgroup.storefront.security.FlintStorefrontAuthenticationSuccessHandler" parent="loginAuthenticationSuccessHandler"/>
 </beans>

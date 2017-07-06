@@ -59,14 +59,14 @@
                 </div>
             </div>
             <div class="col-sm-4 item-wrapper">
-              <!--  <div class="item-group">
+                <div class="item-group">
                     <c:if test="${orderData.paymentType.code=='ACCOUNT'}">
                         <ycommerce:testId code="orderDetail_overviewCostCenter_label">
                             <span class="item-label"><spring:theme code="text.account.order.orderDetails.CostCenter"/></span>
                             <span class="item-value">${fn:escapeXml(orderData.costCenter.name)}</span>
                         </ycommerce:testId>
                     </c:if>
-                </div>-->
+                </div>
                 <div class="item-group">
                     <ycommerce:testId code="orderDetail_overviewOrderTotal_label">
                         <span class="item-label"><spring:theme code="text.account.order.total"/></span>
