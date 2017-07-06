@@ -14,7 +14,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
   <script type="text/javascript" src="C:/Users/User/Desktop/Flint/canvasjs-1.9.8.1/canvasjs.min.js"></script>
 <style>
-
 table th {
     font-weight: 600;
     background-color: #fff;
@@ -46,8 +45,7 @@ body{
 	margin:0px;
 
 }
-/* fine*/
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
 	.order-history-part{
 		width: 100%;
 	}
@@ -61,8 +59,6 @@ body{
 	height: 250px;
 }
 }
-
-
 .quick{
 	border-right: 1px solid black;
 	line-height: 20px;
@@ -101,7 +97,7 @@ tr.table-cont > td.status-col{
 }
 .wel-content-mark{
 	padding-bottom: 10px;
-	padding-top: 10px;
+	padding-top: 40px;
 }
 .img-head-top{
 	padding-top: 10px;
@@ -145,8 +141,9 @@ tr.tab-font > th{
 .text-img-flint{
 		left: 15%;
 	}
+}
 .img-head-top > img{
-	/* width: 20%; */
+	width: 20%;
 }
 a.ancor-ref{
 	color: black;
@@ -196,49 +193,6 @@ tr.table-cont > td.txt-cnt{
     width: 414px;
     padding-left: 7px;
 }
-}
-
-@media (max-width: 639px) {
-footer {
-    margin-top: -19px;
-	padding-top: 25px;
-}
-.text-img-flint {
-    left: 15%!important;
-	top: 31%!important;
-}
-.flint-gic {
-    font-size: 15px!important;
-    margin-top: 12px!important;
-}
-}
-
-@media (min-width: 768px) and (max-width: 1024px)  {
-
-.text-img-flint {
-    left: 9%!important;
-    top: 31%!important;
-}
-.flint-gp {
-    font-size: 19px!important;margin-top: 12px!important;
-}
-	.flint-gic {
-    font-size: 12px!important;
-    margin-top: 12px!important;
-}
-
-}
-
-.text-img-flint {
-    left: 21%;
-    top: 30%;
-}
-
-.flint-gic {
-    font-size: 15px;
-    margin-top: 12px;
-}
-
 </style>
 	 <div class="container-fluid main-order">
       <div class="col-md-12 col-sm-12 col-xs-12 wel-content-mark">
@@ -262,10 +216,7 @@ footer {
               <div class="tab-head-history col-sm-12">
                 <div class="table-header-history"><spring:theme code="recent.order.history"/></div>
               </div>
-              <table class="table" width="100%">
-			   <col style="width:25%">
-				<col style="width:50%">
-				<col style="width:25%">
+              <table class="table">
                 <thead>
                   <tr class="tab-font">
                     <th><spring:theme code="order.date"/></th>
@@ -296,10 +247,7 @@ footer {
               <div class="tab-head-history col-sm-12">
               <div class="table-header-history"><spring:theme code="recent.support.tickets"/></div>
             </div>
-              <table class="table" width="100%">
-			     <col style="width:25%">
-				<col style="width:50%">
-				<col style="width:25%">
+              <table class="table">
                 <thead>
                 <tr class="tab-font">
                     <th><spring:theme code="ticket.id"/></th>
@@ -335,14 +283,19 @@ footer {
         </div>
         
       
-      <div class="col-sm-4 col-xs-12 image-part">
+      <div class="col-sm-4 col-xs-4 image-part">
         <div class="text-img-flint">
-           <cms:pageSlot position="Section1A" var="feature">
-         <cms:component component="${feature}" /> 
+
+       <!--    <cms:pageSlot position="Section1A" var="feature">
+         <cms:component component="${feature}" /> -->
+	
      </cms:pageSlot>
         </div> 
+		<a href="http://www.flintgrp.com/en/company/sustainability-log-in/" target="_blank"> 
         <cms:pageSlot position="Section1" var="feature">
+       		 
          <cms:component component="${feature}" /> 
+       	   </a> 
      </cms:pageSlot>
       </div>
   </div>
