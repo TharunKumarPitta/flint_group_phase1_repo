@@ -5,13 +5,13 @@
 
 <footer>
 
-
+	
     <cms:pageSlot position="Footer" var="feature" >
 
-        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<cms:component component="${feature}" />&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-
+	<span class="footer-links-align">
+       <cms:component component="${feature}" />
+	</span>
     </cms:pageSlot>
-    
    
 </footer>
 

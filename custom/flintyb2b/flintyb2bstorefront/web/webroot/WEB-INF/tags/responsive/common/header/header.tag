@@ -148,13 +148,13 @@
 							</div>
 
 							<c:if test="${empty hideHeaderLinks}">
-								<ycommerce:testId code="header_StoreFinder_link">
+								<%-- <ycommerce:testId code="header_StoreFinder_link">
 									<div class="mobile__nav__row--table-cell hidden-sm hidden-md hidden-lg mobile__nav__row--seperator">
 										<a href="<c:url value="/store-finder"/>" class="mobile__nav__row--btn mobile__nav__row--btn-location btn">
 											<span class="glyphicon glyphicon-map-marker"></span>
 										</a>
 									</div>
-								</ycommerce:testId>
+								</ycommerce:testId> --%>
 							</c:if>
 
 							<cms:pageSlot position="MiniCart" var="cart" element="div" class="miniCartSlot componentContainer mobile__nav__row--table hidden-sm hidden-md hidden-lg">

@@ -1,6 +1,6 @@
 ﻿
 ################### Categories ######################
-#$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Online'])[unique=true,default=$productCatalog:Online]
+#$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
 $productCatalog=flintgroup-zhProductCatalog
 $productCatalogName=Flintgroup Zh Product Catalog
 $productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Online'])[unique=true,default=$productCatalog:Online]
@@ -28,7 +28,7 @@ INSERT_UPDATE Category;code[unique=true];name[lang=en];name[lang=zh];$productCV[
 ;News_Blankets_Sleeves_INT2;Blankets Sleeves;橡皮布及套筒;;
 ;News_Plates_INT2;Plates;印版;;
 ;News_Pressroom_Chemistry_INT2;Pressroom Chemistry;印刷化学品;;
-;News_Anciliary_Products_INT2;Anciliary Products;辅助产品;;
+;News_Ancillary_Products_INT2;Ancillary Products;辅助产品;;
 
 ;Heatset_INKS_INT2;Inks;油墨;;
 ;Heatset_Blankets_Sleeves_INT2;Blankets Sleeves;橡皮布及套筒;;
@@ -47,11 +47,15 @@ INSERT_UPDATE Category;code[unique=true];name[lang=en];name[lang=zh];$productCV[
 ;LetterPress_Plates_INT2;Plates;印版;;
 ;LetterPress_Equipment_INT2;Equipment;设备;;
 
-;Sheetfed_INKS_INT2;Inks;油墨;;
+;Sheetfed_INKS_INT2;Inks & Coatings;油墨及光油;;
 ;Sheetfed_Blankets_Sleeves_INT2;Blankets Sleeves;橡皮布及套筒;;
 ;Sheetfed_PC_INT2;Pressroom Chemistry;印刷化学品;;
 ;Sheetfed_Plates_INT2;Plates;印版;;
 ;Sheetfed_Ancillary_Products_INT2;Anciliary Products;辅助产品;;
+
+;MetalDeco_Blankets_INT2;Blankets;橡皮布;;
+;MetalDeco_Ancillary_Products_INT2;Anciliary Products;辅助产品;;
+
 
 
 ;News_INK_Conventional_INT;Conventional;传统;;
@@ -62,14 +66,17 @@ INSERT_UPDATE Category;code[unique=true];name[lang=en];name[lang=zh];$productCV[
 ;News_PC_Washes_INT;Pressroom Chemistry Washes;印刷化学品洗车水;;
 ;News_PC_Silicones_INT;Pressroom Chemistry Silicones;印刷化学品硅油;;
 ;News_PC_Specialty_INT;Pressroom Chemistry Speciality;印刷化学品特殊化学品;;
-;News_Plates_INT;Plates;印版;;
-;News_Anciliary_Products_INT;Anciliary Products;辅助产品;;
+;News_Plates_Coating_INT;Coating;光油;;
+;News_Plates_Embossing_INT;Embossing;压凹凸;;
+;News_Anciliary_Products_INT;Ancillary Products;辅助产品;;
 ;News_Blankets_Offset_INT;Blankets Offset;橡皮布胶印;;
 ;News_Blankets_Metalback_INT;Blankets Metalback;橡皮布金属底面;;
+;News_Blanket_Bars_INT;Blanket Bars;橡皮布夹;;
 
 
 ;Heatset_Inks_INT;Inks;油墨;;
-;Heatset_Blankets_Offset_INT;Blankets Offset;橡皮布胶印;;
+;Heatset_OffsetBlankets_INT;Offset Blankets;胶印;;
+;Heatset_Blankets_Offset_INT;Offset UV Blankets;紫外线胶印;;
 ;Heatset_Blankets_Metalback_INT;Blankets Metalback;橡皮布金属底面;;
 ;Heatset_Blankets_Sleeves_INT;Blankets Sleeves;橡皮布及套筒;;
 ;Heatset_Blanket_Bars_INT;Blanket Bars;橡皮布夹;;
@@ -78,28 +85,33 @@ INSERT_UPDATE Category;code[unique=true];name[lang=en];name[lang=zh];$productCV[
 ;Heatset_PC_Silicones_INT;Pressroom Chemistry Silicones;印刷化学品硅油;;
 ;Heatset_PC_Specialty_INT;Pressroom Chemistry Specialty;印刷化学品特殊化学品;;
 ;Heatset_Plates_INT;Plates;印版;;
+;Heatset_Plates_Coating_INT;Coating;光油;;
+;Heatset_Plates_Embossing_INT;Embossing;压凹凸;;
 ;Heatset_Anciliary_Product;Anciliary Product;辅助产品;;
 
-;UV_NarrowWeb_INT;NarrowWeb;窄幅轮转;;
+
+;UV_NarrowWeb_INT;NarrowWeb;紫外线窄幅;;
 ;UV_Sheefted_INT;Sheefted;单张纸胶印;;
 ;UV_Coldset_INT;Coldset;冷固;;
 ;UV_Screen_Narrow_Web_INT;UV Screen Narrow Web;窄幅紫外线丝网;;
-;UV_Screen_INT;UV Screen;紫外线丝网;;
+;UV_Screen_INT;Screen;线丝网;;
 ;UV_Offset_Narrow_Web_INT;UV Offset Narrow Web;窄幅紫外线胶印;;
 ;UV_Varnishes_Others;Varnishes;光油;;
 ;UV_OffsetUV_INT;OffsetUV;抵消紫外线;;
 ;UV_Blankets_Bars;Blankets Bars;橡皮布夹;;
+;UV_Offset_Blankets;Offset Blankets;胶印;;
 ;UV_PC_Founts_INT;Pressroom Chemistry Founts;印刷化学品润版液;;
 ;UV_PC_Washes_INT;Pressroom Chemistry Washes;印刷化学品洗车水;;
 ;UV_PC_Cleaners_Rejuvenators_INT;Pressroom Chemistry Cleaners Rejuvenators;印刷化学品清洗剂和更新剂;;
 ;UV_Ancillary_Products_INT;Ancillary Products;辅助产品;;
 
 
-;LetterPress_Inks_NarrowWeb_INT;Inks NarrowWeb;窄幅轮转;;
+;LetterPress_Inks_NarrowWeb_INT;Narrow Web UV;窄幅紫外线;;
 ;LetterPress_News_INT;News;新闻;;
-;LetterPress_Varnishes_NarrowWeb_INT;Varnishes NarrowWeb;窄幅轮转;;
-;LetterPress_PlateMaking_Equipment_INT;PlateMaking Equipment;制版设备;;
-;LetterPress_PlateProcessor_Menu;PlateProcessor menu;印版显影机;;
+;LetterPress_Varnishes_NarrowWeb_INT;Narrow Web UV;窄幅轮转紫外线;;
+;LetterPress_Plates_INT;Plates;印版;;
+;LetterPress_PlateMaking_Equipment_INT;Plate making Equipment;制版设备;;
+;LetterPress_PlateProcessor_INT;Plate Processors;印版显影机;;
 ;LetterPress_Equipment_INT;Equipment;设备;;
 
 ;Sheetfed_INK_Conventional_INT;Conventional;传统;;
@@ -117,9 +129,11 @@ INSERT_UPDATE Category;code[unique=true];name[lang=en];name[lang=zh];$productCV[
 ;Sheetfed_Embossing_INT;Embossing;压凹凸;;
 ;Sheetfed_Anciliary_Products_INT;Anciliary Products;辅助产品;;
 
+;MetalDeco_Can_or_Beverage_INT;Can / Beverage;饮料罐;;
+;MetalDeco_Plastic_INT;Plastic;塑料杯;;
+;MetalDeco_BlanketBars_INT;Blanket Bars;橡皮布夹;;
+;MetalDeco_Ancillary_Products_INT;Anciliary Products;辅助产品;;
 
-#INSERT_UPDATE Category;code[unique=true];$allSubcategories[unique=true]
-#;flintCategory;NEWS_INT,HEATSET_INT,UV_INT,LetterPress_INT,MetalDeco_INT,Sheetfed_INT,Flexography_INT,Gravure_INT,Digital_INT
 
 # Insert Category Structure
 INSERT_UPDATE CategoryCategoryRelation;source($categoryRef)[unique=true];target($categoryRef)[unique=true]

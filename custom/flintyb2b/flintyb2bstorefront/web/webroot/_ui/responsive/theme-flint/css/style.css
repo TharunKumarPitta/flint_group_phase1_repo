@@ -19348,6 +19348,33 @@ ul.nav.nav-pills.payments  > li > a:hover, .nav > li > a:focus {
   .breadcrumb > .active {
     font-size: 12px;
   }
+  .footer-links-align {
+    display: block;
+    margin-left: 10px;
+    padding-bottom: 13px;
+    margin-right: 10px;
+    font-size: 20px;
+	color: #ebebeb;
+    text-decoration: none!important;
+    line-height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+  .footer-links-align a{
+    display: block;
+    margin-left: 10px;
+    padding-bottom: 13px;
+    margin-right: 10px;
+    font-size: 20px;
+	color: #ebebeb;
+    text-decoration: none!important;
+    line-height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 }
 
 /* Mobile landscape view*/
@@ -19469,3 +19496,5 @@ footer a:hover, a:focus {
 .account-orderhistory-pagination .pagination-bar.bottom .pagination-toolbar {
     padding-left: 0px;
 }
+
+.footer-links-align{ margin-right: 20px;margin-left: 20px;}
