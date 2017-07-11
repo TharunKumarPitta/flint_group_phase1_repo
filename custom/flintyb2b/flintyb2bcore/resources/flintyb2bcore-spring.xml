@@ -504,5 +504,8 @@
  	</bean>
  	<bean id="flintSolrSearchListener" class="com.flintgroup.core.util.FlintSolrSearchListener"></bean>
  	
-	
+	<alias name="flintDefaultCalculationService" alias="calculationService"/>
+	<bean id="flintDefaultCalculationService" class="com.flintgroup.core.order.FlintDefaultCalculationService" parent="defaultCalculationService">
+	<property name="findPriceStrategy" ref="currentFactoryFindPricingStrategy"/>
+	</bean>
 </beans>
