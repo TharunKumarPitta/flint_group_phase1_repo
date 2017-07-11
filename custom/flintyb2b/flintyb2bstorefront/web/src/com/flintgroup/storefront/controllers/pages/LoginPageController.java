@@ -14,7 +14,9 @@ import de.hybris.platform.acceleratorstorefrontcommons.controllers.pages.Abstrac
 import de.hybris.platform.acceleratorstorefrontcommons.forms.RegisterForm;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.cms2.model.pages.AbstractPageModel;
-import com.flintgroup.storefront.controllers.ControllerConstants;
+import de.hybris.platform.servicelayer.user.UserService;
+
+import java.io.IOException;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -32,6 +34,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.flintgroup.storefront.controllers.ControllerConstants;
+
 
 /**
  * Login Controller. Handles login and register for the account flow.
@@ -41,6 +45,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class LoginPageController extends AbstractLoginPageController
 {
 	private HttpSessionRequestCache httpSessionRequestCache;
+
+	@Resource(name = "userService")
+	UserService userService;
 
 	@Override
 	protected String getView()
@@ -75,11 +82,16 @@ public class LoginPageController extends AbstractLoginPageController
 	public String doLogin(@RequestHeader(value = "referer", required = false) final String referer,
 			@RequestParam(value = "error", defaultValue = "false") final boolean loginError, final Model model,
 			final HttpServletRequest request, final HttpServletResponse response, final HttpSession session)
-			throws CMSItemNotFoundException
+			throws CMSItemNotFoundException, IOException
 	{
 		if (!loginError)
 		{
 			storeReferer(referer, request, response);
+		}
+		final boolean isUserAnonymous = userService.isAnonymousUser(userService.getCurrentUser());
+		if (!isUserAnonymous)
+		{
+			response.sendRedirect("/flintyb2bstorefront");
 		}
 		return getDefaultLoginPage(loginError, session, model);
 	}

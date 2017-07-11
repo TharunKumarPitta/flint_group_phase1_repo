@@ -52,21 +52,20 @@ public class FlintStorefrontAuthenticationSuccessHandler extends StorefrontAuthe
 		request.setAttribute(WebConstants.CART_MERGED, Boolean.FALSE);
 
 		// Check if the user is in role admingroup
-		if (!isAdminAuthority(authentication))
-		{
+		if (!isAdminAuthority(authentication)) {
 			getCartRestorationStrategy().restoreCart(request);
 			getBruteForceAttackCounter().resetUserCounter(getCustomerFacade().getCurrentCustomerUid());
 			// When Authenticated the following URL's are not valid hence redirect to homepage
-			if (savedRequest != null &&
-					(savedRequest.getRedirectUrl().contains("/login?error=true")) || (savedRequest.getRedirectUrl().contains("login?site=flint-zh")))
-			{
-				this.getRedirectStrategy().sendRedirect(request, response, "/");
-			}
-			else
-			{
+
+			if (savedRequest != null) {
+				if ((savedRequest.getRedirectUrl().contains("/login?error=true")) || (savedRequest.getRedirectUrl().contains("login?site=flint-zh"))) {
+					this.getRedirectStrategy().sendRedirect(request, response, "/");
+				} else {
+					super.onAuthenticationSuccess(request, response, authentication);
+				}
+			}else {
 				super.onAuthenticationSuccess(request, response, authentication);
 			}
-
 		}
 		else
 		{
