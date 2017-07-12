@@ -41,7 +41,7 @@ public class FlintDefaultCalculationService extends DefaultCalculationService
 	@Override
 	protected PriceValue findBasePrice(final AbstractOrderEntryModel entry) throws CalculationException
 	{
-		return entry.getBasePrice().equals(new Double(0.0)) ? new PriceValue(entry.getOrder().getCurrency().toString(), 0.0, true)
+		return getFindPriceStrategy().findBasePrice(entry).equals(new Double(0.0)) ? new PriceValue(entry.getOrder().getCurrency().toString(), 0.0, true)
 				: getFindPriceStrategy().findBasePrice(entry);
 	}
 }

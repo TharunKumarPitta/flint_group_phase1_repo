@@ -10,7 +10,7 @@
 				src="${media.url}">
 		</c:when>
 		<c:otherwise>
-			<a href="${encodedUrl}" target="_blank"><img title="${media.altText}"
+			<a href="${encodedUrl}"><img title="${media.altText}"
 				alt="${media.altText}" src="${media.url}" ></a>
 		</c:otherwise>
 	</c:choose>

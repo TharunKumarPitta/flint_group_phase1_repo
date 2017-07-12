@@ -120,12 +120,12 @@ INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;n
 ;AboutHybrisNavNodeEntry;;About Hybris Navigation Node Entry;AboutHybrisNavNode;AboutHybrisLink;
 #;ContactUsNavNodeEntry;;Contact Us Navigation Node Entry;ContactUsNavNode;ContactUsLink;
 
-INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;linkname[lang=en];linkname[lang=zh];url;&linkRef;&componentRef;target(code)[default='sameWindow']
-;;AboutHybrisLink;About Hybris Link;;;"http://www.hybris.com";AboutHybrisLink;AboutHybrisLink;newWindow
-;;FlintAboutUsLink;About Us Link;About Flint Group;关于 Flint Group;"http://www.flintgrp.com/en/company/fast-facts/";FlintAboutUsLink;FlintAboutUsLink;newWindow
-;;FlintTermsConditionLink;Terms & Condition Link;Terms & Condition;条款和条件;"http://www.flintgrp.com/en/company/conditions-of-sale/";FlintTermsConditionLink;FlintTermsConditionLink;newWindow
-#;;FlintNewsInformationLink;News & Information Link;News & Information;新闻资讯;"http://www.flintgrp.com/en/news-information/press-releases/";FlintNewsInformationLink;FlintNewsInformationLink;newWindow
-;;FAQLink;FAQ Link;FAQ;常问问题;/faq;FAQLink;FAQLink
+INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;linkname[lang=en];linkname[lang=zh];url;&linkRef;&componentRef;target(code)[default='sameWindow'];styleAttributes
+;;AboutHybrisLink;About Hybris Link;;;"http://www.hybris.com";AboutHybrisLink;AboutHybrisLink;newWindow;;
+;;FlintAboutUsLink;About Us Link;About Flint Group;关于 Flint Group;"http://www.flintgrp.com/lp_cn/";FlintAboutUsLink;FlintAboutUsLink;newWindow;;
+;;FlintTermsConditionLink;Terms & Condition Link;Terms & Condition;条款和条件;/footer/termsAndConditions;FlintTermsConditionLink;FlintTermsConditionLink;newWindow;class="termsAndConditionsLink";
+;;FAQLink;FAQ Link;FAQ;常问问题;/faq;FAQLink;FAQLink;;;
+
 
 ##---- level 4. children of Order Tools ----##
 INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);links(&linkRef);&nodeRef
@@ -1049,3 +1049,26 @@ INSERT_UPDATE FooterNavigationComponent;$contentCV[unique=true];uid[unique=true]
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef);;;
 #;;FooterSlot;FAQLink,FooterNavigationComponent
+
+
+#Terms and Condition on footer
+
+$lang=en
+
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
+;;termsAndConditionsForFooter;Terms and Conditions Page for Footer;ContentPage1Template;/termsAndConditionsForFooter
+
+UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
+;;termsAndConditionsForFooter;"Terms and Conditions"
+
+$lang=zh
+
+# Content Pages
+UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];title[lang=zh]
+;;termsAndConditionsForFooter;"条款和条件"
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='termsAndConditionsForFooter'];contentSlot(uid,$contentCV)[unique=true];;;
+;;Section2B-TermsAndConditionsForFooter;Section2B;;Section2BSlot-TermsAndConditionsForFooter;;;
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(uid,$contentCV);;;
+;;Section2BSlot-TermsAndConditionsForFooter;Section2B Slot for Terms and Conditions Page;true;termsAndConditionsTextParagraph;;;

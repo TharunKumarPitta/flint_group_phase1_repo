@@ -123,8 +123,11 @@ public class FlintSolrSearchListener implements FacetSearchListener
 		{
 			final B2BCustomerModel b2bCustomer = (B2BCustomerModel) user;
 			final SearchQuery searchQuery = facetSearchContext.getSearchQuery();
-//			searchQuery.addFilterQuery("b2bunit_string_mv", b2bCustomer.getDefaultB2BUnit().getUid());
-			searchQuery.addQuery("b2bunit_string_mv", b2bCustomer.getDefaultB2BUnit().getUid());
+
+			if(searchQuery.getUserQuery()==null)
+			{
+				searchQuery.addQuery("b2bunit_string_mv", b2bCustomer.getDefaultB2BUnit().getUid());
+			}
 		}
 
 	}
