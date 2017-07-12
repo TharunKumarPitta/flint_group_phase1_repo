@@ -1,0 +1,64 @@
+$contentCatalog=flintgroup-zhContentCatalog
+$contentCatalogName=Flint China Content Catalog
+$productCatalog=flintgroup-zhProductCatalog
+$productCatalogName=Flint China Product Catalog
+
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$picture=media(code, $contentCV);
+$image=image(code, $contentCV);
+$media=media(code, $contentCV);
+$page=page(uid, $contentCV);
+$contentPage=contentPage(uid, $contentCV);
+$siteResource=jar:com.flintgroup.initialdata.setup.InitialDataSystemSetup&/flintyb2binitialdata/import/sampledata/contentCatalogs/$contentCatalog
+$productResource=jar:com.flintgroup.initialdata.setup.InitialDataSystemSetup&/flintyb2binitialdata/import/productCatalogs/$productCatalog
+$jarResourceCms=jar:com.flintgroup.initialdata.setup.InitialDataSystemSetup&/flintyb2binitialdata/import/cockpits/cmscockpit
+
+$siteUid=flint-zh
+
+#my account links
+UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];linkName[lang=en];linkname[lang=zh];
+;;AccountSupportTicketHistoryLink;Support Tickets;支持门票;
+
+
+INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;linkname;linkname[lang=zh];url;&linkRef;target(code)[default='sameWindow']
+;;PersonalDetailsLink;PersonalDetailsLink;Personal Details;個人資料;/my-account/INSERT_UPDATE-profile;PersonalDetailsLink;
+#;;INSERT_UPDATEEmailLink;INSERT_UPDATEEmailLink;/my-account/INSERT_UPDATE-email;INSERT_UPDATEEmailLink;
+;;UpdatePasswordLink;UpdatePasswordLink;Update Password;更新密碼;/my-account/update-password;UpdatePasswordLink;
+;;AddressBookLink;AddressBookLink;Address Book;地址簿;/my-account/address-book;AddressBookLink;
+#;;PaymentDetailsLink;PaymentDetailsLink;/my-account/payment-details;PaymentDetailsLink;
+;;OrderHistoryLink;OrderHistoryLink;Order History;訂單歷史;/my-account/orders;OrderHistoryLink;
+;;SavedCartsLink;SavedCartsLink;Saved Carts;已保存的購物車;/my-account/saved-carts;SavedCartsLink;
+#;;MyQuotesLink;MyQuotesLink;/my-account/my-quotes;MyQuotesLink;
+#;;MyReplenishmentOrdersLink;MyReplenishmentOrdersLink;/my-account/my-replenishment;MyReplenishmentOrdersLink;
+;;ApprovalDashboardLink;ApprovalDashboardLink;;;/my-account/approval-dashboard;ApprovalDashboardLink;
+
+
+#footer links
+INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;linkname[lang=en];linkname[lang=zh];url;&linkRef;&componentRef;target(code)[default='sameWindow'];styleAttributes
+;;AboutHybrisLink;About Hybris Link;;;"http://www.hybris.com";AboutHybrisLink;AboutHybrisLink;newWindow;;
+;;FlintAboutUsLink;About Us Link;About Flint Group;关于 Flint Group;"http://www.flintgrp.com/lp_cn/";FlintAboutUsLink;FlintAboutUsLink;newWindow;;
+;;FlintTermsConditionLink;Terms & Condition Link;Terms & Condition;条款和条件;/footer/termsAndConditions;FlintTermsConditionLink;FlintTermsConditionLink;newWindow;class="termsAndConditionsLink";
+;;FAQLink;FAQ Link;FAQ;常问问题;/faq;FAQLink;FAQLink;;;
+
+
+#no search,FAQ and termscondition condition translation
+INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[lang=zh]
+;;EmptyCartParagraphComponent;"<h2>你的購物車是空的</h2><p>建議</p><ul><li>通過選擇上述類別瀏覽我們的產品</li></ul>"
+;;NoSearchResultsParagraphComponent;"<h2>抱歉， 我们没有找到任何相匹配的产品</h2><p>如果你之前还没有订购产品，但有兴趣了解更多, <a href=""http://www.flintgrp.com/en/contact/"">联系我们</a></p><p>如果你之前订购过此产品, 那么我们的网站可能需要一个快速的优化。<a href=""#"">告知我们</a>.我们会尽快处理这个问题。</br>感谢您给予的耐心。</p>"
+
+INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[lang=zh];
+#;;termsAndConditionsMenuParagraph;"<div class=""nav_column"">	<div class=""title_holder"">		<div class=""title"">			<div class=""title-top"">				<span></span>			</div>		</div>		<h2>Terms and Conditions</h2>	</div>	<div class=""item"">		<ul class=""facet_block indent"">			<li><a href=""#a00"">Registration</a></li>			<li><a href=""#b00"">Eligibility to purchase</a></li>			<li><a href=""#c00"">Orders</a></li>			<li><a href=""#d00"">Pricing policy</a></li>			<li><a href=""#e00"">Sales price adjustment policy</a></li>			<li><a href=""#f00"">Acceptance of your order</a></li>			<li><a href=""#g00"">Payment</a></li>			<li><a href=""#h00"">Insurance and delivery</a></li>			<li><a href=""#i00"">Returns and exchanges</a></li>			<li><a href=""#j00"">Intellectual property rights</a></li>			<li><a href=""#k00"">Content</a></li>			<li><a href=""#l00"">No commercial use</a></li>			<li><a href=""#m00"">Your activity</a></li>			<li><a href=""#n00"">Third party</a></li>			<li><a href=""#o00"">General</a></li>			<li><a href=""#p00"">Indemnification</a></li>			<li><a href=""#q00"">General legal terms</a></li>		</ul>	</div></div>";
+;;termsAndConditionsTextParagraph;"<a name=""00""></a><div class=""textpage textpage-termsAndConditions""><div class=""item_container"">		<h2><a name=""a00""></a>1. 适用范围</h2><p>所有富林特集团公司及其关联公司的相关供货和服务，应完全遵守本一般性销售条款。对于买方提出的任何一般性条款和条件，特此不予接受。本一般性销售条款亦应适用于所有未来发生的业务。任何对本一般性销售条款的修改，需获得卖方明确的书面批准.</p>			</div>		<div class=""item_container"">		<h2><a name=""b00""></a>2. 要约与接受</h2>		<p>卖方的报价并非约束性要约，而应被视为请求买方提交有约束力要约/订单的邀请。<br>合同应基于买方订单（要约）和卖方接受而成立。当接受的内容与要约不一致时，该等接受构成卖方新的、不具约束力的要约。.	</div>	<div class=""item_container"">		<h2><a name=""c00""></a>3. 产品质量、标本和样品；担保</h2>		<p>3.1 除非另有约定，货物的质量以卖方的产品规格标准为准.<br>3.2 标本和样品的属性仅在协议明确约定将其作为货物质量标准时方具有约束力</br><br>3.3 质量、保质期及其它信息，仅当协议明确约定和指定将其作为担保事项时方构成一项担保。</br> </p>	</div>	<div class=""item_container"">		<h2><a name=""d00""></a>4. 建议</h2>		<p>卖方提出的任何建议，都是基于其尽可能所知的信息</br>任何产品适用性和应用方面的建议、信息，均不得免除买方自主进行调查和测试的责任。</p>	<div class=""item_container"">		<h2><a name=""e00""></a>5. 价格</h2>		<p>在合同签订和发货日之间，如果卖方的价格、或卖方付款条件发生变动，卖方可选择在发货日有效的价格或付款条件作为交易价格或付款条件。</br>如价格上涨，买方有权解除合同，但需要在收到价格上涨通知后14天内，向卖方发出解除通知。</p>	<div class=""item_container"">		<h2><a name=""f00""></a>6. 交付</h2>		<p>必须按合同约定进行交付。应当依照合同订立之日有效的国际贸易术语通则，对一般性商业条款进行解释。</p>	</div>	<div class=""item_container"">		<h2><a name=""g00""></a>7. 运输途中的损坏</h2>		<p>由于运输途中的损坏而导致的索赔，必须在运输合同规定的期限内，由买方直接向承运人提出，买方也应向卖方提供一份副本。</br></p>	</div>		<div class=""item_container"">		<h2><a name=""h00""></a>8. 包装</h2>		<p>8.1 卖方交付的货物应用标准包装材料进行包装。<br>8.2 如果货物以通用可回收集装箱交付，则该等集装箱必须在我方委托送货方交付产品后30天内卸空并免运费退还。 </br> <br>对于买方造成的通用集装箱的任何损失和损坏，买方应承担责任。通用集装箱不得用于其他用途或其他产品。它们应专门用于所交付产品的运输。不得移除运输标签。</br><br>8.3 卖方不得收回一次性包装。</br></p>	</div>		<div class=""item_container"">		<h2><a name=""i00""></a>9. 法律合规性</h2>		<p>除非另有特别约定，买方有责任遵守所有货物进口、运输、存储和使用方面的法律法规。</p>	</div>		<div class=""item_container"">		<h2><a name=""j00""></a>10. 延期支付</h2>		<p>10.1 若到期未能支付货物价款，则构成根本性违约。</br>10.2 在买方付款违约的情况下，如货款发票以欧元计价，卖方有权在到期付款时，收取比德国联邦银行当时公布的基本利率高8%的利息；或者，如货款发票以其他货币计价，则收取比发票签发国主要银行机构当时的贴现率高8%的利息。</p>	</div>		<div class=""item_container"">		<h2><a name=""k00""></a>11. 买方关于不合格货物的权利</h2>		<p>11.1 在收到货物后4周内，买方例行检查中发现的任何缺陷必须通知卖方；其他缺陷必须在发现后4周内通知卖方。通知必须以书面形式发出，必须准确地描述缺陷的性质和程度。<br>11.2 如果货物有缺陷，并且买方已按照11.1条款正式通知卖方，买方有权享有法律规定的相关权利，但:</br><br>a)卖方有权选择是否对该等缺陷进行弥补，或为买方提供合格货物进行替换。</br><br>b)卖方依照上述两种做法进行弥补。如果卖方未能遵照执行、或买方不接受，买方可解除合同，或要求降低购买价格。</br><br>c)关于不合格品的索赔和费用报销，应遵循条款12。</br><br>11.3 买方对不合格品的索赔期限，自收到货物起，限于一年之内。在下列情况下，应依照法律规定的时效限制，而非一年时间:</br><br>a) 故意不当行为责任。</br><br>b) 欺诈性隐瞒缺陷。</br><br>c) 有关货物在通用方式下应用于建设工程存在缺陷，因此对卖方提出货物缺陷索赔的。</br><br>d) 由于卖方过失责任，或卖方法定代表人、或代理人的故意或过失责任，所造成的生命、身体和健康的损害索赔。</br> <br>e) 由于卖方重大过失责任，或卖方法定代表人、或代理人故意或过失责任，所造成的其他损害索赔。</br><br>f) 买方依照消费品采购规定所享有的追索权。</br></p>	</div>		<div class=""item_container"">		<h2><a name=""l00""></a>12. 责任</h2>		<p>12.1 原则上，卖方应依照法律规定，对其自身行为负责，并对其法律代表、员工、及其因履行合同义务而使用的第三方（依照德国民法典Bürgerliches Gesetzbuch 第278节所列示的含义）以及代理人的行为负责。<br>12.2 卖方因本合同缔约和履行过程中而产生的任何责任，无论由于缔约过失、延迟、未完全按合同规定履行义务、以及侵权行为所造成的损失责任，卖方应仅对买方由此遭受的直接经济损失承担赔偿责任，且在任何情况下其累计承担的责任与赔偿不应超过其业已交货并按合同收取货款的【20】%，除非双方对此另有明确且不同的书面约定。</br><br>12.3 如果产品相关及本合同所适用法律法规对责任限制有特别禁止性规定的，则上述责任限制不适用。</br></p>	</div>		<div class=""item_container"">		<h2><a name=""m00""></a>13. 抵销</h2>		<p>买方仅能对卖方无争议裁决性的反诉进行抵消辩诉。</p>	</div>		<div class=""item_container"">		<h2><a name=""n00""></a>14. 担保</h2>		<p>卖方如果有合理理由怀疑买方的支付能力，尤其在买方拖欠付款的情况下，卖方可根据进一步的索赔需要，取消其信用期，并以预付款或其他担保方式，来执行未来的交付。</p>	</div>		<div class=""item_container"">		<h2><a name=""o00""></a>15. 所有权保留</h2>		<p>15.1 在所有卖方的有关索赔解决之前，货物仍属于卖方财产。<br>15.2 对货物进行的处理和加工，应代表卖方生产商进行，而不给其带来任何义务。如果买方加工、关联或混合保留权货物，卖方应取得新货物的共有权，其金额按保留所有权货物的发票价值计。</br><br>如果因关联或混合，导致卖方所有权到期，则买方应在此将新库存或货物的(共有)所有权转让给卖方，其金额按照保留所有权货物的发票价值计。买方应为卖方免费储存所有（共有）所有权货物。</br><br>15.3 只有在适当的业务运作框架下，并且买方未违约时，买方才可转售保留所有权的货物。如保留所有权的货物被第三方扣押、或经过其他途径获取，买方应立即通知卖方。作为预防措施，买方特此将对保留所有权货物的转售价的索赔权转让给卖方，包括对所有相关附随的索赔权。在被卖方撤销前，买方有权收取已转让给卖方的相关索赔。 <br>15.4 如果卖方可实现的担保的价值超过赔偿总金额的20%，则卖方有义务根据买方要求，通过自主选择转移或转让方式解除部分担保。 </br> <br>15.5 如果根据目的地国相关法律无法有效保留所有权，则买方应依照目的地国家的法律配合为卖方提供具有法律依据的担保，并根据相应目的地国家的规定执行。</br><br>15.6 如卖方没有退出合同，则可收回货物的保留所有权。 </br> </p></div>		<div class=""item_container"">		<h2><a name=""p00""></a>16. 不可抗力</h2>		<p>如发生任何超出卖方控制的事件或情况，如自然事件、战争、罢工、停业、原材料和能源的短缺，交通障碍、生产设备故障、火灾、爆炸，或政府行为，应当减免本合同项下卖方无法履行的义务。 该条款同样也适用于在该等事件或情况下，合同的履行在很长时间内对卖方已无商业效益、或对卖方的供应商不存在效益。如果上述事件持续三(3)个月以上，卖方有权解除合同，无需做出任何赔偿。</p>	</div>		<div class=""item_container"">		<h2><a name=""q00""></a>17. 付款地点</h2>		<p>无论交货或交单地在何处，付款地点应为卖方的营业地点。</p>	</div> <div><h2><a name=""q00""></a>18. 通信</h2> <p>对于合同一方应收到的任何通知或其他通信，仅当该等通知或通信收讫时，方才生效。如果该等通知或其他通信存在时间期限要求，则必须在该期限内送达接收方。</p></div><div><h2><a name=""q00""></a>19. 争议解决</h2> <p>对于本合同引发的、或与本合同有关的任何争端，，双方同意将提交中国国际经济贸易仲裁委员会，按照其现行有效的仲裁规则，在卖方所在地进行仲裁。各方在此承认并确认其裁决将为终局并具有强制执行力。</p></div><div><h2><a name=""q00""></a>20. 准据法</h2> <p>合同关系应受到中华人民共和国法律的管辖。除非另有明确声明，本文所有引用的法律、法案、法令和其他法规均指中国法律。</p></div><div><h2><a name=""q00""></a>21. 合同语言</h2> <p>如果该一般性销售条款以买方所知的、本销售合同语言（以下简称合同语言）以外的另一种语言制定，这仅仅是为了买方的便利。如有不同解释，以合同语言版本为准。</p></div></div>";
+
+
+INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[lang=zh];
+#;;faqMenuParagraph;" ";
+;;faqTextParagraph;"<div class=""global-alerts""><div class=""alert alert-info"" role=""alert""><strong></strong></div></div><a name=""00""></a><div class=""textpage textpage-faqs""><div class=""item_container"">		<h1><a name=""a00""></a>常問問題</h1></div>		<div class=""item_container"">		<h2><a name=""b00""></a>为什么我需要一个Flint Group门户帐号？</h2>		<p>注册帐号不是必须的，但这样做有很多好处。例如，您可以随时检查价格、下单、跟踪订单状态、查看订单历史，提出问题等等。我们希望在线系统能给您和Flint Group的业务往来提供最大化的便利。</p><h2></a>如何获得帐号？ </h2>		<p>联系我们的销售人员或客户服务获得您的初始密码。 您也可以通过 <a href=""mailto:info.shop.cn@flintgrp.com""  target=""_top"">info.shop.cn@flintgrp.com</a> 向我们发送电子邮件。首次登录后，您可以更改密码。 然后您便可以选购产品。</p><h2></a我可以取消订单吗？</h2>		<p>请联系您的销售代表或客户服务讨论。</p><h2></a>我忘记了我的密码！</h2>		<p>没问题。点击 <a href=""my-account/add-support-ticket"" >這裡</a> 重置您的密码。完成后，您会收到一封包含进一步说明的电子邮件</p><h2></a>我什么时候可以收到货物？</h2>		<p>交货时间和通过销售代表或客户服务订货是一样的。具体的交货时间可能因您所在地区或订购的产品而异。具体细节请联系Flint Group团队，或点击 <a href=""my-account/add-support-ticket"" >這裡</a> 发送“工单”询问。我们将充分重视您的要求并及时回复。。</p><h2>如何提出特殊要求，例如送货到特定码头等）？</h2><p>下单时，您会看到可以提出特殊要求或添加备注的字符框。您也可以随时联系Flint Group团队，或者点击 <a href=""my-account/add-support-ticket"" >這裡</a> 发送支持“工单”。 我们将充分重视您的要求并及时回复。</p><h2></a>我有一个技术问题。 我应该问谁？</h2>		<p>我们的技术团队会尽快回答您的问题。 如果您还没有Flint Group的联系人，请点击 <a href=""my-account/add-support-ticket"" >這裡</a>发送支持“工单”。我们将充分重视您的要求并及时回复。</p><h2></a>我想订购不在我的现有产品目录中的产品。</h2>		<p>没问题。 销售人员或客户服务专家将为您获得定价，并帮助建立订单。 一旦您购买该产品，它将立即进入您的目录。 要求报价或询问任何其他产品，请点击 <a href=""my-account/add-support-ticket"" >這裡</a>. 发送支持“工单”。我们将充分重视您的要求并及时回复。</p><h2></a>如果大量订购，我可以获得折扣或批发价吗？</h2>		<p>您的Flint Group团队可以与您详细讨论。 随时联系他们，或通过点击 <a href=""my-account/add-support-ticket"" >這裡</a>发送支持“工单”。我们将充分重视您的要求并及时回复。</p>";
+
+####my account translation in landing page
+
+UPDATE CMSNavigationNode;$contentCV[unique=true];uid[unique=true];title[lang=zh]
+;;MyAccountNavNode;"我的帳戶"
+
+

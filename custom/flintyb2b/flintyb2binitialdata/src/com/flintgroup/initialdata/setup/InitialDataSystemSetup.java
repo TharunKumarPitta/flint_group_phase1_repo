@@ -10,30 +10,22 @@
  */
 package com.flintgroup.initialdata.setup;
 
-import com.flintgroup.initialdata.services.FlintSampleDataImportService;
 import de.hybris.platform.commerceservices.dataimport.impl.CoreDataImportService;
-import de.hybris.platform.commerceservices.dataimport.impl.SampleDataImportService;
 import de.hybris.platform.commerceservices.setup.AbstractSystemSetup;
+import de.hybris.platform.commerceservices.setup.data.ImportData;
 import de.hybris.platform.core.initialization.SystemSetup;
-import de.hybris.platform.core.initialization.SystemSetup.Process;
-import de.hybris.platform.core.initialization.SystemSetup.Type;
 import de.hybris.platform.core.initialization.SystemSetupContext;
 import de.hybris.platform.core.initialization.SystemSetupParameter;
 import de.hybris.platform.core.initialization.SystemSetupParameterMethod;
-import com.flintgroup.initialdata.constants.Flintyb2bInitialDataConstants;
-
-import de.hybris.platform.commerceservices.setup.data.ImportData;
-import de.hybris.platform.commerceservices.setup.events.CoreDataImportedEvent;
-import de.hybris.platform.commerceservices.setup.events.SampleDataImportedEvent;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-
-
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Required;
+
+import com.flintgroup.initialdata.constants.Flintyb2bInitialDataConstants;
+import com.flintgroup.initialdata.services.FlintSampleDataImportService;
 
 
 /**
@@ -78,19 +70,14 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 		params.add(createBooleanSystemSetupParameter(IMPORT_CORE_DATA, "Import Core Data", true));
 		params.add(createBooleanSystemSetupParameter(IMPORT_SAMPLE_DATA, "Import Sample Data", true));
 		params.add(createBooleanSystemSetupParameter(ACTIVATE_SOLR_CRON_JOBS, "Activate Solr Cron Jobs", true));
-		params.add(createBooleanSystemSetupParameter(IMPORT_REFERENCE_DATA, "Import Reference Data",
-				true));
+		params.add(createBooleanSystemSetupParameter(IMPORT_REFERENCE_DATA, "Import Reference Data", true));
 		params.add(createBooleanSystemSetupParameter(COMMON_DATA, "Common Data", true));
-		params.add(createBooleanSystemSetupParameter(IMPORT_SOLR_CONFIG,
-				"Import Solr Config", true));
-		params.add(createBooleanSystemSetupParameter(IMPORT_FLINT_ZH_SITE_DATA, "Import Flint ZH Site Data",
-				true));
-		params.add(createBooleanSystemSetupParameter(IMPORT_FLINT_ZH_CONTENT_DATA,
-				"Import Flint ZH Catalog Sample Data", true));
-		params.add(createBooleanSystemSetupParameter(IMPORT_FLINT_ZH_PRODUCT_DATA,
-				"Import Flint ZH Product Sample Data", true));
-		params.add(createBooleanSystemSetupParameter(IMPORT_FLINT_ZH_CATALOG_SYNCH_JOBS,
-				"Import Flint ZH Product Sample Data", true));
+		params.add(createBooleanSystemSetupParameter(IMPORT_SOLR_CONFIG, "Import Solr Config", true));
+		params.add(createBooleanSystemSetupParameter(IMPORT_FLINT_ZH_SITE_DATA, "Import Flint ZH Site Data", true));
+		params.add(createBooleanSystemSetupParameter(IMPORT_FLINT_ZH_CONTENT_DATA, "Import Flint ZH Catalog Sample Data", true));
+		params.add(createBooleanSystemSetupParameter(IMPORT_FLINT_ZH_PRODUCT_DATA, "Import Flint ZH Product Sample Data", true));
+		params.add(
+				createBooleanSystemSetupParameter(IMPORT_FLINT_ZH_CATALOG_SYNCH_JOBS, "Import Flint ZH Product Sample Data", true));
 
 		return params;
 	}
@@ -106,31 +93,27 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 	{
 		final List<ImportData> importData = new ArrayList<ImportData>();
 
-		if (this.getBooleanSystemSetupParameter(context, COMMON_DATA)) {
+		if (this.getBooleanSystemSetupParameter(context, COMMON_DATA))
+		{
 
 			// Import essential data
 			importImpexFile(context, FLINT_IMPORT_HOME + "/coredata/common/essential-data.impex", false);
 
 		}
 
-		if (this.getBooleanSystemSetupParameter(context, IMPORT_FLINT_ZH_SITE_DATA)) {
+		if (this.getBooleanSystemSetupParameter(context, IMPORT_FLINT_ZH_SITE_DATA))
+		{
 
-			importImpexFile(context, FLINT_IMPORT_HOME
-					+ "/coredata/contentCatalogs/flintgroup-zhContentCatalog/catalog.impex");
+			importImpexFile(context, FLINT_IMPORT_HOME + "/coredata/contentCatalogs/flintgroup-zhContentCatalog/catalog.impex");
 
-			importImpexFile(context, FLINT_IMPORT_HOME
-					+ "/coredata/contentCatalogs/flintgroup-zhContentCatalog/catalog_en.impex");
+			importImpexFile(context, FLINT_IMPORT_HOME + "/coredata/contentCatalogs/flintgroup-zhContentCatalog/catalog_en.impex");
 
-			importImpexFile(context, FLINT_IMPORT_HOME
-					+ "/coredata/contentCatalogs/flintgroup-zhContentCatalog/catalog_zh.impex");
+			importImpexFile(context, FLINT_IMPORT_HOME + "/coredata/contentCatalogs/flintgroup-zhContentCatalog/catalog_zh.impex");
 
 
-			importImpexFile(context,
-					FLINT_IMPORT_HOME + "/coredata/productCatalogs/flintgroup-zhProductCatalog/catalog.impex");
-			importImpexFile(context,
-					FLINT_IMPORT_HOME + "/coredata/productCatalogs/flintgroup-zhProductCatalog/catalog_en.impex");
-			importImpexFile(context,
-					FLINT_IMPORT_HOME + "/coredata/productCatalogs/flintgroup-zhProductCatalog/catalog_zh.impex");
+			importImpexFile(context, FLINT_IMPORT_HOME + "/coredata/productCatalogs/flintgroup-zhProductCatalog/catalog.impex");
+			importImpexFile(context, FLINT_IMPORT_HOME + "/coredata/productCatalogs/flintgroup-zhProductCatalog/catalog_en.impex");
+			importImpexFile(context, FLINT_IMPORT_HOME + "/coredata/productCatalogs/flintgroup-zhProductCatalog/catalog_zh.impex");
 
 
 			importImpexFile(context, FLINT_IMPORT_HOME + "/coredata/stores/flintgroup-zh/store.impex");
@@ -145,20 +128,14 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 
 			importImpexFile(context, FLINT_IMPORT_HOME + "/coredata/stores/flintgroup-zh/site-responsive.impex");
 
-			importImpexFile(context,
-					FLINT_IMPORT_HOME + "/coredata/stores/flintgroup-zh/site_en.impex");
-			importImpexFile(context,
-					FLINT_IMPORT_HOME + "/coredata/stores/flintgroup-zh/site_zh.impex");
+			importImpexFile(context, FLINT_IMPORT_HOME + "/coredata/stores/flintgroup-zh/site_en.impex");
+			importImpexFile(context, FLINT_IMPORT_HOME + "/coredata/stores/flintgroup-zh/site_zh.impex");
 
-			importImpexFile(context,
-					FLINT_IMPORT_HOME + "/coredata/stores/flintgroup-zh/store_en.impex");
-			importImpexFile(context,
-					FLINT_IMPORT_HOME + "/coredata/stores/flintgroup-zh/store_zh.impex");
+			importImpexFile(context, FLINT_IMPORT_HOME + "/coredata/stores/flintgroup-zh/store_en.impex");
+			importImpexFile(context, FLINT_IMPORT_HOME + "/coredata/stores/flintgroup-zh/store_zh.impex");
 
-			importImpexFile(context,
-					FLINT_IMPORT_HOME + "/coredata/stores/flintgroup-zh/solr_en.impex");
-			importImpexFile(context,
-					FLINT_IMPORT_HOME + "/coredata/stores/flintgroup-zh/solr_zh.impex");
+			importImpexFile(context, FLINT_IMPORT_HOME + "/coredata/stores/flintgroup-zh/solr_en.impex");
+			importImpexFile(context, FLINT_IMPORT_HOME + "/coredata/stores/flintgroup-zh/solr_zh.impex");
 
 
 			importImpexFile(context, FLINT_IMPORT_HOME + "/sampledata/stores/flintgroup-zh/solr.impex");
@@ -171,28 +148,28 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 
 		}
 
-		if (this.getBooleanSystemSetupParameter(context, IMPORT_FLINT_ZH_CONTENT_DATA)) {
+		if (this.getBooleanSystemSetupParameter(context, IMPORT_FLINT_ZH_CONTENT_DATA))
+		{
 
 			// Flint ZH core
 
-			importImpexFile(context, FLINT_IMPORT_HOME
-					+ "/coredata/contentCatalogs/flintgroup-zhContentCatalog/cms-content.impex");
+			importImpexFile(context, FLINT_IMPORT_HOME + "/coredata/contentCatalogs/flintgroup-zhContentCatalog/cms-content.impex");
 
-			importImpexFile(context, FLINT_IMPORT_HOME
-					+ "/coredata/contentCatalogs/flintgroup-zhContentCatalog/cms-content_en.impex");
+			importImpexFile(context,
+					FLINT_IMPORT_HOME + "/coredata/contentCatalogs/flintgroup-zhContentCatalog/cms-content_en.impex");
 
-			importImpexFile(context, FLINT_IMPORT_HOME
-					+ "/coredata/contentCatalogs/flintgroup-zhContentCatalog/cms-content_zh.impex");
+			importImpexFile(context,
+					FLINT_IMPORT_HOME + "/coredata/contentCatalogs/flintgroup-zhContentCatalog/cms-content_zh.impex");
 
-			importImpexFile(context, FLINT_IMPORT_HOME
-					+ "/coredata/contentCatalogs/flintgroup-zhContentCatalog/email-content.impex");
+			importImpexFile(context,
+					FLINT_IMPORT_HOME + "/coredata/contentCatalogs/flintgroup-zhContentCatalog/email-content.impex");
 
-			importImpexFile(context, FLINT_IMPORT_HOME
-					+ "/coredata/contentCatalogs/flintgroup-zhContentCatalog/email-content_zh.impex");
+			importImpexFile(context,
+					FLINT_IMPORT_HOME + "/coredata/contentCatalogs/flintgroup-zhContentCatalog/email-content_zh.impex");
 
 			// Flint ZH sample
-			importImpexFile(context, FLINT_IMPORT_HOME
-					+ "/sampledata/contentCatalogs/flintgroup-zhContentCatalog/cms-content.impex");
+			importImpexFile(context,
+					FLINT_IMPORT_HOME + "/sampledata/contentCatalogs/flintgroup-zhContentCatalog/cms-content.impex");
 
 			//Sceure Portal
 			importImpexFile(context,
@@ -200,30 +177,34 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 
 			importImpexFile(context,
 					FLINT_IMPORT_HOME + "/sampledata/contentCatalogs/flintgroup-zhContentCatalog/cms-content-customerticketing.impex");
-			importImpexFile(context,
-					FLINT_IMPORT_HOME + "/sampledata/contentCatalogs/flintgroup-zhContentCatalog/cms-content-customerticketing_en.impex");
+			importImpexFile(context, FLINT_IMPORT_HOME
+					+ "/sampledata/contentCatalogs/flintgroup-zhContentCatalog/cms-content-customerticketing_en.impex");
 
-			importImpexFile(context,
-					FLINT_IMPORT_HOME + "/sampledata/contentCatalogs/flintgroup-zhContentCatalog/cms-responsive-content-customerticketing.impex");
-			importImpexFile(context,
-					FLINT_IMPORT_HOME + "/sampledata/contentCatalogs/flintgroup-zhContentCatalog/cms-responsive-content-customerticketing_en.impex");
+			importImpexFile(context, FLINT_IMPORT_HOME
+					+ "/sampledata/contentCatalogs/flintgroup-zhContentCatalog/cms-responsive-content-customerticketing.impex");
+			importImpexFile(context, FLINT_IMPORT_HOME
+					+ "/sampledata/contentCatalogs/flintgroup-zhContentCatalog/cms-responsive-content-customerticketing_en.impex");
 
 			importImpexFile(context,
 					FLINT_IMPORT_HOME + "/sampledata/contentCatalogs/flintgroup-zhContentCatalog/cms-responsive-content.impex");
 
-			importImpexFile(context, FLINT_IMPORT_HOME
-					+ "/sampledata/contentCatalogs/flintgroup-zhContentCatalog/cms-content_zh.impex");
+			importImpexFile(context,
+					FLINT_IMPORT_HOME + "/sampledata/contentCatalogs/flintgroup-zhContentCatalog/cms-content_zh.impex");
 
-			importImpexFile(context, FLINT_IMPORT_HOME
-					+ "/sampledata/contentCatalogs/flintgroup-zhContentCatalog/email-content.impex");
+			importImpexFile(context,
+					FLINT_IMPORT_HOME + "/sampledata/contentCatalogs/flintgroup-zhContentCatalog/email-content.impex");
 
-			importImpexFile(context, FLINT_IMPORT_HOME
-					+ "/sampledata/contentCatalogs/flintgroup-zhContentCatalog/email-content_zh.impex");
+			importImpexFile(context,
+					FLINT_IMPORT_HOME + "/sampledata/contentCatalogs/flintgroup-zhContentCatalog/email-content_zh.impex");
 
+
+			importImpexFile(context,
+					FLINT_IMPORT_HOME + "/sampledata/contentCatalogs/flintgroup-zhContentCatalog/translation.impex");
 
 		}
 
-		if (this.getBooleanSystemSetupParameter(context, IMPORT_FLINT_ZH_PRODUCT_DATA)) {
+		if (this.getBooleanSystemSetupParameter(context, IMPORT_FLINT_ZH_PRODUCT_DATA))
+		{
 
 			importImpexFile(context,
 					FLINT_IMPORT_HOME + "/sampledata/productCatalogs/flintgroup-zhProductCatalog/categories-flint.impex");
@@ -249,18 +230,18 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 		}
 
 
-		if (this.getBooleanSystemSetupParameter(context, IMPORT_FLINT_ZH_CATALOG_SYNCH_JOBS)) {
+		if (this.getBooleanSystemSetupParameter(context, IMPORT_FLINT_ZH_CATALOG_SYNCH_JOBS))
+		{
 
-			importImpexFile(context, FLINT_IMPORT_HOME
-					+ "/coredata/contentCatalogs/flintgroup-zhContentCatalog/catalogs-sync.impex");
+			importImpexFile(context,
+					FLINT_IMPORT_HOME + "/coredata/contentCatalogs/flintgroup-zhContentCatalog/catalogs-sync.impex");
 
 			importImpexFile(context,
 					FLINT_IMPORT_HOME + "/coredata/productCatalogs/flintgroup-zhProductCatalog/catalogs-sync.impex");
 
 		}
 
-		importImpexFile(context,
-				FLINT_IMPORT_HOME + "/sampledata/contentCatalogs/flintgroup-zhContentCatalog/navigation.impex");
+		importImpexFile(context, FLINT_IMPORT_HOME + "/sampledata/contentCatalogs/flintgroup-zhContentCatalog/navigation.impex");
 		importImpexFile(context,
 				FLINT_IMPORT_HOME + "/sampledata/productCatalogs/flintgroup-zhProductCatalog/categories-flint.impex");
 		importImpexFile(context,
@@ -272,12 +253,9 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 				FLINT_IMPORT_HOME + "/sampledata/productCatalogs/flintgroup-zhProductCatalog/products-media.impex");
 
 		// Employee Users - CMS Cockpit
-		importImpexFile(context,
-				FLINT_IMPORT_HOME + "/sampledata/cockpits/cmscockpit/cmscockpit-users.impex");
-		importImpexFile(context,
-				FLINT_IMPORT_HOME + "/sampledata/cockpits/cscockpit/cscockpit-users.impex");
-		importImpexFile(context,
-				FLINT_IMPORT_HOME + "/sampledata/cockpits/productcockpit/productcockpit-users.impex");
+		importImpexFile(context, FLINT_IMPORT_HOME + "/sampledata/cockpits/cmscockpit/cmscockpit-users.impex");
+		importImpexFile(context, FLINT_IMPORT_HOME + "/sampledata/cockpits/cscockpit/cscockpit-users.impex");
+		importImpexFile(context, FLINT_IMPORT_HOME + "/sampledata/cockpits/productcockpit/productcockpit-users.impex");
 
 
 	}
