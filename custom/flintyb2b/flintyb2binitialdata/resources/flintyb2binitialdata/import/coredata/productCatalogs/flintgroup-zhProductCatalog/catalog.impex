@@ -14,7 +14,7 @@
 
 $productCatalog=flintgroup-zhProductCatalog
 $classificationCatalog=flintClassificationSystem
-$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Online'])[unique=true,default=$productCatalog:Online]
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
 $languages=en,zh
 
 # Product catalog
