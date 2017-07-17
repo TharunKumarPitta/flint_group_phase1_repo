@@ -10,9 +10,10 @@ ACC.termsandconditions = {
 				scrolling:true,
 				href: $(this).attr("href"),
 				close:'<span class="glyphicon glyphicon-remove"></span>',
-				title:'<div class="headline"><span class="headline-text">Terms and Conditions</span></div>',
+				title:'<div class="headline"><span id="term-condition-header" class="headline-text"> </span></div>',
 				onComplete: function() {
 					ACC.common.refreshScreenReaderBuffer();
+					$('#term-condition-header').text($('#popup-title').val());
 				},
 				onClosed: function() {
 					ACC.common.refreshScreenReaderBuffer();

@@ -6,6 +6,7 @@
 <c:set var="currentURL" value="${pageContext.request.contextPath}" />
 
 <cms:pageSlot position="Section2B" var="feature" class="termsAndConditions-section" element="div">
+	<input type="hidden" id="popup-title" value = "<spring:theme code='term.condition'/>">
 	<cms:component component="${feature}" element="div" class="clearfix"/>
 	<a href="${currentURL}" class="btn btn-primary btn-block">
 		<spring:theme code="checkout.summary.placeOrder.readTermsAndConditions.close" text="Close" />

@@ -6,6 +6,7 @@
 
 <cms:pageSlot position="Section2B" var="feature" class="termsAndConditions-section" element="div">
 	<cms:component component="${feature}" element="div" class="clearfix"/>
+	<input type="hidden" id="popup-title" value = "<spring:theme code='term.condition'/>">
 	<a href="${summaryViewUrl}" class="btn btn-primary btn-block">
 		<spring:theme code="checkout.summary.placeOrder.readTermsAndConditions.close" text="Close" />
 	</a>
