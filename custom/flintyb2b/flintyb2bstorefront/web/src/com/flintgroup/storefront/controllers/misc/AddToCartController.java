@@ -12,6 +12,7 @@ package com.flintgroup.storefront.controllers.misc;
 
 import de.hybris.platform.acceleratorfacades.product.data.ProductWrapperData;
 import de.hybris.platform.acceleratorstorefrontcommons.controllers.AbstractController;
+import de.hybris.platform.acceleratorstorefrontcommons.controllers.util.GlobalMessages;
 import de.hybris.platform.acceleratorstorefrontcommons.forms.AddToCartForm;
 import de.hybris.platform.acceleratorstorefrontcommons.forms.AddToCartOrderForm;
 import de.hybris.platform.commercefacades.order.CartFacade;
@@ -23,7 +24,6 @@ import de.hybris.platform.commercefacades.product.ProductOption;
 import de.hybris.platform.commercefacades.product.data.ProductData;
 import de.hybris.platform.commerceservices.order.CommerceCartModificationException;
 import de.hybris.platform.util.Config;
-import com.flintgroup.storefront.controllers.ControllerConstants;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -46,6 +46,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.flintgroup.storefront.controllers.ControllerConstants;
 
 
 /**
@@ -75,6 +77,8 @@ public class AddToCartController extends AbstractController
 	public String addToCart(@RequestParam("productCodePost") final String code, final Model model,
 			@Valid final AddToCartForm form, final BindingResult bindingErrors)
 	{
+		ProductData productData = null;
+		//final String errorMsg = null;
 		if (bindingErrors.hasErrors())
 		{
 			return getViewWithBindingErrorMessages(model, bindingErrors);
@@ -91,20 +95,33 @@ public class AddToCartController extends AbstractController
 		{
 			try
 			{
-				final CartModificationData cartModification = cartFacade.addToCart(code, qty);
-				model.addAttribute(QUANTITY_ATTR, Long.valueOf(cartModification.getQuantityAdded()));
-				model.addAttribute("entry", cartModification.getEntry());
-				model.addAttribute("cartCode", cartModification.getCartCode());
-				model.addAttribute("isQuote", cartFacade.getSessionCart().getQuoteData() != null ? Boolean.TRUE : Boolean.FALSE);
-
-				if (cartModification.getQuantityAdded() == 0L)
+				productData = productFacade.getProductForCodeAndOptions(code, Arrays.asList(ProductOption.BASIC, ProductOption.PRICE,
+						ProductOption.URL, ProductOption.STOCK, ProductOption.VARIANT_MATRIX_BASE, ProductOption.VARIANT_MATRIX_URL,
+						ProductOption.VARIANT_MATRIX_MEDIA));
+				if (Boolean.FALSE.equals(productData.getPurchasable()))
 				{
-					model.addAttribute(ERROR_MSG_TYPE, "basket.information.quantity.noItemsAdded." + cartModification.getStatusCode());
+					model.addAttribute(ERROR_MSG_TYPE, "text.quickOrder.product.not.purchaseable1");
+					GlobalMessages.addErrorMessage(model, "text.quickOrder.product.not.purchaseable1");
+					//errorMsg = getErrorMessage("text.quickOrder.product.not.purchaseable", null);
 				}
-				else if (cartModification.getQuantityAdded() < qty)
+				else
 				{
-					model.addAttribute(ERROR_MSG_TYPE,
-							"basket.information.quantity.reducedNumberOfItemsAdded." + cartModification.getStatusCode());
+					final CartModificationData cartModification = cartFacade.addToCart(code, qty);
+					model.addAttribute(QUANTITY_ATTR, Long.valueOf(cartModification.getQuantityAdded()));
+					model.addAttribute("entry", cartModification.getEntry());
+					model.addAttribute("cartCode", cartModification.getCartCode());
+					model.addAttribute("isQuote", cartFacade.getSessionCart().getQuoteData() != null ? Boolean.TRUE : Boolean.FALSE);
+
+					if (cartModification.getQuantityAdded() == 0L)
+					{
+						model.addAttribute(ERROR_MSG_TYPE,
+								"basket.information.quantity.noItemsAdded." + cartModification.getStatusCode());
+					}
+					else if (cartModification.getQuantityAdded() < qty)
+					{
+						model.addAttribute(ERROR_MSG_TYPE,
+								"basket.information.quantity.reducedNumberOfItemsAdded." + cartModification.getStatusCode());
+					}
 				}
 			}
 			catch (final CommerceCartModificationException ex)

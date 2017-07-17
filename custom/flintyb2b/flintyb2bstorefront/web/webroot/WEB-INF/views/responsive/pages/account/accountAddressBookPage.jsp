@@ -58,7 +58,7 @@
 								</a>
 							</ycommerce:testId>
 						</c:if>
-						<div class="account-cards-actions pull-left">
+						<%-- <div class="account-cards-actions pull-left">
 							<ycommerce:testId code="addressBook_editAddress_button">
 								<a class="action-links" href="edit-address/${address.id}">
 									<span class="glyphicon glyphicon-pencil"></span>
@@ -69,7 +69,7 @@
 									<span class="glyphicon glyphicon-remove"></span>
 								</a>
 							</ycommerce:testId>
-						</div>
+						</div> --%>
 					</div>
 				</c:forEach>
 			</div>
