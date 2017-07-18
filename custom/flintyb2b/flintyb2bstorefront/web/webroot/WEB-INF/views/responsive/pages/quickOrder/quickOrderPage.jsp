@@ -25,7 +25,7 @@
 <!--                     </div> -->
                 </div>
 
-<%--                 <product:addToCartTitle/> --%>
+                <product:addToCartTitle/>
                 <%-- <div class="col-xs-12 col-md-5 col-lg-6 pull-rightt">
                     <div class="row quick-order__actions">
                         <div class="pull-right col-sm-3 col-md-6 col-lg-5 quick-order__add-to-cart-btn">

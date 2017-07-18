@@ -142,7 +142,7 @@ UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];$picture[l
 
 
 UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[lang=$lang]
-;;EmptyCartParagraphComponent;"<h2>你的購物車是空的</h2><p>建議</p><ul><li>通過選擇上述類別瀏覽我們的產品</li></ul>"
+;;EmptyCartParagraphComponent;"<h2>你的購物車是空的</h2><p>建议</p><ul><li>通过选择上述类别浏览我们的产品</li></ul>"
 ;;NoSearchResultsParagraphComponent;"<h2>抱歉， 我们没有找到任何相匹配的产品</h2><p>如果你之前还没有订购产品，但有兴趣了解更多, <a href=""http://www.flintgrp.com/en/contact/"">联系我们</a></p><p>如果你之前订购过此产品, 那么我们的网站可能需要一个快速的优化。<a href=""#"">告知我们</a>.我们会尽快处理这个问题。</br>感谢您给予的耐心。</p>"
 
 # Powertools Cart Page

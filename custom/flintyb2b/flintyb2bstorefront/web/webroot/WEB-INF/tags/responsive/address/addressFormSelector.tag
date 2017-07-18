@@ -13,7 +13,7 @@
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags"%>
 
 <c:if test="${not empty deliveryAddresses}">
-	<button type="button" class="btn btn-default btn-block js-address-book">
+	<button type="button" class="btn btn-default btn-block js-address-book" data-popup-title="<spring:theme code='text.account.deliveryAddresses.title'/>">
 		<spring:theme
 			code="checkout.checkout.multi.deliveryAddress.viewAddressBook"
 			text="Address Book" />

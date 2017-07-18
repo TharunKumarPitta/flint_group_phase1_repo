@@ -14,7 +14,7 @@
 	</c:when>
 	<c:otherwise>
 		<c:if test="${displayFreeForZero}">
-			<spring:theme code="text.free" text="FREE"/>
+			<spring:theme code="text.free"/>
 		</c:if>
 		<c:if test="${not displayFreeForZero}">
 			${priceData.formattedValue}

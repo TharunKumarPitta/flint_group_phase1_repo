@@ -7,7 +7,7 @@
     <div class="label-order">
         <spring:theme code="text.shippingMethod"/>
     </div>
-    ${order.deliveryMode.name}
+<%--     ${order.deliveryMode.name} --%>
     <br>
     ${order.deliveryMode.description}
 </div>

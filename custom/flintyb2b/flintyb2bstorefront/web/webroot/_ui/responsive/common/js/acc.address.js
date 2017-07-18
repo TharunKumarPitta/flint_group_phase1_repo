@@ -276,8 +276,8 @@ ACC.address = {
 
 		$(document).on("click",".js-address-book",function(e){
 			e.preventDefault();
-
-			ACC.colorbox.open("Saved Addresses",{
+			var popupTitle = $(this).data('popup-title'); 
+			ACC.colorbox.open(popupTitle,{
 				href: "#addressbook",
 				inline: true,
 				width:"380px"

@@ -243,10 +243,10 @@ footer {
 	 <div class="container-fluid main-order">
       <div class="col-md-12 col-sm-12 col-xs-12 wel-content-mark">
           <div class="wel-come-mark col-md-4 col-sm-6 col-xs-3"> <spring:theme code="header.welcome" arguments="${user.firstName},${user.lastName}" htmlEscape="true" /></div>
-            <div class="col-md-2 col-sm-3 col-xs-4 img-head-top">
+            <!--<div class="col-md-2 col-sm-3 col-xs-4 img-head-top">
               <img class="cust-img" src="${commonResourcePath}/images/dashboard-icon1.png">
                 <span class="icon-font-order"><a class="ancor-ref" href="quickOrder"><spring:theme code="quick.order"/></a></span>
-            </div>
+            </div>-->
             <div class="col-md-3 col-sm-3 col-xs-5 img-head-top">
               <img class="cust-img" src="${commonResourcePath}/images/dashboard-icon2.png">
                 <span class="icon-font-order"><a class="ancor-ref" href="Product-Catalog/c/flintCategory"><spring:theme code="product.catalog"/></a></span>
@@ -280,7 +280,8 @@ footer {
       						<%-- <c:set var="date" value="${orderList.placed}"></c:set> --%>
         						<td><fmt:formatDate pattern = "dd/MM/yyyy" value = "${orderList.placed}" /></td>
         						<td>${orderList.code}</td>
-        						<td style="text-transform: uppercase">${orderList.statusDisplay}</td>
+        						<%-- <td style="text-transform: uppercase">${orderList.statusDisplay}<spring:theme code="type.CsOrderState.${orderList.statusDisplay}.name"/></td> --%>
+        						<td style="text-transform: uppercase"><spring:theme code="type.ImportStatus.${orderList.statusDisplay}.name"/></td>
       						</tr>
       						</c:if>
       						</c:forEach>
@@ -313,7 +314,8 @@ footer {
                   <tr class="table-cont">
                     <td>${ticketList.id}</td>
                     <td>${ticketList.subject}</td>
-                    <td>${ticketList.status.id}</td>              
+                 
+                    <td><spring:theme code="type.CsTicketState.${ticketList.status.id}.name"/></td>         
       			 </tr>
       			 </c:if>
       			 </c:forEach>

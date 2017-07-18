@@ -18,17 +18,17 @@ $siteUid=flint-zh
 
 #my account links
 UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];linkName[lang=en];linkname[lang=zh];
-;;AccountSupportTicketHistoryLink;Support Tickets;支持门票;
+;;AccountSupportTicketHistoryLink;Support Tickets;寻求帮助;
 
 
 INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;linkname;linkname[lang=zh];url;&linkRef;target(code)[default='sameWindow']
-;;PersonalDetailsLink;PersonalDetailsLink;Personal Details;個人資料;/my-account/INSERT_UPDATE-profile;PersonalDetailsLink;
+;;PersonalDetailsLink;PersonalDetailsLink;Personal Details;个人资料;/my-account/INSERT_UPDATE-profile;PersonalDetailsLink;
 #;;INSERT_UPDATEEmailLink;INSERT_UPDATEEmailLink;/my-account/INSERT_UPDATE-email;INSERT_UPDATEEmailLink;
-;;UpdatePasswordLink;UpdatePasswordLink;Update Password;更新密碼;/my-account/update-password;UpdatePasswordLink;
+;;UpdatePasswordLink;UpdatePasswordLink;Update Password;更新密码;/my-account/update-password;UpdatePasswordLink;
 ;;AddressBookLink;AddressBookLink;Address Book;地址簿;/my-account/address-book;AddressBookLink;
 #;;PaymentDetailsLink;PaymentDetailsLink;/my-account/payment-details;PaymentDetailsLink;
 ;;OrderHistoryLink;OrderHistoryLink;Order History;訂單歷史;/my-account/orders;OrderHistoryLink;
-;;SavedCartsLink;SavedCartsLink;Saved Carts;已保存的購物車;/my-account/saved-carts;SavedCartsLink;
+;;SavedCartsLink;SavedCartsLink;Saved Carts;以保存的购物车;/my-account/saved-carts;SavedCartsLink;
 #;;MyQuotesLink;MyQuotesLink;/my-account/my-quotes;MyQuotesLink;
 #;;MyReplenishmentOrdersLink;MyReplenishmentOrdersLink;/my-account/my-replenishment;MyReplenishmentOrdersLink;
 ;;ApprovalDashboardLink;ApprovalDashboardLink;;;/my-account/approval-dashboard;ApprovalDashboardLink;
@@ -37,7 +37,7 @@ INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;lin
 #footer links
 INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;linkname[lang=en];linkname[lang=zh];url;&linkRef;&componentRef;target(code)[default='sameWindow'];styleAttributes
 ;;AboutHybrisLink;About Hybris Link;;;"http://www.hybris.com";AboutHybrisLink;AboutHybrisLink;newWindow;;
-;;FlintAboutUsLink;About Us Link;About Flint Group;关于 Flint Group;"http://www.flintgrp.com/lp_cn/";FlintAboutUsLink;FlintAboutUsLink;newWindow;;
+;;FlintAboutUsLink;About Us Link;About Flint Group;关于富林特集团;"http://www.flintgrp.com/lp_cn/";FlintAboutUsLink;FlintAboutUsLink;newWindow;;
 ;;FlintTermsConditionLink;Terms & Condition Link;Terms & Condition;条款和条件;/footer/termsAndConditions;FlintTermsConditionLink;FlintTermsConditionLink;newWindow;class="termsAndConditionsLink";
 ;;FAQLink;FAQ Link;FAQ;常问问题;/faq;FAQLink;FAQLink;;;
 
@@ -59,6 +59,12 @@ INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];con
 ####my account translation in landing page
 
 UPDATE CMSNavigationNode;$contentCV[unique=true];uid[unique=true];title[lang=zh]
-;;MyAccountNavNode;"我的帳戶"
+;;MyAccountNavNode;"我的账户"
 
 
+
+UPDATE ZoneDeliveryMode;code[unique=true];name[lang=en];name[lang=zh];description[lang=en];description[lang=zh]
+;free-standard-shipping;"Free Delivery";"免运费交付";"Free Delivery";"免运费交付" 
+
+UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];title[lang=zh]
+;;faq;"经常问的问题" 
