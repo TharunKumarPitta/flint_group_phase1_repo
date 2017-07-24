@@ -156,3 +156,5 @@ INSERT_UPDATE SolrSortField;sort(indexedType(identifier),code)[unique=true];fiel
 ;$solrIndexedType:price-asc;priceValue;true
 ;$solrIndexedType:price-desc;priceValue;false
 
+UPDATE SolrSearchConfig[batchmode=true];legacyMode[unique=true];legacyMode
+;;false

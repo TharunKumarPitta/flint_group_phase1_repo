@@ -243,10 +243,10 @@ footer {
 	 <div class="container-fluid main-order">
       <div class="col-md-12 col-sm-12 col-xs-12 wel-content-mark">
           <div class="wel-come-mark col-md-4 col-sm-6 col-xs-3"> <spring:theme code="header.welcome" arguments="${user.firstName},${user.lastName}" htmlEscape="true" /></div>
-            <!--<div class="col-md-2 col-sm-3 col-xs-4 img-head-top">
+<%--             <div class="col-md-2 col-sm-3 col-xs-4 img-head-top">
               <img class="cust-img" src="${commonResourcePath}/images/dashboard-icon1.png">
                 <span class="icon-font-order"><a class="ancor-ref" href="quickOrder"><spring:theme code="quick.order"/></a></span>
-            </div>-->
+            </div> --%>
             <div class="col-md-3 col-sm-3 col-xs-5 img-head-top">
               <img class="cust-img" src="${commonResourcePath}/images/dashboard-icon2.png">
                 <span class="icon-font-order"><a class="ancor-ref" href="Product-Catalog/c/flintCategory"><spring:theme code="product.catalog"/></a></span>
@@ -312,11 +312,24 @@ footer {
                 <c:forEach items="${ticketList}" var="ticketList" varStatus="ticketCounter">
     			<c:if test="${ticketCounter.count < 6}">
                   <tr class="table-cont">
+      
+            <%--         <td>${ticketList.subject}</td> --%>
+            
+          <%--   <td>
+               <spring:theme code="type.CsTicketSubject.${ticketList.subject}.name"/>
+               </td>  --%>
+               
+               
+            <%--    <c:if test="${ticketCounter.count < 6}"> --%>
+     			<c:set var="subject" value="${ticketList.subject}"/> 
+     			<c:set var="subject1" value="${fn:replace(subject,' ','')}"/> 
+                
                     <td>${ticketList.id}</td>
-                    <td>${ticketList.subject}</td>
-                 
+                    <td><spring:theme code="type.CsTicketSubject.${subject1}.name"/></td>
+                    
+                    
                     <td><spring:theme code="type.CsTicketState.${ticketList.status.id}.name"/></td>         
-      			 </tr>
+    
       			 </c:if>
       			 </c:forEach>
                   <!-- <tr class="table-cont">
