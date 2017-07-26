@@ -18,7 +18,7 @@ $siteUid=flint-zh
 
 #my account links
 UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];linkName[lang=en];linkname[lang=zh];
-;;AccountSupportTicketHistoryLink;Support Tickets;寻求帮助;
+;;AccountSupportTicketHistoryLink;Support Tickets;所有问题;
 
 
 INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;linkname;linkname[lang=zh];url;&linkRef;target(code)[default='sameWindow']
@@ -27,7 +27,7 @@ INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;lin
 ;;UpdatePasswordLink;UpdatePasswordLink;Update Password;更新密码;/my-account/update-password;UpdatePasswordLink;
 ;;AddressBookLink;AddressBookLink;Address Book;地址簿;/my-account/address-book;AddressBookLink;
 #;;PaymentDetailsLink;PaymentDetailsLink;/my-account/payment-details;PaymentDetailsLink;
-;;OrderHistoryLink;OrderHistoryLink;Order History;訂單歷史;/my-account/orders;OrderHistoryLink;
+;;OrderHistoryLink;OrderHistoryLink;Order History;订单历史;/my-account/orders;OrderHistoryLink;
 ;;SavedCartsLink;SavedCartsLink;Saved Carts;以保存的购物车;/my-account/saved-carts;SavedCartsLink;
 #;;MyQuotesLink;MyQuotesLink;/my-account/my-quotes;MyQuotesLink;
 #;;MyReplenishmentOrdersLink;MyReplenishmentOrdersLink;/my-account/my-replenishment;MyReplenishmentOrdersLink;
@@ -59,12 +59,9 @@ INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];con
 ####my account translation in landing page
 
 UPDATE CMSNavigationNode;$contentCV[unique=true];uid[unique=true];title[lang=zh]
-;;MyAccountNavNode;"我的账户"
+;;MyAccountNavNode;"我的账户";
 
 
 
 UPDATE ZoneDeliveryMode;code[unique=true];name[lang=en];name[lang=zh];description[lang=en];description[lang=zh]
 ;free-standard-shipping;"Free Delivery";"免运费交付";"Free Delivery";"免运费交付" 
-
-UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];title[lang=zh]
-;;faq;"经常问的问题" 
