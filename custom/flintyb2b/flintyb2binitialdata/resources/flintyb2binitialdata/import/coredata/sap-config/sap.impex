@@ -59,9 +59,13 @@ INSERT_UPDATE SAPGlobalConfiguration;core_name;sapcommon_erpLogicalSystem
 ##########################################################
 ## SAP Product & Pricing Sales Area To Catalog Mapping  ##
 ##########################################################
-INSERT_UPDATE SAPProductSalesAreaToCatalogMapping;$catalogVersion;salesOrganization;distributionChannel;sapGlobalConfiguration(core_name);taxClassCountry(isocode)
-;;BZHO;01;sapGlobalConfiguration;ZH
 
+INSERT_UPDATE SAPProductSalesAreaToCatalogMapping;$catalogVersion;salesOrganization;distributionChannel;sapGlobalConfiguration(core_name);taxClassCountry(isocode)
+;;BZHO;01;sapGlobalConfiguration;CN
+
+INSERT_UPDATE SAPProductIDDataConversionModel;conversionID[unique=true]
+ ;MATCONV
+ 
 INSERT_UPDATE SAPPricingSalesAreaToCatalog;$catalogVersion;salesOrganization;distributionChannel;sapcommon_sapGlobalConfiguration(core_name);net[default=true,forceWrite=true]
 #;;BZHO;01;sapGlobalConfiguration
 
