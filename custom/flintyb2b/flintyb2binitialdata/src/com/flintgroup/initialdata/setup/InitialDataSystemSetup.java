@@ -115,7 +115,7 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 			importImpexFile(context, FLINT_IMPORT_HOME + "/coredata/productCatalogs/flintgroup-zhProductCatalog/catalog_en.impex");
 			importImpexFile(context, FLINT_IMPORT_HOME + "/coredata/productCatalogs/flintgroup-zhProductCatalog/catalog_zh.impex");
 
-
+			importImpexFile(context, FLINT_IMPORT_HOME + "/coredata/sap-config/sap.impex");
 			importImpexFile(context, FLINT_IMPORT_HOME + "/coredata/stores/flintgroup-zh/store.impex");
 
 			importImpexFile(context, FLINT_IMPORT_HOME + "/coredata/stores/flintgroup-zh/site.impex");
