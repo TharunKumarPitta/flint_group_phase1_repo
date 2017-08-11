@@ -9,617 +9,125 @@ $baseProduct=baseProduct(code,$catalogVersion)
 $approved=approvalstatus(code)[default='approved']
 $prices=Europe1prices[translator=de.hybris.platform.europe1.jalo.impex.Europe1PricesTranslator]
 $taxGroup=Europe1PriceFactory_PTG(code)[default=cn-sales-tax-full]
-#$productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Online'])[unique=true,default=$productCatalog:Online]
 $productRef=code,$catalogVersion
 $categoryRef=code,$catalogVersion
 
 # Language
-$lang=en
+$lang=en,zh
 
 # Insert Products
 INSERT_UPDATE Product;code[unique=true];$supercategories;manufacturerName;manufacturerAID;ean;variantType(code);unit(code);approvalStatus(code)[default='approved'];$catalogVersion
-;KAA6RFUU01WA;Sheetfed_INT;Flint Group;;4053469618732;;M2;;;;
-;KAA6RGFU01WA;Sheetfed_INT;Flint Group;;4049569545856;;M2;;;;
-;KAA7RH6U01WK;Sheetfed_INT;Flint Group;;4055573389010;;M2;;;;
-;KAA7RLUU01WK;Sheetfed_INT;Flint Group;;4055573397381;;M2;;;;
-;KAAKRH6U01WK;Sheetfed_INT;Flint Group;;4055573389065;;M2;;;;
-;KAALRH1U01WA;UV_INT,Sheetfed_INT ;Flint Group;;4045239899120;;M2;;;;
-;KAAMRH1U01WA;UV_INT,Sheetfed_INT ;Flint Group;;4045239899151;;M2;;;;
-;KAARREAU01WA;Sheetfed_INT,HEATSET_INT;Flint Group;;4049569543098;;M2;;;;
-;KAARREUU01WA;Sheetfed_INT,HEATSET_INT;Flint Group;;4049569543104;;M2;;;;
-;KAARRF3U01WA;Sheetfed_INT,HEATSET_INT;Flint Group;;4049569548253;;M2;;;;
-;KAAURE3U01WA;Sheetfed_INT,HEATSET_INT;Flint Group;;4049569543135;;M2;;;;
-;KAAUREAU01WA;Sheetfed_INT,HEATSET_INT;Flint Group;;4049569543142;;M2;;;;
-;KAAUREUU01WA;Sheetfed_INT,HEATSET_INT;Flint Group;;4049569543159;;M2;;;;
-;KAAURFEU01WA;Sheetfed_INT,HEATSET_INT;Flint Group;;4049569543166;;M2;;;;
-;KAAURH1U01WA;Sheetfed_INT,HEATSET_INT;Flint Group;;4049569363276;;M2;;;;
-;KAAURJ6U01WA;Sheetfed_INT,HEATSET_INT;Flint Group;;4049569543173;;M2;;;;
-;KAAURKUU01WA;Sheetfed_INT,HEATSET_INT;Flint Group;;4049569543197;;M2;;;;
-;KAAURMKU01WA;Sheetfed_INT,HEATSET_INT;Flint Group;;4049569549625;;M2;;;;
-;KAAWRDKU01WA;NEWS_INT;Flint Group;;4049569543227;;M2;;;;
-;KAAWRE7U01WA;NEWS_INT;Flint Group;;4049569543234;;M2;;;;
-;KAAWREAU01WA;NEWS_INT;Flint Group;;4049569543241;;M2;;;;
-;KAAXRF3U01WA;Sheetfed_INT,HEATSET_INT;Flint Group;;4049569543272;;M2;;;;
-;KAB1REUU01WA;Sheetfed_INT,HEATSET_INT;Flint Group;;4053468681058;;M2;;;;
-;KAB6REAU01WA;Sheetfed_INT,HEATSET_INT;Flint Group;;4049569543388;;M2;;;;
-;KABBRBFU01WA;Sheetfed_INT;Flint Group;;4049569550072;;M2;;;;
-;KABBRCPU01WA;Sheetfed_INT;Flint Group;;4049569543418;;M2;;;;
-;KABBRE7U01WA;Sheetfed_INT;Flint Group;;4049569543425;;M2;;;;
-;KABBRGAU01WA;Sheetfed_INT;Flint Group;;4049569543432;;M2;;;;
-;KABBRH1U01WA;Sheetfed_INT;Flint Group;;4049569543449;;M2;;;;
-;KABBRH2U01WA;Sheetfed_INT;Flint Group;;4049569543456;;M2;;;;
-;KABBRKFU01WA;Sheetfed_INT;Flint Group;;4049569543463;;M2;;;;
-;KABBRLKU01WA;Sheetfed_INT;Flint Group;;4049569543470;;M2;;;;
-;KABBRNAU01WA;Sheetfed_INT;Flint Group;;4049569543487;;M2;;;;
-;KABFRDNU01WA;flintCategory;Flint Group;;4049569640254;;M2;;;;
-;KABFREAU01WA;flintCategory;Flint Group;;4049569543524;;M2;;;;
-;KABFREUU01WA;flintCategory;Flint Group;;4049569543531;;M2;;;;
-;KABGRF3U01WA;HEATSET_INT;Flint Group;;4049569543555;;M2;;;;
-;KABKRE5U01WA;HEATSET_INT;Flint Group;;4055573064818;;M2;;;;
-;KABKRF3U01WA;HEATSET_INT;Flint Group;;4049569543586;;M2;;;;
-;KABMRE5U01WA;NEWS_INT;Flint Group;;4049569543609;;M2;;;;
-;KABTRCPU01WA;Sheetfed_INT,UV_INT ;Flint Group;;4049569620034;;M2;;;;
-;KABTRH1U01WA;Sheetfed_INT,UV_INT ;Flint Group;;4045239899861;;M2;;;;
-;KABYRE7U01WA;flintCategory;Flint Group;;4055573729519;;M2;;;;
-;KABYREAU01WA;Sheetfed_INT;Flint Group;;4055573728949;;M2;;;;
-;KAC9RH1U01WA;Sheetfed_INT;Flint Group;;4053469804753;;M2;;;;
-;KACARDNU01WA;NEWS_INT;Flint Group;;4049569543838;;M2;;;;
-;KACAREAU01WA;NEWS_INT;Flint Group;;4049569543845;;M2;;;;
-;KACAREUU01WA;NEWS_INT;Flint Group;;4049569543852;;M2;;;;
-;KACARFEU01WA;NEWS_INT;Flint Group;;4049569543869;;M2;;;;
-;KACARFGU01WA;NEWS_INT;Flint Group;;4049569543876;;M2;;;;
-;KAD5RCPU01WA;Sheetfed_INT;Flint Group;;4053468476784;;M2;;;;
-;KAD5RE7U01WA;Sheetfed_INT;Flint Group;;4053471513506;;M2;;;;
-;KAD5RH1U01WA;Sheetfed_INT;Flint Group;;4049569925962;;M2;;;;
-;KAD6REAU01WA;Sheetfed_INT;Flint Group;;4053471817062;;M2;;;;
-;KAD6REUU01WA;Sheetfed_INT;Flint Group;;4055573174708;;M2;;;;
-;KAD6RH1U01WA;Sheetfed_INT;Flint Group;;4053471582694;;M2;;;;
-;KAD6RMKU01WA;Sheetfed_INT;Flint Group;;4053471676300;;M2;;;;
-;KAD6RNAU01WA;Sheetfed_INT;Flint Group;;4055573013465;;M2;;;;
-;KAE8RE7U01WA;Sheetfed_INT;Flint Group;;4055573058374;;M2;;;;
-;KAE8REAU01WA;Sheetfed_INT;Flint Group;;4055573058367;;M2;;;;
-;KAJ1RH1U01WA;UV_INT,Sheetfed_INT ;Flint Group;;4055573220597;;M2;;;;
-;KAJ1RH8U01WA;UV_INT,Sheetfed_INT ;Flint Group;;4053471832218;;M2;;;;
-;KAX0RDNU01WA;flintCategory;Flint Group;;4049569543937;;M2;;;;
-;KAX0REAU01WA;flintCategory;Flint Group;;4049569546273;;M2;;;;
-;KAX0REUU01WA;flintCategory;Flint Group;;4049569543968;;M2;;;;
-;KAX0RFEU01WA;flintCategory;Flint Group;;4049569543975;;M2;;;;
-;KAX0RH1U01WA;flintCategory;Flint Group;;4049569543982;;M2;;;;
-;KAXCRDNU01WA;NEWS_INT;Flint Group;;4049569546143;;M2;;;;
-;KAXCRE5U01WA;NEWS_INT;Flint Group;;4055573322246;;M2;;;;
-;KAXCRE7U01WA;NEWS_INT;Flint Group;;4049569549144;;M2;;;;
-;KAXCREAU01WA;NEWS_INT;Flint Group;;4049569544040;;M2;;;;
-;KAXCRFEU01WA;NEWS_INT;Flint Group;;4049569544057;;M2;;;;
-;KAXCRH1U01WA;NEWS_INT;Flint Group;;4049569564956;;M2;;;;
-;KAXERH1U01WA;Sheetfed_INT,UV_INT ;Flint Group;;4049569544071;;M2;;;;
-;KAXERJ0U01WA;Sheetfed_INT,UV_INT ;Flint Group;;4049569983672;;M2;;;;
-;KAXERNCU01WA;Sheetfed_INT,UV_INT ;Flint Group;;4055573029596;;M2;;;;
-;KAXVRDNU01WA;NEWS_INT;Flint Group;;4049569557033;;M2;;;;
-;KAXWRFEU01WA;NEWS_INT;Flint Group;;4049569550829;;M2;;;;
-;KAXXRDNU01WA;NEWS_INT;Flint Group;;4049569554674;;M2;;;;
-;KAXXRE5U01WA;NEWS_INT;Flint Group;;4049569565335;;M2;;;;
-;KAXXRE7U01WA;NEWS_INT;Flint Group;;4049569579578;;M2;;;;
-;KAXXREAU01WA;NEWS_INT;Flint Group;;4049569555206;;M2;;;;
-;KAXXREUU01WA;NEWS_INT;Flint Group;;4049569554681;;M2;;;;
-;KAXXRFEU01WA;NEWS_INT;Flint Group;;4055573203194;;M2;;;;
-;KAXXRH1U01WA;NEWS_INT;Flint Group;;4049569565366;;M2;;;;
-;KAXXRJGU01WA;NEWS_INT;Flint Group;;4049569554698;;M2;;;;
-;KAXYRH2U01WA;Sheetfed_INT;Flint Group;;4049569548383;;M2;;;;
-;KAYHRCPU01WA;UV_INT,Sheetfed_INT ;Flint Group;;4053468731975;;M2;;;;
-;KAYHRH1U01WA;UV_INT,Sheetfed_INT ;Flint Group;;4049569949500;;M2;;;;
-;KAYHRJ0U01WA;UV_INT,Sheetfed_INT ;Flint Group;;4055573812037;;M2;;;;
-;KAZ8RH1U01WA;HEATSET_INT;Flint Group;;4049569544118;;M2;;;;
-;KMHA000U01WF;flintCategory;Flint Group;;4049569200434;;ST;;;;
-;KMJT000U01WF;flintCategory;Flint Group;;4049569485343;;ST;;;;
-;KND0N00U01WG;flintCategory;Flint Group;;4053468070289;;ST;;;;
-;KYY2020260W2;flintCategory;Flint Group;;4053471297222;;STE;;;;
-;KYY2020366W2;flintCategory;Flint Group;;4055573035849;;STE;;;;
-;KYY2030038E0;flintCategory;Flint Group;;4049569640957;;STE;;;;
-;KYY2030052E0;flintCategory;Flint Group;;4049569551772;;STE;;;;
-;KAX0RJ0U01WA;flintCategory;Flint Group;;4049569543999;;M2;;;;
-;KC03163U01WB;flintCategory;Flint Group;;4055573386545;;ST;;;;
-;KNNPF00U01WG;flintCategory;Flint Group;;4049569248290;;ST;;;;
-;KNNQF00U01WG;flintCategory;Flint Group;;4049569248306;;ST;;;;
-;KNNRF00U01WG;flintCategory;Flint Group;;4049569454660;;ST;;;;
-;KNNSF00U01WG;flintCategory;Flint Group;;4049569454677;;ST;;;;
+##### new products ######
+;KBAUB4LC01WB;;Flint Group;;;;PCE;;;
+;KBCAB0PC01WB;;Flint Group;;;;PCE;;;
+;KBCAB0QC01WB;;Flint Group;;;;PCE;;;
+;KBCEB01C01WB;;Flint Group;;;;PCE;;;
+;KBB6B00C01WB;;Flint Group;;;;PCE;;;
+;KBCAB0RC01WB;;Flint Group;;;;PCE;;;
+;KBB6B01C01WB;;Flint Group;;;;PCE;;;
+;KBC6B01C01WB;;Flint Group;;;;PCE;;;
+
 
 UPDATE Product;code[unique=true];name[lang=$lang];description[lang=$lang];summary[lang=$lang];$catalogVersion
-;KACARDNU01WA;8897/1.96 Roll x 0832mm;Durable carcass for longer blanket life and superior print surface for a sharp dot and good solids. Versatile packed blanket can also be run in no-pack mode.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/2970/daygraphica_8897.pdf" target="#"> Click here for more details </a></p>;
-;KACAREAU01WA;8897/1.96 Roll x 0889mm;Durable carcass for longer blanket life and superior print surface for a sharp dot and good solids. Versatile packed blanket can also be run in no-pack mode.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/2970/daygraphica_8897.pdf" target="#"> Click here for more details </a></p>;
-;KACAREUU01WA;8897/1.96 Roll x 0940mm;Durable carcass for longer blanket life and superior print surface for a sharp dot and good solids. Versatile packed blanket can also be run in no-pack mode.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/2970/daygraphica_8897.pdf" target="#"> Click here for more details </a></p>;
-;KACARFEU01WA;8897/1.96 Roll x 0991mm;Durable carcass for longer blanket life and superior print surface for a sharp dot and good solids. Versatile packed blanket can also be run in no-pack mode.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/2970/daygraphica_8897.pdf" target="#"> Click here for more details </a></p>;
-;KACARFGU01WA;8897/1.96 Roll x 1029mm;Durable carcass for longer blanket life and superior print surface for a sharp dot and good solids. Versatile packed blanket can also be run in no-pack mode.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/2970/daygraphica_8897.pdf" target="#"> Click here for more details </a></p>;
-;KAD5RCPU01WA;N330/1.96 Roll x 0772mm;<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KAD5RE7U01WA;N330/1.96 Roll x 0927mm;<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KAD5RH1U01WA;N330/1.96 Roll x 1067mm;<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KAD6REAU01WA;N340/1.96 Roll x 0889mm;<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KAD6REUU01WA;N340/1.96 Roll x 0940mm;<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KAD6RH1U01WA;N340/1.96 Roll x 1067mm;<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KAD6RMKU01WA;N340/1.96 Roll x 1600mm;<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KAD6RNAU01WA;N340/1.96 Roll x 1727mm;<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KAE8RE7U01WA;87UL/1.70 Roll x 927mm;Precise and even printing pressure across the entire printing surface. Ideal for use with vegetable oil inks and recycled papers. Perfect for the changing pressroom environment.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/3005/daygraphica_87_ultra.pdf" target="#"> Click here for more details </a></p>;
-;KAE8REAU01WA;87UL/1.70 Roll x 889mm;Precise and even printing pressure across the entire printing surface. Ideal for use with vegetable oil inks and recycled papers. Perfect for the changing pressroom environment.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/3005/daygraphica_87_ultra.pdf" target="#"> Click here for more details </a></p>;
-;KAJ1RH1U01WA;4200/1.96 Roll x 1067mm;Searching<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="Searching for one" target="#"> Click here for more details </a></p>;
-;KAJ1RH8U01WA;4200/1.96 Roll x 1080mm;Searching<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="Searching for one" target="#"> Click here for more details </a></p>;
-;KAX0RDNU01WA;8700/1.98 Roll x 0832mm;Consistently offers high-quality print - even on higher speed presses and with ever-changing pressroom environments.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/3010/daygraphica_8700.pdf" target="#"> Click here for more details </a></p>;
-;KAX0REAU01WA;8700/1.98 Roll x 0889mm;Consistently offers high-quality print - even on higher speed presses and with ever-changing pressroom environments.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/3010/daygraphica_8700.pdf" target="#"> Click here for more details </a></p>;
-;KAX0REUU01WA;8700/1.98 Roll x 0940mm;Consistently offers high-quality print - even on higher speed presses and with ever-changing pressroom environments.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/3010/daygraphica_8700.pdf" target="#"> Click here for more details </a></p>;
-;KAX0RFEU01WA;8700/1.98 Roll x 0991mm;Consistently offers high-quality print - even on higher speed presses and with ever-changing pressroom environments.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/3010/daygraphica_8700.pdf" target="#"> Click here for more details </a></p>;
-;KAX0RH1U01WA;8700/1.98 Roll x 1067mm;Consistently offers high-quality print - even on higher speed presses and with ever-changing pressroom environments.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/3010/daygraphica_8700.pdf" target="#"> Click here for more details </a></p>;
-;KAXCRDNU01WA;9500/1.73 Roll x 0832mm;Texturized surface transfer more ink, more precisely. Outstanding quick release. Wash-up and make-ready times reduced. Talc-free. Smash resistant. Effective on waterless systems.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KAXCRE5U01WA;9500/1.73 Roll x 0864mm;Texturized surface transfer more ink, more precisely. Outstanding quick release. Wash-up and make-ready times reduced. Talc-free. Smash resistant. Effective on waterless systems.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KAXCRE7U01WA;9500/1.73 Roll x 0927mm;Texturized surface transfer more ink, more precisely. Outstanding quick release. Wash-up and make-ready times reduced. Talc-free. Smash resistant. Effective on waterless systems.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KAXCREAU01WA;9500/1.73 Roll x 0889mm;Texturized surface transfer more ink, more precisely. Outstanding quick release. Wash-up and make-ready times reduced. Talc-free. Smash resistant. Effective on waterless systems.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KAXCRFEU01WA;9500/1.73 Roll x 0991mm;Texturized surface transfer more ink, more precisely. Outstanding quick release. Wash-up and make-ready times reduced. Talc-free. Smash resistant. Effective on waterless systems.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KAXCRH1U01WA;9500/1.73 Roll x 1067mm;Texturized surface transfer more ink, more precisely. Outstanding quick release. Wash-up and make-ready times reduced. Talc-free. Smash resistant. Effective on waterless systems.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KAXERH1U01WA;UVM1/1.98 Roll x 1067mm;<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KAXERJ0U01WA;UVM1/1.98 Roll x 1156mm;<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KAXERNCU01WA;UVM1/1.98 Roll x 1828mm;<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KAXVRDNU01WA;8889/2.08 Roll x 0832mm;Designed for newspaper presses that require neutral feed characteristics. Reduces overfeed of paper through the press.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/2988/daygraphica_8889.pdf" target="#"> Click here for more details </a></p>;
-;KAXWRFEU01WA;8889/2.11 Roll x 0991mm;Designed for newspaper presses that require neutral feed characteristics. Reduces overfeed of paper through the press.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/2988/daygraphica_8889.pdf" target="#"> Click here for more details </a></p>;
-;KAXXRDNU01WA;9500/1.98 Roll x 0832mm;Texturized surface transfer more ink, more precisely. Outstanding quick release. Wash-up and make-ready times reduced. Talc-free. Smash resistant. Effective on waterless systems.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KAXXRE5U01WA;9500/1.98 Roll x 0864mm;Texturized surface transfer more ink, more precisely. Outstanding quick release. Wash-up and make-ready times reduced. Talc-free. Smash resistant. Effective on waterless systems.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KAXXRE7U01WA;9500/1.98 Roll x 0927mm;Texturized surface transfer more ink, more precisely. Outstanding quick release. Wash-up and make-ready times reduced. Talc-free. Smash resistant. Effective on waterless systems.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KAXXREAU01WA;9500/1.98 Roll x 0889mm;Texturized surface transfer more ink, more precisely. Outstanding quick release. Wash-up and make-ready times reduced. Talc-free. Smash resistant. Effective on waterless systems.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KAXXREUU01WA;9500/1.98 Roll x 0940mm;Texturized surface transfer more ink, more precisely. Outstanding quick release. Wash-up and make-ready times reduced. Talc-free. Smash resistant. Effective on waterless systems.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KAXXRFEU01WA;9500/1.98 Roll x 0991mm;Texturized surface transfer more ink, more precisely. Outstanding quick release. Wash-up and make-ready times reduced. Talc-free. Smash resistant. Effective on waterless systems.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KAXXRH1U01WA;9500/1.98 Roll x 1067mm;Texturized surface transfer more ink, more precisely. Outstanding quick release. Wash-up and make-ready times reduced. Talc-free. Smash resistant. Effective on waterless systems.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KAXXRJGU01WA;9500/1.98 Roll x 1181mm;Texturized surface transfer more ink, more precisely. Outstanding quick release. Wash-up and make-ready times reduced. Talc-free. Smash resistant. Effective on waterless systems.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KAXYRH2U01WA;0660/1.98 Roll x 1077mm;<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KAYHRCPU01WA;4100/1.96 Roll x 0772mm;The latest technology in UV-resistant surface polymers and carcass construction, offering trouble-free, rich solids and clean halftones—even on the most demanding UV printing jobs.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/3014/daygraphica_4100_uv_red.pdf" target="#"> Click here for more details </a></p>;
-;KAYHRH1U01WA;4100/1.96 Roll x 1067mm;The latest technology in UV-resistant surface polymers and carcass construction, offering trouble-free, rich solids and clean halftones—even on the most demanding UV printing jobs.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/3014/daygraphica_4100_uv_red.pdf" target="#"> Click here for more details </a></p>;
-;KAYHRJ0U01WA;4100/1.96 Roll x 1156mm;The latest technology in UV-resistant surface polymers and carcass construction, offering trouble-free, rich solids and clean halftones—even on the most demanding UV printing jobs.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/3014/daygraphica_4100_uv_red.pdf" target="#"> Click here for more details </a></p>;
-;KAZ8RH1U01WA;5000/1.98 Roll x 1067mm;Durability at its best. Built on DuraZone compressible layer technology, the 5000 absorbs and minimizes damage from web breaks and smashes.The 5000 also delivers consistent print pressure for better print quality readings. The dense carcass design significantly reduces gauge loss during installation and throughout the life of the blanket.<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/2962/daygraphica_5000.pdf" target="#"> Click here for more details </a></p>;
-;KMHA000U01WF;E1381x647x1010xX244x161x165;<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KMJT000U01WF;E1421 KBA C215 1010x605xX192 MBB;<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KND0N00U01WG;T3000_590X1526/1460__M;<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="t3000 Sleeve" target="#"> Click here for more details </a></p>;
-;KYY2020260W2;Blanket Bar 26490 x 2134mm (ref 350);<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KYY2020366W2;Blanket Bar 5A x 2150mm (ref 20366);<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KYY2030038E0;Blanket Bar 28924 x 1042mm (ref 52);<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KYY2030052E0;Blanket Bar 29036 x 1042mm (ref 30052);<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KAX0RJ0U01WA;8700/1.98 Roll x 1156mm;<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KC03163U01WB;N340/077A/3726X3726/1020974;<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KNNPF00U01WG;32426N T3000 N 565x1460/1518;<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KNNQF00U01WG;32426P T3000 P 565x1460/1518;<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KNNRF00U01WG;32448N - T3000 N 578X1460/1525;<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-;KNNSF00U01WG;32448P T3000 P 578X1460/1525;<p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="" target="#"> Click here for more details </a></p>;
-
-
 ### without Desc and Summary##
-;KAA6RFUU01WA;0660/1.96 Roll x 1030mm;;;;
-;KAA6RGFU01WA;0660/1.96 Roll x 1052mm;;;;
-;KAA7RH6U01WK;0036/1.96 Roll x 1075mm Trimmed;;;;
-;KAA7RLUU01WK;0036/1.96 Roll x 1480mm Trimmed;;;;
-;KAAKRH6U01WK;0056/1.96 Roll x 1075mm Trimmed;;;;
-;KAALRH1U01WA;0427/1.96 Roll x 1067mm Butyl;;;;
-;KAAMRH1U01WA;0429/1.70 Roll x 1067mm X-treme;;;;
-;KAARREAU01WA;3000/1.70 Roll x 0889mm;;;;
-;KAARREUU01WA;3000/1.70 Roll x 0940mm;;;;
-;KAARRF3U01WA;3000/1.70 Roll x 1016mm;;;;
-;KAAURE3U01WA;3000/1.96 Roll x 0914mm;;;;
-;KAAUREAU01WA;3000/1.96 Roll x 0889mm;;;;
-;KAAUREUU01WA;3000/1.96 Roll x 0940mm;;;;
-;KAAURFEU01WA;3000/1.96 Roll x 0991mm;;;;
-;KAAURH1U01WA;3000/1.96 Roll x 1067mm;;;;
-;KAAURJ6U01WA;3000/1.96 Roll x 1168mm;;;;
-;KAAURKUU01WA;3000/1.96 Roll x 1372mm;;;;
-;KAAURMKU01WA;3000/1.96 Roll x 1600mm;;;;
-;KAAWRDKU01WA;N340/1.70 Roll x 0800mm;;;;
-;KAAWRE7U01WA;N340/1.70 Roll x 0927mm;;;;
-;KAAWREAU01WA;N340/1.70 Roll x 0889mm;;;;
-;KAAXRF3U01WA;3610/1.70 Roll x 1016mm;;;;
-;KAB1REUU01WA;3610/1.96 Roll x 0940mm;;;;
-;KAB6REAU01WA;3700/1.70 Roll x 0889mm;;;;
-;KABBRBFU01WA;6901/1.96 Roll x 0686mm;;;;
-;KABBRCPU01WA;6901/1.96 Roll x 0772mm;;;;
-;KABBRE7U01WA;6901/1.96 Roll x 0927mm;;;;
-;KABBRGAU01WA;6901/1.96 Roll x 1050mm;;;;
-;KABBRH1U01WA;6901/1.96 Roll x 1067mm;;;;
-;KABBRH2U01WA;6901/1.96 Roll x 1077mm;;;;
-;KABBRKFU01WA;6901/1.96 Roll x 1321mm;;;;
-;KABBRLKU01WA;6901/1.96 Roll x 1473mm;;;;
-;KABBRNAU01WA;6901/1.96 Roll x 1727mm;;;;
-;KABFRDNU01WA;8700/1.70 Roll x 0832mm;;;;
-;KABFREAU01WA;8700/1.70 Roll x 0889mm;;;;
-;KABFREUU01WA;8700/1.70 Roll x 0940mm;;;;
-;KABGRF3U01WA;5000/1.70 Roll x 1016mm;;;;
-;KABKRE5U01WA;5000/1.96 Roll x 0864mm;;;;
-;KABKRF3U01WA;5000/1.96 Roll x 1016mm;;;;
-;KABMRE5U01WA;8891/2.06 Roll x 0864mm;;;;
-;KABTRCPU01WA;8200/1.96 Roll x 0772mm;;;;
-;KABTRH1U01WA;8200/1.96 Roll x 1067mm;;;;
-;KABYRE7U01WA;87UL/1.96 Roll x 0927mm;;;;
-;KABYREAU01WA;87UL/1.96 Roll x 0889mm;;;;
-;KAC9RH1U01WA;0620/1.96 Roll x 1067mm;;;;
+### New Products ###
+;KBAUB4LC01WB;865mmACx1151mmARx1.95mm;<p>Durable carcass for longer blanket life and superior print surface for a sharp dot and good solids. Versatile packed blanket can also be run in no-pack mode.</p><p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/2970/daygraphica_8897.pdf" target="#"> Click here for more details </a></p>;865mmACx1151mmARx1.95mm;;
+;KBCAB0PC01WB;1010mmACx1157mmARx1.95mm;<p>Durable carcass for longer blanket life and superior print surface for a sharp dot and good solids. Versatile packed blanket can also be run in no-pack mode.</p><p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/2970/daygraphica_8897.pdf" target="#"> Click here for more details </a></p>;1010mmACx1157mmARx1.95mm;;
+;KBCAB0QC01WB;889mmACx603mmARx1.73mm;<p>Exclusive patented printing surface is engineered to carry more ink and distribute it more evenly.</p><p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/2970/daygraphica_8897.pdf" target="#"> Click here for more details </a></p>;889mmACx603mmARx1.73mm;;
+;KBCEB01C01WB;905mmACx590mmARx1.95mm;<p>High quality premium blanket for use with conventional ink.</p><p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/2968/daygraphica_3000.pdf" target="#"> Click here for more details </a></p>;905mmACx590mmARx1.95mm;;
 
+;KBB6B00C01WB;972mmACx638mmARx1.70mm;<p>Increased productivity plus efficiency equals more value for heatset printers.</p><p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/2964/daygraphica_3700.pdf" target="#"> Click here for more details </a></p>;972mmACx638mmARx1.70mm;;
+;KBCAB0RC01WB;805mmACx1121mmARx1.95mm;<p>Durable carcass for longer blanket life and superior print surface for a sharp dot and good solids. Versatile packed blanket can also be run in no-pack mode.</p><p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/2970/daygraphica_8897.pdf" target="#"> Click here for more details </a></p>;805mmACx1121mmARx1.95mm;;
+;KBB6B01C01WB;995mmACx660mmARx1.70mm;<p>Increased productivity plus efficiency equals more value for heatset printers.</p><p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/2964/daygraphica_3700.pdf" target="#"> Click here for more details </a></p>;995mmACx660mmARx1.70mm;;
+;KBC6B01C01WB;830mmACx1120mmARx2.08mm;<p>Specifically designed for newspaper presses that require a neutral feed characteristic.</p><p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/2988/daygraphica_8889.pdf" target="#"> Click here for more details </a></p>;830mmACx1120mmARx2.08mm;;
 
-UPDATE Product;code[unique=true];summary[lang=$lang];$catalogVersion
-;KAA6RFUU01WA;0660/1.96 Roll x 1030mm
-;KAA6RGFU01WA;0660/1.96 Roll x 1052mm
-;KAA7RH6U01WK;0036/1.96 Roll x 1075mm Trimmed
-;KAA7RLUU01WK;0036/1.96 Roll x 1480mm Trimmed
-;KAAKRH6U01WK;0056/1.96 Roll x 1075mm Trimmed
-;KAALRH1U01WA;0427/1.96 Roll x 1067mm Butyl
-;KAAMRH1U01WA;0429/1.70 Roll x 1067mm X-treme
-;KAARREAU01WA;3000/1.70 Roll x 0889mm
-;KAARREUU01WA;3000/1.70 Roll x 0940mm
-;KAARRF3U01WA;3000/1.70 Roll x 1016mm
-;KAAURE3U01WA;3000/1.96 Roll x 0914mm
-;KAAUREAU01WA;3000/1.96 Roll x 0889mm
-;KAAUREUU01WA;3000/1.96 Roll x 0940mm
-;KAAURFEU01WA;3000/1.96 Roll x 0991mm
-;KAAURH1U01WA;3000/1.96 Roll x 1067mm
-;KAAURJ6U01WA;3000/1.96 Roll x 1168mm
-;KAAURKUU01WA;3000/1.96 Roll x 1372mm
-;KAAURMKU01WA;3000/1.96 Roll x 1600mm
-;KAAWRDKU01WA;N340/1.70 Roll x 0800mm
-;KAAWRE7U01WA;N340/1.70 Roll x 0927mm
-;KAAWREAU01WA;N340/1.70 Roll x 0889mm
-;KAAXRF3U01WA;3610/1.70 Roll x 1016mm
-;KAB1REUU01WA;3610/1.96 Roll x 0940mm
-;KAB6REAU01WA;3700/1.70 Roll x 0889mm
-;KABBRBFU01WA;6901/1.96 Roll x 0686mm
-;KABBRCPU01WA;6901/1.96 Roll x 0772mm
-;KABBRE7U01WA;6901/1.96 Roll x 0927mm
-;KABBRGAU01WA;6901/1.96 Roll x 1050mm
-;KABBRH1U01WA;6901/1.96 Roll x 1067mm
-;KABBRH2U01WA;6901/1.96 Roll x 1077mm
-;KABBRKFU01WA;6901/1.96 Roll x 1321mm
-;KABBRLKU01WA;6901/1.96 Roll x 1473mm
-;KABBRNAU01WA;6901/1.96 Roll x 1727mm
-;KABFRDNU01WA;8700/1.70 Roll x 0832mm
-;KABFREAU01WA;8700/1.70 Roll x 0889mm
-;KABFREUU01WA;8700/1.70 Roll x 0940mm
-;KABGRF3U01WA;5000/1.70 Roll x 1016mm
-;KABKRE5U01WA;5000/1.96 Roll x 0864mm
-;KABKRF3U01WA;5000/1.96 Roll x 1016mm
-;KABMRE5U01WA;8891/2.06 Roll x 0864mm
-;KABTRCPU01WA;8200/1.96 Roll x 0772mm
-;KABTRH1U01WA;8200/1.96 Roll x 1067mm
-;KABYRE7U01WA;87UL/1.96 Roll x 0927mm
-;KABYREAU01WA;87UL/1.96 Roll x 0889mm
-;KAC9RH1U01WA;0620/1.96 Roll x 1067mm
-;KACARDNU01WA;8897/1.96 Roll x 0832mm
-;KACAREAU01WA;8897/1.96 Roll x 0889mm
-;KACAREUU01WA;8897/1.96 Roll x 0940mm
-;KACARFEU01WA;8897/1.96 Roll x 0991mm
-;KACARFGU01WA;8897/1.96 Roll x 1029mm
-;KAD5RCPU01WA;N330/1.96 Roll x 0772mm
-;KAD5RE7U01WA;N330/1.96 Roll x 0927mm
-;KAD5RH1U01WA;N330/1.96 Roll x 1067mm
-;KAD6REAU01WA;N340/1.96 Roll x 0889mm
-;KAD6REUU01WA;N340/1.96 Roll x 0940mm
-;KAD6RH1U01WA;N340/1.96 Roll x 1067mm
-;KAD6RMKU01WA;N340/1.96 Roll x 1600mm
-;KAD6RNAU01WA;N340/1.96 Roll x 1727mm
-;KAE8RE7U01WA;87UL/1.70 Roll x 927mm
-;KAE8REAU01WA;87UL/1.70 Roll x 889mm
-;KAJ1RH1U01WA;4200/1.96 Roll x 1067mm
-;KAJ1RH8U01WA;4200/1.96 Roll x 1080mm
-;KAX0RDNU01WA;8700/1.98 Roll x 0832mm
-;KAX0REAU01WA;8700/1.98 Roll x 0889mm
-;KAX0REUU01WA;8700/1.98 Roll x 0940mm
-;KAX0RFEU01WA;8700/1.98 Roll x 0991mm
-;KAX0RH1U01WA;8700/1.98 Roll x 1067mm
-;KAXCRDNU01WA;9500/1.73 Roll x 0832mm
-;KAXCRE5U01WA;9500/1.73 Roll x 0864mm
-;KAXCRE7U01WA;9500/1.73 Roll x 0927mm
-;KAXCREAU01WA;9500/1.73 Roll x 0889mm
-;KAXCRFEU01WA;9500/1.73 Roll x 0991mm
-;KAXCRH1U01WA;9500/1.73 Roll x 1067mm
-;KAXERH1U01WA;UVM1/1.98 Roll x 1067mm
-;KAXERJ0U01WA;UVM1/1.98 Roll x 1156mm
-;KAXERNCU01WA;UVM1/1.98 Roll x 1828mm
-;KAXVRDNU01WA;8889/2.08 Roll x 0832mm
-;KAXWRFEU01WA;8889/2.11 Roll x 0991mm
-;KAXXRDNU01WA;9500/1.98 Roll x 0832mm
-;KAXXRE5U01WA;9500/1.98 Roll x 0864mm
-;KAXXRE7U01WA;9500/1.98 Roll x 0927mm
-;KAXXREAU01WA;9500/1.98 Roll x 0889mm
-;KAXXREUU01WA;9500/1.98 Roll x 0940mm
-;KAXXRFEU01WA;9500/1.98 Roll x 0991mm
-;KAXXRH1U01WA;9500/1.98 Roll x 1067mm
-;KAXXRJGU01WA;9500/1.98 Roll x 1181mm
-;KAXYRH2U01WA;0660/1.98 Roll x 1077mm
-;KAYHRCPU01WA;4100/1.96 Roll x 0772mm
-;KAYHRH1U01WA;4100/1.96 Roll x 1067mm
-;KAYHRJ0U01WA;4100/1.96 Roll x 1156mm
-;KAZ8RH1U01WA;5000/1.98 Roll x 1067mm
-;KMHA000U01WF;E1381x647x1010xX244x161x165
-;KMJT000U01WF;E1421 KBA C215 1010x605xX192 MBB
-;KND0N00U01WG;T3000_590X1526/1460__M
-;KYY2020260W2;Blanket Bar 26490 x 2134mm (ref 350)
-;KYY2020366W2;Blanket Bar 5A x 2150mm (ref 20366)
-;KYY2030038E0;Blanket Bar 28924 x 1042mm (ref 52)
-;KYY2030052E0;Blanket Bar 29036 x 1042mm (ref 30052)
-;KAX0RJ0U01WA;8700/1.98 Roll x 1156mm
-;KC03163U01WB;N340/077A/3726X3726/1020974
-;KNNPF00U01WG;32426N T3000 N 565x1460/1518
-;KNNQF00U01WG;32426P T3000 P 565x1460/1518
-;KNNRF00U01WG;32448N - T3000 N 578X1460/1525
-;KNNSF00U01WG;32448P T3000 P 578X1460/1525
-;KAA6RFUU01WA;0660/1.96 Roll x 1030mm
-;KAA6RGFU01WA;0660/1.96 Roll x 1052mm
-;KAA7RH6U01WK;0036/1.96 Roll x 1075mm Trimmed
-;KAA7RLUU01WK;0036/1.96 Roll x 1480mm Trimmed
-;KAAKRH6U01WK;0056/1.96 Roll x 1075mm Trimmed
-;KAALRH1U01WA;0427/1.96 Roll x 1067mm Butyl
-;KAAMRH1U01WA;0429/1.70 Roll x 1067mm X-treme
-;KAARREAU01WA;3000/1.70 Roll x 0889mm
-;KAARREUU01WA;3000/1.70 Roll x 0940mm
-;KAARRF3U01WA;3000/1.70 Roll x 1016mm
-;KAAURE3U01WA;3000/1.96 Roll x 0914mm
-;KAAUREAU01WA;3000/1.96 Roll x 0889mm
-;KAAUREUU01WA;3000/1.96 Roll x 0940mm
-;KAAURFEU01WA;3000/1.96 Roll x 0991mm
-;KAAURH1U01WA;3000/1.96 Roll x 1067mm
-;KAAURJ6U01WA;3000/1.96 Roll x 1168mm
-;KAAURKUU01WA;3000/1.96 Roll x 1372mm
-;KAAURMKU01WA;3000/1.96 Roll x 1600mm
-;KAAWRDKU01WA;N340/1.70 Roll x 0800mm
-;KAAWRE7U01WA;N340/1.70 Roll x 0927mm
-;KAAWREAU01WA;N340/1.70 Roll x 0889mm
-;KAAXRF3U01WA;3610/1.70 Roll x 1016mm
-;KAB1REUU01WA;3610/1.96 Roll x 0940mm
-;KAB6REAU01WA;3700/1.70 Roll x 0889mm
-;KABBRBFU01WA;6901/1.96 Roll x 0686mm
-;KABBRCPU01WA;6901/1.96 Roll x 0772mm
-;KABBRE7U01WA;6901/1.96 Roll x 0927mm
-;KABBRGAU01WA;6901/1.96 Roll x 1050mm
-;KABBRH1U01WA;6901/1.96 Roll x 1067mm
-;KABBRH2U01WA;6901/1.96 Roll x 1077mm
-;KABBRKFU01WA;6901/1.96 Roll x 1321mm
-;KABBRLKU01WA;6901/1.96 Roll x 1473mm
-;KABBRNAU01WA;6901/1.96 Roll x 1727mm
-;KABFRDNU01WA;8700/1.70 Roll x 0832mm
-;KABFREAU01WA;8700/1.70 Roll x 0889mm
-;KABFREUU01WA;8700/1.70 Roll x 0940mm
-;KABGRF3U01WA;5000/1.70 Roll x 1016mm
-;KABKRE5U01WA;5000/1.96 Roll x 0864mm
-;KABKRF3U01WA;5000/1.96 Roll x 1016mm
-;KABMRE5U01WA;8891/2.06 Roll x 0864mm
-;KABTRCPU01WA;8200/1.96 Roll x 0772mm
-;KABTRH1U01WA;8200/1.96 Roll x 1067mm
-;KABYRE7U01WA;87UL/1.96 Roll x 0927mm
-;KABYREAU01WA;87UL/1.96 Roll x 0889mm
-;KAC9RH1U01WA;0620/1.96 Roll x 1067mm
+UPDATE Product;code[unique=true];description[lang=zh];$catalogVersion
+;KBAUB4LC01WB;<p>耐用织布层，使橡皮布更长寿，最佳网点，满版表现之报印橡皮布。</p><p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/2970/daygraphica_8897.pdf" target="#"> 点击这里了解更多详情 </a></p>;;
+;KBCAB0PC01WB;<p>耐用织布层，使橡皮布更长寿，最佳网点，满版表现之报印橡皮布。</p><p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/2970/daygraphica_8897.pdf" target="#"> 点击这里了解更多详情 </a></p>;;
+;KBCAB0QC01WB;<p>专利的表面处理，使油墨转移更平均，更完美。</p><p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/2970/daygraphica_8897.pdf" target="#"> 点击这里了解更多详情 </a></p>;;
+;KBCEB01C01WB;<p>高性能高质量热固轮转橡皮布。</p><p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/2968/daygraphica_3000.pdf" target="#"> 点击这里了解更多详情 </a></p>;;
 
+;KBB6B00C01WB;<p>提升生产效率的最佳选择。</p><p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/2964/daygraphica_3700.pdf" target="#"> 点击这里了解更多详情 </a></p>;;
+;KBCAB0RC01WB;<p>耐用织布层，使橡皮布更长寿，最佳网点，满版表现之报印橡皮布。</p><p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/2970/daygraphica_8897.pdf" target="#"> 点击这里了解更多详情 </a></p>;;
+;KBB6B01C01WB;<p>提升生产效率的最佳选择。</p><p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/2964/daygraphica_3700.pdf" target="#"> 点击这里了解更多详情 </a></p>;;
+;KBC6B01C01WB;<p>特别为需要中性纸速而生产之非衬垫橡皮布。</p><p><img src="http://www.zamzar.com/images/filetypes/pdf.png" width="20px" height="20px"><a href="http://www.flintgrp.com/media/2988/daygraphica_8889.pdf" target="#"> 点击这里了解更多详情 </a></p>;;
 
 #Insert Category Product Relationship
 INSERT_UPDATE CategoryProductRelation;source($categoryRef)[unique=true];target($productRef)[unique=true]
-;Sheetfed_Offset_Blankets_INT;KAA6RGFU01WA
-;Sheetfed_Offset_Blankets_INT;KAA7RH6U01WK
-;Sheetfed_Blanket_Bars_Blankets_INT;KAA7RLUU01WK
-;Sheetfed_Blanket_Bars_Blankets_INT;KAAKRH6U01WK
-;Sheetfed_Blanket_Bars_Blankets_INT;KAALRH1U01WA
-;Sheetfed_Offset_UV_Blankets_INT;KAAMRH1U01WA
-;UV_Offset_Blankets;KAAMRH1U01WA
-;Sheetfed_Blanket_Bars_Blankets_INT;KAARREAU01WA
-;UV_Blankets_Bars;KAARREAU01WA
-;Sheetfed_Blanket_Bars_Blankets_INT;KAARREUU01WA
-;Heatset_Blanket_Bars_INT;KAARREUU01WA
-;News_Blanket_Bars_INT;KAARREUU01WA
-;Sheetfed_Blanket_Bars_Blankets_INT;KAARRF3U01WA
-;Heatset_Blanket_Bars_INT;KAARRF3U01WA
-;News_Blanket_Bars_INT;KAARRF3U01WA
-;Sheetfed_Blanket_Bars_Blankets_INT;KAAURE3U01WA
-;Heatset_Blanket_Bars_INT;KAAURE3U01WA
-;News_Blanket_Bars_INT;KAAURE3U01WA
-;Sheetfed_Blanket_Bars_Blankets_INT;KAAUREAU01WA
-;Heatset_Blanket_Bars_INT;KAAUREAU01WA
-;News_Blanket_Bars_INT;KAAUREAU01WA
-;Sheetfed_Blanket_Bars_Blankets_INT;KAAUREUU01WA
-;Heatset_Blanket_Bars_INT;KAAUREUU01WA
-;News_Blanket_Bars_INT;KAAUREUU01WA
-;Sheetfed_Blanket_Bars_Blankets_INT;KAAURFEU01WA
-;Heatset_Blanket_Bars_INT;KAAURFEU01WA
-;News_Blanket_Bars_INT;KAAURFEU01WA
+;News_Blankets_Offset_INT;KBCAB0KC01WB
+;News_Blankets_Offset_INT;KBCZB01C01WB
+;News_Blankets_Offset_INT;KBCAB0LC01WB
+;News_Blankets_Offset_INT;KBCZB00C01WB
+;Heatset_Blankets_Offset_INT;KBBKB3YC01WB
+;Heatset_Blankets_Offset_INT;KBBKB3WC01WB
+#;News_Blankets_Offset_INT;KBCZB00C01WB
+;News_Blankets_Offset_INT;KBCZS01C01WB
+;News_Blankets_Offset_INT;KBCZS00C01WB
+;Sheetfed_Offset_Blankets_INT;KBCEB00C01WB
+;Sheetfed_Offset_Blankets_INT;KBA6S0RC01WB
+;Sheetfed_Offset_Blankets_INT;KBXYS00C01WB
+;Sheetfed_Offset_Blankets_INT;KBXYS01C01WB
+;Sheetfed_Offset_Blankets_INT;KBARB04C01WB
+;Heatset_Blankets_Offset_INT;KBB6B00C01WB
+;Sheetfed_Offset_Blankets_INT;KBZTS01C01WB
+;News_Blankets_Offset_INT;KBCAB0NC01WB
+;Heatset_Blankets_Offset_INT;KBBKB3VC01WB
+;News_Blankets_Offset_INT;KBBMB00C01WB
+;News_Blankets_Offset_INT;KBCAB0MC01WB
+;Heatset_Blankets_Offset_INT;KBBKS08C01WB
+;Sheetfed_Offset_Blankets_INT;KBAUS13C01WB
+;Heatset_Blankets_Offset_INT;KBBKS07C01WB
+;Sheetfed_Offset_Blankets_INT;KBAUS12C01WB
+;News_Blankets_Offset_INT;KBCAB0PC01WB
+;Heatset_Blankets_Offset_INT;KBBKB3XC01WB
+#;News_Blankets_Offset_INT;KBCZB01C01WB
+;Sheetfed_Offset_Blankets_INT;KBAUB4JC01WB
+;Heatset_Blankets_Offset_INT;KBBKS09C01WB
 
-;Sheetfed_Blanket_Bars_Blankets_INT;KAAURH1U01WA
-;Heatset_Blanket_Bars_INT;KAAURH1U01WA
-;News_Blanket_Bars_INT;KAAURH1U01WA
 
-;Sheetfed_Blanket_Bars_Blankets_INT;KAAURJ6U01WA
-;Heatset_Blanket_Bars_INT;KAAURJ6U01WA
-;News_Blanket_Bars_INT;KAAURJ6U01WA
+### New Products ###
+;NEWS_INT;KBAUB4LC01WB
+;NEWS_INT;KBCAB0PC01WB
+;NEWS_INT;KBCAB0QC01WB
+;Sheetfed_INT;KBCAB0QC01WB
+;HEATSET_INT;KBCAB0QC01WB
+;Sheetfed_INT;KBCEB01C01WB
+;HEATSET_INT;KBCEB01C01WB
+;Sheetfed_INT;KBB6B00C01WB
+;HEATSET_INT;KBB6B00C01WB
+;NEWS_INT;KBCAB0RC01WB
+;Sheetfed_INT;KBB6B01C01WB
+;HEATSET_INT;KBB6B01C01WB
+;NEWS_INT;KBC6B01C01WB
 
-;Sheetfed_Blanket_Bars_Blankets_INT;KAAURKUU01WA
-;Heatset_Blanket_Bars_INT;KAAURKUU01WA
-;News_Blanket_Bars_INT;KAAURKUU01WA
 
-;Sheetfed_Blanket_Bars_Blankets_INT;KAAURMKU01WA
-;Heatset_Blanket_Bars_INT;KAAURMKU01WA
-;News_Blanket_Bars_INT;KAAURMKU01WA
-
-;Sheetfed_Blanket_Bars_Blankets_INT;KAAWRDKU01WA
-;Heatset_Blanket_Bars_INT;KAAWRDKU01WA
-;News_Blanket_Bars_INT;KAAWRDKU01WA
-
-;News_Blanket_Bars_INT;KAAWRE7U01WA
-;News_Blanket_Bars_INT;KAAWREAU01WA
-;News_Blanket_Bars_INT;KAAXRF3U01WA
-;Sheetfed_Offset_Blankets_INT;KAB1REUU01WA
-;Heatset_OffsetBlankets_INT;KAB1REUU01WA
-;Sheetfed_Offset_Blankets_INT;KAB6REAU01WA
-;Heatset_OffsetBlankets_INT;KAB6REAU01WA
-;Heatset_OffsetBlankets_INT;KABBRBFU01WA
-;Sheetfed_Blanket_Bars_Blankets_INT;KABBRCPU01WA
-;Sheetfed_Blanket_Bars_Blankets_INT;KABBRE7U01WA
-;Sheetfed_Blanket_Bars_Blankets_INT;KABBRGAU01WA
-;Sheetfed_Blanket_Bars_Blankets_INT;KABBRH1U01WA
-;Sheetfed_Blanket_Bars_Blankets_INT;KABBRH2U01WA
-;Sheetfed_Blanket_Bars_Blankets_INT;KABBRKFU01WA
-;Sheetfed_Blanket_Bars_Blankets_INT;KABBRLKU01WA
-;Sheetfed_Blanket_Bars_Blankets_INT;KABBRNAU01WA
-;Sheetfed_Blanket_Bars_Blankets_INT;KABFRDNU01WA
-;News_Blanket_Bars_INT;KABFREAU01WA
-;News_Blanket_Bars_INT;KABFREUU01WA
-;News_Blanket_Bars_INT;KABGRF3U01WA
-;Heatset_OffsetBlankets_INT;KABKRE5U01WA
-;Heatset_OffsetBlankets_INT;KABKRF3U01WA
-;Heatset_OffsetBlankets_INT;KABMRE5U01WA
-;News_Blanket_Bars_INT;KABTRCPU01WA
-;Sheetfed_Offset_UV_Blankets_INT;KABTRH1U01WA
-;Sheetfed_Offset_UV_Blankets_INT;KABYRE7U01WA
-#;;KABYREAU01WA
-;Sheetfed_Blanket_Bars_Blankets_INT;KAC9RH1U01WA
-;Sheetfed_Offset_Blankets_INT;KACARDNU01WA
-;News_Blanket_Bars_INT;KACAREAU01WA
-;News_Blanket_Bars_INT;KACAREUU01WA
-;News_Blanket_Bars_INT;KACARFEU01WA
-;News_Blanket_Bars_INT;KACARFGU01WA
-;News_Blanket_Bars_INT;KAD5RCPU01WA
-;Sheetfed_Blanket_Bars_Blankets_INT;KAD5RE7U01WA
-;Sheetfed_Blanket_Bars_Blankets_INT;KAD5RH1U01WA
-;Sheetfed_Blanket_Bars_Blankets_INT;KAD6REAU01WA
-;Sheetfed_Blanket_Bars_Blankets_INT;KAD6REUU01WA
-;Sheetfed_Blanket_Bars_Blankets_INT;KAD6RH1U01WA
-;Sheetfed_Blanket_Bars_Blankets_INT;KAD6RMKU01WA
-;Sheetfed_Blanket_Bars_Blankets_INT;KAD6RNAU01WA
-;Sheetfed_Blanket_Bars_Blankets_INT;KAE8RE7U01WA
-;Sheetfed_Blanket_Bars_Blankets_INT;KAE8REAU01WA
-;Sheetfed_Blanket_Bars_Blankets_INT;KAJ1RH1U01WA
-;Sheetfed_Blanket_Bars_Blankets_INT;KAJ1RH8U01WA
-;Sheetfed_Blanket_Bars_Blankets_INT;KAX0RDNU01WA
-;News_Blanket_Bars_INT;KAX0REAU01WA
-;News_Blanket_Bars_INT;KAX0REUU01WA
-;News_Blanket_Bars_INT;KAX0RFEU01WA
-;News_Blanket_Bars_INT;KAX0RH1U01WA
-;News_Blanket_Bars_INT;KAXCRDNU01WA
-;News_Blanket_Bars_INT;KAXCRE5U01WA
-;News_Blanket_Bars_INT;KAXCRE7U01WA
-;News_Blanket_Bars_INT;KAXCREAU01WA
-;News_Blanket_Bars_INT;KAXCRFEU01WA
-;News_Blanket_Bars_INT;KAXCRH1U01WA
-;News_Blanket_Bars_INT;KAXERH1U01WA
-;Sheetfed_Offset_UV_Blankets_INT;KAXERJ0U01WA
-;Sheetfed_Offset_UV_Blankets_INT;KAXERNCU01WA
-;Sheetfed_Offset_UV_Blankets_INT;KAXVRDNU01WA
-;News_Blanket_Bars_INT;KAXWRFEU01WA
-;News_Blanket_Bars_INT;KAXXRDNU01WA
-;News_Blanket_Bars_INT;KAXXRE5U01WA
-;News_Blanket_Bars_INT;KAXXRE7U01WA
-;News_Blanket_Bars_INT;KAXXREAU01WA
-;News_Blanket_Bars_INT;KAXXREUU01WA
-;News_Blanket_Bars_INT;KAXXRFEU01WA
-;News_Blanket_Bars_INT;KAXXRH1U01WA
-;News_Blanket_Bars_INT;KAXXRJGU01WA
-;News_Blanket_Bars_INT;KAXYRH2U01WA
-;Sheetfed_Offset_Blankets_INT;KAYHRCPU01WA
-;Sheetfed_Offset_UV_Blankets_INT;KAYHRH1U01WA
-;Sheetfed_Offset_UV_Blankets_INT;KAYHRJ0U01WA
-;Sheetfed_Offset_UV_Blankets_INT;KAZ8RH1U01WA
-;Heatset_Blankets_Offset_INT;KMHA000U01WF
 
 ### Tax for Products###
 UPDATE Product;code[unique=true];$catalogVersion;$taxGroup
-;KAA6RFUU01WA;;;
-;KAA6RGFU01WA;;;
-;KAA7RH6U01WK;;;
-;KAA7RLUU01WK;;;
-;KAAKRH6U01WK;;;
-;KAALRH1U01WA;;;
-;KAAMRH1U01WA;;;
-;KAARREAU01WA;;;
-;KAARREUU01WA;;;
-;KAARRF3U01WA;;;
-;KAAURE3U01WA;;;
-;KAAUREAU01WA;;;
-;KAAUREUU01WA;;;
-;KAAURFEU01WA;;;
-;KAAURH1U01WA;;;
-;KAAURJ6U01WA;;;
-;KAAURKUU01WA;;;
-;KAAURMKU01WA;;;
-;KAAWRDKU01WA;;;
-;KAAWRE7U01WA;;;
-;KAAWREAU01WA;;;
-;KAAXRF3U01WA;;;
-;KAB1REUU01WA;;;
-;KAB6REAU01WA;;;
-;KABBRBFU01WA;;;
-;KABBRCPU01WA;;;
-;KABBRE7U01WA;;;
-;KABBRGAU01WA;;;
-;KABBRH1U01WA;;;
-;KABBRH2U01WA;;;
-;KABBRKFU01WA;;;
-;KABBRLKU01WA;;;
-;KABBRNAU01WA;;;
-;KABFRDNU01WA;;;
-;KABFREAU01WA;;;
-;KABFREUU01WA;;;
-;KABGRF3U01WA;;;
-;KABKRE5U01WA;;;
-;KABKRF3U01WA;;;
-;KABMRE5U01WA;;;
-;KABTRCPU01WA;;;
-;KABTRH1U01WA;;;
-;KABYRE7U01WA;;;
-;KABYREAU01WA;;;
-;KAC9RH1U01WA;;;
-;KACARDNU01WA;;;
-;KACAREAU01WA;;;
-;KACAREUU01WA;;;
-;KACARFEU01WA;;;
-;KACARFGU01WA;;;
-;KAD5RCPU01WA;;;
-;KAD5RE7U01WA;;;
-;KAD5RH1U01WA;;;
-;KAD6REAU01WA;;;
-;KAD6REUU01WA;;;
-;KAD6RH1U01WA;;;
-;KAD6RMKU01WA;;;
-;KAD6RNAU01WA;;;
-;KAE8RE7U01WA;;;
-;KAE8REAU01WA;;;
-;KAJ1RH1U01WA;;;
-;KAJ1RH8U01WA;;;
-;KAX0RDNU01WA;;;
-;KAX0REAU01WA;;;
-;KAX0REUU01WA;;;
-;KAX0RFEU01WA;;;
-;KAX0RH1U01WA;;;
-;KAXCRDNU01WA;;;
-;KAXCRE5U01WA;;;
-;KAXCRE7U01WA;;;
-;KAXCREAU01WA;;;
-;KAXCRFEU01WA;;;
-;KAXCRH1U01WA;;;
-;KAXERH1U01WA;;;
-;KAXERJ0U01WA;;;
-;KAXERNCU01WA;;;
-;KAXVRDNU01WA;;;
-;KAXWRFEU01WA;;;
-;KAXXRDNU01WA;;;
-;KAXXRE5U01WA;;;
-;KAXXRE7U01WA;;;
-;KAXXREAU01WA;;;
-;KAXXREUU01WA;;;
-;KAXXRFEU01WA;;;
-;KAXXRH1U01WA;;;
-;KAXXRJGU01WA;;;
-;KAXYRH2U01WA;;;
-;KAYHRCPU01WA;;;
-;KAYHRH1U01WA;;;
-;KAYHRJ0U01WA;;;
-;KAZ8RH1U01WA;;;
-;KMHA000U01WF;;;
-;KMJT000U01WF;;;
-;KND0N00U01WG;;;
-;KYY2020260W2;;;
-;KYY2020366W2;;;
-;KYY2030038E0;;;
-;KYY2030052E0;;;
-;KAX0RJ0U01WA;;;
-;KC03163U01WB;;;
-;KNNPF00U01WG;;;
-;KNNQF00U01WG;;;
-;KNNRF00U01WG;;;
-;KNNSF00U01WG;;;
+### New Products ###
+;KBAUB4LC01WB;;;
+;KBCAB0PC01WB;;;
+;KBCAB0QC01WB;;;
+;KBCEB01C01WB;;;
+;KBB6B00C01WB;;;
+;KBCAB0RC01WB;;;
+;KBB6B01C01WB;;;
+;KBC6B01C01WB;;;
 
 
 
+
+
+INSERT_UPDATE StockLevel;productCode[unique=true];warehouse(code)[unique=true,default=default];available;inStockStatus(code);maxPreOrder[default=1];maxStockLevelHistoryCount[default=-1];overSelling[default=0];preOrder[default=0];reserved[default=0]
+### New Products ###
+;KBAUB4LC01WB;flint_china_warehouse;400;notSpecified;
+;KBCAB0PC01WB;flint_china_warehouse;400;notSpecified;
+;KBCAB0QC01WB;flint_china_warehouse;400;notSpecified;
+;KBCEB01C01WB;flint_china_warehouse;400;notSpecified;
+;KBB6B00C01WB;flint_china_warehouse;400;notSpecified;
+;KBCAB0RC01WB;flint_china_warehouse;400;notSpecified;
+;KBB6B01C01WB;flint_china_warehouse;400;notSpecified;
+;KBC6B01C01WB;flint_china_warehouse;400;notSpecified;
 
 
 

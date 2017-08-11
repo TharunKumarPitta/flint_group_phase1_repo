@@ -2,14 +2,14 @@ INSERT_UPDATE Company;uid[unique=true];name;
 ;FlintAddresses;FlintAddresses;
 
 #INSERT_UPDATE Address    ;code[unique=true]  ;owner(Company.uid)[unique=true]    ;country(isocode)   ;company ;line1;line2;streetnumber   ;streetname;postalcode     ;town   ;state;cellphone;billingAddress;contactAddress;shippingAddress;unloadingAddress;visibleInAddressBook;
-#;10367113;FlintAddresses;CN;山东北方新华经贸有限公司;;;;济南市槐荫区纬八路36号舜亿绿园1号楼1-301室;250000;山东;;;true;true;true;true;false;
-#;10367116;FlintAddresses;CN;东莞市顺锦贸易有限公司;;;;东莞市寮步镇上屯;523430;东莞市;;;true;true;true;true;false;
-#;10367059;FlintAddresses;CN;天津市迪可印刷材料有限公司;;;;天津市北辰区刘家房子;300400;天津;;;true;true;true;true;false;
-#;10372239;FlintAddresses;CN;上海迪可印刷器材專賣部有限公司;;;;上海市青浦区朱家角康园路396号;200070;上海;;;true;true;true;true;false;
-#;10372242;FlintAddresses;CN;上海迪科印刷设备有限公司;;;;上海市静安区中山北路740弄2号1楼;200070;上海;;;true;true;true;true;false;
-#;10372245;FlintAddresses;CN;广州市确域印刷器材有限公司;;;;东风中路268号广州交易广场1911室;510030;广州市;;;true;true;true;true;false;
-#;10372249;FlintAddresses;CN;上海迪恒印刷器材有限公司;;;;普陀区中江路889号605室;;上海;200070;;true;true;true;true;false;
-#;10372250;FlintAddresses;CN;恒美印务（广州）有限公司;;;;南沙经济技术开发区环市大道南334号;;广州;;;true;true;true;true;false;
+#;10367113;FlintAddresses;CN;山东北方新华经贸有限公司;济南市槐荫区纬八路36号舜亿绿园1号楼1-301室;;;济南市槐荫区纬八路36号舜亿绿园1号楼1-301室;250000;山东;;;true;true;true;true;false;
+#;10367116;FlintAddresses;CN;东莞市顺锦贸易有限公司;东莞市寮步镇上屯;523430;东莞市;;;东莞市寮步镇上屯;523430;东莞市;;;true;true;true;true;false;
+#;10367059;FlintAddresses;CN;天津市迪可印刷材料有限公司;天津市北辰区刘家房子;;;天津市北辰区刘家房子;300400;天津;;;true;true;true;true;false;
+#;10372239;FlintAddresses;CN;上海迪可印刷器材專賣部有限公司;上海市青浦区朱家角康园路396号;;;上海市青浦区朱家角康园路396号;200070;上海;;;true;true;true;true;false;
+#;10372242;FlintAddresses;CN;上海迪科印刷设备有限公司;上海市静安区中山北路740弄2号1楼;;;上海市静安区中山北路740弄2号1楼;200070;上海;;;true;true;true;true;false;
+#;10372245;FlintAddresses;CN;广州市确域印刷器材有限公司;东风中路268号广州交易广场1911室;;;东风中路268号广州交易广场1911室;510030;广州市;;;true;true;true;true;false;
+#;10372249;FlintAddresses;CN;上海迪恒印刷器材有限公司;普陀区中江路889号605室;;;普陀区中江路889号605室;;上海;200070;;true;true;true;true;false;
+#;10372250;FlintAddresses;CN;恒美印务（广州）有限公司;南沙经济技术开发区环市大道南334号;;;南沙经济技术开发区环市大道南334号;;广州;;;true;true;true;true;false;
 
 
 
@@ -31,14 +31,14 @@ INSERT_UPDATE B2BUnit    ;active[default=true]   ;uid[unique=true]   ;locName[la
 ;;FlintCustomers;Flint Customers;Flint Customers;
 
 INSERT_UPDATE B2BUnit    ;active[default=true]   ;uid[unique=true]   ;locName[lang=en]   ;locName[lang=zh]   ;groups(uid);country(isocode);userPriceGroup(code);&B2BUnitID;
-;;0090021886;Zhuhai Dike Printing Equipment Co., Ltd.;山东北方新华经贸有限公司;FlintCustomers;CN;0090021886;0090021886;
-;;0090021887;Dongguan Sunking Trading Co. Ltd.;东莞市顺锦贸易有限公司;FlintCustomers;CN;0090021887;0090021887
-;;0090021901;天津市迪可印刷材料有限公司;天津市迪可印刷材料有限公司;FlintCustomers;CN;0090021901;0090021901
-;;0090022162;Shanghai Evershine Ind & Trading Co;上海迪可印刷器材專賣部有限公司;FlintCustomers;CN;0090022162;0090022162
-;;0090022163;Shanghai KEYING Trading Co. Ltd;上海迪科印刷设备有限公司;FlintCustomers;CN;0090022163;0090022163
-;;0090022164;Korich Printing Equipment Co. Ltd. Rm 1911;广州市确域印刷器材有限公司;FlintCustomers;CN;0090022164;0090022164
-;;0090022176;Zhuhai Dike Printing Equipment Co., Ltd.;上海迪恒印刷器材有限公司;FlintCustomers;CN;0090022176;0090022176
-;;0090022177;Everbest (Guangzhou) Printing Co. Ltd.;恒美印务（广州）有限公司;FlintCustomers;CN;0090022177;0090022177
+;;0090021886;Zhuhai Dike Printing Equipment Co., Ltd.;山东北方新华经贸有限公司;;CN;0090021886;0090021886;
+;;0090021887;Dongguan Sunking Trading Co. Ltd.;东莞市顺锦贸易有限公司;;CN;0090021887;0090021887
+;;0090021901;天津市迪可印刷材料有限公司;天津市迪可印刷材料有限公司;;CN;0090021901;0090021901
+;;0090022162;Shanghai Evershine Ind & Trading Co;上海迪可印刷器材專賣部有限公司;;CN;0090022162;0090022162
+;;0090022163;Shanghai KEYING Trading Co. Ltd;上海迪科印刷设备有限公司;;CN;0090022163;0090022163
+;;0090022164;Korich Printing Equipment Co. Ltd. Rm 1911;广州市确域印刷器材有限公司;;CN;0090022164;0090022164
+;;0090022176;Zhuhai Dike Printing Equipment Co., Ltd.;上海迪恒印刷器材有限公司;;CN;0090022176;0090022176
+;;0090022177;Everbest (Guangzhou) Printing Co. Ltd.;恒美印务（广州）有限公司;;CN;0090022177;0090022177
 
 
 

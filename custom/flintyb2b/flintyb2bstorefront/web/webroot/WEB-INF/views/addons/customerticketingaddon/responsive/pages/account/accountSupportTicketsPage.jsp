@@ -53,9 +53,11 @@
                     <tr class="responsive-table-item">
                         <td class="hidden-sm hidden-md hidden-lg"><spring:theme code="text.account.supporttickets.ticketId" text="Ticket ID" /></td>
                         <td><a href="${myAccountsupportTicketDetailsUrl}" class="responsive-table-link"><c:out value="${supportTicket.id}" /></a></td>
-                        
-                        <td class="hidden-sm hidden-md hidden-lg"><spring:theme code="text.account.supporttickets.subject" text="Subject" /></td>
-                        <td class="break-word"><a href="${myAccountsupportTicketDetailsUrl}" class="responsive-table-link"><c:out value="${supportTicket.subject}" /></a></td>
+                        <c:set var="subject" value="${supportTicket.subject}"/> 
+     			<c:set var="subject1" value="${fn:replace(subject,' ','')}"/> 
+			
+                        <td class="hidden-sm hidden-md hidden-lg"><spring:theme code="text.account.supporttickets.${subject1}" text="Subject" /></td>
+                        <td class="break-word"><a href="${myAccountsupportTicketDetailsUrl}" class="responsive-table-link"><spring:theme code="text.account.supporttickets.${subject1}" text="Subject" /></a></td>
                         
                         <td class="hidden-sm hidden-md hidden-lg"><spring:theme code="text.account.supporttickets.dateCreated" text="Date Created" /></td>
                         <td><fmt:formatDate value="${supportTicket.creationDate}" pattern="dd-MM-yy hh:mm a" /></td>
