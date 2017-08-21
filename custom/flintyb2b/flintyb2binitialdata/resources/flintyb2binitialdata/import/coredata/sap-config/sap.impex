@@ -3,8 +3,14 @@ $productCatalogVersion=Staged
 $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='$productCatalogVersion'])[unique=true,default=$productCatalog:$productCatalogVersion]
 $storeUid=flint-zh
 
-INSERT_UPDATE SAPConfiguration;core_name[unique=true];sappricingbol_cartPricing;sappricingbol_priceSub(code);sappricingbol_discountSub(code);sappricingbol_taxesSub(code);sappricingbol_deliverySub(code)
-;BS_ZBX_3WIL_01;false;KZWI1;KZWI2;MWSBP;KZWI4
+INSERT_UPDATE SAPConfiguration;core_name[unique=true];sappricingbol_catalogPricing;sappricingbol_cartPricing;sappricingbol_cachePrice;sappricingbol_priceSub(code);sappricingbol_discountSub(code);sappricingbol_taxesSub(code);sappricingbol_deliverySub(code);
+;FLINT_B2B_HYB_SAP_CONFIG;true;true;false;KZWI4;;MWSBP;;
+
+#####################
+## SAP Paymentmode configuration
+#####################
+INSERT_UPDATE SAPPaymentMode;paymentMode;paymentName;paymentValue;sapConfiguration(core_name)[unique=true];
+;Invoice;ZTERM;001;FLINT_B2B_HYB_SAP_CONFIG;
 
 #####################
 ## RFC DESTINATION ##
@@ -82,5 +88,27 @@ INSERT_UPDATE SAPConfiguration;core_name[unique=true];sappricingbol_cartPricing;
 #INSERT_UPDATE SAPConfiguration;core_name[unique=true];sapordermgmt_enabled;sapordermgmt_headerCondTypeFreight;sapordermgmt_sourceFreight;sapordermgmt_sourceNetWOFreight;
 #;BS_ZBX_3WIL_01;true;ZF01;SUBTOTAL4;SUBTOTAL2
 ##;ZF01;SUBTOTAL4;SUBTOTAL2
+
+################################################################
+### SAP Customizing configuration for china region ##
+################################################################
+INSERT_UPDATE ReferenceDivisionMapping;salesOrganization[unique=true];division[unique=true];divisionName[lang=en];refDivisionConditions;refDivisionConditionsName[lang=en];refDivisionCustomer;refDivisionCustomerName[lang=en] 
+;BZHO;00;"Flint SAP";00;"Flint SAP";00;"Flint SAP";
+
+INSERT_UPDATE ReferenceDistributionChannelMapping;salesOrganization[unique=true];distChannel[unique=true];distChannelName[lang=en];refDistChannelConditions;refDistChannelConditionsName[lang=en];refDistChannelCustMat;refDistChannelCustMatName[lang=en] 
+;BZHO;01;"Standard";01;"Standard";01;"Standard"; 
+;BZHO;IC;"Intercompany";IC;"Intercompany";IC;"Intercompany"; 
+
+INSERT_UPDATE Unit;code[unique=true];sapCode;unitType;conversion;name[lang=en] 
+;MTK;M2;SAP-SURFAC;1;"Square meter" ;
+;M2;KGF;SAP-MASSBD;1;"kg/m2";
+;PCE;ST;SAP-AAAADL;1;"Piece";
+
+
+INSERT_UPDATE Vendor;code[unique=true]
+;ERP
+
+INSERT_UPDATE Warehouse;code[unique=true];default;vendor(code);name[lang=en]
+;BCN6;true;ERP;"TM Zhongshan (CN)"
 
 

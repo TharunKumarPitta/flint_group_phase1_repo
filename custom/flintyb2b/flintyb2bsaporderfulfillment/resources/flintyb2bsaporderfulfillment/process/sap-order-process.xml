@@ -39,7 +39,7 @@
 	</wait>
 
 	<action id="setConfirmationStatus" bean="sapOrderexchangeSetConfirmationStatusAction">
-		<transition name="OK" to="waitForConsignmentCreation" />
+		<transition name="OK" to="waitForGoodsIssue" />
 		<transition name="NOK" to="error" />
 	</action>
 

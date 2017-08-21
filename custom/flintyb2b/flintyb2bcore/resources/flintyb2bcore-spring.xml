@@ -504,8 +504,24 @@
  	</bean>
  	<bean id="flintSolrSearchListener" class="com.flintgroup.core.util.FlintSolrSearchListener"></bean>
  	
-	<alias name="flintDefaultCalculationService" alias="calculationService"/>
+<!-- 	<alias name="flintDefaultCalculationService" alias="calculationService"/>
 	<bean id="flintDefaultCalculationService" class="com.flintgroup.core.order.FlintDefaultCalculationService" parent="defaultCalculationService">
 	<property name="findPriceStrategy" ref="currentFactoryFindPricingStrategy"/>
-	</bean>
+	</bean> -->
+<!-- 	<bean id="flintCartCodeGenerator" class="de.hybris.platform.servicelayer.keygenerator.impl.PersistentKeyGenerator">
+         <property name="key" value="cart_code" />
+         <property name="digits" value="10" />
+         <property name="start" value="0" />
+         <property name="numeric" value="true" />
+         <property name="template" value="$" />
+     </bean>
+       
+       <alias alias="cartFactory" name="defaultCartFactory"/>
+       <bean id="defaultCartFactory" class="de.hybris.platform.order.impl.DefaultCartFactory">
+              <property name="keyGenerator" ref="flintCartCodeGenerator"/>
+              <property name="modelService" ref="modelService"/>
+              <property name="userService" ref="userService"/>
+              <property name="commonI18NService" ref="commonI18NService"/>
+       </bean> -->
+	
 </beans>

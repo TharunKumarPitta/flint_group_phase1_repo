@@ -54,37 +54,6 @@ UPDATE Product;code[unique=true];description[lang=zh];$catalogVersion
 
 #Insert Category Product Relationship
 INSERT_UPDATE CategoryProductRelation;source($categoryRef)[unique=true];target($productRef)[unique=true]
-;News_Blankets_Offset_INT;KBCAB0KC01WB
-;News_Blankets_Offset_INT;KBCZB01C01WB
-;News_Blankets_Offset_INT;KBCAB0LC01WB
-;News_Blankets_Offset_INT;KBCZB00C01WB
-;Heatset_Blankets_Offset_INT;KBBKB3YC01WB
-;Heatset_Blankets_Offset_INT;KBBKB3WC01WB
-#;News_Blankets_Offset_INT;KBCZB00C01WB
-;News_Blankets_Offset_INT;KBCZS01C01WB
-;News_Blankets_Offset_INT;KBCZS00C01WB
-;Sheetfed_Offset_Blankets_INT;KBCEB00C01WB
-;Sheetfed_Offset_Blankets_INT;KBA6S0RC01WB
-;Sheetfed_Offset_Blankets_INT;KBXYS00C01WB
-;Sheetfed_Offset_Blankets_INT;KBXYS01C01WB
-;Sheetfed_Offset_Blankets_INT;KBARB04C01WB
-;Heatset_Blankets_Offset_INT;KBB6B00C01WB
-;Sheetfed_Offset_Blankets_INT;KBZTS01C01WB
-;News_Blankets_Offset_INT;KBCAB0NC01WB
-;Heatset_Blankets_Offset_INT;KBBKB3VC01WB
-;News_Blankets_Offset_INT;KBBMB00C01WB
-;News_Blankets_Offset_INT;KBCAB0MC01WB
-;Heatset_Blankets_Offset_INT;KBBKS08C01WB
-;Sheetfed_Offset_Blankets_INT;KBAUS13C01WB
-;Heatset_Blankets_Offset_INT;KBBKS07C01WB
-;Sheetfed_Offset_Blankets_INT;KBAUS12C01WB
-;News_Blankets_Offset_INT;KBCAB0PC01WB
-;Heatset_Blankets_Offset_INT;KBBKB3XC01WB
-#;News_Blankets_Offset_INT;KBCZB01C01WB
-;Sheetfed_Offset_Blankets_INT;KBAUB4JC01WB
-;Heatset_Blankets_Offset_INT;KBBKS09C01WB
-
-
 ### New Products ###
 ;NEWS_INT;KBAUB4LC01WB
 ;NEWS_INT;KBCAB0PC01WB
@@ -120,14 +89,13 @@ UPDATE Product;code[unique=true];$catalogVersion;$taxGroup
 
 INSERT_UPDATE StockLevel;productCode[unique=true];warehouse(code)[unique=true,default=default];available;inStockStatus(code);maxPreOrder[default=1];maxStockLevelHistoryCount[default=-1];overSelling[default=0];preOrder[default=0];reserved[default=0]
 ### New Products ###
-;KBAUB4LC01WB;flint_china_warehouse;400;notSpecified;
-;KBCAB0PC01WB;flint_china_warehouse;400;notSpecified;
-;KBCAB0QC01WB;flint_china_warehouse;400;notSpecified;
-;KBCEB01C01WB;flint_china_warehouse;400;notSpecified;
-;KBB6B00C01WB;flint_china_warehouse;400;notSpecified;
-;KBCAB0RC01WB;flint_china_warehouse;400;notSpecified;
-;KBB6B01C01WB;flint_china_warehouse;400;notSpecified;
-;KBC6B01C01WB;flint_china_warehouse;400;notSpecified;
+;KBAUB4LC01WB;flint_china_warehouse;0;forceInStock;
+;KBCAB0PC01WB;flint_china_warehouse;0;forceInStock;
+;KBCAB0QC01WB;flint_china_warehouse;0;forceInStock;
+;KBCEB01C01WB;flint_china_warehouse;0;forceInStock;
+;KBB6B00C01WB;flint_china_warehouse;0;forceInStock;
+;KBB6B01C01WB;flint_china_warehouse;0;forceInStock;
+;KBC6B01C01WB;flint_china_warehouse;0;forceInStock;
 
 
 

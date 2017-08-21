@@ -37,9 +37,9 @@
 						<ul class="pull-left">
 							<li>
 								<strong>${fn:escapeXml(address.title)}&nbsp;${fn:escapeXml(address.firstName)}&nbsp;${fn:escapeXml(address.lastName)}
-									<c:if test="${address.defaultAddress}">
+					<%-- 				<c:if test="${address.defaultAddress}">
 										(<spring:theme code="text.default"/>)
-									</c:if>
+									</c:if> --%>
 								</strong>
 							</li>
 							<li>${fn:escapeXml(address.line1)}</li>
